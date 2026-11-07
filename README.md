@@ -1,36 +1,32 @@
-# University Stewardship Portfolio · GitHub Pages
+# University Stewardship Reporting Suite — Operations Board Update
 
-This portfolio consists of two standalone HTML files that link to one another:
+## What goes where
+Upload `index.html`, `playbook.html`, `operations.html`, and `.nojekyll` into the root of the GitHub Pages repo `narissa-pgm/aad`. Replace the earlier `index.html` only if it is still the last smoke-tested version; first merge any newer edits you have made directly on GitHub.
 
-- `index.html` — **University Stewardship Platform**, the interactive reporting application.
-- `playbook.html` — **Stewardship Reporting Playbook**, the operating methods, four worked donor-report cases, release checks, filled SOPs and batch-delivery controls.
+- `https://narissa-pgm.github.io/aad/` — reporting platform
+- `https://narissa-pgm.github.io/aad/#flow` — Data Flow & Tracking section, now links to the full operations view
+- `https://narissa-pgm.github.io/aad/operations.html#systems` — interactive operational layers and 23 system records
+- `https://narissa-pgm.github.io/aad/operations.html#public-cases` — public alumni gifts and separate synthetic CRM records
+- `https://narissa-pgm.github.io/aad/playbook.html` — supporting operating playbook
 
-Both use relative links and therefore work when published in the root of your repository at `https://narissa-pgm.github.io/aad/`:
+## Provenance, safeguards, and portrait licensing
+The operations-board environment image is embedded in the HTML as an AI-generated illustration; no separate asset is needed for it. Public alumni portraits are **not** embedded: they load from Wikimedia Commons when the page has Internet access. Image credits and license links are visible in each profile:
 
-- Platform: https://narissa-pgm.github.io/aad/
-- Playbook: https://narissa-pgm.github.io/aad/playbook.html
-- Playbook case library: https://narissa-pgm.github.io/aad/playbook.html#report
-- Platform four report gallery: https://narissa-pgm.github.io/aad/#reportgallery
+- Kenneth C. Griffin photo: Paul Elledge; CC BY-SA 4.0; source: https://commons.wikimedia.org/wiki/File:Kenneth_C._Griffin_photo.jpg
+- Hansjörg Wyss photo: Oceana; CC BY 3.0; source: https://commons.wikimedia.org/wiki/File:Hansjorg_Wyss_profile_image.png
+- Michael Bloomberg photo: Bloomberg Philanthropies; CC0; source: https://commons.wikimedia.org/wiki/File:Mike_Bloomberg_Headshot.jpg
 
-## Installation
+Keep the credits and links when publishing. If portrait hotlinking fails, download and host the licensed images in the repo with proper attribution, then update the three image paths in `operations.html`. Do not interpret public giving announcements as complete giving histories. No real person’s gift officer, private contact history, donor preferences, or confidential CRM data appear in the demo.
 
-Upload **both** files to the `main` branch repository root, keep their names `index.html` and `playbook.html`, and add `.nojekyll`. Enable GitHub Pages for `main` / `(root)`.
+## How to test
+1. Open `operations.html` and switch all five layers: Systems Map, Automation, Human Review, Mass-load Alerts, Release Checklist.
+2. Click a workflow stage and inspect its record.
+3. Expand the 23-node lineage diagram and click different nodes.
+4. Open each of the three public alumni profiles; their gift dates, amounts/purposes, and publication links should appear.
+5. Open a synthetic donor (P-1104), add a fictional contact to its log, and export its CSV.
+6. Change batch volume, filter HOLD / REVIEW / READY, and export audit CSV.
+7. Check all 18 release controls and enter a sample approver; confirm that no actual send occurs.
+8. From the main platform Data Flow section, click the operations-board link; use the return link in the operations board.
 
-No PNG, font, or WebP files are required: both pages are standalone, with artwork embedded. No credentials or external libraries are used.
-
-## Evidence and safe publication
-
-All four reports use the **same fictional case IDs, budgets and narratives** embedded in the platform (SIM-END-2026, SIM-USE-2026, SIM-CAP-2026, SIM-GRT-2026). The scenarios are not verified university donor reports. Every example is held from real release until authenticated source documents, donor intent, recipient preferences, consent, financial and program reviews, and named authorization are documented.
-
-The public app **does not transmit email**. Its mass-delivery demonstration records local browser-only simulation results. It contains no actual donor identities, lists or email credentials.
-
-One Harvard, SMARTER and VERITAS are discussed as **proposed operating frameworks** in a Harvard AA&D application context, not as implemented or endorsed university policy. VERITAS is used consistently for **Vision, Experience, Results, Investment, Truth, Advancement, Stewardship**; the six release-gate checks have their own distinct names.
-
-## Synchronization contract
-
-When updating:
-1. Keep the four `REPORT_SAMPLES` financial bridges, IDs and narratives in `index.html` aligned with `SHARED_REPORT_CASES` in `playbook.html`.
-2. Keep the SMARTER and VERITAS vocabulary aligned.
-3. Keep annual workload shares on both pages in July–June order (4%, 5%, 7%, 15%, 17%, 16%, 13%, 9%, 5%, 4%, 3%, 2%) unless changing them deliberately in both places.
-4. Run the work-sample arithmetic and release-gate checks. An illustrative mathematical pass never certifies a fund or authorizes delivery.
-5. Check links `./`, `./playbook.html`, `./#reportgallery`, `./#masscalendar`, and `./#trace` after publishing.
+## Unverified integration
+All HTML interactions were exercised in a controlled browser using inline page content. The GitHub Pages production URL and the availability of remote portrait images could not be tested from this environment. The sample does not connect to actual mass mailing, a CRM, or institutional records.
