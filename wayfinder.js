@@ -14,7 +14,8 @@
     ['program-office.html','Program Office','Timelines & delivery','O'],
     ['operations.html','Operations & Alerts','Tracking & release','A'],
     ['donor-profile.html','Donor Dossier','Synthetic record','D'],
-    ['communications.html','Communications Studio','Donor storytelling','C']
+    ['communications.html','Communications Studio','Donor storytelling','C'],
+    ['bridge-builder.html','Bridge Builder & Team Calendar','Open-door scheduling and shared progress','◈']
   ];
   var KEY='aad_wayfinder_v1';
   var route=['profile.html','workframe.html','donor-impact-reporting.html#reports','playbook.html#report','index.html#suite'];

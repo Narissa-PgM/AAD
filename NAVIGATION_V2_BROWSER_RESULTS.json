@@ -1,0 +1,92 @@
+[
+  {
+    "page": "campaign-initiatives.html",
+    "navigator_pass": true,
+    "heading": "You are here: Campaign Initiatives",
+    "runtime_errors": []
+  },
+  {
+    "page": "career-profile.html",
+    "navigator_pass": true,
+    "heading": "You are here: Detailed Career Profile",
+    "runtime_errors": []
+  },
+  {
+    "page": "communications.html",
+    "navigator_pass": true,
+    "heading": "You are here: Communications Studio",
+    "runtime_errors": []
+  },
+  {
+    "page": "donor-impact-reporting.html",
+    "navigator_pass": true,
+    "heading": "You are here: Donor Impact Reporting",
+    "runtime_errors": []
+  },
+  {
+    "page": "donor-profile.html",
+    "navigator_pass": true,
+    "heading": "You are here: Donor Dossier",
+    "runtime_errors": []
+  },
+  {
+    "page": "index.html",
+    "navigator_pass": true,
+    "heading": "You are here: Operating Suite",
+    "runtime_errors": []
+  },
+  {
+    "page": "operations.html",
+    "navigator_pass": true,
+    "heading": "You are here: Operations & Alerts",
+    "runtime_errors": []
+  },
+  {
+    "page": "playbook.html",
+    "navigator_pass": true,
+    "heading": "You are here: Executive Playbook",
+    "runtime_errors": []
+  },
+  {
+    "page": "profile.html",
+    "navigator_pass": true,
+    "heading": "You are here: Professional Profile",
+    "runtime_errors": []
+  },
+  {
+    "page": "program-office.html",
+    "navigator_pass": true,
+    "heading": "You are here: Program Office",
+    "runtime_errors": []
+  },
+  {
+    "page": "strategic-leadership.html",
+    "navigator_pass": true,
+    "heading": "You are here: Strategic Leadership",
+    "runtime_errors": []
+  },
+  {
+    "page": "team-leadership.html",
+    "navigator_pass": true,
+    "heading": "You are here: Team Leadership",
+    "runtime_errors": []
+  },
+  {
+    "page": "workframe.html",
+    "navigator_pass": true,
+    "heading": "You are here: Portfolio Workframe",
+    "runtime_errors": []
+  },
+  {
+    "page": "profile.html [mobile]",
+    "navigator_pass": true
+  },
+  {
+    "page": "career-profile.html [mobile]",
+    "navigator_pass": true
+  },
+  {
+    "page": "workframe.html [mobile]",
+    "navigator_pass": true
+  }
+]

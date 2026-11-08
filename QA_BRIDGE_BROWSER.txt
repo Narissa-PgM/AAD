@@ -1,0 +1,22 @@
+PASS main title
+PASS tasks rendered
+PASS five KPI cards
+PASS task filter unit
+PASS unit filtered
+PASS status update changes count
+PASS add task dialog
+PASS task created
+PASS week calendar rendered
+PASS offers available
+PASS local meeting request
+PASS confirm meeting works
+PASS whisper saved
+PASS wheel seven stage buttons
+PASS wheel twelve months
+PASS wheel detail changes
+PASS unit summary rendered
+PASS no JS exceptions
+PASS mobile no overflow
+PASS mobile tasks
+PASS mobile no JS errors
+Browser checks 21/21

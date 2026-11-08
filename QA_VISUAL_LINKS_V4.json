@@ -1,0 +1,16 @@
+{
+  "browser_precision_checks": {
+    "passed": 80,
+    "total": 80
+  },
+  "focused_browser_checks": {
+    "passed": 16,
+    "total": 16
+  },
+  "html_pages_checked": 15,
+  "local_resource_missing": 0,
+  "inline_js_syntax_errors": 0,
+  "javascript_assets_checked": 3,
+  "hosted_navigation_verified": false,
+  "fix": "one SVG geometry manifest for both native and shared Visual Explorer hotspots; transparent, responsive and keyboard accessible"
+}

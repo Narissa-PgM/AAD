@@ -1,0 +1,6 @@
+{
+  "passed": 29,
+  "total": 29,
+  "failed": [],
+  "method": "Playwright Chromium executable_path=/usr/bin/chromium; in-memory HTML for GitHub files; base-app test on Impact Circle; shared navigator mounting isolation on all pages. Hosted navigation and deep-link transitions not executed."
+}
