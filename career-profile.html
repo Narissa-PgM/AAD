@@ -2527,11 +2527,17 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
     if(scheduled)return;scheduled=true;
     requestAnimationFrame(()=>{
       scheduled=false;
-      const cutoff=(document.querySelector('.topbar')?.getBoundingClientRect().bottom||68)+145;
+      // Deterministic reading marker: last section above the 35% viewport line.
+      const readingLine=window.innerHeight*0.35;
       let found='achievements';
-      sections.forEach(x=>{const e=document.getElementById(x[0]);if(e&&e.getBoundingClientRect().top<=cutoff)found=x[0]});
+      sections.forEach(x=>{const e=document.getElementById(x[0]);if(e&&e.getBoundingClientRect().top<=readingLine)found=x[0]});
       update(found);
     });
+  }
+  // IntersectionObserver drives chapter highlighting, never page movement.
+  if('IntersectionObserver' in window){
+    const spy=new IntersectionObserver(onScroll,{rootMargin:'-30% 0px -60% 0px',threshold:0});
+    sections.forEach(x=>{const e=document.getElementById(x[0]);if(e)spy.observe(e)});
   }
   function setOpen(v){open=!!v;root.dataset.open=String(open);toggle.setAttribute('aria-expanded',String(open));if(open)panel.focus()}
   toggle.addEventListener('click',()=>setOpen(!open));
