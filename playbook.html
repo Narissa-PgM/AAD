@@ -226,6 +226,92 @@
 @media(max-width:780px){.book-hero,.case-cols,.batch-panel{grid-template-columns:1fr}.crosswalk,.case-nav,.fill-rows{grid-template-columns:1fr 1fr}.workflow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.crosswalk,.case-nav,.letter-grid,.case-stats,.fill-rows,.workflow{grid-template-columns:1fr}.monthbars{gap:2px}.month small{font-size:8px}.case-inner{padding:15px}}
 @media print{.connected,.case-nav,.batch-actions,.no-print{display:none!important}.print-only{display:block}.case-cover{break-inside:auto}.book-hero{display:block}.photo-panel{max-height:210px}.letter-grid{grid-template-columns:repeat(7,1fr)}.crosswalk{grid-template-columns:repeat(4,1fr)}}
+
+/* Start Here: worked examples (unique to each lifecycle and pilot phase) */
+.start-excerpt{border-left:4px solid var(--red);background:#fcf8f8;padding:13px 15px;border-radius:0 8px 8px 0;margin:10px 0 14px;font:15px/1.6 var(--font-serif)}
+.start-sample-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 12px}
+.start-pill{font:700 10px var(--font-sans);letter-spacing:.05em;border-radius:20px;padding:5px 10px;background:#fff1db;color:#7c4b00}
+.start-pill.hold{background:#fae4e7;color:#8f1830}
+.start-pill.neutral{background:#e8f1f8;color:#255a7b}
+.start-sample-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.start-sample-metric{border:1px solid var(--line);border-top:3px solid var(--blue);background:#fff;border-radius:9px;padding:10px}
+.start-sample-metric b{font:700 19px var(--font-serif);display:block;word-break:break-word}
+.start-sample-metric small{font:11px/1.4 var(--font-sans);color:var(--muted)}
+.start-sample-table{border:1px solid var(--line);border-radius:10px;overflow-x:auto;margin:12px 0}
+.start-sample-table table{width:100%;border-collapse:collapse;font:12px/1.55 var(--font-sans)}
+.start-sample-table th{background:#f1f5f9;font-size:11px}
+.start-sample-table td,.start-sample-table th{padding:9px 11px;border-bottom:1px solid #e5eaf0}
+.start-sample-steps{margin:10px 0;padding-left:21px;color:#33465a;font:13px/1.6 var(--font-sans)}
+.start-sample-steps li{margin:5px 0}
+.start-sample-actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 3px}
+.start-sample-actions button{border:1px solid var(--blue);background:#fff;color:var(--blue);border-radius:7px;padding:9px 12px;font:700 12px var(--font-sans)}
+.start-sample-actions button:hover{background:#e8f1fa}
+.workstep{position:relative}
+.start-linkcue{display:block;font:700 11px var(--font-sans);color:#a51c30;margin-top:8px}
+@media(max-width:560px){.start-sample-grid{grid-template-columns:1fr}}
+
+/* Executive donor review: unified with the white + crimson portfolio design */
+.rev-exec{color:#213348;font-family:Cambria,Georgia,serif;max-width:100%;}
+.rev-exec *, .rev-exec *:before,.rev-exec *:after{box-sizing:border-box}
+.rev-hero{border:1px solid #dcdfe6;border-top:5px solid #a51c30;border-radius:16px;background:linear-gradient(125deg,#fff 48%,#f8f1f1 100%);padding:22px 23px 20px;box-shadow:0 7px 24px rgba(39,54,72,.05);position:relative;overflow:hidden}
+.rev-hero:after{content:'';position:absolute;right:-95px;top:-150px;width:360px;height:360px;border-radius:50%;border:48px solid rgba(165,28,48,.045);pointer-events:none}
+.rev-overline{font:700 10px system-ui,sans-serif;color:#8d2d42;letter-spacing:1.2px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rev-sim{border:1px solid #e6c3c8;padding:4px 9px;border-radius:30px;color:#893444;background:#fff8f8}
+.rev-hero-layout{display:grid;grid-template-columns:1.45fr 1fr;gap:20px;align-items:center}
+.rev-hero h2{font:bold clamp(22px,3vw,34px)/1.13 Cambria,Georgia,serif;margin:11px 0 8px;color:#203447;max-width:570px}
+.rev-hero p{font:14px/1.5 system-ui,sans-serif;color:#516377;margin:0 0 12px;max-width:600px}
+.rev-identity{border-left:3px solid #a51c30;padding-left:11px}
+.rev-identity b{display:block;font:bold 19px Cambria,Georgia,serif;color:#86172a}
+.rev-identity span{display:block;color:#536577;font:12px/1.5 system-ui,sans-serif}
+.rev-hero-viz{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:0}
+.rev-node{width:95px;height:95px;border:1px solid #cfdae5;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#315573;font:bold 13px system-ui,sans-serif;box-shadow:0 8px 22px rgba(53,73,96,.08)}
+.rev-node.red{background:#a51c30;border-color:#a51c30;color:#fff;transform:scale(1.12);z-index:2}
+.rev-node small{display:block;font:10px/1.3 system-ui,sans-serif;max-width:70px;text-align:center;opacity:.76;margin-top:4px}
+.rev-link{flex:1;min-width:12px;height:3px;background:#bb9ca5;position:relative}.rev-link:after{content:'';border-left:7px solid #bb9ca5;border-top:5px solid transparent;border-bottom:5px solid transparent;position:absolute;right:-2px;top:-3.5px}
+.rev-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:13px 0 15px}
+.rev-metrics>div{border:1px solid #e1e5eb;border-radius:12px;background:#fff;padding:14px 16px;border-top:3px solid #a51c30;min-width:0}
+.rev-metrics small{font:700 10px/1.4 system-ui,sans-serif;color:#6d7a88;text-transform:uppercase;letter-spacing:.35px;display:block}
+.rev-metrics b{display:block;font:bold clamp(23px,2.5vw,30px)/1.25 Cambria,Georgia,serif;color:#243b50;margin:5px 0}
+.rev-metrics .rev-status{color:#9a2740}
+.rev-metrics span{display:block;color:#657383;font:11px/1.45 system-ui,sans-serif}
+.rev-controls{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin:16px 0 11px}
+.rev-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid #e0e4eb}
+.rev-tabs button{border:0;border-bottom:3px solid transparent;background:transparent;color:#526577;font:600 12px system-ui,sans-serif;padding:11px 12px 9px;border-radius:5px 5px 0 0;cursor:pointer}
+.rev-tabs button.active{color:#a51c30;border-bottom-color:#a51c30;background:#fff6f7}
+.rev-side-links{display:flex;gap:7px;flex-wrap:wrap}
+.rev-side-links a,.rev-txt-link,.rev-note-short button,.rev-call-to-action button,.rev-call-to-action a,.rev-reviewform button,.rev-decision button{display:inline-block;background:#fff;color:#9a2036;border:1px solid #dfbac2;border-radius:9px;padding:8px 11px;text-decoration:none;font:bold 11.5px system-ui,sans-serif;cursor:pointer}
+.rev-side-links a:hover,.rev-call-to-action a:hover,.rev-reviewform button:hover{background:#fceff1}
+.rev-display{min-height:300px}.rev-pane{border:1px solid #dee4eb;background:#fff;border-radius:13px;padding:16px;box-shadow:0 6px 20px rgba(33,52,73,.04)}
+.rev-pane-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 0 11px;border-bottom:1px solid #e9edf2;margin:0 0 13px}
+.rev-pane-h>b{color:#8e2137;font:bold 20px Cambria,Georgia,serif}.rev-pane-h>small{color:#778595;font:bold 10px system-ui,sans-serif;letter-spacing:.6px}
+.rev-cols{display:grid;grid-template-columns:1fr 1fr;gap:13px;align-items:stretch}
+.rev-mini-info{display:grid;grid-template-columns:120px minmax(0,1fr);gap:9px 7px;font:12px/1.5 system-ui,sans-serif}
+.rev-mini-info span{color:#6c7888}.rev-mini-info strong{color:#2c3e4f}
+.rev-note-short{margin-top:15px;padding:12px;border-left:4px solid #a51c30;background:#fff6f7;border-radius:0 8px 8px 0}
+.rev-note-short b{font:700 12px system-ui,sans-serif;color:#8f2033}.rev-note-short p{font:12px/1.5 system-ui,sans-serif;color:#41536b;margin:6px 0 8px}
+.rev-pane svg{width:100%;height:auto;max-height:240px;display:block}
+.rev-mini-row{display:flex;align-items:start;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:1px solid #e7ebf0;padding:10px 3px;margin:0 0 8px;font:12px system-ui,sans-serif}.rev-mini-row b{color:#8c2035}.rev-mini-row span{color:#64748b;max-width:260px}
+.rev-journey{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px}
+.rev-journey-step{min-height:90px;position:relative;border:1px solid #d7e0e8;background:linear-gradient(165deg,#fff,#f6f9fc);border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;gap:6px}
+.rev-journey-step span{font:bold 12px system-ui,sans-serif;color:#a51c30}.rev-journey-step b{font:bold 13px/1.2 Cambria,Georgia,serif;color:#213a52}.rev-journey-step small{font:10px/1.3 system-ui,sans-serif;color:#607282}
+.rev-journey-step:not(:last-child):after{content:'›';position:absolute;right:-10px;top:32px;color:#9c3245;font:700 28px Georgia;z-index:1}
+.rev-call-to-action{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:13px;padding:11px 13px;border-radius:10px;border:1px solid #e4e9ee;background:#f9fafc}
+.rev-call-to-action p{flex:1;min-width:220px;font:12px/1.55 system-ui,sans-serif;color:#4a6175;margin:0}
+.rev-side-note{background:#f8fafa;border:1px solid #e4e9ec;border-radius:10px;padding:14px}.rev-side-note h3,.rev-evidence h3{font:bold 16px Cambria,Georgia,serif;color:#8c2035;margin:0 0 7px}.rev-side-note p,.rev-evidence p{font:12px/1.55 system-ui,sans-serif;color:#44586e;margin:0 0 10px}.rev-side-note span{font:10px system-ui,sans-serif;color:#7d8c99}
+.rev-table-wrap{width:100%;overflow-x:auto}.rev-table{width:100%;border-collapse:collapse;min-width:650px;font:12px/1.4 system-ui,sans-serif}.rev-table th{text-align:left;background:#f1f5f9;color:#536679;font-weight:700;letter-spacing:.03em;padding:10px;border-bottom:1px solid #d9e3ec}.rev-table td{color:#33495b;padding:10px;border-bottom:1px solid #edf1f5}.rev-table tfoot th{background:#f6faf8;color:#166149}
+.rev-watch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px}.rev-watch>div{padding:12px;border:1px solid #e4e7ec;border-top:3px solid #a51c30;border-radius:10px}.rev-watch b{display:block;font:bold 12px/1.4 Cambria,Georgia,serif;color:#8c2035}.rev-watch span{font:11px/1.45 system-ui,sans-serif;color:#587083}
+.rev-note-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.rev-note-item{padding:12px 14px;border:1px solid #e3e8ee;border-left:4px solid #448096;border-radius:10px;background:#fff}.rev-note-item.hold{border-left-color:#a51c30;background:#fff9f9}.rev-note-item.review{border-left-color:#cba055}.rev-note-item>div{display:flex;justify-content:space-between;gap:8px;font:10px system-ui,sans-serif;color:#7c8997}.rev-note-item>div>span{text-transform:uppercase;font-weight:700;letter-spacing:.04em}.rev-note-item h4{font:bold 14px Cambria,Georgia,serif;color:#203b52;margin:7px 0 5px}.rev-note-item p{font:12px/1.5 system-ui,sans-serif;color:#455b6c;margin:0 0 9px}.rev-note-item small{font:10.5px/1.4 system-ui,sans-serif;color:#556b7b}
+.rev-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;padding-top:11px}.rev-contact{border-top:3px solid #9e3649;position:relative;padding:15px 8px 10px;background:linear-gradient(180deg,#f9fbfd,white);border-radius:0 0 8px 8px}.rev-contact .rev-pin{position:absolute;top:-8px;left:9px;width:12px;height:12px;border-radius:100%;background:#a51c30;border:2px solid white;outline:2px solid #a51c30}.rev-contact .rev-pin.stop{background:#dfa23a;outline-color:#dfa23a}.rev-contact time{display:block;font:700 11px system-ui,sans-serif;color:#9a3043}.rev-contact b{display:block;font:bold 16px Cambria,Georgia,serif;margin:5px 0;color:#2d475f}.rev-contact small{font:11px/1.45 system-ui,sans-serif;color:#61788a}.rev-contact p{font:11px/1.5 system-ui,sans-serif;color:#4e6478;margin:10px 0 0}
+.rev-bridge{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.rev-bridge>div{padding:12px;background:#f5f8fb;border-radius:8px;border:1px solid #e2e7eb}.rev-bridge small{font:10.5px system-ui,sans-serif;color:#6d7c88;display:block}.rev-bridge b{font:bold 24px Cambria,Georgia,serif;color:#263f51}.rev-stacked{display:flex;overflow:hidden;width:100%;height:22px;border-radius:99px;margin:14px 0 9px;background:#e5ebef}.rev-legend{display:flex;gap:16px;color:#607687;font:11px system-ui,sans-serif;margin-bottom:18px}.rev-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}.rev-evidence{background:#fff;border:1px solid #e5eaf0;border-radius:10px;padding:14px}.rev-evidence blockquote{padding:12px 13px;border-left:3px solid #a51c30;background:#fff8f9;color:#8a2939;margin:0 0 12px;font:italic 15px/1.5 Cambria,Georgia,serif}.rev-evidence a{font:700 12px system-ui,sans-serif;color:#8c2035}
+.rev-hint{font:12px/1.55 system-ui,sans-serif;color:#697887;margin:2px 0 14px}.rev-checkgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.rev-check{padding:12px;border-radius:10px;border:1px solid #e0e5ea;background:#fff;min-height:135px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px}.rev-check>span{border:1px solid;border-radius:50%;width:29px;height:29px;display:grid;place-items:center;font:700 14px system-ui,sans-serif;margin-bottom:3px}.rev-check.pass>span{background:#e6f4ee;color:#1a7759}.rev-check.hold>span{background:#fff5e9;color:#946c20}.rev-check b{font:bold 15px Cambria,Georgia,serif;color:#263e50}.rev-check small{font:11px/1.4 system-ui,sans-serif;color:#657688}.rev-check em{font:700 10px system-ui,sans-serif;color:#9d243b;font-style:normal;margin-top:auto}.rev-check.pass em{color:#137755}
+.rev-decision{border:1px solid #e6d9db;border-radius:11px;background:#fff9f9;margin:14px 0;padding:13px;display:flex;justify-content:space-between;align-items:center;gap:12px}.rev-decision small{display:block;color:#7a6770;font:10px system-ui,sans-serif}.rev-decision strong{display:block;font:bold 20px Cambria,Georgia,serif}.rev-decision strong.hold{color:#9d2639}.rev-decision strong.pass{color:#177354}.rev-decision p{font:11px/1.5 system-ui,sans-serif;color:#667685;margin:4px 0 0}.rev-reviewform{display:grid;grid-template-columns:1fr 1fr;gap:9px}.rev-reviewform label{display:grid;gap:5px;font:700 11px system-ui,sans-serif;color:#57697a}.rev-reviewform input,.rev-reviewform textarea{padding:9px 10px;border:1px solid #bdcdd8;border-radius:8px;font:12px system-ui,sans-serif;color:#263f50}.rev-reviewform button{align-self:start;max-width:max-content}.rev-log{margin-top:15px;border-top:1px solid #e4eaf0;padding:10px 0;font:11px system-ui,sans-serif}.rev-log>div{display:grid;grid-template-columns:160px 140px 1fr;gap:8px;padding:9px 6px;border-bottom:1px solid #edf0f4}.rev-log b{color:#a51c30}.rev-log p{grid-column:1/-1;margin:0;color:#5a6a7c}.rev-log>p{margin:0;color:#6e7b88}.rev-footer{border-top:1px solid #e5eaf0;font:11px/1.6 system-ui,sans-serif;color:#7a8794;margin:15px 0 0;padding-top:11px}
+@media(max-width:1000px){.rev-hero-layout,.rev-cols{grid-template-columns:1fr}.rev-metrics{grid-template-columns:repeat(2,1fr)}.rev-journey{grid-template-columns:repeat(3,1fr)}.rev-watch{grid-template-columns:repeat(2,1fr)}.rev-timeline{grid-template-columns:repeat(2,1fr)}.rev-hero-viz{max-width:440px;justify-self:center}}
+@media(max-width:600px){.rev-exec .rev-hero{padding:14px}.rev-overline{font-size:9px}.rev-hero-viz{display:none}.rev-metrics,.rev-bridge,.rev-note-list,.rev-checkgrid,.rev-watch,.rev-timeline,.rev-reviewform{grid-template-columns:1fr}.rev-journey{grid-template-columns:repeat(2,1fr)}.rev-tabs{flex-wrap:nowrap;overflow:auto;max-width:100%;width:100%}.rev-tabs button{white-space:nowrap;padding:10px}.rev-metrics>div{padding:11px}.rev-log>div{grid-template-columns:1fr}.rev-pane{padding:12px}}
+@media print{.rev-tabs,.rev-reviewform,.rev-side-links,.rev-check button{display:none!important}.rev-pane,.rev-metrics>div{break-inside:avoid;box-shadow:none}}
+
+
+/* Mobile safety: the portfolio provenance banner must wrap instead of widening the page. */
+@media(max-width:660px){.top .tags{max-width:100%;min-width:0}.top .tags .tag{white-space:normal;overflow-wrap:anywhere;max-width:calc(100vw - 32px);line-height:1.45}.top .actions{max-width:100%}}
 </style>
 </head>
 <body>
@@ -245,12 +331,12 @@
   <main class="main">
     <div class="top">
       <div class="tags">
-        <span class="tag">Work sample · not an authorized plan</span>
+        <span class="tag">Independent portfolio demonstration · not an institutional system or adopted policy</span>
         <span class="tag blue">Public data + labeled synthetic</span>
         <span class="tag gray">No identifiable donors or students</span>
       </div>
       <div class="actions">
-        <a class="btn" href="./" title="Open the main interactive reporting platform">Reporting Platform ↗</a><button class="btn" id="printBtn">Print dossier</button>
+        <a class="btn" href="./" title="Open the main interactive reporting platform">Reporting Platform ↗</a><a class="btn" href="./communications.html" title="Open the message storytelling library">Comms library ↗</a><a class="btn" href="#donor" title="Open the donor review workspace inside this playbook">Donor workspace ↗</a><button class="btn" id="printBtn">Print dossier</button>
         <button class="btn" id="exportBtn">Export demo data</button>
       </div>
     </div>
@@ -258,7 +344,7 @@
     <div id="views"></div>
 
     <footer class="footer">
-      <p><strong>About the evidence standard.</strong> The VERITAS stewardship quality lens and its six release checks are candidate-proposed operating tools, not institutional policies. Published institutional facts link to official sources. All donor, gift, project, and portfolio figures used in simulations are <strong>SAMPLE</strong> or <strong>PLANNING ESTIMATE</strong>. No donor or academic personal records are included.</p>
+      <p><strong>About the release controls and editorial model.</strong> The seven-part VERITAS editorial structure and the separate Six-Check Release Gate are candidate-proposed frameworks, not institutional policies. Published institutional facts link to official sources. All donor, gift, project, and portfolio figures used in simulations are <strong>SAMPLE</strong> or <strong>PLANNING ESTIMATE</strong>. No donor or academic personal records are included.</p>
       <p><strong>About the structure.</strong> This playbook demonstrates governance, SOPs and worked decisions (the how). The separate Reporting Platform demonstrates the interactive report factory and outputs (the what). They share four fictional reporting records and the same SMARTER/VERITAS/values vocabulary.</p>
     </footer>
   </main>
@@ -275,6 +361,7 @@
 /* ============================================================
    DATA — illustrative scenario data, labeled SAMPLE / PROPOSED
    ============================================================ */
+const RELEASE_GATE_SPEC = {"name":"Six-Check Release Gate","summary":"Could a donor, an auditor, and an academic partner read this report together and agree that every sentence is true and traceable to its source?","checks":[{"id":"intent","name":"Intent","question":"Does the report describe the gift’s purpose exactly as the gift agreement records it?","rule":"Block release if purpose wording or proposed use conflicts with the agreement.","owner":"Gift Administration"},{"id":"reconcile","name":"Reconciliation","question":"Do the financial figures reconcile to the certified year-end source?","rule":"Block release for any unexplained difference; any tolerance must be approved by Finance.","owner":"Finance"},{"id":"consent","name":"Consent","question":"Are names, stories, quotes, and imagery permitted for the intended channels and dates?","rule":"Block release when required consent is absent, expired, or out of scope.","owner":"Stewardship + Academic Unit"},{"id":"trace","name":"Traceability","question":"Does each material claim identify its source, period, definition, and owner?","rule":"Block release when a material claim cannot be traced to source evidence.","owner":"Stewardship Reporting"},{"id":"attribution","name":"Attribution","question":"Does the narrative avoid causal or impact claims not demonstrated by the evidence?","rule":"Return overclaims for editorial and academic review before release.","owner":"Academic Partner + Editorial"},{"id":"authorize","name":"Authorization","question":"Is release authorized by a named, permitted human reviewer and recorded in the audit log?","rule":"Block release until the correct authorized approver, approval time, and version are recorded.","owner":"Designated Release Authority"}]};
 const DATA = {
   asOf: '2027-03-15',
   program: {
@@ -426,24 +513,17 @@ const DATA = {
       {id:'D-005',fund:'research',stage:'Data intake',due:'2027-05-19',owner:'Data owner'}
     ]
   },
-  /* ---- Stewardship Release-Gate Checklist (candidate-proposed) ---- */
+  /* ---- Six-Check Release Gate (candidate-proposed) ---- */
   evidenceStandard: {
-    name: 'Stewardship Release-Gate Checklist',
-    summary: 'VERITAS test: Could a donor, an auditor, and an academic partner read this report together and agree that every sentence is true and traceable to its source?',
-    checks: [
-      {id:'intent',name:'Intent',question:'Does the report describe the gift’s purpose exactly as the gift agreement records it?',rule:'Report is blocked if purpose wording diverges from the agreement.',owner:'Gift administration'},
-      {id:'reconcile',name:'Reconciliation',question:'Do the financial figures tie to the certified year-end close?',rule:'Report is blocked if any figure is unexplained; tolerance is set by Finance.',owner:'Finance'},
-      {id:'consent',name:'Consent',question:'Is every story, quote, and named person covered by current permission?',rule:'Report is blocked if consent is missing, expired, or narrower than the intended use.',owner:'Stewardship + academic unit'},
-      {id:'trace',name:'Traceability',question:'Is every claim traceable to a named source, period, and owner?',rule:'Report is blocked if any material claim lacks a named source.',owner:'Stewardship reporting'},
-      {id:'attribution',name:'Attribution',question:'Does the report avoid overstating causal impact?',rule:'Report is returned for revision if it implies causation the evidence does not support.',owner:'Academic partner + editorial'},
-      {id:'authorize',name:'Authorization',question:'Has a named human approved release, and is the approval logged?',rule:'Report cannot be sent without a recorded named approver and timestamp.',owner:'Sponsor or delegate'}
-    ]
+    name: RELEASE_GATE_SPEC.name,
+    summary: RELEASE_GATE_SPEC.summary,
+    checks: RELEASE_GATE_SPEC.checks
   }
 };
 
 /* Shared case definitions copied verbatim from the companion platform's REPORT_SAMPLES register.
    Keep IDs, amounts, line items, and release statuses in sync when editing either file. */
-const SHARED_REPORT_CASES = [{"id":"endowed","code":"SIM-END-2026","type":"Endowed fund","title":"Annual Endowed Fund Impact Report","fund":"University Opportunity Endowment","period":"Fiscal year ending June 30, 2026","purpose":"Need-based undergraduate financial aid, per a fictional gift agreement.","who":"A supporter of student opportunity","headline":"18","headlineLabel":"illustrative need-based aid awards","stats":[["18","Need-based awards recorded"],["16 of 18","Recipients continuing to the next term"],["$9,000","Unspent distribution carried forward"]],"opening":"Your endowment is designed to make university study more financially accessible. In this illustrative year, its annual distribution supported 18 need-based aid awards. That is a clear count of assistance awarded—not a claim that the fund alone produced academic success.","experience":"A student receiving an award can focus more fully on coursework, advising and academic opportunities. This description is a composite illustration; it is not a testimonial from an identified student, and no individual biography or quotation is presented as fact.","result":"The simulated award register records 16 of the 18 recipients as continuing into the next term; two records are pending follow-up. This is a descriptive count, not a causal estimate of the effect of aid.","advancement":"The endowment provides a recurring, purpose-restricted resource for student access. Its activity should be understood alongside other approved university aid sources, without double counting awards or attributing institution-wide access outcomes to one fund.","truth":"A $9,000 portion of the year’s distribution was not spent by June 30. The example assumes award timing and eligibility checks delayed allocation; a real report would require a documented explanation and approved carry-forward plan.","next":"The proposed next step is to apply the remaining $9,000 to eligible aid awards in the next award cycle, subject to the fund terms and confirmed spending plan. An approved year-end statement and verified student counts must replace this demonstration before any donor receives it.","fin":[["Illustrative fiscal-year-end market value",1250000],["Illustrative annual distribution",55000],["Eligible spending during the year",46000],["Unspent distribution carried forward",9000],["Illustrative new gifts added",20000]],"bridge":{"total":55000,"used":46000,"remain":9000,"label":"Distribution utilization"},"sources":["Synthetic gift-terms summary (embedded assumption)","Synthetic financial bridge: $55,000 = $46,000 + $9,000","Synthetic award activity register: 18 awards, 16 continuations, two pending"],"notes":"Year-end market value is a point-in-time stock and is not added to the distribution flow. New gifts are stated separately and are not automatically part of spending.","checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}},{"id":"current","code":"SIM-USE-2026","type":"Current-use gift","title":"Current-Use Student Experience Report","fund":"Student Experience & Access Fund","period":"Fiscal year ending June 30, 2026","purpose":"Immediate student support and approved academic participation expenses, under simulated restrictions.","who":"A supporter of student well-being","headline":"42","headlineLabel":"illustrative emergency-support grants","stats":[["42","Student microgrants approved"],["3","Academic-support workshops funded"],["$27,500","Unspent gift balance"]],"opening":"Your gift is structured to address needs within the year it is received. In this illustrative reporting period, the fund supported 42 emergency-support grants and three academic-support workshops in accordance with its simulated purpose.","experience":"A timely microgrant may help a student manage an unexpected expense while remaining engaged in their studies. The example does not include a named recipient or personal story; a real student experience would be used only with documented permission.","result":"The reported outputs are 42 grants and three workshops. No persistence, graduation, or satisfaction improvement is attributed to the fund without a verified comparison and an agreed measure.","advancement":"Current-use giving allows a university to respond to immediate needs while complementing longer-term endowed support. A final report should explain how this restricted fund fits within the broader student-support portfolio.","truth":"At year-end, $27,500 remained available but unspent. The sample assumes a second approved grant round is scheduled; the actual timing and eligible uses would need confirmation before publication.","next":"The program team would validate the next grant cycle, reconcile remaining funds, and invite the gift officer to discuss the donor’s preferred form of future engagement. This demonstration does not make a renewal solicitation.","fin":[["Gift receipts for the period",180000],["Illustrative program spending",152500],["Closing unspent gift balance",27500]],"bridge":{"total":180000,"used":152500,"remain":27500,"label":"Gift receipts utilized"},"sources":["Synthetic current-use gift ledger: $180,000 received","Synthetic expenses register: $152,500 approved","Synthetic activity log: 42 grants and three workshops"],"notes":"This is a current-use receipts-to-spending bridge, not an endowment distribution or investment-performance statement.","checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}},{"id":"capital","code":"SIM-CAP-2026","type":"Capital project","title":"Learning Commons Capital Project Update","fund":"Learning Commons Renewal Project","period":"Project status as of June 30, 2026","purpose":"Renovation of instructional and collaborative learning facilities, under simulated capital-gift restrictions.","who":"A supporter of learning spaces","headline":"65%","headlineLabel":"illustrative construction progress","stats":[["65%","Construction complete (estimate)"],["$1.72M","Project spending to date"],["1 of 2","Planned project phases completed"]],"opening":"Your capital commitment supports an improved environment for study and academic collaboration. In this illustrative project report, one of two planned phases is complete and the project team estimates 65% construction progress as of the reporting date.","experience":"The design includes more flexible study spaces and accessible circulation. These are proposed design features, not claims of actual occupancy or student satisfaction; use metrics should be reported only after opening and assessment.","result":"The synthetic project register records one completed construction phase, one in progress, and an illustrative 65% completion estimate. It does not yet support a claim of increased usage or learning outcomes.","advancement":"A capital report should separate donor commitments, receipts and construction costs, then explain how the facility advances academic priorities when opened. A single gift must not be portrayed as funding the entire project.","truth":"The second phase is behind its illustrative milestone because a supplier delivery slipped. The next schedule should be confirmed with capital planning, and any revised opening date reviewed before it appears in donor communications.","next":"The proposed next report would include a certified construction schedule, current budget forecast, approved progress photographs, and a verified statement of naming and recognition obligations.","fin":[["Illustrative total project budget",3200000],["Donor commitments to date",2450000],["Gifts received against commitments",1960000],["Construction spending to date",1720000],["Uncollected pledges (commitments less receipts)",490000],["Gift receipts less project spend (simple bridge)",240000]],"bridge":{"total":1960000,"used":1720000,"remain":240000,"label":"Illustrative receipts versus spending"},"sources":["Synthetic project budget and commitment summary","Synthetic gift receipts: $1,960,000 against $2,450,000 commitments","Synthetic milestone log: phase 1 complete, phase 2 underway"],"notes":"Project budget ($3.20M), gifts committed ($2.45M), cash received ($1.96M), and expenditures ($1.72M) are different measures. The $240K bridge is an illustrative comparison, not a certified restricted-fund cash balance.","checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}},{"id":"grant","code":"SIM-GRT-2026","type":"Restricted grant","title":"Biomedical Training Grant Progress Report","fund":"Biomedical Research Training Initiative","period":"Grant period January 1–June 30, 2026","purpose":"Approved research-trainee support, training equipment and educational activities, under a fictional grant agreement.","who":"A fictional foundation program officer","headline":"6 of 8","headlineLabel":"trainees completing phase-one activities","stats":[["8","Trainees enrolled"],["6","Phase-one training completions"],["$89,000","Budget remaining as of period end"]],"opening":"This illustrative mid-year report summarizes activities under a restricted training grant. Eight trainees enrolled; six completed the planned phase-one activities by June 30. Two completions remain open and are listed as an exception rather than counted as achieved.","experience":"The work included supervised practice and structured training sessions. No identifiable trainee story or first-person testimony is included because consent and program verification have not been obtained.","result":"Six of eight phase-one completions are recorded in this synthetic status log. This describes activity against the approved work plan; it does not establish a research-outcome or career-placement effect.","advancement":"The demonstration illustrates how a foundation report aligns financial categories, grant deliverables and explicit variance narratives in one auditable package. Terms should follow the agreement and the sponsor’s reporting rules.","truth":"Two completions remain outstanding due to an illustrative scheduling change. The program would document corrective sessions, reviewer agreement, and a revised date before presenting the explanation to a real foundation.","next":"The proposed next milestone is to complete the two outstanding activities and provide an updated budget-to-actual statement by September 15, 2026, subject to sponsor terms and an approved extension if needed.","fin":[["Personnel and trainee support · budget",180000],["Personnel and trainee support · actual",128000],["Equipment · budget",70000],["Equipment · actual",55000],["Training activities · budget",50000],["Training activities · actual",28000],["Total synthetic approved budget",300000],["Total actual spending",211000],["Budget remaining",89000]],"bridge":{"total":300000,"used":211000,"remain":89000,"label":"Grant budget used"},"sources":["Synthetic sponsor agreement and approved category budget","Synthetic expenditure detail: $128,000 + $55,000 + $28,000","Synthetic training register: eight enrolled, six completed, two outstanding"],"notes":"Restricted-grant accounting requires sponsor-specific definitions and eligible-cost testing. Budget remaining is not necessarily cash on hand, and sponsor approval of reallocations is not assumed.","checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}}];
+const SHARED_REPORT_CASES = [{"id":"endowed","code":"SIM-END-2026","type":"Endowed fund","title":"Annual Endowed Fund Impact Report","fund":"University Opportunity Endowment","period":"Fiscal year ending June 30, 2026","purpose":"Need-based undergraduate financial aid, per a fictional gift agreement.","headline":"18","headlineLabel":"illustrative need-based aid awards","result":"The simulated award register records 16 of the 18 recipients as continuing into the next term; two records are pending follow-up. This is a descriptive count, not a causal estimate of the effect of aid.","bridge":{"total":55000,"used":46000,"remain":9000,"label":"Distribution utilization"},"checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}},{"id":"current","code":"SIM-USE-2026","type":"Current-use gift","title":"Current-Use Student Experience Report","fund":"Student Experience & Access Fund","period":"Fiscal year ending June 30, 2026","purpose":"Immediate student support and approved academic participation expenses, under simulated restrictions.","headline":"42","headlineLabel":"illustrative emergency-support grants","result":"The reported outputs are 42 grants and three workshops. No persistence, graduation, or satisfaction improvement is attributed to the fund without a verified comparison and an agreed measure.","bridge":{"total":180000,"used":152500,"remain":27500,"label":"Gift receipts utilized"},"checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}},{"id":"capital","code":"SIM-CAP-2026","type":"Capital project","title":"Learning Commons Capital Project Update","fund":"Learning Commons Renewal Project","period":"Project status as of June 30, 2026","purpose":"Renovation of instructional and collaborative learning facilities, under simulated capital-gift restrictions.","headline":"65%","headlineLabel":"illustrative construction progress","result":"The synthetic project register records one completed construction phase, one in progress, and an illustrative 65% completion estimate. It does not yet support a claim of increased usage or learning outcomes.","bridge":{"total":1960000,"used":1720000,"remain":240000,"label":"Illustrative receipts versus spending"},"checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}},{"id":"grant","code":"SIM-GRT-2026","type":"Restricted grant","title":"Biomedical Training Grant Progress Report","fund":"Biomedical Research Training Initiative","period":"Grant period January 1–June 30, 2026","purpose":"Approved research-trainee support, training equipment and educational activities, under a fictional grant agreement.","headline":"6 of 8","headlineLabel":"trainees completing phase-one activities","result":"Six of eight phase-one completions are recorded in this synthetic status log. This describes activity against the approved work plan; it does not establish a research-outcome or career-placement effect.","bridge":{"total":300000,"used":211000,"remain":89000,"label":"Grant budget used"},"checks":{"arith":true,"intent":true,"dates":true,"explain":true,"count":true,"consent":false,"ledger":false,"program":false,"recognition":false,"approver":false}}];
 const CASES = SHARED_REPORT_CASES;
 const FRAMEWORK = {
   vision:'Connect strategy, people, evidence and reporting systems through consensus, not formal authority; safeguard decentralized ownership while delivering dependable, donor-centered impact reports.',
@@ -512,17 +592,95 @@ const tile = (label, n, sub = '', color = '', prov = 'SAMPLE') =>
 
 const pages = [
   ['start','Start here'],['framework','Mission & SMARTER'],['brief','Executive brief'],
-  ['report','Four report cases'],['standard','VERITAS & release checks'],
+  ['report','Four report cases'],['donor','Donor review workspace'],['standard','VERITAS & release checks'],
   ['factory','Impact factory'],['delivery','Mass delivery & calendar'],['toolkit','Templates & SOPs'],
   ['plan','Plan & roadmap'],['measure','Measure & control'],['close','Close & benefits'],['govern','Governance & QA']
 ];
+
+/* Executive donor-review work sample: all names, receipts and notes are fictional. */
+const REVIEW_CASE = {
+  name:'Eleanor M. Whitfield', code:'P-1104', officer:'J. Chen', salutation:'Ms. Whitfield',
+  fund:'The Whitfield Scholarship Fund', fundId:'DEMO-AID-01',
+  intent:'Support undergraduate financial aid so that admitted students can attend regardless of family resources.',
+  emails:'Digital preferred · no printed report without request',
+  gifts:[
+    ['FY2023','2023-03-09',120000,'RCP-2023-0955','Scholarship + annual fund'],
+    ['FY2024','2024-04-04',180000,'RCP-2024-2011','Scholarship + capital'],
+    ['FY2025','2025-04-30',240000,'RCP-2025-1892','Endowed fund contribution'],
+    ['FY2026','2026-04-11',500000,'RCP-2026-1488','Endowed scholarship'],
+    ['FY2026','2026-06-02',160000,'RCP-2026-0987','Scholarship designation'],
+    ['FY2027','2027-03-14',20000,'RCP-2027-0412','Endowed scholarship']
+  ],
+  notes:[
+    {date:'2027-03-12',type:'Gift-officer flag',by:'J. Chen · relationship manager',text:'The donor reads every line and will notice the $9,000 carry-forward. Explain the timing and planned use before sending the report.',action:'Draft the candid explanation and secure Finance acceptance.',alert:'hold'},
+    {date:'2027-02-14',type:'Meeting insight',by:'J. Chen · relationship manager',text:'Asked about the scholarship cohort and specifically how many recipients continued. Use descriptive outcomes only; do not claim the gift caused persistence.',action:'Confirm the count with the academic data steward.',alert:'review'},
+    {date:'2027-02-14',type:'Preference',by:'J. Chen · relationship manager',text:'Email first. No unsolicited print packet. Use “Ms. Whitfield,” not an informal first-name greeting.',action:'Check the preference and salutation before batch export.',alert:'pass'},
+    {date:'2027-03-14',type:'Financial check',by:'K. Rodriguez · Finance',text:'The illustrative distribution bridge balances at $55,000 = $46,000 spent + $9,000 carried. The carry-forward plan must be included.',action:'Attach final certified data in a real implementation.',alert:'review'},
+    {date:'2027-03-16',type:'Editorial correction',by:'M. Osei · reviewer',text:'Corrected an AI salutation from “Dear Eleanor” to “Dear Ms. Whitfield.” Rechecked quote scope and attribution.',action:'Preserve the change in the AI review log.',alert:'pass'}
+  ],
+  contacts:[
+    {date:'2026-11-08',channel:'Scholarship lunch',actor:'Events + J. Chen',status:'Completed',next:'Follow up on student outcome interests'},
+    {date:'2027-02-14',channel:'Telephone',actor:'J. Chen',status:'Completed',next:'Get verified cohort continuation count'},
+    {date:'2027-03-16',channel:'Draft review',actor:'Stewardship writer',status:'Needs review',next:'Verify consent and final salutation'},
+    {date:'2027-03-22',channel:'Email report',actor:'Stewardship coordinator',status:'Not authorized',next:'Hold until all release checks pass'},
+    {date:'2027-03-29',channel:'Post-report call',actor:'J. Chen',status:'Planned',next:'Ask one specific question about the report'}
+  ],
+  gates:[
+    ['intent','Intent','Purpose matches agreement','Gift administration',true],
+    ['reconciliation','Reconciliation','The $55K bridge balances','Finance',true],
+    ['consent','Consent','Verify the story scope and date','Academic unit',false],
+    ['traceability','Traceability','Sources, periods and owners recorded','Stewardship reporting',true],
+    ['attribution','Attribution','No unsupported causal claims','Academic reviewer',true],
+    ['authorization','Authorization','Named approval for send required','Executive Director',false]
+  ]
+};
+const reviewUI = {tab:'overview', check:Object.fromEntries(REVIEW_CASE.gates.map(x=>[x[0],x[4]])), log:[], decision:'', runCount:0};
+const reviewMoney=x=>'$'+Number(x).toLocaleString('en-US');
+const reviewFmt=x=>x>=1e6?'$'+(x/1e6).toFixed(2)+'M':x>=1e3?'$'+Math.round(x/1e3)+'K':reviewMoney(x);
+function reviewBar(){
+  const sums=[120000,180000,240000,660000,20000],fy=['FY23','FY24','FY25','FY26','FY27'];
+  return `<svg viewBox="0 0 640 244" role="img" aria-label="Six synthetic receipts totaling $1.22 million grouped by fiscal year"><defs><linearGradient id="dbr" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bc354e"/><stop offset="1" stop-color="#8a2035"/></linearGradient></defs>
+    ${[0,1,2,3].map(i=>`<line x1="48" x2="626" y1="${44+i*47}" y2="${44+i*47}" stroke="#e5eaf1" stroke-dasharray="3 5"/>`).join('')}
+    ${sums.map((v,i)=>{const h=Math.max(5,(v/700000)*155),x=74+i*112;return `<rect x="${x}" y="${201-h}" rx="7" width="68" height="${h}" fill="${i===3?'url(#dbr)':i===4?'#8ca6b5':'#477b9d'}"/><text x="${x+34}" y="${196-h}" fill="#24384b" text-anchor="middle" font-size="14" font-weight="700">${reviewFmt(v)}</text><text x="${x+34}" y="229" fill="#586779" text-anchor="middle" font-size="13">${fy[i]}</text>`}).join('')}
+    <line x1="50" x2="626" y1="201" y2="201" stroke="#b9c4d0"/></svg>`;
+}
+function reviewJourney(){
+ const st=[['01','Gift intent','Gift agreement','safeguard'],['02','Financial bridge','$55K distributed','fund'],['03','Academic evidence','18 awards · 16 continued','proof'],['04','Editorial review','VERITAS narrative','write'],['05','Release Gate','6 named checks','check'],['06','Donor follow-up','Digital + relationship','deliver']];
+ return `<div class="rev-journey" aria-label="Donor intent to approved stewardship pathway">${st.map((x,i)=>`<div class="rev-journey-step"><span>${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></div>`).join('')}</div>`;
+}
+function reviewHead(){return `<div class="rev-hero"><div class="rev-overline">DONOR RELATIONSHIP · EVIDENCE · RELEASE DECISION <span class="rev-sim">SYNTHETIC WORK SAMPLE</span></div>
+<div class="rev-hero-layout"><div><h2>Know the donor before approving the report.</h2><p>One place to review the fictional donor's giving pattern, gift-officer notes, contact preferences and the evidence behind every proposed claim—before moving the report through the Release Gate.</p><div class="rev-identity"><b>${esc(REVIEW_CASE.name)}</b><span>${esc(REVIEW_CASE.code)} · Leadership donor · ${esc(REVIEW_CASE.officer)} · Digital preferred</span></div></div><div class="rev-hero-viz"><div class="rev-node">DONOR <small>relationship</small></div><div class="rev-link"></div><div class="rev-node red">REPORT <small>verified evidence</small></div><div class="rev-link"></div><div class="rev-node">GATE <small>human review</small></div></div></div></div>
+<div class="rev-metrics"><div><small>Recorded gifts · sample</small><b>$1.22M</b><span>6 receipts · FY2023–FY2027</span></div><div><small>Fund distribution · FY2026</small><b>$55K</b><span>$46K spent + $9K carried</span></div><div><small>Students supported · sample</small><b>18</b><span>16 continued · 2 pending</span></div><div><small>Release status · simulated</small><b class="rev-status">${REVIEW_CASE.gates.filter(g=>!reviewUI.check[g[0]]).length===0?'DEMO READY':'HOLD'}</b><span>${REVIEW_CASE.gates.filter(g=>!reviewUI.check[g[0]]).length} checks not cleared</span></div></div>`;}
+function reviewSummary(){return `<div class="rev-cols"><div class="rev-pane"><div class="rev-pane-h"><b>Relationship intelligence</b><small>DONOR PROFILE</small></div><div class="rev-mini-info"><span>Salutation</span><strong>${esc(REVIEW_CASE.salutation)}</strong><span>Preferred channel</span><strong>Digital only, unless requested</strong><span>Relationship stage</span><strong>Renewal window approaching</strong><span>Assigned officer</span><strong>J. Chen · simulated</strong></div><div class="rev-note-short"><b>Officer flag · 12 Mar 2027</b><p>Explain the $9,000 carry-forward and planned awards before the donor receives the annual report.</p><button data-donor-tab="notes">Read the underlying notes →</button></div></div>
+<div class="rev-pane"><div class="rev-pane-h"><b>Giving trajectory</b><small>6 RECEIPTS · SAMPLE</small></div>${reviewBar()}<div class="rev-mini-row"><b>$660K in FY2026</b><span>Separately accounted from the $55K annual distribution</span></div><button class="rev-txt-link" data-donor-tab="giving">Inspect receipt history →</button></div></div>
+<div class="rev-pane" style="margin-top:15px"><div class="rev-pane-h"><b>What must be true before publishing</b><small>RELEASE GATE</small></div>${reviewJourney()}<div class="rev-call-to-action"><p>Operational test: <b>SMARTER</b> governs the timeline; the <b>Release Gate</b> validates evidence and named approval; <b>VERITAS</b> structures the donor narrative.</p><button data-donor-tab="review">Inspect the six controls →</button></div></div>`;}
+function reviewGiving(){const rows=REVIEW_CASE.gifts, sum=rows.reduce((a,b)=>a+b[2],0);
+ return `<div class="rev-pane"><div class="rev-pane-h"><b>Giving history · every receipt cross-checkable</b><small>ILLUSTRATIVE LEDGER</small></div><div class="rev-cols"><div>${reviewBar()}</div><div class="rev-side-note"><h3>How to read this record</h3><p>The lifetime total reflects all six fictional posted gifts. The two FY2026 gifts total <b>$660,000</b>; the March 2027 gift is excluded from the FY2026 reporting period.</p><p>The fund distribution of <b>$55,000</b> is an annual endowment payout, not the same measure as gifts received.</p><span>SAMPLE · Fiscal year assumed July–June</span></div></div><div class="rev-table-wrap"><table class="rev-table"><thead><tr><th>Fiscal year</th><th>Receipt date</th><th>Amount</th><th>Receipt ID</th><th>Purpose</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(x[0])}</td><td>${esc(x[1])}</td><td><b>${reviewMoney(x[2])}</b></td><td><code>${esc(x[3])}</code></td><td>${esc(x[4])}</td></tr>`).join('')}</tbody><tfoot><tr><th colspan="2">Lifetime sample total</th><th>${reviewMoney(sum)}</th><th colspan="2">6 receipts, no real CRM connection</th></tr></tfoot></table></div></div>`;}
+function reviewNotes(){return `<div class="rev-pane"><div class="rev-pane-h"><b>Officer notes and editorial watchlist</b><small>HUMAN-IN-THE-LOOP</small></div><div class="rev-watch"><div><b>1 · Recognition & salutation</b><span>Ms. Whitfield, not first name</span></div><div><b>2 · Candid financial narrative</b><span>Explain $9K carried forward</span></div><div><b>3 · Validated cohort outcome</b><span>16 of 18 continuing; no causal claim</span></div><div><b>4 · Story and permissions</b><span>Check consent at publication date</span></div></div><div class="rev-note-list">${REVIEW_CASE.notes.map(n=>`<article class="rev-note-item ${n.alert}"><div><span>${esc(n.type)}</span><time>${esc(n.date)}</time></div><h4>${esc(n.by)}</h4><p>${esc(n.text)}</p><small><b>Follow-up:</b> ${esc(n.action)}</small></article>`).join('')}</div></div>`;}
+function reviewContacts(){return `<div class="rev-pane"><div class="rev-pane-h"><b>Communications tracker</b><small>FIVE SAMPLE TOUCHPOINTS</small></div><div class="rev-timeline">${REVIEW_CASE.contacts.map(c=>`<div class="rev-contact"><span class="rev-pin ${c.status==='Not authorized'?'stop':''}"></span><div><time>${esc(c.date)}</time><b>${esc(c.channel)}</b><small>${esc(c.actor)} · ${esc(c.status)}</small><p>${esc(c.next)}</p></div></div>`).join('')}</div><div class="rev-call-to-action"><p>Coordinate donor cadence: no duplicate outreach, honor email preference, and stop a planned send if consent, evidence or authorization fails.</p><a href="./communications.html">Open the illustrated communications library →</a></div></div>`;}
+function reviewEvidence(){const c=CASES.find(x=>x.id==='endowed')||CASES[0];return `<div class="rev-pane"><div class="rev-pane-h"><b>Financial statement and donor story</b><small>CANONICAL CASE · ${esc(c.code)}</small></div><div class="rev-bridge"><div><small>FY2026 distribution</small><b>$55,000</b></div><div><small>Spent on purpose</small><b>$46,000</b></div><div><small>Carry-forward</small><b>$9,000</b></div><div><small>Difference</small><b>$0</b></div></div><div class="rev-stacked"><span style="width:83.636%;background:#16745c"></span><span style="width:16.364%;background:#dfb25f"></span></div><div class="rev-legend"><span><i style="background:#16745c"></i>83.6% spent</span><span><i style="background:#dfb25f"></i>16.4% carried forward</span></div><div class="rev-cols"><div class="rev-evidence"><h3>Gift purpose</h3><blockquote>${esc(REVIEW_CASE.intent)}</blockquote><h3>What the evidence supports</h3><p>18 awards; 16 recipients recorded as continuing into the next term; two still pending. The fund supported students; no controlled study demonstrates that it caused continuation.</p></div><div class="rev-evidence"><h3>Story and permissions</h3><p>Fictional student “Maya” has an illustrative report-only consent record that expires June 30, 2027. Its validity must be checked against the proposed publication date.</p><p>Donor story copy must match the approved scope, finance statement, recognition and channel preferences.</p><a href="./?report=endowed#reportgallery">Open the complete endowed report →</a></div></div></div>`;}
+function reviewDecision(){const pending=REVIEW_CASE.gates.filter(g=>!reviewUI.check[g[0]]);return `<div class="rev-pane"><div class="rev-pane-h"><b>Six-Check Release Gate</b><small>TOGGLE DEMO CONTROLS</small></div><p class="rev-hint">Click a control to simulate its clearance. A pass here never authorizes actual sending: this browser contains synthetic evidence and no institutional credentials.</p><div class="rev-checkgrid">${REVIEW_CASE.gates.map(g=>`<button type="button" class="rev-check ${reviewUI.check[g[0]]?'pass':'hold'}" data-donor-gate="${g[0]}" aria-pressed="${reviewUI.check[g[0]]}"><span>${reviewUI.check[g[0]]?'✓':'!'}</span><b>${esc(g[1])}</b><small>${esc(g[2])}</small><em>${reviewUI.check[g[0]]?'DEMO PASS':'HOLD'} · ${esc(g[3])}</em></button>`).join('')}</div>
+<div class="rev-decision"><div><small>Current simulated decision</small><strong class="${pending.length?'hold':'pass'}">${pending.length?'HOLD — '+pending.length+' unresolved':'DEMO READY FOR QUEUE'}</strong><p>${pending.length?'Pending: '+pending.map(x=>x[1]).join(' · '):'All simulated checks cleared. Real named authorization is still required.'}</p></div><button type="button" data-donor-run>Run preflight →</button></div>
+<div class="rev-reviewform"><label>Reviewer (demo)<input id="revReviewer" placeholder="e.g. M. Osei · QA reviewer" /></label><label>Decision reason<textarea id="revReason" rows="2" placeholder="What evidence did you inspect? What remains unresolved?"></textarea></label><button type="button" data-donor-record>Record simulated decision</button><button type="button" data-donor-export>Export local demo log (.json)</button></div><div class="rev-log">${reviewUI.log.length?reviewUI.log.map(x=>`<div><time>${esc(x.at)}</time><b>${esc(x.decision)}</b><span>${esc(x.reviewer)}</span><p>${esc(x.reason)}</p></div>`).join(''):'<p>No decision has been recorded in this browser session. Local demo events clear on refresh.</p>'}</div></div>`;}
+function makeDonorReview(){const tabs=[['overview','Overview'],['giving','Giving'],['notes','Gift-officer notes'],['contacts','Contact timeline'],['evidence','Report evidence'],['review','Release decision']];const views={overview:reviewSummary,giving:reviewGiving,notes:reviewNotes,contacts:reviewContacts,evidence:reviewEvidence,review:reviewDecision};
+ return `<div class="rev-exec">${reviewHead()}<div class="rev-controls"><div class="rev-tabs" role="tablist" aria-label="Donor review sections">${tabs.map(x=>`<button role="tab" aria-selected="${reviewUI.tab===x[0]}" class="${reviewUI.tab===x[0]?'active':''}" data-donor-tab="${x[0]}">${x[1]}</button>`).join('')}</div><div class="rev-side-links"><a href="./?report=endowed#reportgallery">Full report ↗</a><a href="./communications.html">Message library ↗</a><a href="./donor-profile.html">Extended dossier ↗</a></div></div><div class="rev-display" role="tabpanel">${(views[reviewUI.tab]||reviewSummary)()}</div><div class="rev-footer">SIMULATED · Independent portfolio example. These are fictional donor, student and financial records. No live CRM, donor correspondence or institutional approval occurs in this browser. The canonical report lives in the companion Reporting Platform.</div></div>`;}
+function updateDonorReview(){const ch=document.querySelector('#page-donor');if(ch)ch.innerHTML=makeDonorReview();}
+function donorEvent(e){const tab=e.target.closest('[data-donor-tab]');if(tab){reviewUI.tab=tab.dataset.donorTab;updateDonorReview();return true;}
+ const gate=e.target.closest('[data-donor-gate]');if(gate){const id=gate.dataset.donorGate;reviewUI.check[id]=!reviewUI.check[id];updateDonorReview();return true;}
+ if(e.target.closest('[data-donor-run]')){reviewUI.runCount++;const pending=REVIEW_CASE.gates.filter(g=>!reviewUI.check[g[0]]);reviewUI.decision=pending.length?'HOLD':'DEMO READY';const msg=pending.length?'Unresolved: '+pending.map(g=>g[1]).join(', '):'All demo gates show PASS. Production still requires certified records and actual authority.';
+  reviewUI.log.unshift({at:new Date().toISOString(),reviewer:'Simulation engine',decision:reviewUI.decision,reason:msg});updateDonorReview();return true;}
+ if(e.target.closest('[data-donor-record]')){const reviewer=(document.querySelector('#revReviewer')?.value||'').trim();const reason=(document.querySelector('#revReason')?.value||'').trim();const pending=REVIEW_CASE.gates.filter(g=>!reviewUI.check[g[0]]);if(!reviewer||!reason){const note=document.querySelector('.rev-hint');if(note)note.textContent='Enter reviewer and decision reason to create an illustrative record. Nothing is stored externally.';return true;}
+ reviewUI.log.unshift({at:new Date().toISOString(),reviewer,decision:pending.length?'HOLD':'DEMO READY',reason});updateDonorReview();return true;}
+ if(e.target.closest('[data-donor-export]')){const payload={label:'SYNTHETIC · NOT AUTHORIZED',donorCode:REVIEW_CASE.code,releaseChecks:Object.fromEntries(REVIEW_CASE.gates.map(g=>[g[1],reviewUI.check[g[0]]?'DEMO PASS':'HOLD'])),log:reviewUI.log};download('synthetic_donor_release_review.json',JSON.stringify(payload,null,2),'application/json');return true;}
+ return false;}
+
 
 /* ============================================================
    DETAIL DIALOG
    ============================================================ */
 const dlg = $('#detail');
 let dialogOpener = null;
-function show(title, body, owner = 'Proposed owner', system = 'Governed reporting workflow', rule = 'Human reviewer approves changes before release') {
+function show(title, body, owner = 'Proposed owner', system = 'Governed reporting workflow', rule = 'Human reviewer approves changes before release', meta = {}) {
   $('#detailBody').innerHTML = `
     <div class="eyebrow">Interactive decision detail</div>
     <h2>${esc(title)}</h2>
@@ -530,8 +688,8 @@ function show(title, body, owner = 'Proposed owner', system = 'Governed reportin
     <div class="detail-grid">
       <div><strong>Accountability</strong>${esc(owner)}</div>
       <div><strong>System / evidence</strong>${esc(system)}</div>
-      <div><strong>Common mistake</strong>Publish an attractive number or narrative without checking donor intent, timeframe, consent, and its source.</div>
-      <div><strong>Better practice</strong>Trace the source → validate definition → secure academic and financial review → log approval.</div>
+      <div><strong>What would fail</strong>${esc(meta.mistake || 'Publish an attractive number or narrative without checking donor intent, timeframe, consent, and its source.')}</div>
+      <div><strong>Better practice</strong>${esc(meta.good || 'Trace the source → validate definition → secure academic and financial review → log approval.')}</div>
     </div>
     <div class="callout"><strong>Release rule:</strong> ${esc(rule)}</div>`;
   dialogOpener = document.activeElement;
@@ -550,7 +708,7 @@ function navigate(id) {
     x.classList.toggle('active', active);
     x.setAttribute('aria-current', active ? 'page' : 'false');
   });
-  if (location.hash.slice(1)!==id) history.replaceState(null,'','#'+id); window.scrollTo({top:0,behavior:'auto'});
+  if (location.hash.slice(1)!==id) history.replaceState(null,'','#'+id); try{sessionStorage.setItem('aadLastPlaybook','playbook.html#'+id);sessionStorage.setItem('aadPlaybookHash','#'+id);sessionStorage.setItem('aadReturnPlaybook','playbook.html#'+id)}catch(e){} window.scrollTo({top:0,behavior:'auto'});
 }
 
 /* ============================================================
@@ -626,7 +784,7 @@ function flow() {
     <button class="flow-node" data-detail="flow:${i}">
       <span class="num">0${i + 1}</span>
       ${n[0]}
-      <small>${n[1]}</small>
+      <small>${n[1]}</small><span class="start-linkcue">Inspect worked record →</span>
     </button>`).join('')}</div>`;
 }
 
@@ -647,7 +805,7 @@ function ring(percent, label) {
    EVIDENCE STRIP
    ============================================================ */
 function evidenceStrip() {
-  return `<div class="evidence-strip" role="group" aria-label="Stewardship Release-Gate Checklist">
+  return `<div class="evidence-strip" role="group" aria-label="Six-Check Release Gate">
     ${DATA.evidenceStandard.checks.map(c => `
       <button type="button" data-detail="evidence:${c.id}" aria-label="${esc(c.name)}: ${esc(c.question)}">
         <span class="check">?</span>${esc(c.name)}
@@ -744,34 +902,48 @@ function coverPhoto(kind='mission'){
   return `<figure class="photo-panel"><img loading="lazy" src="${kind==='mission'?MISSION_VISUAL:PLATFORM_VISUAL}" alt="Illustrative stewardship operating framework infographic, university buildings and graphical reporting workflow, without individuals"><span class="photo-tag">ILLUSTRATIVE CONCEPT ART</span></figure>`;
 }
 function makeFramework(){
-  return intro('02 · Operating philosophy','Mission, values and shared controls','One Harvard is the proposed collaboration method for Harvard AA&D context; SMARTER governs delivery; VERITAS is the proposed stewardship reporting quality lens; AA&D values set the cultural standard.',[
+  return intro('02 · Operating philosophy','Mission, values and shared controls','One Harvard is the proposed collaboration method for Harvard AA&D context; SMARTER governs delivery; VERITAS structures the donor narrative; the Release Gate independently certifies evidence; AA&D values set the cultural standard.',[
     tile('Operating method','One Harvard','Connect decentralized owners without assuming positional authority','red','PROPOSED'),
     tile('Execution','SMARTER','Seven measurable operating commitments','','PROPOSED'),
-    tile('Report integrity','VERITAS','One seven-word expansion across both linked artifacts','green','PROPOSED'),
+    tile('Donor narrative','VERITAS','Seven donor-facing sections, separate from the Release Gate','green','PROPOSED'),
     tile('Cultural standard','AA&D values','Respect, inclusion, trust, collaboration and learning','','PROPOSED')
-  ])+`<div class="book-hero sectiongap"><div class="copy"><div class="eyebrow">A mission a reviewer can quote</div><h2>One reporting standard. Many accountable partners. Clear donor impact.</h2><p>${esc(FRAMEWORK.vision)}</p><div class="connected"><a href="#report" data-go="report">See four completed fictional reports →</a><a href="./#mission">Explore the companion mission framework ↗</a></div></div>${coverPhoto('mission')}</div>
-  <section class="panel"><h3>The four frameworks, one operating system</h3><div class="crosswalk">
-  ${[['MISSION','Institutional purpose','Gift intent and university educational mission are the test of relevance.'],['METHOD','One Harvard','Align advancement, Finance, academic units, Communications and data stewards through agreed responsibilities.'],['EXECUTION','SMARTER','Gift-type standards, baselines, fiscal calendar, phased rollout and sign-off decisions.'],['QUALITY & CULTURE','VERITAS + AA&D values','Donor-centred truth, evidence, trust, inclusion and transparent approvals.']].map(x=>`<div class="cross"><small>${x[0]}</small><b>${x[1]}</b><p>${x[2]}</p></div>`).join('')}</div></section>
+  ])+`<div class="book-hero sectiongap"><div class="copy"><div class="eyebrow">A mission a reviewer can quote</div><h2>One reporting standard. Many accountable partners. Clear donor impact.</h2><p>${esc(FRAMEWORK.vision)}</p><div class="connected"><a href="#report" data-go="report">Open the four operating guides →</a><a href="./#mission">Explore the companion mission framework ↗</a></div></div>${coverPhoto('mission')}</div>
+  <section class="panel"><h3>The four frameworks, one operating system</h3><p class="note"><b>One-line operating standard:</b> ${esc(RELEASE_GATE_SPEC.name)} certifies evidence; SMARTER governs delivery; VERITAS shapes the donor narrative.</p><div class="crosswalk">
+  ${[['MISSION','Institutional purpose','Gift intent and university educational mission are the test of relevance.'],['METHOD','One Harvard','Align advancement, Finance, academic units, Communications and data stewards through agreed responsibilities.'],['EXECUTION','SMARTER','Gift-type standards, baselines, fiscal calendar, phased rollout and sign-off decisions.'],['NARRATIVE & CULTURE','VERITAS + AA&D values','A seven-section donor story, guided by trust, inclusion and editorial integrity.']].map(x=>`<div class="cross"><small>${x[0]}</small><b>${x[1]}</b><p>${x[2]}</p></div>`).join('')}</div></section>
   <section class="panel"><h3>The mission as SMARTER commitments</h3><p class="lead">Specifically define each gift-type report; measurably trace quality; achievably pilot shared standards; relevantly align with donor purpose; time-bound delivery to institutional calendars; evaluate performance monthly; and review every release with named human authority.</p><div class="letter-grid">${FRAMEWORK.smarter.map((x,i)=>`<button class="letter" type="button" data-detail="smart:${i}"><span class="letter-badge">${x[0]}</span><b>${x[1]}</b><small>${x[3]}</small></button>`).join('')}</div></section>
-  <section class="panel"><h3>VERITAS: one expansion, one editorial standard</h3><div class="book-strap">Vision · Experience · Results · Investment · Truth · Advancement · Stewardship</div><div class="grid auto">${FRAMEWORK.veritas.map((v,i)=>`<button type="button" class="tile clickable" data-detail="veritas:${i}" style="text-align:left"><small>${v[0]}</small><h4>${v[1]}</h4><p>${['Purpose and donor intent','Approved lived or program experience','Counted results with defined periods','Appropriate financial bridge by fund type','Exceptions, limitations and what is unknown','Connection to broader mission without double-counting','Future milestones and donor relationship next step'][i]}</p></button>`).join('')}</div><p class="note">The separate six-check release-gate checklist is an operational control, <b>not</b> a second expansion of VERITAS. The main platform uses the same seven editorial terms.</p></section>
+  <section class="panel"><h3>VERITAS · seven sections of the donor narrative</h3><div class="book-strap">Vision · Experience · Results · Investment · Truth · Advancement · Stewardship</div><div class="grid auto">${FRAMEWORK.veritas.map((v,i)=>`<button type="button" class="tile clickable" data-detail="veritas:${i}" style="text-align:left"><small>${v[0]}</small><h4>${v[1]}</h4><p>${['Purpose and donor intent','Approved lived or program experience','Counted results with defined periods','Appropriate financial bridge by fund type','Exceptions, limitations and what is unknown','Connection to broader mission without double-counting','Future milestones and donor relationship next step'][i]}</p></button>`).join('')}</div><p class="note">These seven sections organize what a donor reads: purpose, lived experience, results, financial use, limitations, institutional contribution and next stewardship step.</p></section>
   <section class="panel"><h3>AA&D values translated into review behaviors</h3><div class="grid three">${FRAMEWORK.values.map((v,i)=>`<div class="tile"><h4>${v}</h4><p>${['Protect donor and beneficiary dignity and preferences.','Offer inclusive, accessible report formats and plain-language narratives.','Publish only certified claims and explain unresolved limits.','Ask source owners to validate what they own; preserve decentralized accountability.','Review defect logs and retire low-value reports each quarter.','Log disagreements, owners, decisions and changed wording openly.'][i]}</p></div>`).join('')}</div><p class="small">Values are presented as the application-alignment lens rather than a claim that this portfolio is a university-approved program.</p></section>${ourLinks('mission')}`;
 }
-function caseCheckRows(r){const checks=[['Arithmetic balances',r.bridge.total===r.bridge.used+r.bridge.remain,'synthetic arithmetic only'],['Purpose and fund terms',!!r.checks.intent,'needs authorized gift agreement'],['As-of period',!!r.checks.dates,'needs reporting-period certification'],['Exception explanation',!!r.checks.explain,'needs source-owner sign-off'],['Activity-count method',!!r.checks.count,'needs program register'],['Story/consent release',!!r.checks.consent,'not certified'],['Certified financial extract',!!r.checks.ledger,'not certified'],['Academic/program approval',!!r.checks.program,'not certified'],['Donor preferences',!!r.checks.recognition,'not certified'],['Named final approver',!!r.checks.approver,'not recorded']];return checks;}
-function caseDetailed(r){
- const M=n=>'$'+Number(n).toLocaleString('en-US'); const u=r.bridge.used/r.bridge.total*100;
- const sections=[['V · Vision',r.opening],['E · Experience',r.experience],['R · Results',r.result],['I · Investment',r.notes],['T · Truth',r.truth],['A · Advancement',r.advancement],['S · Stewardship',r.next]];
- const labels={endowed:['Fund agreement','Fund 003 • purpose-approved aid','Financial aid office + fund controller','Financial aid source ID and reporting period','18 awards / 16 continuations, 2 follow-up pending','Do not infer that one gift caused retention'],current:['Current-use receipt records','Fund 114 • spending purpose','Student-support program lead + Finance','Expense and approved microgrant register','42 grants and 3 workshops','Do not equate grant counts with academic persistence'],capital:['Capital project agreement','Project 051 • eligible renovations','Capital planning + project Finance','Project status, invoice and schedule version','65% illustrative construction completion','Do not claim facility is occupied before opening'],grant:['Restricted grant terms','Grant 027 • eligible training costs','Sponsored research + grant program officer','Award register, budget period and expenses','Trainee and deliverable counts in fictional register','Do not claim scientific/clinical efficacy']};const d=labels[r.id];
- return `<article class="case-cover" id="caseFull"><div class="case-banner"><small>WORKED REPORT · ${esc(r.code)} · SYNTHETIC · RELEASE HOLD</small><h3>${esc(r.title)}</h3><p>${esc(r.fund)} · ${esc(r.period)}</p></div><div class="case-inner"><p class="case-intro">${esc(r.opening)}</p><div class="case-stats">${r.stats.map(a=>`<div><b>${esc(a[0])}</b><span>${esc(a[1])}</span></div>`).join('')}</div>
- <h3>Financial statement and calculation</h3><div class="tablewrap"><table class="sample-table"><thead><tr><th>Line item</th><th>Amount</th><th>Proof status</th></tr></thead><tbody>${r.fin.map((x,i)=>`<tr><td>${esc(x[0])}</td><td><b>${M(x[1])}</b></td><td>Synthetic ledger entry</td></tr>`).join('')}</tbody></table></div><p class="small">${esc(r.bridge.label)}: ${M(r.bridge.total)} = ${M(r.bridge.used)} + ${M(r.bridge.remain)}. The bridge matches <b>within this fictional scenario</b>. Financial sign-off is still missing.</p><div class="fin-track" role="img" aria-label="${u.toFixed(0)} percent used and ${(100-u).toFixed(0)} percent remaining"><span style="width:${u}%"></span><span style="width:${100-u}%"></span></div><p class="legend"><span><i style="background:#16745c"></i>Used ${M(r.bridge.used)}</span><span><i style="background:#e6b46c"></i>Remaining ${M(r.bridge.remain)}</span></p>
- <div class="case-cols"><div><h4>Donor-facing narrative · VERITAS</h4>${sections.map(x=>`<p><b>${x[0]}</b><br>${esc(x[1])}</p>`).join('')}</div><div><h4>Evidence register · completed example</h4><div class="source-trace"><b>${d[0]}</b><br>${d[1]}</div><p><b>Record owner:</b> ${d[2]} (proposed role)</p><p><b>Validation method:</b> ${d[3]}</p><p><b>Claim supported:</b> ${d[4]}</p><p><b>Claim limitation:</b> ${d[5]}</p><h4>Required source packet</h4><ul>${r.sources.map(src=>`<li>${esc(src)}</li>`).join('')}</ul><p class="note amber">The files cited above are <b>invented sample source descriptions</b>, not actual records or independent verification.</p></div></div>
- <h3>Release decision · ten checks</h3><div class="check-grid">${caseCheckRows(r).map(x=>`<div class="check-item"><span class="mini-flag ${x[1]?'good':'fail'}">${x[1]?'DEMO PASS':'HOLD'}</span><span><b>${esc(x[0])}</b><br>${esc(x[2])}</span></div>`).join('')}</div><div class="ready-status fail"><b>Not authorized to send.</b> Arithmetic passing in a synthetic model does not certify a statement. Obtain actual source records, appropriate consent, fund-purpose confirmation, program review and a named release authorization.</div>
- <div class="connected no-print"><a href="./?report=${encodeURIComponent(r.id)}#reportgallery">Open this report family in the reporting platform →</a><button type="button" data-go="toolkit">Open completed control documents →</button></div></div></article>`;
+function makeCaseLibrary(){
+  const r=CASES.find(x=>x.id===state.reportId)||CASES[0];
+  const guide={
+    endowed:{owner:'Finance + Financial Aid + Gift Administration',check:'Distribution, eligible spending and carry-forward; avoid attributing student outcomes to one gift.',exception:'The $9,000 unspent distribution needs a verified cause and approved next-cycle plan.',output:'Certified fund bridge and financial-aid activity attestation.'},
+    current:{owner:'Student Support Unit + Finance',check:'Current-use receipts, approved microgrant spending and unspent gift balance.',exception:'The $27,500 unspent balance requires confirmed timing and eligibility.',output:'Current-use receipts-to-spending reconciliation and grant activity register.'},
+    capital:{owner:'Capital Projects + Facilities + Finance',check:'Separate pledge commitments, receipts, project spending and progress certification.',exception:'Do not describe an unfinished facility as available for use.',output:'Milestone certification, invoice bridge and approved project imagery.'},
+    grant:{owner:'Sponsored Research + Grant Program + Finance',check:'Compare category budgets with eligible actual costs and verified training deliverables.',exception:'Do not claim scientific or clinical benefit from training milestones.',output:'Grant expense certification and milestone/PI attestations.'}
+  };
+  const g=guide[r.id];
+  return intro('04 · Case operating guides','How each report reaches an approved donor narrative',
+    'The reporting platform owns the complete fictional reports. This playbook documents the operator’s source packet, approval choices, exceptions and handoff without duplicating the donor-facing content.',[
+    tile('Gift-type paths',4,'One operating standard, four distinct financial models','red','SAMPLE'),
+    tile('Case linkage','Synchronized','Each path opens its corresponding platform report','green','DEMO QA'),
+    tile('Release Gate',6,'Canonical checks shared with the platform','','PROPOSED'),
+    tile('Operating result','Approval required','Source certification and a named human decision','amber','PROPOSED')])+
+    `<div class="case-nav" role="group" aria-label="Choose operating case">${CASES.map((x,i)=>`<button type="button" class="case-choice" data-case="${x.id}" aria-pressed="${x.id===r.id}"><small>0${i+1} · ${esc(x.code)}</small><b>${esc(x.type)}</b><span>View operating steps →</span></button>`).join('')}</div>`+
+    `<section class="panel"><div class="eyebrow">WORKED OPERATING CASE · ${esc(r.code)} · SYNTHETIC</div><h3>${esc(r.title)}</h3><p class="lead">${esc(r.fund)} · ${esc(r.period)}. Report content and the full ten-check quality register are maintained in the Reporting Platform, not reprinted here.</p>
+    <div class="grid three">${tile('Financial base','$'+r.bridge.total.toLocaleString('en-US'),r.bridge.label,'','SAMPLE')}${tile('Used / spent','$'+r.bridge.used.toLocaleString('en-US'),'Synthetic activity only','green','SAMPLE')}${tile('Remaining','$'+r.bridge.remain.toLocaleString('en-US'),'Variance and next use require source sign-off','amber','SAMPLE')}</div>
+    <h4>Operator’s evidence and decision path</h4><div class="tablewrap"><table><thead><tr><th>Step</th><th>Required source / decision</th><th>Who owns it</th></tr></thead><tbody>
+    <tr><td>1 · Fund purpose</td><td>${esc(r.purpose)}</td><td>Gift Administration</td></tr>
+    <tr><td>2 · Financial proof</td><td>${esc(g.check)}</td><td>${esc(g.owner)}</td></tr>
+    <tr><td>3 · Release exception</td><td>${esc(g.exception)}</td><td>Reporting + source owner</td></tr>
+    <tr><td>4 · Claim review</td><td>${esc(r.result.slice(0,210))}</td><td>Academic/program reviewer</td></tr>
+    <tr><td>5 · Release decision</td><td>Apply all six Release Gate controls; named authorization required.</td><td>Designated release authority</td></tr>
+    </tbody></table></div><p class="note"><b>Required evidence packet:</b> ${esc(g.output)} Every status and value here is fictional.</p>
+    <div class="connected"><a class="primary" href="./?report=${encodeURIComponent(r.id)}#reportgallery">View the complete ${esc(r.type.toLowerCase())} report in the platform →</a><a href="./#trace">Inspect Release Gate &amp; traceability →</a><button type="button" data-go="toolkit">See operating SOPs →</button></div></section>`;
 }
-function makeCaseLibrary(){const r=CASES.find(x=>x.id===state.reportId)||CASES[0];return intro('04 · Donor deliverables','Four reports · four different financial models','These are the exact four fictional report cases used by the companion reporting platform. Select one to inspect the full story, financial bridge, evidence lineage and the reason publication remains blocked.',[
- tile('Completed cases',4,'Endowed · current-use · capital · restricted grant','red','SAMPLE'),tile('Source fidelity','4 / 4','Matching simulated IDs and amounts in both pages','green','DEMO QA'),tile('Financial bridge','Reconciles','Different bridge definitions by gift type','','SAMPLE'),tile('Authorized releases','0','Actual ledger, intent and approval not verified','amber','PROPOSED')])+`<div class="case-nav" role="group" aria-label="Select report family">${CASES.map((x,i)=>`<button class="case-choice" data-case="${x.id}" aria-pressed="${x.id===r.id}"><small>0${i+1} · ${esc(x.code)}</small><b>${esc(x.type)}</b><span>${esc(x.title)} →</span></button>`).join('')}</div>${caseDetailed(r)}<div class="connected no-print"><button class="primary" type="button" id="caseExport">Download this complete synthetic report (.html)</button></div><section class="panel"><h3>Compare the four financial models</h3><div class="tablewrap"><table><thead><tr><th>Report</th><th>Financial base</th><th>Used / spent</th><th>Remaining</th><th>Appropriate interpretation</th></tr></thead><tbody>${CASES.map(x=>`<tr><td><button type="button" class="btn small" data-case="${x.id}">${esc(x.type)}</button></td><td>${'$'+x.bridge.total.toLocaleString('en-US')}</td><td>${'$'+x.bridge.used.toLocaleString('en-US')}</td><td>${'$'+x.bridge.remain.toLocaleString('en-US')}</td><td>${esc(x.bridge.label)}</td></tr>`).join('')}</tbody></table></div><p class="note">An endowment market value is a stock, not money available for the current-year distribution. Current-use receipts are not endowment payouts. Capital commitments, receipts, and costs must remain distinct. Grant budgets require budget-category and eligibility checks.</p></section>${ourLinks('reportgallery')}`;}
 function batchResult(){const c=DELIVERY_CASES.find(x=>x.id===state.deliveryCase)||DELIVERY_CASES[0];const flags=[['Certified financial close',c.fiscal],['Verified donor intent',c.intent],['Story and consent approved',c.consent],['Delivery preference allows email',c.preferences],['Secure report URL responds',c.url],['Named authorization recorded',c.approval]];const pass=flags.every(x=>x[1]);return {c,flags,pass,why:flags.filter(x=>!x[1]).map(x=>x[0])};}
 function makeDelivery(){const v=batchResult();return intro('07 · Publishing and donor engagement','Mass email, print and annual stewardship calendar','GitHub Pages displays the demonstration; it does not email donors. This is a designed batch-release process with suppression lists, approvals, alternative print routes and an audit trail.',[
- tile('Annual volume','100%','Illustrative month-to-month seasonality matches platform','red','SAMPLE'),tile('Release gates',6,'Human sign-off always required','','PROPOSED'),tile('Scenarios',6,'Includes suppressed, broken-link and blocked cases','green','SAMPLE'),tile('Actual sends',0,'No contacts, messages or API credentials stored','','PROPOSED')])+`<section class="panel"><h3>Annual report season · shared distribution profile</h3><p class="small">The relative shares shown here are the same July–June sample curve as the companion platform. Counts require local confirmed inventory and seasonality before commitments.</p><div class="monthbars" role="img" aria-label="Illustrative annual reporting shares: July 4, August 5, September 7, October 15, November 17, December 16, January 13, February 9, March 5, April 4, May 3, June 2 percent">${DELIVERY_MONTHS.map((x,i)=>`<div class="month"><small>${DELIVERY_SHARES[i]}%</small><span class="height" style="height:${Math.max(6,DELIVERY_SHARES[i]/17*160)}px"></span><b>${x}</b></div>`).join('')}</div><p class="small">Illustrative peak: Oct–Jan. Proposed recurring dates: T−21 segment · T−14 source freeze · T−7 quality review · T−3 gift-officer review · T0 approved send · T+7 response and bounce review.</p></section>
+ tile('Annual volume','100%','Illustrative month-to-month seasonality matches platform','red','SAMPLE'),tile('Release gates',6,'Human sign-off always required','','PROPOSED'),tile('Scenarios',6,'Includes suppressed, broken-link and blocked cases','green','SAMPLE'),tile('Sending mode','Simulation','No donor contacts or external system credentials in this public demo','','PROPOSED')])+`<section class="panel"><h3>Annual report season · shared distribution profile</h3><p class="small">The relative shares shown here are the same July–June sample curve as the companion platform. Counts require local confirmed inventory and seasonality before commitments.</p><div class="monthbars" role="img" aria-label="Illustrative annual reporting shares: July 4, August 5, September 7, October 15, November 17, December 16, January 13, February 9, March 5, April 4, May 3, June 2 percent">${DELIVERY_MONTHS.map((x,i)=>`<div class="month"><small>${DELIVERY_SHARES[i]}%</small><span class="height" style="height:${Math.max(6,DELIVERY_SHARES[i]/17*160)}px"></span><b>${x}</b></div>`).join('')}</div><p class="small">Illustrative peak: Oct–Jan. Proposed recurring dates: T−21 segment · T−14 source freeze · T−7 quality review · T−3 gift-officer review · T0 approved send · T+7 response and bounce review.</p></section>
  <section class="panel"><h3>One governed mass-delivery process</h3><div class="workflow">${[['01 · Segment','Gift type, relationship tier, channel preference, restrictions'],['02 · Prepare','Freeze fund totals, consent, salutations, URLs, suppression'],['03 · Test','Seed email, print proof, accessibility, link/identity checks'],['04 · Approve','Finance, source owner, stewardship and final release'],['05 · Deliver','Authorized mailer; digital link; print exceptions'],['06 · Learn','Delivery failures, verified responses, gift-officer follow-up']].map(x=>`<div class="workstep"><b>${x[0]}</b><p>${x[1]}</p></div>`).join('')}</div><div class="connected"><a href="./#masscalendar">Open the live delivery calendar →</a><a href="./#comms">Email and message previews →</a><a href="./#automation">Automation failure simulations →</a></div></section>
  <section class="panel"><h3>Interactive preflight: why a batch releases or stops</h3><div class="filters"><label for="batchCase">Synthetic batch scenario</label><select id="batchCase">${DELIVERY_CASES.map(x=>`<option value="${x.id}" ${x.id===v.c.id?'selected':''}>${esc(x.label)}</option>`).join('')}</select><button type="button" class="btn primary" id="batchRun">Run simulated preflight</button><button type="button" class="btn" id="batchCSV">Download fictional cohort CSV</button></div><div class="check-grid">${v.flags.map(x=>`<div class="check-item"><span class="mini-flag ${x[1]?'good':'fail'}">${x[1]?'CHECK':'HOLD'}</span><span>${esc(x[0])}</span></div>`).join('')}</div><div class="ready-status ${v.pass?'ok':'fail'}"><b>${state.deliveryRan?(v.pass?'DEMO: APPROVED FOR QUEUE ONLY':'DEMO: SEND BLOCKED'):'Preflight simulation (not executed)'}</b><br>${v.pass?'All synthetic flags pass; real sender, recipients and content still require authorization':'Missing: '+esc(v.why.join('; '))}. The public site sends nothing.</div>${state.deliveryLog.length?`<div class="tablewrap"><table><thead><tr><th>Tested (local)</th><th>Scenario</th><th>Decision</th><th>Actor</th></tr></thead><tbody>${state.deliveryLog.map(x=>`<tr><td>${esc(x.at)}</td><td>${esc(x.id)}</td><td>${esc(x.decision)}</td><td>Demo reviewer</td></tr>`).join('')}</tbody></table></div>`:''}</section>
  <section class="panel"><h3>Channel and exception matrix</h3><div class="tablewrap"><table><thead><tr><th>Segment</th><th>Channel</th><th>Required review</th><th>Fallback / owner</th></tr></thead><tbody>${[['Standard fund reports','Personalized email linking to access-controlled report','Automated data checks + authorized batch sign-off','Undeliverable → gift officer / print if permitted'],['Major and principal gift','Gift-officer reviewed digital report; print by preference','Relationship strategy, custom narrative, finance and Executive Director','One-to-one review / gift officer'],['No valid email or suppressed','Do not email','Preference, opt-out, legal basis and recognition review','Approved postal route or personal outreach'],['Research / grant restricted','Controlled email and approved report access','Sponsor terms, unpublished-results screening, PI/Finance approvals','Secure delivery channel if required'],['Returned mail / bounced email','Exception queue','Address hygiene and permission rules','No re-send until data owner clears']].map(x=>`<tr>${x.map(z=>`<td>${esc(z)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note amber"><b>Security boundary:</b> actual donor contact lists, personalized report URLs, privacy preferences, grant records, unsubscribe data and audit logs belong in approved systems—not this GitHub repository.</p></section>`;}
@@ -786,73 +958,35 @@ function makeToolkit(){return intro('08 · Implementation toolkit','Filled examp
  <section class="panel"><h3>SOP: standard endowed reporting cycle</h3><ol class="runbook">${[['Intake and tier','Coordinator records gift ID, reporting obligation, audience, deadline and review tier.'],['Certify period and restricted purpose','Finance and gift administration confirm fund terms, reporting year and acceptable uses.'],['Reconcile statement','Compare distribution, spent and carried amounts; record source version and any variance.'],['Gather academic proof','Unit confirms counted awards or milestones, denominator, consent and approved wording.'],['Apply VERITAS editorial lens','Write Vision, Experience, Results, Investment, Truth, Advancement and next Stewardship step.'],['Run six release checks','Intent, Reconciliation, Consent, Traceability, Attribution and Authorization; any failure stops release.'],['Obtain approvals and send','Document finance, program and named publication sign-off; use approved channel only.'],['Close the loop','Record delivery, bounce disposition, gift-officer follow-up and monthly quality metrics.']].map(x=>`<li><b>${x[0]}:</b> ${x[1]}</li>`).join('')}</ol></section>
  <section class="panel"><h3>Worked leadership decision record</h3><div class="case-cols"><div><h4>Decision: automated annual reports versus bespoke production</h4><p><b>Context:</b> A fictional group of 120 funds has a uniform certified data source; 12 major-gift relationships require distinct story review.</p><p><b>Options:</b> A. Manual for all; B. Digital standard for all; C. Standard for 108 + enhanced review for 12.</p><p><b>Proposed selection:</b> C — subject to verified capacity, recipient preferences and gift obligations.</p><p><b>Reason:</b> Separate repeatable arithmetic from relationship-specific stories; avoid sending a generic report to donors whose agreements require customization.</p></div><div><h4>Decision acceptance and review</h4><p><b>Evidence:</b> Completed gift-type inventory; cost per tier; error rate; exception frequency; donor preferences.</p><p><b>Trade-off:</b> Standardization can lower effort but creates reputational risk when unsupported narratives are mailed at scale.</p><p><b>Owner:</b> Stewardship Director proposes; relationship owners and Finance review; designated sponsor authorizes.</p><p><b>Stop condition:</b> More than one unmatched ledger amount, unresolved intent, or missing donor permissions.</p></div></div><div class="connected"><a href="./#decision">Try intake triage →</a><a href="./#advisory">See weighted advisory scenario →</a></div></section>${ourLinks('factory')}`;}
 
-function makeStart(){return `<div class="eyebrow">01 · Independent portfolio work sample</div><div class="book-hero"><div class="copy"><div class="eyebrow">Executive stewardship playbook</div><h2>From donor intent to evidence you can trust.</h2><p>This companion explains <b>how</b> a university would run stewardship reporting: one mission, gift-type standards, certified records, responsible AI, human authorization and donor-safe delivery.</p><p>Four complete fictional reports are synchronized with the separate interactive Reporting Platform.</p><div class="connected"><button data-go="report">Explore four finished reports →</button><a href="./" class="primary">Open the Reporting Platform ↗</a></div></div>${coverPhoto('platform')}</div><div class="book-strap">One Harvard coordinates the work · SMARTER structures delivery · VERITAS tests the narrative · AA&amp;D values guide collaboration</div>
+function makeStart(){return `<div class="eyebrow">01 · Independent portfolio work sample</div><div class="book-hero"><div class="copy"><div class="eyebrow">Executive stewardship playbook</div><h2>From donor intent to evidence you can trust.</h2><p>This companion explains <b>how</b> a university would run stewardship reporting: one mission, gift-type standards, certified records, responsible AI, human authorization and donor-safe delivery.</p><p>The companion Reporting Platform contains the four complete fictional reports; this playbook contains their operating procedures, evidence checks and governance decisions.</p><div class="connected"><button data-go="report">Explore four case operating guides →</button><a href="./" class="primary">Open the Reporting Platform ↗</a><a href="./communications.html">Open the communications library ↗</a><button data-go="donor">Explore the donor review workspace →</button></div></div>${coverPhoto('platform')}</div><div class="book-strap">SMARTER governs execution · Release Gate certifies evidence · VERITAS structures the donor narrative · AA&amp;D values guide collaboration</div>
 <section class="panel"><h3>How to explore this work sample</h3><div class="workflow">${[['01 · Mission','Understand the operating philosophy.','framework'],['02 · Examples','Open a full report, financial bridge and claim trail.','report'],['03 · Controls','See what blocks release.','standard'],['04 · Operations','Follow the production workflow and calendar.','factory'],['05 · Delivery','Try a blocked bulk-email scenario.','delivery'],['06 · SOPs','Read the filled evidence, review and decision records.','toolkit']].map(x=>`<button type="button" class="workstep" data-go="${x[2]}" style="text-align:left;cursor:pointer"><b>${x[0]}</b><p>${x[1]}</p></button>`).join('')}</div></section>
 <section class="panel"><h3>One coordinated report lifecycle</h3>${flow()}<p class="small">Choose any stage for its accountable reviewer, source evidence, stop condition and handover.</p></section>
-<section class="panel"><h3>First 90 days · proposed pilot, not an implementation claim</h3><div class="grid three">${[['01–30','Inventory + baseline','List all report obligations, gift types, financial sources and current turnaround.'],['31–60','Template + approval design','Agree source dictionaries, traceability rules, tiers and release authorizations.'],['61–90','Two-report pilot','Pilot an endowed and current-use report, capture defects and obtain sponsor go/rework/stop.']].map(x=>`<button class="tile clickable" data-detail="day:Days ${x[0]}" style="text-align:left"><small>Days ${x[0]}</small><h3>${x[1]}</h3><p>${x[2]}</p></button>`).join('')}</div></section><p class="small">Public hosting contains no identifiable donor, student, employee or recipient records. All operational counts are <b>SAMPLE</b> or <b>PROPOSED</b>.</p>`;}
+<section class="panel"><h3>First 90 days · proposed pilot, not an implementation claim</h3><div class="grid three">${[['01–30','Inventory + baseline','List all report obligations, gift types, financial sources and current turnaround.'],['31–60','Template + approval design','Agree source dictionaries, traceability rules, tiers and release authorizations.'],['61–90','Two-report pilot','Pilot an endowed and current-use report, capture defects and obtain sponsor go/rework/stop.']].map(x=>`<button class="tile clickable" data-detail="day:Days ${x[0]}" style="text-align:left"><small>Days ${x[0]}</small><h3>${x[1]}</h3><p>${x[2]}</p><span class="start-linkcue">Open phase sample →</span></button>`).join('')}</div></section><p class="small">Public hosting contains no identifiable donor, student, employee or recipient records. All operational counts are <b>SAMPLE</b> or <b>PROPOSED</b>.</p>`;}
 
 function makeBrief(){return intro('03 · Executive decision brief','A repeatable donor-reporting operation, not a collection of reports','The leadership decision is how to produce accurate, useful stewardship materials consistently at peak volume while protecting the relationships that require individual treatment.',[
- tile('Working examples',4,'Fully specified fictional report types','red','SAMPLE'),tile('Release gate','HOLD','Missing real approvals are displayed, not hidden','amber','PROPOSED'),tile('Delivery method','Digital + exceptions','Email, access-controlled reports and print by preference','green','PROPOSED'),tile('Governance','One Harvard','Connect and align without relying on positional authority','','PROPOSED')])+`<div class="book-strap">Protect donor intent. Prove the financial story. Deliver on time—with a named human decision.</div><section class="panel"><h3>Three leadership priorities</h3><div class="grid three"><div class="tile"><h4>01 · Establish trust</h4><p>Certified fund ledger, gift terms, attribution restraint, consent and transparent unresolved issues.</p></div><div class="tile"><h4>02 · Make delivery repeatable</h4><p>Distinct templates by gift type; one report record; clear tiers and season-linked due dates.</p></div><div class="tile"><h4>03 · Free capacity for the donor</h4><p>Automate repeatable checks and preflight but preserve editorial judgment and relationship-specific engagement.</p></div></div></section><section class="panel"><h3>Sample deliverables · choose a full case</h3><div class="case-nav">${CASES.map(x=>`<button type="button" class="case-choice" data-case="${x.id}"><small>${esc(x.code)}</small><b>${esc(x.type)}</b><span>${esc(x.headline)} · ${esc(x.headlineLabel)}</span></button>`).join('')}</div></section><section class="panel"><h3>Harvard-specific published context versus the demonstration</h3><div class="grid three">${DATA.demo.institutional.map(x=>`<div class="tile"><small>${esc(x.label)} · ${badge('PUBLIC')}</small><div class="big">${esc(x.value)}</div><a target="_blank" rel="noopener noreferrer" href="${x.source}">${esc(x.note)} ↗</a></div>`).join('')}</div><p class="small">University-level published financial context must never be mistaken for donor-fund results, actual reporting volume or authorization of this proposed plan.</p></section>${ourLinks('brief')}`;}
+ tile('Working examples',4,'Four linked sample-report families','red','SAMPLE'),tile('Release decision','Stop rules demonstrated','Example teaches why records halt before donor release','amber','PROPOSED'),tile('Delivery method','Digital + exceptions','Email, access-controlled reports and print by preference','green','PROPOSED'),tile('Governance','One Harvard','Connect and align without relying on positional authority','','PROPOSED')])+`<div class="book-strap">Protect donor intent. Prove the financial story. Deliver on time—with a named human decision.</div><section class="panel"><h3>Three leadership priorities</h3><div class="grid three"><div class="tile"><h4>01 · Establish trust</h4><p>Certified fund ledger, gift terms, attribution restraint, consent and transparent unresolved issues.</p></div><div class="tile"><h4>02 · Make delivery repeatable</h4><p>Distinct templates by gift type; one report record; clear tiers and season-linked due dates.</p></div><div class="tile"><h4>03 · Free capacity for the donor</h4><p>Automate repeatable checks and preflight but preserve editorial judgment and relationship-specific engagement.</p></div></div></section><section class="panel"><h3>Sample deliverables · choose a full case</h3><div class="case-nav">${CASES.map(x=>`<button type="button" class="case-choice" data-case="${x.id}"><small>${esc(x.code)}</small><b>${esc(x.type)}</b><span>${esc(x.headline)} · ${esc(x.headlineLabel)}</span></button>`).join('')}</div></section><section class="panel"><h3>Harvard-specific published context versus the demonstration</h3><div class="grid three">${DATA.demo.institutional.map(x=>`<div class="tile"><small>${esc(x.label)} · ${badge('PUBLIC')}</small><div class="big">${esc(x.value)}</div><a target="_blank" rel="noopener noreferrer" href="${x.source}">${esc(x.note)} ↗</a></div>`).join('')}</div><p class="small">University-level published financial context must never be mistaken for donor-fund results, actual reporting volume or authorization of this proposed plan.</p></section>${ourLinks('brief')}`;}
 
-function makeReport(){return makeCaseLibrary();}
+function makeReport(){return makeCaseLibrary()+`<section class="panel"><h3>Review the donor before submitting a report</h3><p class="small">The synthetic endowed-fund report now connects to a full donor relationship and Release Gate review page: giving history, officer notes, permissions, prior communications and the six evidence controls.</p><button class="btn primary" data-go="donor">Open integrated donor review workspace →</button></section>`;}
 
 function makeStandard() {
-  const S = DATA.evidenceStandard;
-  return intro(
-    '03b · Proposed evidence standard',
-    'The Stewardship Release-Gate Checklist',
-    'Six plain checks that every donor report must pass before release. Each check has a named owner, a release rule, and a visible place in the report.',
-    [
-      tile('Checks', String(S.checks.length), 'MECE: intent, money, people, sources, logic, authority', 'red', 'PROPOSED'),
-      tile('Owners', '6 roles', 'No check is unowned', '', 'PROPOSED'),
-      tile('Blocks release', 'Yes', 'A failed check halts the report', '', 'PROPOSED'),
-      tile('Report sections', '7', 'Each maps to at least one check', 'green', 'PROPOSED')
-    ]
-  ) + `
-  <section class="panel">
-    <h3>The one-line test leadership remembers</h3>
-    <div class="callout">
-      <p style="font-size:15px;margin:0"><strong>${esc(S.name)} — summary:</strong> ${esc(S.summary)}</p>
-    </div>
-    <p class="small">A single sentence a sponsor can repeat in a meeting. Reports that fail any of the six checks below fail the test.</p>
-  </section>
-  <section class="panel">
-    <h3>The six checks</h3>
-    <div class="tablewrap">
-      <table>
-        <thead><tr><th>Check</th><th>Question</th><th>Release rule</th><th>Owner</th></tr></thead>
-        <tbody>
-          ${S.checks.map(c => `
-            <tr>
-              <td><button class="btn small" data-detail="evidence:${c.id}">${esc(c.name)}</button></td>
-              <td>${esc(c.question)}</td>
-              <td>${esc(c.rule)}</td>
-              <td>${esc(c.owner)}</td>
-            </tr>`).join('')}
-        </tbody>
-      </table>
-    </div>
-  </section>
-  <section class="panel">
-    <h3>How report sections map to checks</h3>
-    <div class="tablewrap">
-      <table>
-        <thead><tr><th>Report section</th><th>Satisfies</th></tr></thead>
-        <tbody>
-          <tr><td>The purpose of this fund</td><td>Intent</td></tr>
-          <tr><td>What this year made possible</td><td>Consent</td></tr>
-          <tr><td>What we can count</td><td>Traceability</td></tr>
-          <tr><td>How the fund was used</td><td>Reconciliation</td></tr>
-          <tr><td>What we don’t yet know</td><td>Attribution + Reconciliation</td></tr>
-          <tr><td>How this fits a larger goal</td><td>Traceability</td></tr>
-          <tr><td>What happens next</td><td>Authorization</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="small">The mapping is intentional: each report section answers one donor question and is auditable against a named check. The standard and the report cannot drift apart without a visible mismatch.</p>
-  </section>`;
+  const S=DATA.evidenceStandard;
+  const rows=[
+    ['Intent','PASS (model)','Gift purpose matches the fictional agreement','Gift Administration'],
+    ['Reconciliation','PASS (arithmetic)','55,000 = 46,000 + 9,000, but certification still required','Finance'],
+    ['Consent','HOLD','No real student-story permission or usage authorization','Stewardship + Academic Unit'],
+    ['Traceability','PASS (model)','Sample source lineage is consistent; actual source documents absent','Stewardship Reporting'],
+    ['Attribution','PASS (model)','Narrative avoids unsupported causal conclusions','Academic Partner + Editorial'],
+    ['Authorization','HOLD','No approved institutional release authority or signed publication version','Designated Release Authority']
+  ];
+  return intro('03b · Operating control tutorial','Six-Check Release Gate · why a report stops',
+    'This example teaches the release decision, not an unfinished deliverable. In production each check must be satisfied by approved evidence and a named reviewer; demonstration arithmetic alone never authorizes distribution.',[
+      tile('Release Gate checks',6,'One canonical control specification','red','PROPOSED'),
+      tile('Worked control example','HOLD','An intentional simulation of safeguards','amber','SAMPLE'),
+      tile('Assigned owners',6,'Every failed check has a disposition owner','','PROPOSED'),
+      tile('Donor narrative','VERITAS','Seven distinct editorial sections','green','PROPOSED')])+
+    `<section class="panel"><h3>The one-line Release Gate question</h3><div class="callout"><p style="font-size:15px;margin:0">${esc(S.summary)}</p></div><p class="small">SMARTER governs execution; the Release Gate certifies evidence; VERITAS structures the donor narrative.</p></section>
+    <section class="panel"><h3>Worked release decision · synthetic endowed case</h3><p>The model demonstrates that some checks can pass at the <em>simulation</em> level while real source certification and authorization remain outstanding. The correct outcome is a documented publication hold, not a rushed send.</p><div class="tablewrap"><table><thead><tr><th>Release Gate</th><th>Demonstration result</th><th>Evidence and next action</th><th>Clearance owner</th></tr></thead><tbody>${rows.map(x=>`<tr><td><strong>${esc(x[0])}</strong></td><td>${esc(x[1])}</td><td>${esc(x[2])}</td><td>${esc(x[3])}</td></tr>`).join('')}</tbody></table></div><div class="note amber"><b>Decision: HOLD, with an identified clearance path.</b> Simulated passes are not official approvals. Finance supplies the certified ledger, the academic unit verifies permissions and outcomes, and a designated human authorizes the final version. A report marked “all clear” without those records would be a real defect.</div><div class="connected"><a class="primary" href="./#trace">Open the canonical Release Gate &amp; source-trace view →</a><button type="button" data-go="toolkit">Review the filled release-authorization SOP →</button></div></section>`;
 }
-
 function makeFactory() {
   const reports = state.status;
   const stages = ['Data intake', 'Finance validation', 'Story approval', 'Draft review', 'Publication HOLD'];
@@ -1204,7 +1338,7 @@ function makeGovern() {
     <div class="grid three">
       <div class="tile">
         <h3>Veritas (the motto)</h3>
-        <p>Harvard’s institutional motto, Latin for <em>truth</em>. Every donor claim must remain traceable to it. The Evidence Standard is named to serve the motto — not to claim it.</p>
+        <p>Harvard’s institutional motto, Latin for <em>truth</em>. Every donor claim must remain traceable to it. The proposed seven-part VERITAS structure is an editorial device, not an official Harvard reporting policy.</p>
         <a target="_blank" rel="noopener" href="https://www.harvard.edu/about/history/shields/">Harvard official source</a>
       </div>
       <div class="tile">
@@ -1245,7 +1379,7 @@ function selfcheck() {
   if (DATA.program.plannedWeeks !== DATA.phases.at(-1).endWeek) issues.push('Program/phase week mismatch');
   const a = DATA.raci.matrix.find(r => r.role === 'Director of Stewardship Reporting');
   if (!a) issues.push('Director missing from RACI');
-  for(const r of CASES){if(r.bridge.total!==r.bridge.used+r.bridge.remain) issues.push('Canonical case arithmetic mismatch: '+r.id); if(caseCheckRows(r).every(x=>x[1])) issues.push('Unsafe demo case has no release hold: '+r.id);}
+  for(const r of CASES){if(r.bridge.total!==r.bridge.used+r.bridge.remain) issues.push('Canonical case arithmetic mismatch: '+r.id); if(Object.values(r.checks).every(Boolean)) issues.push('Unsafe demo case has no release hold: '+r.id);}
   if(FRAMEWORK.veritas.map(x=>x[0]).join('')!=='VERITAS') issues.push('VERITAS spelling differs from platform');
   return { issues };
 }
@@ -1258,7 +1392,7 @@ function build() {
     `<button data-go="${id}" ${i === 0 ? 'class="active"' : ''}>${String(i + 1).padStart(2, '0')} · ${t}</button>`
   ).join('');
 
-  const makers = [makeStart,makeFramework,makeBrief,makeReport,makeStandard,makeFactory,makeDelivery,makeToolkit,makePlan,makeMeasure,makeClose,makeGovern];
+  const makers = [makeStart,makeFramework,makeBrief,makeReport,makeDonorReview,makeStandard,makeFactory,makeDelivery,makeToolkit,makePlan,makeMeasure,makeClose,makeGovern];
   $('#views').innerHTML = pages.map(([id, t], i) =>
     `<article class="chapter ${i === 0 ? 'active' : ''}" id="page-${id}">${makers[i]()}</article>`
   ).join('');
@@ -1276,22 +1410,106 @@ function build() {
 }
 
 /* ============================================================
+   START PAGE: EIGHT DISTINCT, FICTIONAL WORKED RECORDS
+   Each detail button is mapped to an actual step/phase-specific
+   evidence packet rather than a universal, generic popup.
+   ============================================================ */
+const START_FLOW_RECORDS = [
+  {
+    heading:'01 · Gift intent: the controlling purpose', status:'SAMPLE · INTENT VERIFIED IN DEMO',statusType:'neutral',
+    lead:'SIM-END-2026 · Synthetic scholarship endowment. The sample gift agreement restricts the distribution to undergraduate financial aid; reporting language is checked against that agreement before drafting.',
+    metrics:[['SIM-GA-021','Synthetic agreement'],['FY2026','Illustrative reporting period'],['HOLD','Pending real-world proof']],
+    rows:[['Gift type','Endowed scholarship','Synthetic gift-agreement register'],['Fund identifier','SIM-END-2026','Illustrative case library'],['Permitted use','Undergraduate financial aid','Simulated donor-intent clause'],['Reporting obligation','Annual donor-impact statement','Proposed service catalog'],['Material exception','Any purpose mismatch blocks publication','Release-check definition']],
+    steps:['Gift Administration checks the exact agreement version and reporting terms.','The report record locks purpose language and fund restrictions.','A changed purpose requires a signed amendment and human review before regeneration.'],
+    owner:'Gift Administration · stewardship intake coordinator',evidence:'SIM-GA-021 · synthetic restriction register',gate:'NO SEND until purpose matches the legally authoritative agreement and the release owner signs off.',route:'standard',routeLabel:'Inspect donor-intent release check',
+    mistake:'Drafting an attractive impact story before checking the gift purpose.',good:'Load the controlling purpose and version first; block out-of-scope claims.'
+  },
+  {
+    heading:'02 · Evidence: financial and program source packet',status:'SAMPLE · ARITHMETIC PASS',statusType:'neutral',
+    lead:'SIM-END-2026 · A worked financial bridge illustrates how a writer would obtain a reconciled year-end statement and program evidence, without mistaking arithmetic for certified university data.',
+    metrics:[['$55,000','Illustrative distribution'],['$46,000','Illustrative spending'],['$9,000','Illustrative carry-forward']],
+    rows:[['Annual distribution','$55,000','Synthetic fund ledger'],['Scholarship expenditure','$46,000','Synthetic activity ledger'],['Carried forward','$9,000','Distribution minus spending'],['Recipients supported','18','Sample award register; not live records'],['Financial source approval','PENDING','Would require named Finance authority']],
+    steps:['Reconcile each fund total to the certified close, not the analyst’s working spreadsheet.','Match outcome counts and definitions to the academic source owner.','Store fund period, source version, exception notes, and attribution limitations together.'],
+    owner:'Finance + academic program data owner',evidence:'SIM-GL-021 · sample reconciliation and awards ledger',gate:'HOLD if certified fund evidence, source provenance, or a required program attestation is missing.',route:'report',routeLabel:'Open the full endowed-fund report',
+    mistake:'Treating a $0 arithmetic variance as proof that source data were certified.',good:'Show both the financial equation and the outstanding source/approval checks.'
+  },
+  {
+    heading:'03 · Validation: stop rules and consent',status:'SAMPLE · RELEASE HOLD',statusType:'hold',
+    lead:'The narrative can be mathematically consistent and still fail release. This demonstration intentionally blocks publication when consent, source certification, or named approval is absent.',
+    metrics:[['PASS','Illustrative arithmetic'],['HOLD','Consent and evidence'],['0','Authorized external releases']],
+    rows:[['Gift intent','Model check only','Real agreement verification pending'],['Reconciliation','Arithmetic PASS','Finance certification pending'],['Beneficiary consent','MISSING','Do not publish identifiable stories'],['Claim traceability','PARTIAL','Academic reviewer has not approved'],['Release authority','NOT SIGNED','No donor distribution permitted']],
+    steps:['Automated validation identifies the missing or conflicting record.','Human reviewers resolve consent scope, the financial source, and wording uncertainty.','Every rework creates a new version, disposition, owner, and timestamp.'],
+    owner:'Stewardship QA · Finance · academic/consent reviewer',evidence:'SIM-QA-021 · six-check release gate',gate:'HARD HOLD for missing consent, unverifiable claims, unreconciled financials, or absent authorization.',route:'standard',routeLabel:'Open the six release checks',
+    mistake:'Using a green arithmetic check to override missing consent or named sign-off.',good:'Apply independent mandatory controls and require every applicable check to pass.'
+  },
+  {
+    heading:'04 · Impact narrative: the editorial redline',status:'SAMPLE · WRITER REVISION REQUIRED',statusType:'hold',
+    lead:'This sample connects the donor’s purpose to a measured activity without inventing causal impact. The writer edits AI-assisted language using the VERITAS lens.',
+    metrics:[['18','Illustrative recipients'],['14','Illustrative documented milestones'],['7','VERITAS narrative elements']],
+    rows:[['Draft claim — reject','“The gift guaranteed 18 students would graduate.”','Unsupported causation and outcome'],['Defensible sample claim','“The fictional fund supported 18 recipients during the sample period.”','Synthetic award roster'],['Results evidence','14 illustrative milestones recorded','Academic owner still needs to verify'],['Truth / limitation','No real student stories or consent in this demo','Publication HOLD'],['Next step','Confirm follow-up outcomes and request approval','Writer → academic reviewer']],
+    steps:['Writer turns the evidence packet into a seven-part VERITAS narrative.','An AI-assisted suggestion may be retained only after human source verification and revision.','Gift officer and academic contact approve tone, factual scope, and any story permissions.'],
+    owner:'Stewardship writer · academic reviewer · gift officer',evidence:'SIM-AIR-021 · sample AI review record and narrative redline',gate:'DO NOT release an unsupported benefit claim or a beneficiary story without current consent.',route:'toolkit',routeLabel:'Open the completed AI review log',
+    mistake:'Describing a funding activity as a validated life outcome.',good:'Distinguish supported activity, verified results, uncertainty, and future milestones.'
+  },
+  {
+    heading:'05 · Delivery: the batch authorization record',status:'SAMPLE · QUEUE ONLY',statusType:'hold',
+    lead:'This simulated 12-record cohort demonstrates why production eligibility differs from permission to send. Even a technically ready report must pass named authorization, preference checks, and delivery-link testing.',
+    metrics:[['12','Illustrative recipient records'],['8','Digital-eligible in sample'],['2','Suppressed in sample']],
+    rows:[['Digital eligibility','8 sample records','Before final release checks'],['Print preference','2 sample records','Verified only in simulation'],['Suppression','2 sample records','Never entered into send queue'],['Link and seed tests','REQUIRED','Preview every report landing link'],['External authorization','NOT PRESENT','No real sending occurs']],
+    steps:['Create the approved audience and excluded-recipient lists.','Run last-minute anonymity, address, deliverability, and link tests.','Record approver, file version, send job ID, bounces, and T+7 follow-up tasks.'],
+    owner:'Stewardship director · gift officer · approved mailing operations',evidence:'SIM-BAT-021 · fictional audience and batch manifest',gate:'QUEUE ONLY until all release checks and authorized sending controls are complete.',route:'delivery',routeLabel:'Try the mass-delivery simulation',
+    mistake:'Confusing successfully generated HTML with permission to email it.',good:'Separate technical readiness from source certification, consent, and send authorization.'
+  }
+];
+const START_90_DAY_RECORDS = {
+  'Days 01–30':{
+    heading:'Days 1–30 · Inventory and validate the baseline',status:'PROPOSED PILOT · DISCOVERY',statusType:'neutral',
+    lead:'Worked inventory sample: a fictional reporting population of 120 obligations across four gift types, with each row linked to a fund, due date, source owner, and delivery tier.',
+    metrics:[['120','Sample obligations'],['4','Gift-type families'],['0','Verified operational baselines']],
+    rows:[['Endowed-fund reports','80','Illustrative inventory count'],['Current-use reports','20','Illustrative inventory count'],['Capital-project updates','12','Illustrative inventory count'],['Restricted-grant reports','8','Illustrative inventory count'],['Baseline quality','TBD','Requires Gate 1 real-world measurement'],['Sample intake key','SIM-INTAKE-021','Links fund, obligation and owner']],
+    steps:['Interview gift officers, Finance, Gift Administration, and academic units to map existing practices.','Inventory report obligations, their calendar dates, exceptions, evidence sources, and current service levels.','Agree measurable definitions: on-time delivery, source coverage, intent errors, revision count, and manual hours.'],
+    owner:'Director of Stewardship Reporting (proposed) + school/unit partners',evidence:'SIM-INTAKE-021 · fictional requirements register',gate:'G1 acceptance: signed inventory, named owners, baseline method, and prioritized exceptions.',route:'plan',routeLabel:'Open the phased implementation plan',
+    mistake:'Setting performance targets before verifying the current volume and deadlines.',good:'Capture current practice, define denominators, then set baselines with owners.'
+  },
+  'Days 31–60':{
+    heading:'Days 31–60 · Template and control design',status:'PROPOSED PILOT · DESIGN',statusType:'neutral',
+    lead:'Worked tiering decision: in a fictional 120-report population, 108 can use a common reporting template and 12 require enhanced relationship or gift-agreement review; no reports are approved for sending by this design alone.',
+    metrics:[['108','Standard templates (sample)'],['12','Enhanced review (sample)'],['6','Mandatory release controls']],
+    rows:[['Standardized segment','108 of 120','Repeatable financial structures and approved fields'],['Enhanced segment','12 of 120','Individual narrative/relationship review'],['Template families','Endowed, current-use, capital, grant','Separate financial bridges'],['Release checks','Intent, reconcile, consent, trace, attribution, authorize','Human sign-offs required'],['Version control','SIM-TPL-v1','Template and rule version'],['Decision status','DESIGN APPROVAL PENDING','Sponsor validation required']],
+    steps:['Specify locked financial fields and distinct narrative sections for each gift type.','Draft an explicit RACI: who owns source validation, writing, academic approvals, and external release.','Run sample discrepancies through the exception-routing and six-gate checklist.'],
+    owner:'Reporting director + Finance + Gift Administration + communications',evidence:'SIM-TPL-v1 · fictional service tiers and release matrix',gate:'G2 acceptance: fund-specific templates, draft SOPs, approved owners, and demonstrated hold behavior.',route:'toolkit',routeLabel:'Open populated SOPs and templates',
+    mistake:'Treating one visual template as sufficient for every fund’s financial accounting.',good:'Reuse the controls while preserving gift-type-specific structures and relationship exceptions.'
+  },
+  'Days 61–90':{
+    heading:'Days 61–90 · Pilot two complete report journeys',status:'PROPOSED PILOT · UAT / HOLD',statusType:'hold',
+    lead:'Run the synthetic endowed and current-use cases from intake through human review, calculate error rates, and present a go/rework/stop decision to the sponsor. None of the fictional cases is an approved donor communication.',
+    metrics:[['2','Pilot report families'],['$55,000','Endowed sample distribution'],['HOLD','No real release authority']],
+    rows:[['Pilot A','SIM-END-2026','Endowed: $55,000 = $46,000 + $9,000'],['Pilot B','SIM-USE-2026','Current-use: $180,000 = $152,500 + $27,500'],['Source certification','PENDING','Synthetic ledger values only'],['Story/permission checks','HOLD','No real recipient consents'],['Human approval','REQUIRED','Finance + academic + release owner'],['Decision example','REWORK','Do not go live without accepted controls']],
+    steps:['Execute a complete user acceptance test across both gift-type reporting paths.','Test a financial mismatch, a missing story permission, a broken report URL, and a blocked bulk send.','Capture reviewer feedback, cycle time, defect causes, and a sponsor-backed extend/rework/stop decision.'],
+    owner:'Sponsor + Reporting Director + cross-unit pilot review team',evidence:'SIM-PILOT-021 · fictional UAT and exception register',gate:'G3 acceptance: no unowned critical defects; documented human approvals; signed go/rework/stop decision.',route:'report',routeLabel:'Inspect the two fictional report examples',
+    mistake:'Calling a proof of concept production-ready because the demonstration looks complete.',good:'Record the failures, require acceptance criteria, and preserve a sponsor stop decision.'
+  }
+};
+function startWorkedPopup(x){
+  const metricHtml = `<div class="start-sample-grid">${x.metrics.map(m=>`<div class="start-sample-metric"><b>${esc(m[0])}</b><small>${esc(m[1])}</small></div>`).join('')}</div>`;
+  const rowsHtml = `<div class="start-sample-table"><table><thead><tr><th>Sample field / control</th><th>Illustrative value</th><th>Evidence or interpretation</th></tr></thead><tbody>${x.rows.map(row=>`<tr><td><strong>${esc(row[0])}</strong></td><td>${esc(row[1])}</td><td>${esc(row[2])}</td></tr>`).join('')}</tbody></table></div>`;
+  const content = `<div class="start-sample-head"><span class="start-pill ${x.statusType}">${esc(x.status)}</span><span class="start-pill neutral">INDEPENDENT WORK SAMPLE</span></div><p class="start-excerpt">${esc(x.lead)}</p>${metricHtml}${rowsHtml}<h3 style="font-size:17px;margin:13px 0 6px">What the operator does next</h3><ol class="start-sample-steps">${x.steps.map(t=>`<li>${esc(t)}</li>`).join('')}</ol><div class="start-sample-actions"><button type="button" data-go="${esc(x.route)}">${esc(x.routeLabel)} →</button></div><p class="small">Every amount, record, approval status and workload count above is synthetic or proposed. This is not a real donor record or university operating report.</p>`;
+  show(x.heading,content,x.owner,x.evidence,x.gate,{mistake:x.mistake,good:x.good});
+}
+
+/* ============================================================
    DETAILS
    ============================================================ */
 function details(key) {
   const [kind, ...rest] = key.split(':');
   const id = rest.join(':');
   if(kind==='smart'){const x=FRAMEWORK.smarter[Number(id)];if(!x)return;show(`${x[0]} · ${x[1]}`,`<p>${esc(x[2])}</p><p><b>Implementation evidence:</b> ${esc(x[3])}</p><p><b>Linked example:</b> See the populated case reports and release checklists.</p>`,'Stewardship Director (proposed)','Mission and operating scorecard','No policy adoption is implied.');return;}
-  if(kind==='veritas'){const x=FRAMEWORK.veritas[Number(id)];if(!x)return;const q=['State the donor-supported purpose without promising an outcome.','Illustrate approved experience, with current consent when a person is identified.','Count outcomes and specify denominator, period, and provenance.','Reconcile the appropriate financial bridge for this gift type.','Explain the unknown, delayed, variance or limitation.','Place the fund in the institutional mission without double-counting.','Name the next verified milestone and appropriate gift-officer action.'];show(`${x[0]} · ${x[1]}`,`<p>${esc(q[Number(id)])}</p><p>Evidence review belongs to the six-check operational release gate; this is the shared editorial vocabulary.</p>`);return;}
-  if (kind === 'flow') {
-    const titles = ['Donor intent', 'Gather evidence', 'Validate & consent', 'Compose impact narrative', 'Approve & deliver'];
-    show(titles[+id], `<ol><li>Identify the approved purpose and scope.</li><li>Gather the specific financial, outcome and story records needed.</li><li>Resolve contradictions and retain proof.</li><li>Prepare a narrative that explains what changed.</li><li>Approve the final version and log its delivery.</li></ol>`, 'Stewardship Director + assigned reviewer', 'Gift agreement · GL · program evidence', 'No external release until intent, figures, consent and claims are approved.');
-    return;
-  }
+  if(kind==='veritas'){const x=FRAMEWORK.veritas[Number(id)];if(!x)return;const q=['State the donor-supported purpose without promising an outcome.','Illustrate approved experience, with current consent when a person is identified.','Count outcomes and specify denominator, period, and provenance.','Reconcile the appropriate financial bridge for this gift type.','Explain the unknown, delayed, variance or limitation.','Place the fund in the institutional mission without double-counting.','Name the next verified milestone and appropriate gift-officer action.'];show(`${x[0]} · ${x[1]}`,`<p>${esc(q[Number(id)])}</p><p>This editorial section tells the donor story; evidence is separately verified at the Release Gate.</p>`);return;}
+  if (kind === 'flow') { const x = START_FLOW_RECORDS[Number(id)]; if (x) startWorkedPopup(x); return; }
   if (kind === 'evidence') {
     const c = DATA.evidenceStandard.checks.find(x => x.id === id);
     if (!c) { show('Evidence check', '<p>Check not found.</p>'); return; }
-    show(`Evidence Standard · ${c.name}`, `<p><b>Question.</b> ${esc(c.question)}</p><p><b>Release rule.</b> ${esc(c.rule)}</p><p>The check is proposed as part of the Stewardship Release-Gate Checklist — a candidate operating framework, not an official Harvard policy.</p>`, c.owner, 'Evidence register', c.rule);
+    show(`Release Gate · ${c.name}`, `<p><b>Question.</b> ${esc(c.question)}</p><p><b>Release rule.</b> ${esc(c.rule)}</p><p>The check is proposed as part of the Six-Check Release Gate — a candidate operating framework, not an official Harvard policy.</p>`, c.owner, 'Evidence register', c.rule);
     return;
   }
   if (kind === 'gate') {
@@ -1349,10 +1567,7 @@ function details(key) {
     show(id + ' · ' + (map[id] || 'Reviewed'), `<p>SMARTER delivery logic — a candidate-proposed operating discipline, not an official Harvard standard.</p><p>Each letter maps to a concrete operating commitment in the playbook: specific gift-type standards, measurable quality, attainable rollout, relevant mission alignment, time-bound calendar, evaluated benefits, and reviewed governance.</p>`);
     return;
   }
-  if (kind === 'day') {
-    show(id, `<p>Proposed first-90-day window. Deliverables remain proposals until a charter is signed at G0.</p><p>Confirm data access, staff capacity, reviewer roles and the pilot scope before any commitment is made.</p>`, 'Director of Stewardship Reporting (proposed)');
-    return;
-  }
+  if (kind === 'day') { const x=START_90_DAY_RECORDS[id]; if(x)startWorkedPopup(x); return; }
   if (kind === 'partner') {
     show(id, `<p>Proposed cross-unit stewardship dependency. ${id} must validate the evidence they own before a donor report is released.</p><p>The RACI matrix defines exactly one accountable role per activity.</p>`, id, 'RACI matrix and evidence register');
     return;
@@ -1448,20 +1663,15 @@ function init() {
   build();
 
   document.addEventListener('click', e => {
+    if (donorEvent(e)) return;
     const go = e.target.closest('[data-go]');
-    if (go) { if (go.tagName === 'A') e.preventDefault(); navigate(go.dataset.go); return; }
+    if (go) { if (go.tagName === 'A') e.preventDefault(); if(dlg?.open && dlg.contains(go)) dlg.close(); navigate(go.dataset.go); return; }
 
     const d = e.target.closest('[data-detail]');
     if (d) { details(d.dataset.detail); return; }
 
     const pick=e.target.closest('[data-case]');if(pick){state.reportId=pick.dataset.case;state.page='report';build();return;}
     if(e.target.id==='batchRun'){const r=batchResult();state.deliveryRan=true;state.deliveryLog=[{at:new Date().toISOString(),id:r.c.id,decision:r.pass?'READY FOR QUEUE (DEMO)':'HOLD · '+r.why.join(', ')}].concat(state.deliveryLog).slice(0,8);build();return;}
-    if(e.target.id==='caseExport'){
-      const r=CASES.find(x=>x.id===state.reportId)||CASES[0];
-      const section=caseDetailed(r).replace(/<div class="connected no-print">[\s\S]*?<\/div>\s*<\/div>\s*<\/article>/,'</div></article>');
-      const h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(r.title)+' · Fictional Work Sample</title><style>'+document.querySelector('style').textContent+'</style></head><body style="padding:25px"><main style="max-width:1040px;margin:0 auto"><p><strong>INDEPENDENT WORK SAMPLE — ALL DATA FICTIONAL — NOT FOR DONOR DELIVERY</strong></p>'+section+'</main></body></html>';
-      download(r.code+'_fictional_report.html',h);return;
-    }
     if(e.target.id==='batchCSV'){const rows=[['case_id','channel','recipient_id','delivery_status'],['SIM-1','digital','recipient-SIM-1','eligible'],['SIM-2','print','recipient-SIM-2','approved mail'],['SIM-3','email','recipient-SIM-3','suppressed'],['SIM-4','email','recipient-SIM-4','hold: missing consent']];download('synthetic_stewardship_batch.csv',rows.map(r=>r.join(',')).join('\n'),'text/csv');return;}
     const act = e.target.closest('[data-action]');
     if (act) {
@@ -1519,6 +1729,25 @@ function init() {
 }
 
 init();
+
+/* Remember where the reviewer was before opening the platform or companion pages */
+function rememberPlaybookLocation(){ try { sessionStorage.setItem('aadLastPlaybook', 'playbook.html' + (location.hash || '#start')); sessionStorage.setItem('aadPlaybookHash', location.hash || '#start'); } catch(e){} }
+document.addEventListener('click', function(e){
+  const a=e.target.closest('a[href^="./"],a[href="./"]');
+  if (!a) return;
+  rememberPlaybookLocation();
+  // Carry the exact playbook chapter through URLs. GitHub Pages and same-tab
+  // return navigation then work even when storage is cleared or unavailable.
+  try {
+    const u=new URL(a.getAttribute('href'),location.href);
+    if (u.origin!==location.origin || !/\/(?:index\.html|communications\.html|donor-profile\.html)?$/.test(u.pathname)) return;
+    u.searchParams.set('return','playbook.html#'+(state.page||'start'));
+    a.setAttribute('href',(u.pathname.endsWith('/')?'./':'./'+u.pathname.substring(u.pathname.lastIndexOf('/')+1))+u.search+u.hash);
+  } catch(err) { /* Local file sandbox may lack URL origins. */ }
+});
+window.addEventListener('hashchange', rememberPlaybookLocation);
+rememberPlaybookLocation();
+
 </script>
 </body>
 </html>

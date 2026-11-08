@@ -1,0 +1,82 @@
+{
+  "version": "2026-11-07.1",
+  "operating_statement": "SMARTER governs execution; the Release Gate certifies evidence; VERITAS structures the donor narrative.",
+  "veritas": [
+    [
+      "V",
+      "Vision"
+    ],
+    [
+      "E",
+      "Experience"
+    ],
+    [
+      "R",
+      "Results"
+    ],
+    [
+      "I",
+      "Investment"
+    ],
+    [
+      "T",
+      "Truth"
+    ],
+    [
+      "A",
+      "Advancement"
+    ],
+    [
+      "S",
+      "Stewardship"
+    ]
+  ],
+  "release_gate": {
+    "name": "Six-Check Release Gate",
+    "summary": "Could a donor, an auditor, and an academic partner read this report together and agree that every sentence is true and traceable to its source?",
+    "checks": [
+      {
+        "id": "intent",
+        "name": "Intent",
+        "question": "Does the report describe the gift’s purpose exactly as the gift agreement records it?",
+        "rule": "Block release if purpose wording or proposed use conflicts with the agreement.",
+        "owner": "Gift Administration"
+      },
+      {
+        "id": "reconcile",
+        "name": "Reconciliation",
+        "question": "Do the financial figures reconcile to the certified year-end source?",
+        "rule": "Block release for any unexplained difference; any tolerance must be approved by Finance.",
+        "owner": "Finance"
+      },
+      {
+        "id": "consent",
+        "name": "Consent",
+        "question": "Are names, stories, quotes, and imagery permitted for the intended channels and dates?",
+        "rule": "Block release when required consent is absent, expired, or out of scope.",
+        "owner": "Stewardship + Academic Unit"
+      },
+      {
+        "id": "trace",
+        "name": "Traceability",
+        "question": "Does each material claim identify its source, period, definition, and owner?",
+        "rule": "Block release when a material claim cannot be traced to source evidence.",
+        "owner": "Stewardship Reporting"
+      },
+      {
+        "id": "attribution",
+        "name": "Attribution",
+        "question": "Does the narrative avoid causal or impact claims not demonstrated by the evidence?",
+        "rule": "Return overclaims for editorial and academic review before release.",
+        "owner": "Academic Partner + Editorial"
+      },
+      {
+        "id": "authorize",
+        "name": "Authorization",
+        "question": "Is release authorized by a named, permitted human reviewer and recorded in the audit log?",
+        "rule": "Block release until the correct authorized approver, approval time, and version are recorded.",
+        "owner": "Designated Release Authority"
+      }
+    ]
+  }
+}

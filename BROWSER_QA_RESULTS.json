@@ -1,0 +1,157 @@
+[
+  {
+    "test": "playbook 13 sections",
+    "pass": true,
+    "details": "13"
+  },
+  {
+    "test": "donor chapter integrated",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "donor tab overview",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "donor tab giving",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "donor tab notes",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "donor tab contacts",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "donor tab evidence",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "donor tab review",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "release toggles produce demo ready",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "simulation logs decision",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "human review recorded",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "JSON exported",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "release holds preserved",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "no browser errors in playbook",
+    "pass": true,
+    "details": "[]"
+  },
+  {
+    "test": "desktop preview generated",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "mobile page width fits viewport",
+    "pass": true,
+    "details": "390"
+  },
+  {
+    "test": "mobile donor view no JS errors",
+    "pass": true,
+    "details": "[]"
+  },
+  {
+    "test": "mobile preview generated",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "synchronized Release Gate index.html",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "synchronized Release Gate playbook.html",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "synchronized Release Gate communications.html",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "synchronized Release Gate donor-profile.html",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "playbook carries return query",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "main resolves return query",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "direct donor deep link supported",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "storytelling infographic appears",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "communications aligns 16/18",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "communications no JS errors",
+    "pass": true,
+    "details": "[]"
+  },
+  {
+    "test": "extended dossier six receipts",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "extended dossier $1.22M",
+    "pass": true,
+    "details": ""
+  },
+  {
+    "test": "dossier no JS errors",
+    "pass": true,
+    "details": "[]"
+  }
+]

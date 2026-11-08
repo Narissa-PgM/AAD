@@ -1,0 +1,38 @@
+[
+  {
+    "file": "index.html",
+    "script": 0,
+    "pass": true,
+    "error": ""
+  },
+  {
+    "file": "playbook.html",
+    "script": 0,
+    "pass": true,
+    "error": ""
+  },
+  {
+    "file": "communications.html",
+    "script": 0,
+    "pass": true,
+    "error": ""
+  },
+  {
+    "file": "donor-profile.html",
+    "script": 0,
+    "pass": true,
+    "error": ""
+  },
+  {
+    "file": "donor-profile.html",
+    "script": 1,
+    "pass": true,
+    "error": ""
+  },
+  {
+    "file": "operations.html",
+    "script": 0,
+    "pass": true,
+    "error": ""
+  }
+]

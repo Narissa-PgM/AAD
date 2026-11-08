@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donor profile — review workspace (work sample, synthetic)</title>
+<style>
+  :root{
+    --bg:#f8f9fb;--paper:#fff;--ink:#1d2b3d;--muted:#64748b;--line:#dfe5eb;
+    --red:#a51c30;--red-soft:#f9e8eb;--blue:#146aa3;--blue-soft:#e4f3ff;
+    --green:#16745c;--green-soft:#e3f2ed;--amber:#8c5900;--amber-soft:#fff2d9;
+    --shadow:0 8px 32px rgba(29,43,61,0.06);--radius:12px;
+    --font-serif:Cambria,Georgia,"Times New Roman",serif;
+    --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--font-serif);-webkit-font-smoothing:antialiased}
+  button{cursor:pointer;font:inherit}
+  a{color:var(--blue)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .wrap{max-width:1360px;margin:0 auto;padding:24px clamp(16px,3vw,32px) 60px}
+  .eyebrow{font:700 11px var(--font-sans);letter-spacing:1.6px;color:var(--red);text-transform:uppercase;margin-bottom:6px}
+  h1{font:700 clamp(22px,2.6vw,32px)/1.15 var(--font-serif);margin:0 0 4px}
+  h2{font:700 clamp(20px,2.2vw,26px)/1.2 var(--font-serif);margin:0 0 8px}
+  h3{font:700 17px var(--font-serif);margin:0 0 8px}
+  h4{font:700 14px var(--font-serif);margin:0 0 6px}
+  .lead{color:#5b6b7d;max-width:960px;margin:0 0 16px;font-size:15px}
+  .tag{display:inline-block;border-radius:20px;padding:4px 9px;font:700 10px var(--font-sans);letter-spacing:.4px;background:var(--red-soft);color:#832034;margin-right:4px;text-transform:uppercase}
+  .tag.blue{background:var(--blue-soft);color:#155883}
+  .tag.green{background:var(--green-soft);color:#116a55}
+  .tag.amber{background:var(--amber-soft);color:#815000}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-top:14px}
+  .panel:first-of-type{margin-top:0}
+  .panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+  .tile small{font:600 11px var(--font-sans);color:#5f6f83;display:block}
+  .tile .big{font:700 clamp(18px,1.8vw,24px)/1.15 var(--font-serif);margin:6px 0 4px;color:var(--ink)}
+  .tile p{font:11.5px/1.4 var(--font-sans);color:#68778a;margin:0}
+  .tile.red{border-top:3px solid var(--red)}
+  .tile.green{border-top:3px solid var(--green)}
+  .tile.amber{border-top:3px solid #cb8c2b}
+  .tile.blue{border-top:3px solid var(--blue)}
+  .meta{font:700 10px var(--font-sans);padding:3px 6px;border-radius:4px;background:#eef3f8;color:#3c536d;text-transform:uppercase;letter-spacing:.3px}
+  .meta.sample{background:var(--amber-soft);color:#815000}
+  .meta.public{background:var(--green-soft);color:#116a55}
+  .meta.proposed{background:var(--blue-soft);color:#155883}
+  .small{font:12px/1.5 var(--font-sans);color:var(--muted)}
+  .note{padding:10px 12px;border-left:3px solid var(--blue);background:#f2f8fc;font:12px/1.5 var(--font-sans);margin:10px 0;border-radius:0 6px 6px 0}
+  .note.amber{border-left-color:#cb8c2b;background:#fff8ec}
+  .note.red{border-left-color:var(--red);background:#fff6f7}
+  .btn{border:1px solid #cad4df;background:var(--paper);padding:7px 11px;border-radius:8px;color:#243e5b;font:600 12px var(--font-sans);transition:background 120ms,border-color 120ms}
+  .btn:hover{background:#f2f6fa;border-color:#a9b8c7}
+  .btn.primary{background:var(--red);color:#fff;border-color:var(--red)}
+  .btn.primary:hover{background:#891326;border-color:#891326}
+  .btn.small{padding:5px 9px;font-size:11px}
+  .btn.ghost{background:transparent;border-color:transparent}
+  .btn.ghost:hover{background:#f0f4f8}
+
+  /* Header identity */
+  .identity{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}
+  .identity h1{font-size:clamp(20px,2.4vw,28px)}
+  .identity .sub{font:13px/1.5 var(--font-sans);color:#4a5f73}
+  .identity .badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .identity .right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  .identity .right .who{font:11px var(--font-sans);color:var(--muted);text-align:right}
+
+  /* Tabs */
+  .tabs{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:0 0 16px;padding:0}
+  .tabs button{border:0;background:transparent;padding:11px 14px;font:600 12.5px var(--font-sans);color:#6b7c8f;border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tabs button:hover{color:var(--ink)}
+  .tabs button.on{color:var(--red);border-bottom-color:var(--red)}
+  .tab-panel{display:none}
+  .tab-panel.on{display:block}
+
+  /* Field grids */
+  .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .field{padding:10px 14px;border-bottom:1px solid #eef2f6;border-right:1px solid #eef2f6;font:12px/1.45 var(--font-sans);min-width:0}
+  .field:nth-child(2n){border-right:0}
+  .field:nth-last-child(-n+2){border-bottom:0}
+  .field .k{display:block;font:700 10px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .field .v{color:var(--ink);font-weight:600;word-break:break-word}
+  .field .v.muted{color:#93a3b5;font-weight:500;font-style:italic}
+  .field .v code{font:11.5px var(--font-mono);background:#f5f7fa;padding:1px 5px;border-radius:4px;color:#334155}
+  .field.wide{grid-column:1 / -1;border-right:0}
+
+  /* Giving history table */
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table.hist{border-collapse:collapse;width:100%;font:12px/1.4 var(--font-sans);min-width:760px}
+  table.hist th{background:#f3f6fa;text-align:left;padding:8px 10px;font:700 10.5px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:#4a5f73;border-bottom:1px solid var(--line)}
+  table.hist td{padding:8px 10px;border-bottom:1px solid #eef2f6;vertical-align:top}
+  table.hist tbody tr:hover td{background:#fbfcfd}
+  table.hist td.num{text-align:right;font-variant-numeric:tabular-nums}
+  table.hist tfoot td{background:#f7fafc;font-weight:700;border-top:2px solid var(--line)}
+  table.hist tfoot td.num{text-align:right}
+  table.hist .rmk{color:#4a5f73}
+
+  /* Giving chart */
+  .chart{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fbfdff;margin-bottom:14px}
+  .chart h4{font:700 10.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
+  .chart svg{width:100%;height:auto;display:block}
+  .chart .legend{display:flex;gap:14px;font:11.5px var(--font-sans);color:var(--muted);flex-wrap:wrap;margin-top:6px}
+  .chart .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+
+  /* Notes */
+  .notes{display:grid;gap:10px}
+  .note-card{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:8px;padding:10px 14px;background:#fbfdff}
+  .note-card .who{display:flex;justify-content:space-between;gap:8px;font:11.5px var(--font-sans);color:#4a5f73;margin-bottom:4px}
+  .note-card .who b{color:var(--ink)}
+  .note-card p{margin:0;font:13px/1.55 var(--font-serif);color:var(--ink)}
+  .note-card .type{display:inline-block;font:700 9.5px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:4px;background:#eef3f8;color:#3c536d;margin-right:6px}
+  .note-card.flag{border-left-color:var(--red)}
+  .note-card.flag .type{background:#fbe7e7;color:#92253b}
+
+  /* Review workspace */
+  .review-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:12px}
+  .check{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--paper);min-width:0}
+  .check .name{font:700 12px var(--font-sans);color:var(--ink)}
+  .check .state{font:700 11px var(--font-sans);margin-top:3px;text-transform:uppercase;letter-spacing:.04em}
+  .check .state.pass{color:#116a55}
+  .check .state.hold{color:#8a1c2c}
+  .check .state.na{color:#6b7c8f}
+  .check .owner{font:11px var(--font-sans);color:var(--muted);margin-top:3px}
+  .review-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .review-form label{display:grid;gap:4px;font:600 11.5px var(--font-sans);color:#3d4f5f}
+  .review-form input,.review-form select,.review-form textarea{border:1px solid #c7d3de;border-radius:7px;padding:8px 10px;font:13px var(--font-sans);background:var(--paper);color:var(--ink)}
+  .review-form textarea{min-height:80px;resize:vertical}
+  .review-form .wide{grid-column:1 / -1}
+  .review-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+  .review-decision{font:700 12px var(--font-sans);padding:8px 12px;border-radius:8px;display:inline-block;margin-top:8px}
+  .review-decision.hold{background:#fbe7e7;color:#92253b}
+  .review-decision.pass{background:var(--green-soft);color:#116a55}
+  .review-decision.none{background:#f2f4f7;color:#526173}
+  .review-log{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--line);padding-top:10px}
+  .review-log li{padding:7px 0;border-bottom:1px dashed var(--line);font:12px/1.5 var(--font-sans);color:#3d4f5f}
+  .review-log li:last-child{border-bottom:0}
+  .review-log b{color:var(--ink)}
+  .review-log small{color:var(--muted)}
+
+  /* Story */
+  .story{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;align-items:start}
+  .story .quote{font:italic 16px/1.5 var(--font-serif);color:#a51c30;padding:10px 14px;border-left:3px solid var(--red);background:#fff6f7;border-radius:0 8px 8px 0}
+  .story .meta-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;font:11.5px var(--font-sans);color:#4a5f73}
+  .story .meta-row span{padding:3px 8px;border-radius:6px;background:#f2f6fa;border:1px solid #e1e8ef}
+
+  /* Prior reports */
+  .reports-table{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table.reports{border-collapse:collapse;width:100%;font:12px/1.4 var(--font-sans);min-width:720px}
+  table.reports th{background:#f3f6fa;text-align:left;padding:8px 10px;font:700 10.5px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:#4a5f73;border-bottom:1px solid var(--line)}
+  table.reports td{padding:8px 10px;border-bottom:1px solid #eef2f6}
+  table.reports tr:hover td{background:#fbfcfd}
+
+  @media (max-width:1080px){
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .review-grid{grid-template-columns:repeat(3,1fr)}
+    .story{grid-template-columns:1fr}
+    .fields{grid-template-columns:1fr}
+    .field{border-right:0}
+    .field:nth-last-child(-n+2){border-bottom:1px solid #eef2f6}
+    .field:last-child{border-bottom:0}
+  }
+  @media (max-width:560px){
+    .grid,.grid.two,.grid.three{grid-template-columns:1fr}
+    .review-grid{grid-template-columns:repeat(2,1fr)}
+    .review-form{grid-template-columns:1fr}
+    .identity{grid-template-columns:1fr}
+    .identity .right{align-items:flex-start}
+    .identity .right .who{text-align:left}
+  }
+  @media print{
+    body{background:#fff}
+    .wrap{padding:0}
+    .no-print{display:none!important}
+    .panel{box-shadow:none;break-inside:avoid}
+    .tabs{display:none}
+    .tab-panel{display:block!important;break-before:auto}
+  }
+
+.contextbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--shadow)}
+.contextbar .left,.contextbar .right{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.contextbar .hint{font:12px var(--font-sans);color:var(--muted)}
+.jumpgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.jumpcard{border:1px solid var(--line);border-top:3px solid var(--red);border-radius:10px;padding:12px 14px;background:#fff}
+.jumpcard b{display:block;font:700 13px var(--font-sans);color:var(--ink);margin-bottom:4px}
+.jumpcard p{margin:0 0 10px;font:12px/1.5 var(--font-sans);color:#5b6b7d}
+@media(max-width:760px){.jumpgrid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="contextbar no-print">
+  <div class="left">
+    <button class="btn" id="returnBtn" style="display:none">← Return to playbook</button>
+    <a class="btn" href="./index.html#comms">Reporting Platform</a>
+    <a class="btn" href="./playbook.html#donor">Playbook donor review</a>
+  </div>
+  <div class="right">
+    <span class="hint">Connected work sample pages · use Return to pick up where you left off.</span>
+  </div>
+</div>
+
+
+  <div class="eyebrow">Donor profile · review workspace</div>
+  <p class="lead">Everything a reviewer needs before signing a report through the Release Gate: identity and preferences, gift-officer notes, five years of giving with each receipt traceable, the fund’s financial bridge, the consented story, prior reports, and a decision workspace.</p>
+  <div>
+    <span class="tag">Work sample · not an authorized plan</span>
+    <span class="tag blue">Synthetic records</span>
+    <span class="tag green">No real donor data</span>
+  </div>
+
+  <!-- ================= IDENTITY HEADER ================= -->
+  <section class="panel">
+    <div class="identity">
+      <div>
+        <h1>Eleanor M. Whitfield <span class="meta sample">SAMPLE</span></h1>
+        <div class="sub">
+          <b>P-1104</b> · Leadership donor · Class of 1994 · alumna, parent<br>
+          Relationship began 1994 · Assigned gift officer <b>J. Chen</b> · Portfolio Tier 1
+        </div>
+        <div class="badges">
+          <span class="tag">Major donor</span>
+          <span class="tag blue">Endowed fund holder</span>
+          <span class="tag green">Class volunteer</span>
+          <span class="tag amber">Renewal due in 90 days</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="who">
+          Last contact 2027-02-14<br>
+          Record updated 2027-03-15
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
+          <button class="btn small" disabled title="No real CRM connection: portfolio simulation only">CRM · demo only</button>
+          <button class="btn small" id="dp-print">Print profile</button>
+          <button class="btn small primary" id="dp-draft">Draft message ↗</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:16px">
+      <div class="tile red"><small>Lifetime giving</small><div class="big">$1,220,000</div><p>5 fiscal years · 6 posted gifts</p></div>
+      <div class="tile blue"><small>This fiscal year</small><div class="big">$660,000</div><p>endowed fund + pledge</p></div>
+      <div class="tile green"><small>Fund supported</small><div class="big">Whitfield Scholarship</div><p>DEMO-AID-01 · endowed</p></div>
+      <div class="tile amber"><small>Open reports</small><div class="big">1</div><p>RPT-FY-2026-0142 · in Finance validation</p></div>
+    </div>
+  </section>
+
+  <!-- ================= TABS ================= -->
+  <section class="panel" style="padding:0">
+    <div style="padding:14px 18px 0">
+      <div class="tabs" role="tablist" aria-label="Donor profile sections">
+        <button role="tab" aria-selected="true" class="on" data-tab="overview">Overview</button>
+        <button role="tab" aria-selected="false" data-tab="giving">Giving history</button>
+        <button role="tab" aria-selected="false" data-tab="fund">Fund & financials</button>
+        <button role="tab" aria-selected="false" data-tab="notes">Gift-officer notes</button>
+        <button role="tab" aria-selected="false" data-tab="story">Story & consent</button>
+        <button role="tab" aria-selected="false" data-tab="reports">Prior reports</button>
+        <button role="tab" aria-selected="false" data-tab="review">Review & decision</button>
+      </div>
+    </div>
+
+    <!-- ---------- OVERVIEW ---------- -->
+    <div class="tab-panel on" id="tab-overview" style="padding:16px 18px 18px">
+      <h3>Who this donor is, before you read a single figure</h3>
+      <p class="lead">The record a reviewer reads first: how the donor wants to be addressed, what they have told us about contact, what we know about their relationship with the fund. Every field here is sourced from the CRM extract dated 2027-03-15.</p>
+
+      <div class="fields">
+        <div class="field"><span class="k">Preferred name</span><span class="v">Eleanor Whitfield</span></div>
+        <div class="field"><span class="k">Verbatim salutation</span><span class="v"><code>Ms. Whitfield</code> · no invitation to first name</span></div>
+        <div class="field"><span class="k">Preferred channel</span><span class="v">Digital (email)</span></div>
+        <div class="field"><span class="k">Anonymity flag</span><span class="v">Off · name may be used in reports</span></div>
+        <div class="field"><span class="k">Naming rule</span><span class="v">Full name in endowed reports</span></div>
+        <div class="field"><span class="k">Last preference change</span><span class="v">2027-02-14 · no direct mail since</span></div>
+        <div class="field"><span class="k">Mailing address</span><span class="v">Home · verified 2027-01-18</span></div>
+        <div class="field"><span class="k">Email address</span><span class="v"><code>e.whitfield@example.com</code></span></div>
+        <div class="field"><span class="k">Do not contact</span><span class="v muted">None</span></div>
+        <div class="field"><span class="k">Language preference</span><span class="v">English</span></div>
+        <div class="field wide"><span class="k">Accessibility notes</span><span class="v muted">None recorded</span></div>
+      </div>
+
+      <h4 style="margin:16px 0 6px">Relationship at a glance</h4>
+      <div class="grid three">
+        <div class="tile"><small>Relationship stage</small><div class="big" style="font-size:15px">Renewal due in 90 days</div><p>Next renewal window opens 2027-06-30</p></div>
+        <div class="tile"><small>Volunteer roles</small><div class="big" style="font-size:15px">Reunion committee</div><p>Class of 1994 · 2024–present</p></div>
+        <div class="tile"><small>Contact this year</small><div class="big" style="font-size:15px">3 conversations · 2 events</div><p>Last conversation 2027-02-14</p></div>
+      </div>
+    </div>
+
+    <!-- ---------- GIVING HISTORY ---------- -->
+    <div class="tab-panel" id="tab-giving" style="padding:16px 18px 18px">
+      <h3>Every gift, traceable to its receipt</h3>
+      <p class="lead">The donor made six recorded gifts across five fiscal years. Each row is a receipt that a reviewer can open. The fund’s report may cite the FY2026 total; it must never cite a lifetime total without stating the period and the exclusions.</p>
+
+      <div class="chart">
+        <h4>Giving by year (FY2023–FY2027)</h4>
+        <svg viewBox="0 0 640 200" role="img" aria-label="Bar chart of giving by year">
+          <!-- gridlines -->
+          <line x1="60" y1="20" x2="620" y2="20" stroke="#eef2f6"/>
+          <line x1="60" y1="65" x2="620" y2="65" stroke="#eef2f6"/>
+          <line x1="60" y1="110" x2="620" y2="110" stroke="#eef2f6"/>
+          <line x1="60" y1="155" x2="620" y2="155" stroke="#eef2f6"/>
+          <line x1="60" y1="170" x2="620" y2="170" stroke="#dfe5eb"/>
+          <!-- y labels -->
+          <text x="52" y="24" text-anchor="end" font-family="system-ui" font-size="10" fill="#64748b">$700K</text>
+          <text x="52" y="69" text-anchor="end" font-family="system-ui" font-size="10" fill="#64748b">$525K</text>
+          <text x="52" y="114" text-anchor="end" font-family="system-ui" font-size="10" fill="#64748b">$350K</text>
+          <text x="52" y="159" text-anchor="end" font-family="system-ui" font-size="10" fill="#64748b">$175K</text>
+          <text x="52" y="174" text-anchor="end" font-family="system-ui" font-size="10" fill="#64748b">$0</text>
+          <!-- bars: FY2023 120, FY2024 180, FY2025 240, FY2026 660, FY2027 current FY 20 -->
+          <rect x="100" y="139" width="70" height="31" fill="#2b5c8a" rx="2"/>
+          <text x="135" y="133" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="#152430">$120K</text>
+          <text x="135" y="186" text-anchor="middle" font-family="system-ui" font-size="10" fill="#55697a">FY2023</text>
+          <rect x="210" y="123" width="70" height="47" fill="#2b5c8a" rx="2"/>
+          <text x="245" y="117" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="#152430">$180K</text>
+          <text x="245" y="186" text-anchor="middle" font-family="system-ui" font-size="10" fill="#55697a">FY2024</text>
+          <rect x="320" y="108" width="70" height="62" fill="#2b5c8a" rx="2"/>
+          <text x="355" y="102" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="#152430">$240K</text>
+          <text x="355" y="186" text-anchor="middle" font-family="system-ui" font-size="10" fill="#55697a">FY2025</text>
+          <rect x="430" y="25" width="70" height="145" fill="#a51c30" rx="2"/>
+          <text x="465" y="19" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="#a51c30">$660K</text>
+          <text x="465" y="186" text-anchor="middle" font-family="system-ui" font-size="10" fill="#55697a">FY2026</text>
+          <rect x="540" y="166" width="70" height="4" fill="#94a3b8" rx="2"/>
+          <text x="575" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#55697a">FY2027</text>
+          <text x="575" y="186" text-anchor="middle" font-family="system-ui" font-size="10" fill="#55697a">in progress</text>
+        </svg>
+        <div class="legend"><span><i style="background:#2b5c8a"></i>Prior-year gift</span><span><i style="background:#a51c30"></i>FY2026 reported gift</span><span><i style="background:#94a3b8"></i>In-progress year</span></div>
+      </div>
+
+      <div class="tw">
+        <table class="hist">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Fund</th>
+              <th>Purpose</th>
+              <th>Receipt</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2027-03-14</td>
+              <td class="num">$20,000</td>
+              <td>Whitfield Scholarship</td>
+              <td>Endowed scholarship · undergraduate aid</td>
+              <td><code>RCP-2027-0412</code></td>
+              <td><span class="tag green">Posted</span></td>
+            </tr>
+            <tr>
+              <td>2026-04-11</td>
+              <td class="num">$500,000</td>
+              <td>Whitfield Scholarship</td>
+              <td>Endowed scholarship · undergraduate aid</td>
+              <td><code>RCP-2026-1488</code></td>
+              <td><span class="tag green">Posted</span></td>
+            </tr>
+            <tr>
+              <td>2026-06-02</td>
+              <td class="num">$160,000</td>
+              <td>Whitfield Scholarship</td>
+              <td>Endowed scholarship · capital pledge</td>
+              <td><code>RCP-2026-0987</code></td>
+              <td><span class="tag green">Posted</span></td>
+            </tr>
+            <tr>
+              <td>2025-04-30</td>
+              <td class="num">$240,000</td>
+              <td>Whitfield Scholarship</td>
+              <td>Endowed fund contribution</td>
+              <td><code>RCP-2025-1892</code></td>
+              <td><span class="tag green">Posted</span></td>
+            </tr>
+            <tr>
+              <td>2024-04-04</td>
+              <td class="num">$180,000</td>
+              <td>Whitfield Scholarship</td>
+              <td>Scholarship + capital</td>
+              <td><code>RCP-2024-2011</code></td>
+              <td><span class="tag green">Posted</span></td>
+            </tr>
+            <tr>
+              <td>2023-03-09</td>
+              <td class="num">$120,000</td>
+              <td>Whitfield Scholarship</td>
+              <td>Annual fund + scholarship</td>
+              <td><code>RCP-2023-0955</code></td>
+              <td><span class="tag green">Posted</span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="1">Lifetime (all recorded)</td>
+              <td class="num">$1,220,000</td>
+              <td colspan="4" class="rmk">6 gifts · FY2023–FY2027 · includes one FY2027 gift received 2027-03-14</td>
+            </tr>
+            <tr>
+              <td colspan="1">Reported FY2026 only</td>
+              <td class="num">$660,000</td>
+              <td colspan="4" class="rmk">Two gifts received in FY2026 · excludes the FY2027 gift above</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="note amber"><b>Reading rule:</b> a report may cite the FY2026 figure of $660,000 with its period. It may not cite lifetime giving without stating the period, the receipt count, and that the FY2027 gift is excluded. Every figure in this table is a receipt a reviewer can open.</div>
+    </div>
+
+    <!-- ---------- FUND & FINANCIALS ---------- -->
+    <div class="tab-panel" id="tab-fund" style="padding:16px 18px 18px">
+      <h3>The fund the report is about</h3><div class="note amber">Reconciled synthetic demo: six posted gifts total $1,220,000 across FY2023–FY2027. Two FY2026 receipts total $660,000; these are separate from the $55,000 endowment distribution. Annual reports must not conflate gifts received with amounts spent.</div>
+      <p class="lead">The financial record a report’s financial section must reflect. Every figure here ties to the certified FY2026 statement; the distribution bridge is the arithmetic a reviewer should be able to check in ten seconds.</p>
+
+      <div class="fields">
+        <div class="field"><span class="k">Fund</span><span class="v">The Whitfield Scholarship Fund (DEMO-AID-01)</span></div>
+        <div class="field"><span class="k">Fund type</span><span class="v">Endowed · scholarship</span></div>
+        <div class="field"><span class="k">Purpose (verbatim)</span><span class="v">Support undergraduate financial aid so that admitted students can attend regardless of family resources.</span></div>
+        <div class="field"><span class="k">Gift agreement</span><span class="v"><code>GA-2024-118</code> · signed 2024-06-12 · amended 2026-04-03</span></div>
+        <div class="field"><span class="k">Fiscal year</span><span class="v">FY2026 · closed 2026-06-30</span></div>
+        <div class="field"><span class="k">Certification</span><span class="v">Certified 2026-08-14 · Controller’s Office</span></div>
+      </div>
+
+      <h4 style="margin:16px 0 6px">Distribution bridge · FY2026</h4>
+      <div class="tw">
+        <table class="hist">
+          <thead>
+            <tr><th>Line item</th><th>Amount</th><th>Source</th><th>Check</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Market value · 2026-06-30</td><td class="num">$1,250,000</td><td>GL extract <code>0x7fa2c9…43d1</code></td><td><span class="tag green">Certified</span></td></tr>
+            <tr><td>Distribution for the year (4.40% policy)</td><td class="num">$55,000</td><td>GL extract</td><td><span class="tag green">Certified</span></td></tr>
+            <tr><td>Spent on purpose</td><td class="num">− $46,000</td><td>Spending detail · 4 line items</td><td><span class="tag green">Ties</span></td></tr>
+            <tr><td>Carried forward</td><td class="num">$9,000</td><td>Distribution − spent</td><td><span class="tag amber">Plan required</span></td></tr>
+            <tr><td>New principal gifts received · FY2026</td><td class="num">$660,000</td><td>Gift ledger · separate from annual distribution</td><td><span class="tag green">Sample</span></td></tr>
+            <tr><td>Variance</td><td class="num">$0</td><td>Tolerance max($5,000, 0.1%)</td><td><span class="tag green">PASS</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note"><b>Arithmetic:</b> distribution $55,000 = spent $46,000 + carried $9,000. Variance $0. The carry-forward plan — two additional awards in FY2027 — must appear in the report before the reviewer can sign.</div>
+
+      <h4 style="margin:16px 0 6px">Recipient cohort · FY2026</h4>
+      <div class="grid three">
+        <div class="tile blue"><small>Awards</small><div class="big">18</div><p>need-based awards · from aid ledger</p></div>
+        <div class="tile green"><small>Continued</small><div class="big">16 of 18</div><p>to the next year · IR cohort file</p></div>
+        <div class="tile amber"><small>Pending follow-up</small><div class="big">2 of 18</div><p>records pending · do not state as “graduated”</p></div>
+      </div>
+      <div class="note amber"><b>Attribution rule:</b> 16 of 18 continued into the next year. That is a count, not a causal claim. The report may say the fund “supported” these students; it may not say the fund “caused” their continuation. The two pending records are excluded from the count but visible to the reviewer.</div>
+    </div>
+
+    <!-- ---------- NOTES ---------- -->
+    <div class="tab-panel" id="tab-notes" style="padding:16px 18px 18px">
+      <h3>What the gift officer knows</h3>
+      <p class="lead">Relationship notes are the context the report does not carry, but the reviewer needs. Each note is attributed, dated, and typed (context, preference, action, flag). Notes marked <b>flag</b> are the ones a reviewer must read before signing.</p>
+
+      <div class="notes">
+        <div class="note-card flag">
+          <div class="who"><div><span class="type flag">Flag</span><b>J. Chen</b> · Gift Officer</div><div>2027-03-12</div></div>
+          <p>Ms. Whitfield reads the full report closely. She will notice the $9,000 carry-forward before she reaches the letter. The report should name it, and I would like to send the candor note the day before the report goes out.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Context</span><b>J. Chen</b> · Gift Officer</div><div>2027-02-14</div></div>
+          <p>Phone conversation, 25 minutes. She asked specifically about Maya’s cohort — the second-year student she met at the scholarship lunch in November. She wants to know how many of that cohort stayed.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Preference</span><b>J. Chen</b> · Gift Officer</div><div>2027-02-14</div></div>
+          <p>Prefers email to post since February. Do not send the print copy of the report unless she asks. When the report is ready, email first, and let her tell us if she wants a print copy.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Action</span><b>J. Chen</b> · Gift Officer</div><div>2027-03-15</div></div>
+          <p>Follow-up task created for 2027-03-29. I will call her two days after the report goes out, not on the day. If she replies to the report by email, I will respond within the same day.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Context</span><b>M. Osei</b> · Second Writer (reviewer)</div><div>2027-03-16</div></div>
+          <p>Verified the salutation against the CRM preference field. It is “Ms. Whitfield” verbatim — no invitation to first name. The AI draft had “Dear Eleanor”; corrected in the change log.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Flag</span><b>K. Rodriguez</b> · Controller’s Office</div><div>2027-03-14</div></div>
+          <p>FY2026 GL extract is certified. The $9,000 carry-forward is legitimate — two awards confirmed after June 30. Any report referencing the carry-forward must state the plan, or I will not sign the financial section.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Context</span><b>J. Chen</b> · Gift Officer</div><div>2026-11-08</div></div>
+          <p>At the scholarship lunch, she met Maya. She mentioned Maya by name to two other donors. I asked Maya’s permission for her story to be used in the annual report; consent signed 2026-09-14, expires 2027-06-30.</p>
+        </div>
+        <div class="note-card">
+          <div class="who"><div><span class="type">Preference</span><b>J. Chen</b> · Gift Officer</div><div>2026-04-11</div></div>
+          <p>On the $500,000 endowed gift, she asked that the recognition read “The Whitfield Scholarship Fund” — no mention of Mr. Whitfield individually in the endowed reports. The memorial fund for Mr. Whitfield is a separate fund (DEMO-FAM-04).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- STORY ---------- -->
+    <div class="tab-panel" id="tab-story" style="padding:16px 18px 18px">
+      <h3>The story, and the consent that makes it safe</h3>
+      <p class="lead">A reviewer should be able to see the story, the consent it sits on, and the exact scope of that consent, in one view. This is the section that keeps the annual report from carrying a quote that has already expired.</p>
+
+      <div class="story">
+        <div>
+          <h4>Maya · consented quote</h4>
+          <div class="quote">“I once thought I would have to leave. The scholarship is the reason I am still here — and the reason I am applying to graduate school.”</div>
+          <div class="meta-row">
+            <span>Story ID <code>ST-2026-0142</code></span>
+            <span>Anonymous · first name only</span>
+            <span>Consent signed 2026-09-14</span>
+            <span>Expires 2027-06-30</span>
+          </div>
+          <div class="meta-row">
+            <span>Scope: this report, this year</span>
+            <span>Channels: print + digital report</span>
+            <span>Not for social or appeal</span>
+          </div>
+          <p class="small" style="margin-top:10px">Maya is a fictional student. Every fact above is synthetic, and the consent is a demonstration of the record a real consent would live in.</p>
+        </div>
+        <div>
+          <h4>Consent record</h4>
+          <div class="fields" style="grid-template-columns:1fr">
+            <div class="field"><span class="k">Signed</span><span class="v">2026-09-14</span></div>
+            <div class="field"><span class="k">Expires</span><span class="v">2027-06-30</span></div>
+            <div class="field"><span class="k">Scope</span><span class="v">This report · FY2026 endowed report only</span></div>
+            <div class="field"><span class="k">Name use</span><span class="v">First name only · no photo</span></div>
+            <div class="field"><span class="k">Withdrawal</span><span class="v">Any time, no questions asked</span></div>
+            <div class="field"><span class="k">Reuse rule</span><span class="v">Requires new consent for any future use</span></div>
+          </div>
+          <div class="note red" style="margin-top:10px"><b>Release Gate dependency:</b> if the report is released after 2027-06-30, the story must be removed or a new consent obtained. The Release Gate will show this as HOLD until the consent date is verified against the release date.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- PRIOR REPORTS ---------- -->
+    <div class="tab-panel" id="tab-reports" style="padding:16px 18px 18px">
+      <h3>What we have sent this donor before</h3>
+      <p class="lead">A reviewer reading five years of reporting in one view can see how the donor has been treated — and whether the current report is a continuation or a break. That history is also the record of what was previously promised.</p>
+
+      <div class="reports-table">
+        <table class="reports">
+          <thead>
+            <tr>
+              <th>Report</th>
+              <th>Year</th>
+              <th>Delivered</th>
+              <th>Content</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>RPT-FY-2022-0093</code></td>
+              <td>FY2022</td>
+              <td>2022-10-04 · email</td>
+              <td>Endowed report · 11 awards</td>
+              <td><span class="tag green">Opened · replied</span></td>
+            </tr>
+            <tr>
+              <td><code>RPT-FY-2023-0107</code></td>
+              <td>FY2023</td>
+              <td>2023-09-28 · email</td>
+              <td>Endowed report · 13 awards · first Maya story? <span class="meta sample">SAMPLE</span></td>
+              <td><span class="tag green">Opened · no reply</span></td>
+            </tr>
+            <tr>
+              <td><code>RPT-FY-2024-0121</code></td>
+              <td>FY2024</td>
+              <td>2024-10-02 · email + print</td>
+              <td>Endowed report · 15 awards · named recognition</td>
+              <td><span class="tag green">Opened · replied</span></td>
+            </tr>
+            <tr>
+              <td><code>RPT-FY-2025-0148</code></td>
+              <td>FY2025</td>
+              <td>2025-04-30 · email</td>
+              <td>Endowed report · 17 awards</td>
+              <td><span class="tag green">Opened · replied</span></td>
+            </tr>
+            <tr>
+              <td><code>RPT-FY-2026-0142</code></td>
+              <td>FY2026</td>
+              <td>in progress · release pending</td>
+              <td>Endowed report · 18 awards · Maya consent</td>
+              <td><span class="tag amber">Finance validation</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note"><b>Pattern:</b> every prior report was opened; three of four received a reply. That is a signal the current report should preserve the format — not shorten it. The prior reports are also the record of what was previously promised: the FY2024 report said “named recognition,” which must be honored again this year.</div>
+
+      <h4 style="margin:16px 0 6px">What we promised last year, and whether it happened</h4>
+      <div class="tw">
+        <table class="hist">
+          <thead><tr><th>Promise in the FY2025 report</th><th>Status</th><th>Evidence</th></tr></thead>
+          <tbody>
+            <tr><td>“We will apply the full FY2025 distribution to awards.”</td><td><span class="tag green">Delivered</span></td><td>17 awards funded · FY2025 close</td></tr>
+            <tr><td>“We will share a recipient’s story with permission.”</td><td><span class="tag green">Delivered</span></td><td>Maya consent signed 2026-09-14</td></tr>
+            <tr><td>“We will report any unspent funds.”</td><td><span class="tag amber">In progress</span></td><td>The $9,000 carry-forward is disclosed in the FY2026 report</td></tr>
+            <tr><td>“We will invite you to a conversation before the renewal window.”</td><td><span class="tag amber">Scheduled</span></td><td>Gift officer follow-up scheduled 2027-03-29</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ---------- REVIEW ---------- -->
+    <div class="tab-panel" id="tab-review" style="padding:16px 18px 18px">
+      <h3>Review & decision</h3>
+      <p class="lead">The workspace the reviewer signs the report through. The six Release Gate checks, the record the reviewer should have in front of them, and the decision record that will ship with the report.</p>
+
+      <div class="review-grid">
+        <div class="check"><div class="name">Intent</div><div class="state pass">PASS</div><div class="owner">Purpose verified against GA-2024-118</div></div>
+        <div class="check"><div class="name">Reconciliation</div><div class="state pass">PASS</div><div class="owner">Variance $0 · certified close</div></div>
+        <div class="check"><div class="name">Consent</div><div class="state hold">HOLD</div><div class="owner">Maya consent expires 2027-06-30 · verify before release</div></div>
+        <div class="check"><div class="name">Traceability</div><div class="state pass">PASS</div><div class="owner">Every claim resolves to a named source</div></div>
+        <div class="check"><div class="name">Attribution</div><div class="state pass">PASS</div><div class="owner">No causal language in the draft</div></div>
+        <div class="check"><div class="name">Authorization</div><div class="state hold">HOLD</div><div class="owner">Named approver not yet recorded</div></div>
+      </div>
+
+      <div class="review-form">
+        <label>Reviewer<input type="text" id="rv-name" placeholder="Name and role" value=""></label>
+        <label>Decision
+          <select id="rv-decision">
+            <option value="hold">Hold · return to writer</option>
+            <option value="pass">Request simulated release (blocked until holds clear)</option>
+            <option value="defer">Defer · awaiting an owner</option>
+          </select>
+        </label>
+        <label class="wide">Notes for the record
+          <textarea id="rv-note" placeholder="What did you check? What did you decide? What must happen before release?"></textarea>
+        </label>
+        <label>Conditions (optional)<input type="text" id="rv-cond" placeholder="e.g. consent re-verified for release date"></label>
+        <label>Next owner<input type="text" id="rv-next" placeholder="e.g. J. Chen · 2027-03-29"></label>
+      </div>
+      <div class="review-actions">
+        <button class="btn primary" id="rv-save">Record decision</button>
+        <button class="btn" id="rv-clear">Clear form</button>
+        <span class="review-decision none" id="rv-state">No decision yet</span>
+      </div>
+
+      <h4 style="margin:16px 0 4px">Decision log</h4>
+      <ul class="review-log" id="rv-log">
+        <li><b>M. Osei</b> · 2027-03-16 · <span class="tag green">Note</span> Salutation verified against CRM; AI draft “Dear Eleanor” corrected to “Dear Ms. Whitfield.”</li>
+        <li><b>K. Rodriguez</b> · 2027-03-14 · <span class="tag green">Certification</span> FY2026 GL extract certified; carry-forward accepted with plan.</li>
+      </ul>
+      <p class="small">This log is a demonstration. In production, the log writes to the reporting pipeline’s evidence register, is locked after signing, and is visible to any future reviewer of the same fund.</p>
+    </div>
+  </section>
+
+  <footer class="small" style="margin-top:24px;padding-top:14px;border-top:1px solid var(--line)">
+    <p><b>About this page.</b> A candidate-proposed donor profile workspace. Every name, amount, receipt, consent, and note is synthetic and labeled <span class="meta sample">SAMPLE</span>. This fictional example includes a full invented name and code; neither identifies a real donor. No real donor, student, gift officer, or fund is represented. The purpose is to show the record a reviewer should have in front of them before signing a report through the Release Gate.</p>
+  </footer>
+</div>
+
+<script>
+'use strict';
+const $ = (s, ctx = document) => ctx.querySelector(s);
+const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+const E = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+/* Tabs */
+$$('.tabs button').forEach(b => {
+  b.addEventListener('click', () => {
+    $$('.tabs button').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); });
+    b.classList.add('on'); b.setAttribute('aria-selected', 'true');
+    $$('.tab-panel').forEach(p => p.classList.remove('on'));
+    $('#tab-' + b.getAttribute('data-tab')).classList.add('on');
+  });
+});
+
+document.getElementById('dp-print')?.addEventListener('click',()=>window.print());
+document.getElementById('dp-draft')?.addEventListener('click',()=>{location.href='./communications.html';});
+/* Decision record */
+const rvState = $('#rv-state');
+const rvLog = $('#rv-log');
+
+function showDecision(text, cls) {
+  rvState.textContent = text;
+  rvState.className = 'review-decision ' + cls;
+}
+
+$('#rv-save').addEventListener('click', () => {
+  const name = ($('#rv-name').value || '').trim();
+  const dec = $('#rv-decision').value;
+  const note = ($('#rv-note').value || '').trim();
+  const cond = ($('#rv-cond').value || '').trim();
+  const next = ($('#rv-next').value || '').trim();
+  if (!name || !note) { showDecision('HOLD · reviewer name and reason required', 'hold'); return; }
+  const label = { hold: 'Hold · return to writer', pass: 'HOLD · simulated release request blocked (consent and authorization pending)', defer: 'Defer · awaiting owner' }[dec];
+  const cls = dec === 'pass' || dec === 'hold' ? 'hold' : 'none';
+  const time = new Date().toLocaleString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const li = document.createElement('li');
+  li.innerHTML = `<b>${E(name)}</b> · ${E(time)} · <span class="tag ${dec === 'pass' || dec === 'hold' ? 'amber' : ''}">${E(label)}</span>${note ? `<br>${E(note)}` : ''}${cond ? `<br><small>Condition: ${E(cond)}</small>` : ''}${next ? `<br><small>Next owner: ${E(next)}</small>` : ''}`;
+  rvLog.prepend(li);
+  showDecision(label, cls);
+});
+
+$('#rv-clear').addEventListener('click', () => {
+  $('#rv-name').value = '';
+  $('#rv-note').value = '';
+  $('#rv-cond').value = '';
+  $('#rv-next').value = '';
+  $('#rv-decision').value = 'hold';
+  showDecision('No decision yet', 'none');
+});
+</script>
+
+<section class="panel">
+  <h3>Where this profile connects</h3>
+  <div class="jumpgrid">
+    <div class="jumpcard"><b>Messages & storytelling</b><p>Draft the donor letter, email and follow-up using the same fictional record, tone controls and message prompts.</p><a class="btn" href="./communications.html">Open communications library →</a></div>
+    <div class="jumpcard"><b>Reporting platform</b><p>See the complete fictional report, release state and linked donor record in the main platform.</p><a class="btn" href="./index.html#flow">Open reporting platform →</a></div>
+    <div class="jumpcard"><b>Operating playbook</b><p>Review the batch-delivery controls, release decisions, SOPs and calendar that govern this record before send.</p><a class="btn" href="./playbook.html#donor">Open integrated donor review →</a></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  function saveReturn(){ try { sessionStorage.setItem('aadReturnPlaybook', sessionStorage.getItem('aadLastPlaybook') || 'playbook.html#start'); } catch(e){} }
+  document.querySelectorAll('a[href^="./index"],a[href^="./playbook"],a[href^="./communications"],a[href^="./donor-profile"]').forEach(function(a){ a.addEventListener('click', saveReturn); });
+  var btn=document.getElementById('returnBtn');
+  try {
+    var from=new URLSearchParams(location.search).get('return');
+    var target=(/^playbook\.html#(?:start|framework|brief|report|donor|standard|factory|delivery|toolkit|plan|measure|close|govern)$/.test(from||'')?from:'')||sessionStorage.getItem('aadReturnPlaybook')||sessionStorage.getItem('aadLastPlaybook');
+    if(btn && target){ btn.style.display='inline-block'; btn.addEventListener('click', function(){ location.href='./'+target; }); }
+  } catch(e){}
+})();
+</script>
+</body>
+</html>

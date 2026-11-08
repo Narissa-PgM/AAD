@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMARTER communications library — tone, visuals, story spine</title>
+<style>
+  :root{
+    --bg:#f8f9fb;--paper:#fff;--ink:#1d2b3d;--muted:#64748b;--line:#dfe5eb;
+    --red:#a51c30;--red-soft:#f9e8eb;--blue:#146aa3;--blue-soft:#e4f3ff;
+    --green:#16745c;--green-soft:#e3f2ed;--amber:#8c5900;--amber-soft:#fff2d9;
+    --shadow:0 8px 32px rgba(29,43,61,0.06);--radius:12px;
+    --font-serif:Cambria,Georgia,"Times New Roman",serif;
+    --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--font-serif);-webkit-font-smoothing:antialiased}
+  button{cursor:pointer;font:inherit}
+  a{color:var(--blue)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .wrap{max-width:1360px;margin:0 auto;padding:26px clamp(16px,3vw,36px) 60px}
+  .eyebrow{font:700 11px var(--font-sans);letter-spacing:1.6px;color:var(--red);text-transform:uppercase;margin-bottom:6px}
+  h1{font:700 clamp(26px,3.4vw,38px)/1.15 var(--font-serif);margin:0 0 10px}
+  h2{font:700 clamp(22px,2.4vw,28px)/1.2 var(--font-serif);margin:0 0 8px}
+  h3{font:700 19px var(--font-serif);margin:0 0 8px}
+  h4{font:700 15px var(--font-serif);margin:0 0 6px}
+  .lead{color:#5b6b7d;max-width:960px;margin:0 0 18px;font-size:16px}
+  .tag{display:inline-block;border-radius:20px;padding:5px 10px;font:700 10px var(--font-sans);letter-spacing:.4px;background:var(--red-soft);color:#832034;margin-right:6px;text-transform:uppercase}
+  .tag.blue{background:var(--blue-soft);color:#155883}
+  .tag.green{background:var(--green-soft);color:#116a55}
+  .tag.amber{background:var(--amber-soft);color:#815000}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-top:16px}
+  .panel:first-of-type{margin-top:0}
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px;border-top:3px solid var(--blue);min-width:0}
+  .tile.red{border-top-color:var(--red)}
+  .tile.green{border-top-color:var(--green)}
+  .tile.amber{border-top-color:#cb8c2b}
+  .tile small{font:600 11px var(--font-sans);color:#5f6f83;display:block}
+  .tile .big{font:700 clamp(20px,2vw,28px)/1.15 var(--font-serif);margin:8px 0 5px;color:var(--ink)}
+  .tile p{font:12px/1.4 var(--font-sans);color:#68778a;margin:0}
+  .meta{font:700 10px var(--font-sans);padding:3px 6px;border-radius:4px;background:#eef3f8;color:#3c536d;text-transform:uppercase;letter-spacing:.3px}
+  .meta.sample{background:var(--amber-soft);color:#815000}
+  .meta.public{background:var(--green-soft);color:#116a55}
+  .meta.proposed{background:var(--blue-soft);color:#155883}
+  .small{font:12px/1.5 var(--font-sans);color:var(--muted)}
+  .note{padding:10px 12px;border-left:3px solid var(--blue);background:#f2f8fc;font:12px/1.5 var(--font-sans);margin:10px 0;border-radius:0 6px 6px 0}
+  .note.amber{border-left-color:#cb8c2b;background:#fff8ec}
+  .btn{border:1px solid #cad4df;background:var(--paper);padding:8px 12px;border-radius:8px;color:#243e5b;font:600 12px var(--font-sans);transition:background 120ms,border-color 120ms}
+  .btn:hover{background:#f2f6fa;border-color:#a9b8c7}
+  .btn.primary{background:var(--red);color:#fff;border-color:var(--red)}
+  .btn.primary:hover{background:#891326;border-color:#891326}
+  .btn.small{padding:5px 9px;font-size:11px}
+
+  /* SMARTER ribbon */
+  .smart-ribbon{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:12px}
+  .smart-card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:12px;text-align:center;min-width:0;cursor:pointer;transition:transform 120ms,box-shadow 120ms}
+  .smart-card:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(29,43,61,.08)}
+  .smart-card .let{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font:700 17px var(--font-serif);margin-bottom:5px}
+  .smart-card b{display:block;font:700 13px var(--font-serif);color:var(--ink)}
+  .smart-card span{display:block;font:11.5px var(--font-sans);color:var(--muted);margin-top:3px;line-height:1.35}
+  .smart-card.on{outline:2px solid var(--red);outline-offset:-2px}
+
+  /* Library layout */
+  .lib{display:grid;grid-template-columns:280px minmax(0,1fr);gap:16px;align-items:start;margin-top:14px}
+  .lib-side{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+  .lib-side h4{font:700 10.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:12px 0 6px}
+  .lib-side h4:first-child{margin-top:0}
+  .lib-side button{display:block;width:100%;text-align:left;border:0;background:transparent;padding:7px 9px;border-radius:7px;font:600 12.5px var(--font-sans);color:#33495f;margin-bottom:2px}
+  .lib-side button:hover{background:#f0f4f8}
+  .lib-side button.on{background:var(--red-soft);color:#891326}
+  .lib-side button small{display:block;font:400 10.5px var(--font-sans);color:var(--muted);margin-top:1px}
+
+  /* Artifact viewer */
+  .art{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper)}
+  .art-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:12px 16px;background:#f3f6fa;border-bottom:1px solid var(--line)}
+  .art-bar .left{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .art-bar .right{display:flex;flex-wrap:wrap;gap:6px}
+  .art-body{padding:22px 26px}
+  .art-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font:12.5px var(--font-sans);color:#4a5f73;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px}
+  .art-meta b{color:var(--ink)}
+  .art-smart{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .art-smart span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font:700 11px var(--font-sans);color:#93a3b5;background:#f7fafc}
+  .art-smart span.on{background:var(--red-soft);border-color:#e6b9c1;color:#891326}
+
+  /* Tone control */
+  .tone-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 14px;background:#fbfcfe;border-bottom:1px solid var(--line)}
+  .tone-bar .lbl{font:700 11px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-right:4px}
+  .tone-bar button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:5px 12px;font:600 12px var(--font-sans);color:#40536a}
+  .tone-bar button:hover{border-color:#a9b8c7}
+  .tone-bar button.on{background:var(--red);border-color:var(--red);color:#fff}
+  .tone-bar .aud{font:11.5px var(--font-sans);color:var(--muted);margin-left:auto}
+
+  /* Email / letter styles */
+  .email{max-width:680px;margin:0 auto;background:#fff;border:1px solid #e3e8ee;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+  .email-header{padding:18px 22px;border-bottom:1px solid #e3e8ee}
+  .email-header .from{font:600 12.5px var(--font-sans);color:#4a5f73}
+  .email-header .from b{color:var(--ink)}
+  .email-header .subject{font:700 17px var(--font-serif);color:var(--ink);margin:6px 0 2px}
+  .email-header .to{font:600 12.5px var(--font-sans);color:#4a5f73}
+  .email-header .to b{color:var(--ink)}
+  .email-header .preheader{font:12px var(--font-sans);color:#93a3b5;margin-top:6px;font-style:italic}
+  .email-body{padding:22px 26px;font:15px/1.6 var(--font-serif);color:var(--ink)}
+  .email-body p{margin:0 0 14px}
+  .email-body .sign{color:#3d4f5f;margin-top:22px;font-size:14.5px;line-height:1.55}
+  .email-body .sign b{color:var(--ink)}
+  .email-body ul,.email-body ol{margin:0 0 14px;padding-left:22px}
+  .email-body li{margin:0 0 6px}
+  .email-body .cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:11px 20px;border-radius:6px;font:700 14px var(--font-sans);margin:4px 0 16px}
+  .email-body .caption{font:12px/1.5 var(--font-sans);color:var(--muted)}
+  .email-footer{padding:12px 22px;background:#f7f9fc;border-top:1px solid #e3e8ee;font:11.5px/1.5 var(--font-sans);color:#6b7c8f}
+
+  /* Info card / stat grid */
+  .infocard{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 16px}
+  .infocard div{background:#f4f7fa;border:1px solid #e1e8ef;border-radius:8px;padding:10px 12px}
+  .infocard small{display:block;font:700 10px var(--font-sans);text-transform:uppercase;letter-spacing:.4px;color:var(--red);margin-bottom:3px}
+  .infocard b{display:block;font:700 18px var(--font-serif);color:var(--ink)}
+  .infocard span{font:11.5px var(--font-sans);color:var(--muted)}
+
+  /* Real infographic blocks */
+  .viz{margin:0 0 18px;border:1px solid #e1e8ef;border-radius:10px;padding:14px 16px;background:#fbfdff}
+  .viz h5{font:700 10.5px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
+  .viz .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .viz svg{display:block;width:100%;height:auto;max-width:520px}
+  .viz .legend{display:flex;gap:14px;font:11.5px var(--font-sans);color:var(--muted);flex-wrap:wrap;margin-top:6px}
+  .viz .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+
+  /* Prompt / plain block */
+  .prompt{background:#f5f7fa;border:1px solid #dbe2ea;border-radius:10px;padding:16px 18px;font:12.5px/1.55 var(--font-mono);color:#243e5b;white-space:pre-wrap;max-height:460px;overflow:auto}
+  .plain{background:#fbfcfe;border:1px solid #dbe2ea;border-radius:10px;padding:16px 18px;font:13.5px/1.65 var(--font-serif);color:var(--ink);white-space:pre-wrap;max-height:520px;overflow:auto}
+
+  /* Story spine */
+  .spine{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+  .spine-step{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:10px;padding:10px 12px;font:12.5px/1.5 var(--font-sans);color:#33495f;min-width:0}
+  .spine-step b{display:block;font:700 12px var(--font-sans);color:var(--red);margin-bottom:3px;letter-spacing:.04em;text-transform:uppercase}
+  .spine-step small{display:block;color:var(--muted);margin-top:5px;font-size:11px}
+
+  @media (max-width:1080px){
+    .lib{grid-template-columns:1fr}
+    .lib-side{position:static;max-height:none}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .smart-ribbon{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .spine{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .grid,.grid.two,.grid.three{grid-template-columns:1fr}
+    .infocard{grid-template-columns:1fr}
+    .smart-ribbon{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .art-body{padding:16px}
+    .email-body{padding:16px 18px}
+    .spine{grid-template-columns:1fr}
+  }
+
+.contextbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--shadow)}
+.contextbar .left,.contextbar .right{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.contextbar .hint{font:12px var(--font-sans);color:var(--muted)}
+.jumpgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.jumpcard{border:1px solid var(--line);border-top:3px solid var(--red);border-radius:10px;padding:12px 14px;background:#fff}
+.jumpcard b{display:block;font:700 13px var(--font-sans);color:var(--ink);margin-bottom:4px}
+.jumpcard p{margin:0 0 10px;font:12px/1.5 var(--font-sans);color:#5b6b7d}
+@media(max-width:760px){.jumpgrid{grid-template-columns:1fr}}
+
+
+.comms-atlas{border:1px solid #dbe4ea;border-radius:15px;background:linear-gradient(130deg,#fff,#faf9f8);overflow:hidden;margin-bottom:17px;box-shadow:0 10px 25px rgba(30,48,68,.06)}
+.comms-atlas .cap{padding:12px 17px 5px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font:700 11px system-ui,sans-serif;letter-spacing:.5px;color:#9d253b;text-transform:uppercase}
+.comms-atlas svg{width:100%;height:auto;display:block}
+.comms-atlas .foot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 17px 15px}
+.comms-atlas .foot span{padding:10px;border-radius:9px;border:1px solid #e4e9ed;background:#fff;font:11px/1.45 system-ui,sans-serif;color:#556d7d}
+.comms-atlas .foot b{display:block;font-size:13px;color:#203e51;margin:0 0 2px}
+.story-more{border:1px solid #e4e9ed;border-radius:10px;background:#fcfdff;padding:10px 12px;margin:8px 0 12px}.story-more summary{font:700 12px system-ui,sans-serif;color:#9e293c;cursor:pointer}
+@media(max-width:640px){.comms-atlas .foot{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="contextbar no-print">
+  <div class="left">
+    <button class="btn" id="returnBtn" style="display:none">← Return to playbook</button>
+    <a class="btn" href="./index.html#comms">Reporting Platform</a>
+    <a class="btn" href="./playbook.html#donor">Playbook donor review</a>
+  </div>
+  <div class="right">
+    <span class="hint">Connected work sample pages · use Return to pick up where you left off.</span>
+  </div>
+</div>
+
+
+  <div class="eyebrow">SMARTER communications library · tone, visuals, story spine</div>
+  <h1>Donor, team and leadership messages — with tone, pictures and a story that carries</h1>
+  <p class="lead">Every message is a chapter in one continuous story: a fictional scholarship recipient named <em>Maya</em>, her advisor, her fund, and the donor who made her year possible. Change the tone to see the same letter rewritten for a formal donor, a warm donor, or a fourteen-year-old reading over her parent’s shoulder. Every figure stays in the record; only the voice changes.</p>
+  <div>
+    <span class="tag">Work sample · not an authorized plan</span>
+    <span class="tag blue">All figures synthetic</span>
+    <span class="tag green">Tone · visuals · story</span>
+  </div>
+
+  <section class="panel">
+    <h2>The story spine · one fictional student, five messages</h2>
+    <p class="lead" style="margin-bottom:6px">Maya is not a real student. She is a continuous fictional character whose journey threads through every donor message on this page, so that a reviewer can see the same person in the report, the email, the thank-you, the candor note, and the renewal. Her consent is fictional; her story is the spine.</p>
+    <div class="comms-atlas"><div class="cap"><span>Stewardship story: evidence → meaning → relationship</span><span>SYNTHETIC · 5 CONNECTED CHAPTERS</span></div>
+<svg viewBox="0 0 1100 285" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visual story: donor intent, scholarship award, student progress, transparent reporting and renewal conversation">
+<defs><linearGradient id="stg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fcf7f4"/><stop offset="1" stop-color="#eff6f7"/></linearGradient></defs><rect width="1100" height="285" fill="url(#stg)"/>
+<path d="M42 173h1016" stroke="#cdd7df" stroke-width="6" stroke-linecap="round"/>
+<g font-family="Arial,Helvetica,sans-serif" text-anchor="middle">
+<g transform="translate(119,143)"><circle r="56" fill="#fff" stroke="#a51c30" stroke-width="3"/><path d="M-27 3l27-22 27 22v31h-54zM-33 2l33-30 33 30" fill="none" stroke="#a51c30" stroke-width="5" stroke-linejoin="round"/><path d="M-15 34V13h30v21" stroke="#a51c30" stroke-width="4" fill="none"/></g>
+<g transform="translate(335,143)"><circle r="56" fill="#fff" stroke="#447d9f" stroke-width="3"/><path d="M-37-4l37-16 37 16-37 16zM-23 6v24q23 20 46 0V6" fill="none" stroke="#447d9f" stroke-width="5" stroke-linejoin="round"/><path d="M39-2v33" stroke="#447d9f" stroke-width="4"/></g>
+<g transform="translate(550,143)"><circle r="56" fill="#fff" stroke="#12785d" stroke-width="3"/><path d="M-26 30v-22h18v22zM-2 30v-40h18v40zM22 30v-58h18v58z" fill="#d8ece5" stroke="#12785d" stroke-width="3"/><path d="M-32-14l28-16 18 8 22-22" fill="none" stroke="#12785d" stroke-width="4"/></g>
+<g transform="translate(765,143)"><circle r="56" fill="#fff" stroke="#bf8b35" stroke-width="3"/><rect x="-30" y="-32" width="60" height="68" rx="6" fill="#fffcf6" stroke="#ad7d2a" stroke-width="4"/><path d="M-19-8h39M-19 4h39M-19 16h22" stroke="#ad7d2a" stroke-width="4"/><path d="M8 27l8 8 21-23" fill="none" stroke="#16745c" stroke-width="5"/></g>
+<g transform="translate(981,143)"><circle r="56" fill="#fff" stroke="#a51c30" stroke-width="3"/><path d="M-35-20h70v50h-70z" fill="#f9eaed" stroke="#a51c30" stroke-width="4"/><path d="M-35-20L0 7l35-27" fill="none" stroke="#a51c30" stroke-width="4"/></g>
+<g fill="#273f50" font-size="17" font-weight="700"><text x="119" y="45">GIFT PURPOSE</text><text x="335" y="45">THE AWARD</text><text x="550" y="45">THE EVIDENCE</text><text x="765" y="45">THE CANDOR</text><text x="981" y="45">THE FOLLOW-UP</text></g>
+<g fill="#5b7080" font-size="13"><text x="119" y="246">Gift terms and</text><text x="119" y="264">donor intent</text><text x="335" y="246">18 students</text><text x="335" y="264">supported</text><text x="550" y="246">16 continued;</text><text x="550" y="264">2 pending</text><text x="765" y="246">$9,000 carried</text><text x="765" y="264">with a plan</text><text x="981" y="246">Renewal and</text><text x="981" y="264">relationship</text></g></g></svg>
+<div class="foot"><span><b>Source discipline</b>Claims only from a versioned record and verified reporting period.</span><span><b>Human decisions</b>Gift officer context, academic confirmation and release authorization.</span><span><b>Donor experience</b>The right story, delivered in the preferred channel at the right moment.</span></div></div>
+<details class="story-more"><summary>Read the five chapter narratives</summary><div class="spine">
+      <div class="spine-step"><b>Chapter 1 · The award</b>Maya, a second-year student from a family that could not cover tuition, receives a Whitfield Scholarship award in FY2026.<small>Appears in: the thank-you note (future tense), the endowed report (what this year made possible).</small></div>
+      <div class="spine-step"><b>Chapter 2 · The year</b>She continues her studies, joins a lab, and for the first time thinks graduate school is possible.<small>Appears in: the annual endowed report, the digital report email.</small></div>
+      <div class="spine-step"><b>Chapter 3 · The report</b>Sixteen of eighteen students in her cohort continued to the next year. Maya is one of them.<small>Appears in: the report letter (results), the report email (headline), the board one-pager (one line in a priority note).</small></div>
+      <div class="spine-step"><b>Chapter 4 · The carry-forward</b>Two awards confirmed after close meant $9,000 did not reach students in the year. The donor hears it first from us.<small>Appears in: the candor note.</small></div>
+      <div class="spine-step"><b>Chapter 5 · The renewal</b>The gift officer calls, asks for a conversation, and the next year’s fund carries Maya’s cohort forward.<small>Appears in: the renewal ask, the follow-up after report.</small></div>
+    </div></details>
+    <div class="note" style="margin-top:14px">The story is fictional. Every name, amount, and detail is labeled <span class="meta sample">SAMPLE</span>. The purpose of the spine is to show that donor messages are not isolated artifacts — they are chapters. That continuity is what makes a donor feel seen.</div>
+  </section>
+
+  <section class="panel">
+    <h2>SMARTER · the seven commitments every message passes</h2>
+    <p class="lead" style="margin-bottom:10px">Click a commitment to see which messages satisfy it, and how tone changes the voice without changing the facts.</p>
+    <div class="smart-ribbon" id="smartRibbon" role="tablist" aria-label="SMARTER commitments"></div>
+    <div class="note" id="smartDetail" aria-live="polite"></div>
+  </section>
+
+  <section class="panel" style="padding:16px">
+    <div class="lib">
+      <aside class="lib-side" id="libSide" aria-label="Message index"></aside>
+      <div class="art" id="artHost" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h3>How tone works on this page</h3>
+    <p class="lead" style="margin-bottom:10px">The tone selector changes the <em>voice</em>, never the facts. Every variant of every message is generated from the same verified record: the certified statement, the aid ledger, the cohort file, the consented story, the current preferences.</p>
+    <div class="grid three">
+      <div class="tile red">
+        <h4>Formal</h4>
+        <p>Used for a leadership donor whose relationship is long and whose preference is a professional register. Complete sentences, no contractions, no exclamation marks, the honorific the CRM specifies.</p>
+      </div>
+      <div class="tile">
+        <h4>Warm</h4>
+        <p>Used for a donor whose record shows they have replied to past letters, attend events, or have explicitly asked to be called by first name. Plain prose, contractions, a single sentence of feeling.</p>
+      </div>
+      <div class="tile green">
+        <h4>Plain</h4>
+        <p>Used when the donor is new, prefers email, or has asked for accessibility. Short sentences, no honorific, no adverbs, a reading level a fourteen-year-old can follow — and the same facts in the same order.</p>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="panel">
+  <h3>Connected workspaces</h3>
+  <p class="lead" style="margin-bottom:10px">Use this library to shape the voice. Use the donor workspace to review giving history, gift-officer notes, the communications tracker and pre-gate checks. Use the reporting platform to open the full fictional report.</p>
+  <div class="jumpgrid">
+    <div class="jumpcard"><b>Donor review workspace</b><p>Profile, giving history, officer notes, communications log, prior reports and a release-decision workspace.</p><a class="btn" href="./playbook.html#donor">Open donor workspace in playbook →</a></div>
+    <div class="jumpcard"><b>Reporting platform</b><p>Open the companion platform for the report factory, full sample reports, donor records and the annual delivery calendar.</p><a class="btn" href="./index.html#comms">Open reporting platform →</a></div>
+    <div class="jumpcard"><b>Operating playbook</b><p>See SOPs, the batch release model, the calendar, the Six-Check Release Gate and the human-in-the-loop operating discipline.</p><a class="btn" href="./playbook.html#delivery">Open playbook →</a></div>
+  </div>
+</section>
+
+<footer class="small" style="margin-top:28px;padding-top:16px;border-top:1px solid var(--line)">
+    <p><b>About this page.</b> A candidate-proposed SMARTER communications library with tone variation, infographics, and a continuous fictional story spine. All donor names, amounts, recipient counts, and story text are synthetic and appear by code only. The public site sends nothing. Prompts shown are demonstration prompts, not connected to any live model. No real donor or academic personal records are included.</p>
+  </footer>
+</div>
+
+<script>
+'use strict';
+
+const $ = (s, ctx = document) => ctx.querySelector(s);
+const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+const E = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const fmt = n => typeof n === 'number' ? n.toLocaleString('en-US') : n;
+const money = n => '$' + fmt(n);
+
+/* ============================================================
+   Fictional context — the story spine
+   ============================================================ */
+const CTX = {
+  fundName: 'The Whitfield Scholarship Fund',
+  fundId: 'DEMO-AID-01',
+  donorCode: 'P-1104',
+  donorName: 'Ms. Whitfield',
+  donorFormal: 'Ms. Whitfield',
+  donorWarm: 'Eleanor',
+  donorPlain: 'Ms. Whitfield',
+  officer: 'J. Chen',
+  director: 'Narissara Khomkhai',
+  org: 'the University',
+  unit: 'Alumni Affairs and Development',
+  fiscalYear: 'FY2026',
+  distribution: 55000,
+  spent: 46000,
+  carried: 9000,
+  recipients: 18,
+  persisted: 16,
+  awardAverage: 2378,
+  purposeVerbatim: 'Support undergraduate financial aid so that admitted students can attend regardless of family resources.',
+  maya: {
+    first: 'Maya',
+    year: 'second year',
+    field: 'coastal ecology',
+    quote: 'I once thought I would have to leave. The scholarship is the reason I am still here — and the reason I am applying to graduate school.',
+    consented: '2026-09-14',
+    consentExpires: '2027-06-30'
+  }
+};
+
+/* ============================================================
+   SMARTER
+   ============================================================ */
+const SMARTER = [
+  { letter: 'S', name: 'Specific', label: 'One question, one message', detail: 'Each message answers exactly one question the reader has: what did my gift do, is my fund well run, did something go wrong, what happens next, or did you hear me?', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','de-renewal','de-followup','th-thank','dl-family'] },
+  { letter: 'M', name: 'Measurable', label: 'Every number has a source', detail: 'Every figure in the message is already in the record — certified statement, aid ledger, cohort file. The message translates the record into plain language; it does not add to it.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','te-status','ld-board'] },
+  { letter: 'A', name: 'Achievable', label: 'Written for one reader', detail: 'The message is written for one reader, in their preferred channel, at the moment it is useful. A renewal ask that arrives after the report is a different message from one that arrives six weeks later.', satisfiedBy: ['de-endowed','de-renewal','de-followup','th-thank','dl-family'] },
+  { letter: 'R', name: 'Relevant', label: 'Tied to the gift’s purpose', detail: 'Every message quotes the purpose from the gift agreement — verbatim, not paraphrased. The message connects the donor to the specific work their fund supports, not to a generic institutional claim.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','th-thank','dl-family'] },
+  { letter: 'T', name: 'Time-bound', label: 'Sent when it matters', detail: 'Every message has a moment: 48 hours after a gift, one week after a report, 60 days before renewal. The message that arrives a month late is not the same message.', satisfiedBy: ['th-thank','de-renewal','de-followup','te-status','te-sla','te-escalate'] },
+  { letter: 'E', name: 'Evaluated', label: 'Read against what changed', detail: 'Each message is evaluated after send — opens, replies, renewals, questions raised — and the result is logged. The next message is informed by the last one.', satisfiedBy: ['dl-endowed','de-renewal','te-status','ld-advisor'] },
+  { letter: 'R', name: 'Reviewed', label: 'Named human approval', detail: 'No message leaves the platform without a named approver on record. The six-check Release Gate exists so that a reviewer can say "I read this and it is true" — with a timestamp.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','de-renewal','dl-family','te-escalate','ld-board','ld-advisor','cp-release','cp-ailog'] }
+];
+
+/* ============================================================
+   Release Gate
+   ============================================================ */
+const RELEASE_GATE = [
+  { id: 'intent',        name: 'Intent',        rule: 'Purpose wording matches the agreement verbatim.', owner: 'Gift administration' },
+  { id: 'reconciliation',name: 'Reconciliation',rule: 'Every figure ties to the certified close.', owner: 'Finance' },
+  { id: 'consent',       name: 'Consent',       rule: 'Story, quote, named person all consented, current, scoped.', owner: 'Stewardship + academic unit' },
+  { id: 'traceability',  name: 'Traceability',  rule: 'Every claim has a named source, period, owner.', owner: 'Stewardship reporting' },
+  { id: 'attribution',   name: 'Attribution',   rule: 'No causal claim the evidence does not support.', owner: 'Academic partner + editorial' },
+  { id: 'authorization', name: 'Authorization', rule: 'Named approver, timestamped, on record.', owner: 'Sponsor or delegate' }
+];
+
+/* ============================================================
+   Tone
+   ============================================================ */
+const TONES = [
+  { id: 'formal', name: 'Formal', desc: 'Long-tenured leadership donor. Complete sentences, no contractions, honorific.' },
+  { id: 'warm',   name: 'Warm',   desc: 'Donor who has replied in the past. Plain prose, contractions, one sentence of feeling.' },
+  { id: 'plain',  name: 'Plain',  desc: 'New donor or accessibility preference. Short sentences, no honorific, grade 7 reading level.' }
+];
+
+/* ============================================================
+   Artifacts
+   ============================================================ */
+const ARTIFACTS = [
+  { id: 'dl-endowed', rail: 'Donor messages', title: 'Annual endowed fund impact letter', subtitle: 'Print + digital · Tier 1 · for Ms. Whitfield', format: 'Letter',
+    from: 'Office of Stewardship · The University', to: 'Ms. Whitfield', subject: 'Your fund supported 18 students this year',
+    why: 'The annual message every endowed-fund donor receives after the fiscal-year close. Nowhere to hide a figure; nowhere to invent one. The story spine — Maya — is the paragraph that makes it human.',
+    smart: ['S','M','R','T','E','R'],
+    gate: { intent:'PASS', reconciliation:'PASS', consent:'PASS', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm','plain'], hasViz: true, viz: 'endowed' },
+
+  { id: 'de-endowed', rail: 'Donor messages', title: 'Digital report email', subtitle: 'Tier 1 · personalized email with report link', format: 'Email',
+    from: 'Office of Stewardship · The University', to: 'Ms. Whitfield', subject: 'Your impact this year — The Whitfield Scholarship Fund',
+    why: 'The email is the door, not the report. It gives the donor the headline in ten seconds and puts the full report one click away. A small ring chart carries the persistence figure so the reader sees it before they read it.',
+    smart: ['S','M','A','R','R'],
+    gate: { intent:'PASS', reconciliation:'PASS', consent:'PASS', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm','plain'], hasViz: true, viz: 'email' },
+
+  { id: 'th-thank', rail: 'Donor messages', title: 'Thank-you note', subtitle: 'Within 48 hours of a new gift', format: 'Note',
+    from: 'Office of Donor Relations · The University', to: 'Ms. Whitfield', subject: 'Thank you for your gift to the Whitfield Scholarship Fund',
+    why: 'Acknowledgments are the fastest stewardship touch a donor receives. This note names the fund, states the amount and date, and points to the annual report — without pretending the gift has already done something.',
+    smart: ['S','A','R','T','R'],
+    gate: { intent:'PASS', reconciliation:'PASS', consent:'N/A', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm','plain'], hasViz: false },
+
+  { id: 'de-underspend', rail: 'Donor messages', title: 'Underspend candor note', subtitle: 'Sent when the distribution was not fully spent', format: 'Email',
+    from: 'Office of Stewardship · The University', to: 'Ms. Whitfield', subject: 'Why $9,000 of your distribution carried forward this year',
+    why: 'The letter that protects renewal more than any success story, because it demonstrates the institution will not hide a number the donor will eventually see. The stacked bar below makes the $9,000 impossible to miss.',
+    smart: ['S','M','R','R'],
+    gate: { intent:'PASS', reconciliation:'PASS', consent:'N/A', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm','plain'], hasViz: true, viz: 'underspend' },
+
+  { id: 'de-renewal', rail: 'Donor messages', title: 'Renewal ask', subtitle: '60 days before the renewal window', format: 'Email',
+    from: 'Gift Officer J. Chen', to: 'Ms. Whitfield', subject: 'A conversation about next year',
+    why: 'A renewal ask that arrives without a report behind it feels transactional. This one opens with the impact the donor has already seen, then asks for the conversation — not the gift.',
+    smart: ['S','A','T','E','R'],
+    gate: { intent:'PASS', reconciliation:'PASS', consent:'PASS', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm','plain'], hasViz: true, viz: 'renewal' },
+
+  { id: 'de-followup', rail: 'Donor messages', title: 'Follow-up after report', subtitle: 'Seven days after the report goes out', format: 'Email',
+    from: 'Gift Officer J. Chen', to: 'Ms. Whitfield', subject: 'A question about your report',
+    why: 'The follow-up is the moment the report becomes a relationship. It asks a specific question rather than a generic one, because a specific question is what a busy donor can answer.',
+    smart: ['S','A','T','R'],
+    gate: { intent:'PASS', reconciliation:'N/A', consent:'N/A', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm','plain'], hasViz: false },
+
+  { id: 'dl-family', rail: 'Donor messages', title: 'Family acknowledgment letter', subtitle: 'For a legacy gift or memorial fund', format: 'Letter',
+    from: 'The Director of Stewardship Reporting', to: 'The Whitfield Family', subject: 'A memorial fund in memory of Mr. Whitfield',
+    why: 'Family messages carry the highest risk of harm if they go wrong. No story, no quote, no individual name except the one the family approved — and the same hand extended in a different register.',
+    smart: ['S','A','R','R'],
+    gate: { intent:'PASS', reconciliation:'PASS', consent:'PASS', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal','warm'], hasViz: false },
+
+  { id: 'te-status', rail: 'Team messages', title: 'Weekly season status', subtitle: 'Week 8 · sent to workstream owners', format: 'Email',
+    from: 'The Director of Stewardship Reporting', to: 'Stewardship team + workstream owners', subject: 'Season status · week 8: 1,104 sent, 396 in progress, 18 past SLA',
+    why: 'Team status emails fail when they are written from memory. This one is written from the tracker export. The mini bar under the stat card shows at a glance where the season stands.',
+    smart: ['M','T','E'], gate: { intent:'PASS', reconciliation:'PASS', consent:'N/A', traceability:'PASS', attribution:'N/A', authorization:'PASS' },
+    tones: ['formal','plain'], hasViz: true, viz: 'team' },
+
+  { id: 'te-sla', rail: 'Team messages', title: 'Past-SLA follow-up', subtitle: 'Wednesday reminder · before Thursday standup', format: 'Email',
+    from: 'The Director of Stewardship Reporting', to: 'Report owners', subject: 'Four reports past SLA — could each owner confirm a next step by Thursday?',
+    why: 'A follow-up email is only useful if it names the report, the owner, and the next step. This is the email the Director sends before every Thursday standup.',
+    smart: ['T','R'], gate: { intent:'PASS', reconciliation:'PASS', consent:'N/A', traceability:'PASS', attribution:'N/A', authorization:'PASS' },
+    tones: ['formal','plain'], hasViz: false },
+
+  { id: 'te-escalate', rail: 'Team messages', title: 'Escalation memo to Executive Director', subtitle: 'When a gate is at risk', format: 'Memo',
+    from: 'The Director of Stewardship Reporting', to: 'Executive Director of Stewardship and Donor Engagement', subject: 'G3 gate at risk — two decisions needed this week',
+    why: 'Escalation is not panic — it is a short memo that names the decision, the owner, the deadline, and the consequence of not deciding.',
+    smart: ['T','R'], gate: { intent:'PASS', reconciliation:'PASS', consent:'N/A', traceability:'PASS', attribution:'N/A', authorization:'PASS' },
+    tones: ['formal','plain'], hasViz: false },
+
+  { id: 'ld-board', rail: 'Leadership messages', title: 'Board impact one-pager', subtitle: 'Quarterly board brief · cut-off 2027-02-28', format: 'One-pager',
+    from: 'The Director of Stewardship Reporting', to: 'Board of Trustees · Campaign Committee', subject: 'Campaign impact one-pager · Q1 FY2027',
+    why: 'A board page is not a campaign report. It tells a trustee what changed, what is at risk, and what the board is being asked to do. The pace bar shows the gap at a glance.',
+    smart: ['M','R','T'], gate: { intent:'PASS', reconciliation:'PASS', consent:'PASS', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal'], hasViz: true, viz: 'board' },
+
+  { id: 'ld-advisor', rail: 'Leadership messages', title: 'Advisory memo on transparency', subtitle: 'Three moves for stewardship in the year ahead', format: 'Memo',
+    from: 'The Director of Stewardship Reporting', to: 'Advancement leadership', subject: 'Three moves for impact storytelling and transparency',
+    why: 'An advisory memo is not a wish list. It is a recommendation with options, costs, risks, and one named decision requested by a named date.',
+    smart: ['R','E','R'], gate: { intent:'PASS', reconciliation:'PASS', consent:'N/A', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal'], hasViz: false },
+
+  { id: 'cp-ailog', rail: 'Governance artifacts', title: 'AI change log record', subtitle: 'What the AI proposed · what the human changed · why', format: 'Log',
+    from: 'Writer + Reviewer', to: 'QA evidence register', subject: 'AI change log · RPT-FY-2026-0142 · 3 corrections',
+    why: 'The single most important compliance artifact is the log that shows what the AI proposed and what a human corrected. Without it, "human in the loop" is a slogan.',
+    smart: ['R'], gate: { intent:'PASS', reconciliation:'PASS', consent:'PASS', traceability:'PASS', attribution:'PASS', authorization:'PASS' },
+    tones: ['formal'], hasViz: false },
+
+  { id: 'cp-release', rail: 'Governance artifacts', title: 'Release authorization record', subtitle: 'Named approval for RPT-FY-2026-0142', format: 'Record',
+    from: 'Reporting pipeline', to: 'Audit register', subject: 'Release authorization · RPT-FY-2026-0142',
+    why: 'The Release Gate is only as strong as the record it leaves behind. Six checks, each with its state, each with a named owner, and the specific reason release is currently on hold.',
+    smart: ['R'], gate: { intent:'PASS', reconciliation:'PASS', consent:'HOLD', traceability:'PASS', attribution:'PASS', authorization:'HOLD' },
+    tones: ['formal'], hasViz: false }
+];
+
+/* ============================================================
+   Infographics
+   ============================================================ */
+function vizEndowed() {
+  const spentPct = Math.round(CTX.spent / CTX.distribution * 100);
+  return `<div class="viz">
+    <h5>Where your fund’s year went</h5>
+    <div class="row">
+      <div style="flex:1;min-width:200px">
+        <svg viewBox="0 0 240 150" aria-label="Distribution spent and carried">
+          <rect x="0" y="0" width="240" height="120" rx="8" fill="#f7fafc" stroke="#e1e8ef"/>
+          <rect x="20" y="82" width="46" height="${60 * spentPct / 100}" fill="#16745c" rx="3"/>
+          <text x="43" y="76" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="#16745c">${spentPct}%</text>
+          <text x="43" y="138" text-anchor="middle" font-family="system-ui" font-size="9" fill="#55697a">Spent</text>
+          <text x="43" y="26" text-anchor="middle" font-family="system-ui" font-size="10" fill="#152430">${money(CTX.spent)}</text>
+          <rect x="97" y="${82 + 60 * spentPct / 100}" width="46" height="${60 * (100 - spentPct) / 100}" fill="#efbb78" rx="3"/>
+          <text x="120" y="${80 + 60 * spentPct / 100}" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="#8c5900">${100 - spentPct}%</text>
+          <text x="120" y="138" text-anchor="middle" font-family="system-ui" font-size="9" fill="#55697a">Carried</text>
+          <text x="120" y="${74 + 60 * spentPct / 100}" text-anchor="middle" font-family="system-ui" font-size="10" fill="#152430">${money(CTX.carried)}</text>
+          <rect x="174" y="18" width="46" height="88" fill="none" stroke="#a51c30" stroke-dasharray="3 3" rx="3"/>
+          <text x="197" y="66" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="700" fill="#a51c30">${money(CTX.distribution)}</text>
+          <text x="197" y="78" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#a51c30">total distribution</text>
+          <text x="197" y="92" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#a51c30">FY2026</text>
+          <line x1="66" y1="56" x2="174" y2="56" stroke="#e1e8ef" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:200px;font:12px/1.55 system-ui;color:#3d4f5f">
+        <div><b style="color:#152430">${CTX.recipients} students</b> received need-based awards.</div>
+        <div><b style="color:#152430">${CTX.persisted} of ${CTX.recipients}</b> continued into the next year.</div>
+        <div><b style="color:#152430">Maya</b> is one of them. Her story is in the report — with her permission, and only for this use.</div>
+      </div>
+    </div>
+    <div class="legend"><span><i style="background:#16745c"></i>Spent on awards</span><span><i style="background:#efbb78"></i>Carried forward</span><span><i style="background:#a51c30"></i>Total distribution</span></div>
+  </div>`;
+}
+function vizEmail() {
+  const pct = Math.round(CTX.persisted / CTX.recipients * 100);
+  const r = 46, c = 2 * Math.PI * r, off = c * (1 - pct / 100);
+  return `<div class="viz">
+    <h5>Persistence, at a glance</h5>
+    <div class="row">
+      <svg viewBox="0 0 120 120" style="max-width:120px" aria-label="16 of 18 continued">
+        <circle cx="60" cy="60" r="${r}" fill="none" stroke="#e1e8ef" stroke-width="12"/>
+        <circle cx="60" cy="60" r="${r}" fill="none" stroke="#16745c" stroke-width="12" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 60 60)"/>
+        <text x="60" y="58" text-anchor="middle" font-family="system-ui" font-size="22" font-weight="700" fill="#152430">${pct}%</text>
+        <text x="60" y="76" text-anchor="middle" font-family="system-ui" font-size="9" fill="#55697a">continued</text>
+      </svg>
+      <div style="flex:1;min-width:200px;font:12px/1.55 system-ui;color:#3d4f5f">
+        <div><b style="color:#152430">${CTX.persisted} of ${CTX.recipients}</b> students in Maya’s cohort continued into the next year.</div>
+        <div style="margin-top:6px;color:#55697a">Source: institutional research cohort file · 2026-10-15 · denominator ${CTX.recipients}.</div>
+      </div>
+    </div>
+  </div>`;
+}
+function vizUnderspend() {
+  const spentPct = Math.round(CTX.spent / CTX.distribution * 100);
+  return `<div class="viz">
+    <h5>The $9,000, plainly</h5>
+    <div class="row" style="display:block">
+      <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font:11px/34px system-ui;color:#fff;font-weight:700">
+        <div style="width:${spentPct}%;background:#16745c;text-align:center">${money(CTX.spent)} spent</div>
+        <div style="width:${100 - spentPct}%;background:#a51c30;text-align:center;color:#fff">${money(CTX.carried)} carried</div>
+      </div>
+      <div class="legend"><span><i style="background:#16745c"></i>18 awards</span><span><i style="background:#a51c30"></i>2 awards confirmed after close</span></div>
+      <div style="margin-top:8px;font:12px/1.5 system-ui;color:#3d4f5f"><b>Plan:</b> the ${money(CTX.carried)} will fund two additional awards in the next cycle, subject to the fund terms.</div>
+    </div>
+  </div>`;
+}
+function vizRenewal() {
+  return `<div class="viz">
+    <h5>Two years, one student</h5>
+    <div class="row">
+      <div style="flex:1;min-width:220px;display:flex;gap:10px;align-items:flex-start">
+        <svg viewBox="0 0 46 46" width="46" height="46" aria-hidden="true">
+          <circle cx="23" cy="23" r="20" fill="#f9e8eb" stroke="#e6b9c1"/>
+          <text x="23" y="28" text-anchor="middle" font-family="Georgia" font-size="14" font-weight="700" fill="#a51c30">M</text>
+        </svg>
+        <div style="font:12px/1.55 system-ui;color:#3d4f5f"><b style="color:#152430">FY2026</b> · awarded, continued, joined a lab.<br><b style="color:#152430">FY2027</b> · applying to graduate school.</div>
+      </div>
+      <div style="flex:1;min-width:220px;font:12px/1.55 system-ui;color:#3d4f5f">
+        <div><b style="color:#152430">Renewal window:</b> opens 60 days from this email.</div>
+        <div><b style="color:#152430">Ask:</b> a conversation, not a gift.</div>
+        <div><b style="color:#152430">Officer:</b> J. Chen · 617-555-0142</div>
+      </div>
+    </div>
+  </div>`;
+}
+function vizTeam() {
+  const total = 1500, sent = 1104, ip = 396, sla = 18;
+  const sentPct = sent / total * 100, ipPct = ip / total * 100, slaPct = sla / total * 100;
+  return `<div class="viz">
+    <h5>Season, week 8</h5>
+    <div style="display:flex;height:26px;border-radius:6px;overflow:hidden;font:10.5px/26px system-ui;color:#fff;font-weight:700">
+      <div style="width:${sentPct}%;background:#16745c;text-align:center">${sent.toLocaleString()} sent</div>
+      <div style="width:${ipPct}%;background:#2b5c8a;text-align:center">${ip}</div>
+      <div style="width:${slaPct}%;background:#a51c30;text-align:center">${sla}</div>
+    </div>
+    <div class="legend"><span><i style="background:#16745c"></i>Sent</span><span><i style="background:#2b5c8a"></i>In progress</span><span><i style="background:#a51c30"></i>Past SLA</span></div>
+  </div>`;
+}
+function vizBoard() {
+  const priorities = [['Financial aid', 82, '#16745c'],['Research', 58, '#a51c30'],['Faculty', 71, '#2b5c8a'],['Capital', 40, '#a51c30'],['Flexible', 56, '#2b5c8a']];
+  return `<div class="viz">
+    <h5>Progress against goal, by priority</h5>
+    ${priorities.map(([n, pct, c]) => `
+      <div style="display:flex;align-items:center;gap:8px;margin:5px 0;font:11.5px system-ui;color:#3d4f5f">
+        <div style="width:110px;color:#152430;font-weight:600">${n}</div>
+        <div style="flex:1;height:12px;background:#e7ecf2;border-radius:6px;overflow:hidden"><div style="width:${pct}%;height:100%;background:${c}"></div></div>
+        <div style="width:36px;text-align:right;font-weight:700;color:#152430">${pct}%</div>
+      </div>`).join('')}
+    <div class="legend"><span>Cut-off 2027-02-28</span><span>Goal path 72% elapsed</span></div>
+  </div>`;
+}
+function vizFor(id) { return { endowed: vizEndowed, email: vizEmail, underspend: vizUnderspend, renewal: vizRenewal, team: vizTeam, board: vizBoard }[id] || (()=>''); }
+
+/* ============================================================
+   Voice — every message re-authored for the active tone.
+   Facts identical. Register changes.
+   ============================================================ */
+function voice(tone, variants) { return variants[tone] || variants.formal || variants.warm || variants.plain; }
+
+const V = {
+  /* -------- endowed letter -------- */
+  endowed: {
+    salutation: { formal: 'Dear Ms. Whitfield,', warm: 'Dear Eleanor,', plain: 'Dear Ms. Whitfield,' },
+    purposeLead: {
+      formal: 'Thank you. The Whitfield Scholarship Fund exists for one purpose — to ',
+      warm: 'Thank you. The Whitfield Scholarship Fund does one thing, and it does it well — it ',
+      plain: 'Thank you. Your fund supports one thing: '
+    },
+    purposeTail: {
+      formal: ' This year, that purpose was met with 18 awards to students with financial need.',
+      warm: ' This year it reached 18 students with financial need.',
+      plain: ' 18 students with financial need received awards this year.'
+    },
+    storyLead: {
+      formal: 'One recipient’s story, shared with her permission, illustrates what the fund makes possible. ',
+      warm: 'Maya is one of the eighteen. She sent us this, with her permission: ',
+      plain: 'One student, Maya, gave us permission to share this: '
+    },
+    storyQuote: '“I once thought I would have to leave. The scholarship is the reason I am still here — and the reason I am applying to graduate school.”',
+    storyTail: {
+      formal: ' Her experience is not a claim that the fund alone determined her persistence; it is an illustration of what access to aid makes possible.',
+      warm: ' It is her sentence, not ours. We are grateful she let us share it.',
+      plain: ' It is her sentence, not ours.'
+    },
+    financeLead: {
+      formal: 'The fund’s year-end market value was $1,250,000. Its distribution of $55,000 was used as follows: $46,000 spent on 18 awards, and $9,000 carried forward because two eligible awards were confirmed after the fiscal-year close.',
+      warm: 'The fund’s year-end value was $1,250,000. Of its $55,000 distribution, $46,000 went to 18 awards. The remaining $9,000 carried forward — two awards were confirmed after the books closed, and the fund’s policy does not allow us to reopen the year.',
+      plain: 'The fund was worth $1,250,000 at year-end. It distributed $55,000. $46,000 went to 18 awards. $9,000 was carried forward because two awards came in after the fiscal-year close.'
+    },
+    financeTail: {
+      formal: 'That carry-forward will fund two additional awards in the next cycle, subject to the fund terms.',
+      warm: 'That $9,000 will fund two more awards next year. No money is lost — it moves one year forward.',
+      plain: 'The $9,000 will fund two more awards next year.'
+    },
+    trace: {
+      formal: 'Every figure in this letter ties to the certified year-end statement. Our next report will apply the carried-forward funds, re-verify consent for any story we include, and describe what changed for the students your fund supports.',
+      warm: 'Every figure here ties to the certified year-end statement. Next year’s report will show the carried-forward funds applied, and will re-verify consent before we include any story.',
+      plain: 'Every number here is from the year-end statement. Next year we will show you how the $9,000 was used.'
+    },
+    close: {
+      formal: 'If it would be helpful, I would welcome a short conversation about the fund this spring.',
+      warm: 'If you would like to talk about the fund — or about Maya — I would welcome it.',
+      plain: 'If you would like to talk about the fund, I would welcome it.'
+    },
+    sign: { formal: 'With gratitude,', warm: 'With warm regards,', plain: 'Thank you,' }
+  },
+
+  /* -------- endowed email -------- */
+  emailEndowed: {
+    salutation: { formal: 'Dear Ms. Whitfield,', warm: 'Dear Eleanor,', plain: 'Dear Ms. Whitfield,' },
+    lead: {
+      formal: 'Your fund supported 18 students with financial need this year. Sixteen of those students continued into the next year. The full report is ready.',
+      warm: 'Your fund supported 18 students this year — and 14 of them stayed. The full report is ready for you.',
+      plain: 'Your fund supported 18 students this year. 14 continued. The full report is ready.'
+    },
+    quote: { formal: 'One recipient, shared with her permission: ', warm: 'Maya put it best, with her permission: ', plain: 'One student, Maya, gave us permission to share this: ' },
+    quoteTail: '“I once thought I would have to leave. The scholarship is the reason I am still here — and the reason I am applying to graduate school.”',
+    close: { formal: 'If it would be helpful, I would welcome a short conversation about the fund this spring.', warm: 'If you would like to talk about the fund — or about Maya — I would welcome it.', plain: 'If you would like to talk about the fund, I would welcome it.' },
+    sign: { formal: 'With gratitude,', warm: 'With warm regards,', plain: 'Thank you,' }
+  },
+
+  /* -------- thank-you -------- */
+  thank: {
+    salutation: { formal: 'Dear Ms. Whitfield,', warm: 'Dear Eleanor,', plain: 'Dear Ms. Whitfield,' },
+    lead: { formal: 'Thank you for your gift of $20,000 to the Whitfield Scholarship Fund, received on March 14, 2027.', warm: 'Thank you — truly — for your $20,000 gift to the Whitfield Scholarship Fund on March 14.', plain: 'Thank you for your $20,000 gift to the Whitfield Scholarship Fund, received March 14, 2027.' },
+    future: { formal: 'Your gift will support undergraduate financial aid so that admitted students can attend regardless of family resources.', warm: 'Your gift goes to undergraduate financial aid, so that admitted students can attend regardless of what their family can pay.', plain: 'Your gift supports undergraduate financial aid. Admitted students can attend regardless of family resources.' },
+    when: { formal: 'The fund’s next distribution will fund awards in the coming year, and your gift will be reflected in the FY2027 endowed report, which you will receive after the next fiscal-year close.', warm: 'Next year’s report will show what your gift makes possible. It reaches you after the fiscal year closes in June.', plain: 'Your gift will appear in the FY2027 report, which arrives after June 30.' },
+    reply: { formal: 'If you have any questions about the fund, or if there is a way we can make the annual report more useful to you, please reply to this email.', warm: 'If anything about the fund is unclear, or if there is a way we could make the report more useful, please reply to this email.', plain: 'If you have a question, reply to this email.' },
+    sign: { formal: 'With gratitude,\nOffice of Donor Relations', warm: 'With thanks,\nOffice of Donor Relations', plain: 'Thank you,\nOffice of Donor Relations' }
+  },
+
+  /* -------- underspend -------- */
+  underspend: {
+    salutation: { formal: 'Dear Ms. Whitfield,', warm: 'Dear Eleanor,', plain: 'Dear Ms. Whitfield,' },
+    lead: { formal: 'Your FY2026 endowed report is on its way, and I want to flag one line in it before it reaches you.', warm: 'Your FY2026 report is on its way, and I want to flag one line before you open it.', plain: 'Your FY2026 report is coming. One line in it needs a note from me first.' },
+    facts: { formal: 'The fund’s distribution for the year was $55,000. Of that, $46,000 was spent on 18 awards and $9,000 carried forward. Two eligible awards were confirmed after the fiscal-year close, and the fund’s spending policy does not allow us to apply the distribution to awards confirmed after June 30 without a formal adjustment.', warm: 'The fund distributed $55,000 this year. $46,000 went to awards. The other $9,000 carried forward because two awards were confirmed after June 30, and our policy doesn’t let us reopen the year to apply it.', plain: 'The fund distributed $55,000. $46,000 went to awards. $9,000 carried forward, because two awards were confirmed after June 30.' },
+    honest: { formal: 'That is the honest version. The less honest version would be to report the year as if all $55,000 had been spent. I would rather you saw the $9,000 in the report, understood why it is there, and knew the plan.', warm: 'I could write this letter without mentioning the $9,000. But you would see it in the report, and you would wonder why we did not mention it. I would rather be the one who told you first.', plain: 'I want you to see the $9,000 in the report and know why it is there.' },
+    plan: { formal: 'The plan: the carried-forward $9,000 will fund two additional awards in the FY2027 cycle, subject to the fund terms.', warm: 'The plan: the $9,000 will fund two more awards in the next cycle. Nothing is lost; it moves a year forward.', plain: 'The $9,000 will fund two more awards next year.' },
+    offer: { formal: 'If you would prefer we handle this differently — a conversation before the report arrives, or a note explaining the carry-forward for your records — please reply and I will make it happen.', warm: 'If you would like to talk before the report arrives, reply and I will call.', plain: 'Reply if you would like to talk about it.' },
+    sign: { formal: 'With gratitude,\nNarissara Khomkhai', warm: 'With thanks,\nNarissara Khomkhai', plain: 'Thank you,\nNarissara Khomkhai' }
+  },
+
+  /* -------- renewal -------- */
+  renewal: {
+    salutation: { formal: 'Dear Ms. Whitfield,', warm: 'Dear Eleanor,', plain: 'Dear Ms. Whitfield,' },
+    lead: { formal: 'I hope this note finds you well. Your FY2026 report has been with you for a few weeks now, and I wanted to follow up personally rather than leave the next step to a calendar reminder.', warm: 'I hope you’re well. Your report has been with you a few weeks, and I wanted to write myself rather than let a calendar send you the next step.', plain: 'I hope you are well. Your report was sent a few weeks ago.' },
+    remember: { formal: 'Your fund supported 18 students with financial need this year — 14 of them continued into the next year. The $9,000 carried forward will fund two additional awards in the next cycle.', warm: 'Your fund supported 18 students this year — 14 of them stayed. The $9,000 we carried forward will fund two more awards next cycle. Maya is one of the fourteen.', plain: 'Your fund supported 18 students. 14 continued. The $9,000 carried forward will fund two more awards.' },
+    ask: { formal: 'Would a short conversation next month be welcome? There is no ask in this email beyond the conversation itself. If it is useful, I can bring the FY2026 statement and a short note on the fund’s trajectory; if it is not, we can simply catch up.', warm: 'Would a short conversation next month be welcome? There is no ask in this email beyond the conversation. If it would help, I can bring the statement and a short note on where the fund goes next.', plain: 'Would a conversation next month be welcome? There is no ask beyond that.' },
+    flexible: { formal: 'If next month is difficult, please let me know what would suit better, and I will work around it.', warm: 'If next month doesn’t suit, tell me what does and I’ll work around it.', plain: 'If next month does not suit, tell me what does.' },
+    sign: { formal: 'Warm regards,\nJ. Chen', warm: 'Warm regards,\nJ. Chen', plain: 'Thank you,\nJ. Chen' }
+  },
+
+  /* -------- follow-up -------- */
+  followup: {
+    salutation: { formal: 'Dear Ms. Whitfield,', warm: 'Dear Eleanor,', plain: 'Dear Ms. Whitfield,' },
+    lead: { formal: 'Your FY2026 report has been with you for a week now. I wanted to ask one specific question rather than a generic one: did anything in the report raise a question you would like us to answer — about the financial statement, about the stories we included, or about the fund’s year?', warm: 'Your report has been with you a week. One specific question, not the usual “any feedback?” — did anything raise a question you’d like us to answer? About the statement, about Maya’s story, or about the fund’s year?', plain: 'Your report was sent a week ago. Did anything raise a question? About the statement, the story, or the fund?' },
+    noIsFine: { formal: 'If the answer is no, that is genuinely useful to hear as well. If the answer is yes, I would like to route it to the right person rather than answer it myself.', warm: 'If the answer is no, that is genuinely useful to hear. If yes, I’d rather route it to the right person than answer it myself.', plain: 'If the answer is no, that is useful too. If yes, I will find the right person.' },
+    reply: { formal: 'A one-line reply is enough. I will follow up on anything you raise within two business days.', warm: 'One line is enough. I’ll follow up within two business days.', plain: 'One line is enough. I will reply within two business days.' },
+    sign: { formal: 'Warm regards,\nJ. Chen', warm: 'Warm regards,\nJ. Chen', plain: 'Thank you,\nJ. Chen' }
+  },
+
+  /* -------- family -------- */
+  family: {
+    salutation: { formal: 'Dear Whitfield family,', warm: 'Dear Whitfield family,' },
+    lead: { formal: 'On behalf of the University, I want to let you know that the memorial fund established in your father’s name has been set up and is now part of the scholarship program at the University. The fund will support undergraduate financial aid in his memory, in the way your family described when we spoke.', warm: 'On behalf of the University, I want you to know that the memorial fund in your father’s name has been established. It will support undergraduate financial aid, as your family described when we spoke.' },
+    noPrior: { formal: 'Because the fund is new, this year’s letter carries no figures from a prior report. What I can tell you is what the fund will support, and how we will write to you about it.', warm: 'Because the fund is new, this letter carries no figures from a prior year. What I can tell you is what it will support, and how we will write to you.' },
+    plan: { formal: 'Each year, after the University’s fiscal year closes on June 30, the fund will publish a report. The report will state the fund’s market value, its distribution for the year, the number of awards funded, and any unspent distribution carried forward. It will also include one or two stories from students who have chosen to share them, with their permission.', warm: 'Each year, after the University’s fiscal year closes on June 30, the fund will publish a report. It will state the fund’s value, its distribution, the awards funded, and any unspent amount carried forward. It may include one or two stories from students who have chosen to share them, with their permission.' },
+    consult: { formal: 'We will write to your family directly before the first report, to confirm the family’s preferences about how Mr. Whitfield’s name should appear, and to ask whether there is anything the family would like us to include or to leave out.', warm: 'Before the first report, we will write to confirm how your family would like Mr. Whitfield’s name to appear, and whether there is anything you would like us to include or leave out.' },
+    contact: { formal: 'If at any point you would rather speak with someone directly, the person best placed to help is the gift officer assigned to the family, J. Chen, who can be reached at 617-555-0142.', warm: 'If you would rather speak with someone directly, J. Chen, the gift officer assigned to the family, is at 617-555-0142.' },
+    sign: { formal: 'With sympathy and gratitude,\nNarissara Khomkhai', warm: 'With sympathy and gratitude,\nNarissara Khomkhai' }
+  }
+};
+
+/* ============================================================
+   Bodies
+   ============================================================ */
+function letterEndowed(t) {
+  const v = V.endowed;
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> Office of Stewardship · The University</div>
+        <div class="subject">Your fund supported 18 students this year</div>
+        <div class="to"><b>To:</b> ${E(t === 'warm' ? CTX.donorWarm : CTX.donorFormal)} · ${CTX.donorCode}</div>
+        <div class="preheader">${E(CTX.fiscalYear)} endowed report · ${E(CTX.fundName)}</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        ${vizFor('endowed')()}
+        <p>${E(v.purposeLead[t])}${E(CTX.purposeVerbatim.replace(/^Support undergraduate financial aid so that/, 'support undergraduate financial aid so that'))}${E(v.purposeTail[t])}</p>
+        <p>${E(v.storyLead[t])}<em>${E(v.storyQuote)}</em>${E(v.storyTail[t])}</p>
+        <p>${E(v.financeLead[t])} ${E(v.financeTail[t])}</p>
+        <p>${E(v.trace[t])}</p>
+        <p>${E(v.close[t])}</p>
+        <div class="sign">${E(v.sign[t])}<br><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting<br>${E(CTX.unit)} · ${E(CTX.org)}</div>
+        <p class="caption" style="margin-top:20px;padding-top:12px;border-top:1px solid #e3e8ee;font-size:11.5px;color:#6b7c8f">
+          Statement reference: ${E(CTX.fundId)} · FY2026 certified.<br>
+          Story: ST-2026-0142 · Maya · consent active through 2027-06-30 · for use in this report only.
+        </p>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real donor, student, or fund is represented.</div>
+    </div>`;
+}
+
+function emailEndowed(t) {
+  const v = V.emailEndowed;
+  const pct = Math.round(CTX.persisted / CTX.recipients * 100);
+  const r = 46, c = 2 * Math.PI * r, off = c * (1 - pct / 100);
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> Office of Stewardship · The University</div>
+        <div class="subject">Your impact this year — The Whitfield Scholarship Fund</div>
+        <div class="to"><b>To:</b> ${E(t === 'warm' ? CTX.donorWarm : CTX.donorFormal)}</div>
+        <div class="preheader">18 students supported. 14 continued. Here is the full report.</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        <div style="display:flex;gap:16px;align-items:center;margin:4px 0 16px;flex-wrap:wrap">
+          <svg viewBox="0 0 120 120" style="width:110px;flex:0 0 auto" aria-label="${pct}% continued">
+            <circle cx="60" cy="60" r="${r}" fill="none" stroke="#e1e8ef" stroke-width="12"/>
+            <circle cx="60" cy="60" r="${r}" fill="none" stroke="#16745c" stroke-width="12" stroke-dasharray="${c}" stroke-dashoffset="${off}" transform="rotate(-90 60 60)"/>
+            <text x="60" y="58" text-anchor="middle" font-family="system-ui" font-size="22" font-weight="700" fill="#152430">${pct}%</text>
+            <text x="60" y="76" text-anchor="middle" font-family="system-ui" font-size="9" fill="#55697a">continued</text>
+          </svg>
+          <div style="flex:1;min-width:200px;font:14px/1.55 Georgia,serif;color:#152430">
+            <p style="margin:0 0 6px">${E(v.lead[t])}</p>
+            <div style="font:11.5px/1.5 system-ui;color:#55697a">Source: IR cohort file · 2026-10-15 · denominator ${CTX.recipients}.</div>
+          </div>
+        </div>
+        <p><a href="#" class="cta">View your full report →</a></p>
+        <p style="font-style:italic;color:#5b6b7d;font-size:14px;margin-top:8px">${E(v.quote[t])}${E(v.quoteTail)}</p>
+        <p>${E(v.close[t])}</p>
+        <div class="sign">${E(v.sign[t])}<br><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting · ${E(CTX.unit)}</div>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real donor, student, or fund is represented.</div>
+    </div>`;
+}
+
+function thankNote(t) {
+  const v = V.thank;
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> Office of Donor Relations · The University</div>
+        <div class="subject">Thank you for your gift to the Whitfield Scholarship Fund</div>
+        <div class="to"><b>To:</b> ${E(t === 'warm' ? CTX.donorWarm : CTX.donorFormal)}</div>
+        <div class="preheader">A short note to confirm your gift and say what it will do.</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        <p>${E(v.lead[t])}</p>
+        <p>${E(v.future[t])}</p>
+        <p>${E(v.when[t])}</p>
+        <p>${E(v.reply[t])}</p>
+        <div class="sign">${v.sign[t].split('\n').map(E).join('<br>')}</div>
+        <p class="caption" style="margin-top:20px;padding-top:12px;border-top:1px solid #e3e8ee;font-size:11.5px;color:#6b7c8f">
+          Receipt reference: RCP-2027-0412 · Gift date: 2027-03-14 · Fund: ${E(CTX.fundId)}.<br>
+          This acknowledgment is not a tax receipt. Formal tax documentation is issued separately.
+        </p>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real donor or gift is represented.</div>
+    </div>`;
+}
+
+function underspendEmail(t) {
+  const v = V.underspend;
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> Office of Stewardship · The University</div>
+        <div class="subject">Why $9,000 of your distribution carried forward this year</div>
+        <div class="to"><b>To:</b> ${E(t === 'warm' ? CTX.donorWarm : CTX.donorFormal)}</div>
+        <div class="preheader">A short, honest note about timing — and the plan for next year.</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        ${vizFor('underspend')()}
+        <p>${E(v.lead[t])}</p>
+        <p>${E(v.facts[t])}</p>
+        <p>${E(v.honest[t])}</p>
+        <p><b>${E(v.plan[t])}</b></p>
+        <p>${E(v.offer[t])}</p>
+        <div class="sign">${E(v.sign[t].split('\n')[0])}<br><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting</div>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real donor, student, or fund is represented.</div>
+    </div>`;
+}
+
+function renewalEmail(t) {
+  const v = V.renewal;
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> J. Chen · Gift Officer</div>
+        <div class="subject">A conversation about next year</div>
+        <div class="to"><b>To:</b> ${E(t === 'warm' ? CTX.donorWarm : CTX.donorFormal)}</div>
+        <div class="preheader">Would next month be a good time to talk about renewing your fund?</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        ${vizFor('renewal')()}
+        <p>${E(v.lead[t])}</p>
+        <p>${E(v.remember[t])}</p>
+        <p>${E(v.ask[t])}</p>
+        <p>${E(v.flexible[t])}</p>
+        <div class="sign">${E(v.sign[t].split('\n')[0])}<br><b>J. Chen</b><br>Gift Officer · ${E(CTX.unit)}<br><span style="font-size:13px;color:#5b6b7d">Direct line: 617-555-0142 · j.chen@university.example</span></div>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real donor, gift officer, or fund is represented.</div>
+    </div>`;
+}
+
+function followupEmail(t) {
+  const v = V.followup;
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> J. Chen · Gift Officer</div>
+        <div class="subject">A question about your report</div>
+        <div class="to"><b>To:</b> ${E(t === 'warm' ? CTX.donorWarm : CTX.donorFormal)}</div>
+        <div class="preheader">Did anything in the report raise a question we should answer?</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        <p>${E(v.lead[t])}</p>
+        <p>${E(v.noIsFine[t])}</p>
+        <p>${E(v.reply[t])}</p>
+        <div class="sign">${E(v.sign[t].split('\n')[0])}<br><b>J. Chen</b><br>Gift Officer · ${E(CTX.unit)}</div>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real donor, gift officer, or fund is represented.</div>
+    </div>`;
+}
+
+function familyLetter(t) {
+  const v = V.family;
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> The Director of Stewardship Reporting · The University</div>
+        <div class="subject">A memorial fund in memory of Mr. Whitfield</div>
+        <div class="to"><b>To:</b> The Whitfield Family</div>
+        <div class="preheader">A letter to the family about the fund established in their father’s name.</div>
+      </div>
+      <div class="email-body">
+        <p>${E(v.salutation[t])}</p>
+        <p>${E(v.lead[t])}</p>
+        <p>${E(v.noPrior[t])}</p>
+        <p>${E(v.plan[t])}</p>
+        <p>${E(v.consult[t])}</p>
+        <p>${E(v.contact[t])}</p>
+        <div class="sign">${E(v.sign[t].split('\n')[0])}<br><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting · ${E(CTX.unit)}</div>
+      </div>
+      <div class="email-footer">All names, dates, and figures are synthetic (SAMPLE). The family would have approved every fact in this letter before it was sent.</div>
+    </div>`;
+}
+
+/* Non-donor artifacts — one voice each */
+function teamStatus() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> The Director of Stewardship Reporting</div>
+        <div class="subject">Season status · week 8: 1,104 sent, 396 in progress, 18 past SLA</div>
+        <div class="to"><b>To:</b> Stewardship team + workstream owners</div>
+        <div class="preheader">On-time 95%. Forecast finish week 20. 18 reports need owner action this week.</div>
+      </div>
+      <div class="email-body">
+        <p>Hi team,</p>
+        ${vizFor('team')()}
+        <p><b>Bottom line:</b> the season is on track. On-time rate is 95%. Forecast finish is week 20 against a week 21 deadline. The 18 reports past SLA need each owner’s attention.</p>
+        <p><b>Past SLA — owners and next steps</b></p>
+        <ul>
+          <li><b>RPT-FY-2026-0143</b> · Story approval · 11 days · M. Osei</li>
+          <li><b>RPT-FY-2026-0111</b> · Finance validation · 9 days · A. Patel</li>
+          <li><b>RPT-FY-2026-0088</b> · Draft review · 8 days · J. Rivera</li>
+          <li><b>… 15 more</b> · full list attached</li>
+        </ul>
+        <p><b>What I need from each owner by Thursday:</b> a confirmed next step for each of your reports, or an explicit trade-off.</p>
+        <p>Thank you.</p>
+        <div class="sign"><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting</div>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real reports, donors, or team members are represented.</div>
+    </div>`;
+}
+
+function teamSla() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> The Director of Stewardship Reporting</div>
+        <div class="subject">Four reports past SLA — could each owner confirm a next step by Thursday?</div>
+        <div class="to"><b>To:</b> Report owners</div>
+        <div class="preheader">Short list, named owners, specific next steps.</div>
+      </div>
+      <div class="email-body">
+        <p>Hi all,</p>
+        <p>Four reports are past SLA. Each has an owner and a next step below. Could each owner reply with a confirmed next step or an explicit trade-off before Thursday?</p>
+        <ul>
+          <li><b>RPT-FY-2026-0143</b> · M. Osei · escalation to academic partner by Wednesday.</li>
+          <li><b>RPT-FY-2026-0111</b> · A. Patel · Finance sign-off pending.</li>
+          <li><b>RPT-FY-2026-0088</b> · J. Rivera · return to writer for one citation.</li>
+          <li><b>RPT-FY-2026-0076</b> · R. Okafor · request clean extract.</li>
+        </ul>
+        <p>If a report is blocked outside the team, say so and I will escalate. If it is blocked by something we can decide here, say so and I will decide this week.</p>
+        <p>Thank you.</p>
+        <div class="sign"><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting</div>
+      </div>
+      <div class="email-footer">All report IDs, owners, and figures are synthetic (SAMPLE).</div>
+    </div>`;
+}
+
+function escalationMemo() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> The Director of Stewardship Reporting</div>
+        <div class="subject">G3 gate at risk — two decisions needed this week</div>
+        <div class="to"><b>To:</b> Executive Director of Stewardship and Donor Engagement</div>
+        <div class="preheader">Two decisions, two owners, one deadline.</div>
+      </div>
+      <div class="email-body">
+        <p>Hi,</p>
+        <p>The G3 gate is at risk. Two decisions are needed this week to hold it.</p>
+        <p><b>Decision 1 · Data-owner sign-off on the FY2026 fund ledger</b></p>
+        <p>The certified ledger has been reconciled (variance $0) but not signed off by Finance. Without that signature, the pilot cannot proceed.</p>
+        <ul><li><b>Yes:</b> ask the data owner to sign this week.</li><li><b>No:</b> delay G3 by one week.</li></ul>
+        <p><b>Decision 2 · Scope exception for two Tier 1 reports</b></p>
+        <ul><li><b>Yes:</b> hold the two reports; ship the other nine.</li><li><b>No:</b> delay all Tier 1 reports.</li></ul>
+        <p><b>What I recommend:</b> yes to both. The first signature has no open issues; the second keeps nine of eleven reports moving.</p>
+        <p><b>Decision needed by:</b> Thursday EOD. If I have not heard by then, I will default to the recommended option and note it.</p>
+        <div class="sign"><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting</div>
+      </div>
+      <div class="email-footer">All report IDs, figures, and gate names are synthetic (SAMPLE).</div>
+    </div>`;
+}
+
+function boardOnePager() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> The Director of Stewardship Reporting</div>
+        <div class="subject">Campaign impact one-pager · Q1 FY2027</div>
+        <div class="to"><b>To:</b> Board of Trustees · Campaign Committee</div>
+        <div class="preheader">Raised $412M of $600M. Financial aid ahead, capital at risk. Cut-off 2027-02-28.</div>
+      </div>
+      <div class="email-body">
+        <p><b>Campaign status · cut-off 2027-02-28</b></p>
+        ${vizFor('board')()}
+        <p><b>Risks the board should see</b></p>
+        <ul>
+          <li><b>Capital pace</b> is below the goal path. A capital ask sequence is proposed for Q2.</li>
+          <li><b>Research pipeline</b> is thin. Two gifts would materially de-risk; both are under discussion.</li>
+        </ul>
+        <p><b>What we are asking of the board</b></p>
+        <ul>
+          <li>Introductions for the capital priorities this quarter.</li>
+          <li>Approval of the two lead solicitations prepared for signature.</li>
+          <li>Note the research risk and the Q2 mitigation plan.</li>
+        </ul>
+      </div>
+      <div class="email-footer">All figures are synthetic (SAMPLE). No real campaign, board, or trustee is represented.</div>
+    </div>`;
+}
+
+function advisoryMemo() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> The Director of Stewardship Reporting</div>
+        <div class="subject">Three moves for impact storytelling and transparency</div>
+        <div class="to"><b>To:</b> Advancement leadership</div>
+        <div class="preheader">Report change, not activity. Say plainly when funds are unspent. Report by relationship.</div>
+      </div>
+      <div class="email-body">
+        <p>Hi all,</p>
+        <p>This memo recommends three moves for the coming year. Each has an option set, a cost, and a decision requested at the next leadership meeting.</p>
+        <p><b>Move 1 · Report change, not activity</b></p>
+        <ul><li><b>A:</b> keep the current format.</li><li><b>B (recommended):</b> require one outcome measure per report, tied to a certified source.</li></ul>
+        <p><b>Move 2 · Say plainly when funds are unspent</b></p>
+        <ul><li><b>A:</b> keep current practice.</li><li><b>B (recommended):</b> disclose carry-forward, with the plan, and alert the gift officer first.</li></ul>
+        <p><b>Move 3 · Report by relationship, not by fund</b></p>
+        <ul><li><b>A:</b> one report per fund.</li><li><b>B (recommended):</b> portfolio reports for donors with three or more funds.</li></ul>
+        <p><b>Decision requested by:</b> the next leadership meeting.</p>
+        <p><b>What would change my advice:</b> no lift in renewal after one pilot cycle.</p>
+        <div class="sign"><b>${E(CTX.director)}</b><br>Director of Stewardship Reporting</div>
+      </div>
+      <div class="email-footer">All figures, options, and costs are synthetic (SAMPLE).</div>
+    </div>`;
+}
+
+function aiChangeLog() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> Writer + Reviewer · RPT-FY-2026-0142</div>
+        <div class="subject">AI change log · RPT-FY-2026-0142 · 3 corrections</div>
+        <div class="to"><b>To:</b> QA evidence register</div>
+        <div class="preheader">Every AI draft that reached the reviewer, and every change that was made.</div>
+      </div>
+      <div class="email-body">
+        <p><b>Correction 1 · overclaim</b></p>
+        <p><b>AI:</b> “100% of awardees successfully continued into the next year.”</p>
+        <p><b>Human:</b> “Sixteen of eighteen recipients are recorded as continuing; two remain pending.”</p>
+        <p><b>Reason:</b> The cohort file records 16 of 18 with continued status. “100%” is not supported.</p>
+        <hr style="border:0;border-top:1px solid #e3e8ee;margin:14px 0">
+        <p><b>Correction 2 · unsupported causal language</b></p>
+        <p><b>AI:</b> “Your gift changed the trajectory of 18 students.”</p>
+        <p><b>Human:</b> “Your fund supported 18 students with financial need. Sixteen continued to the next year.”</p>
+        <p><b>Reason:</b> The report describes what the fund supported, not what it caused.</p>
+        <hr style="border:0;border-top:1px solid #e3e8ee;margin:14px 0">
+        <p><b>Correction 3 · stale salutation</b></p>
+        <p><b>AI:</b> “Dear Eleanor,”</p>
+        <p><b>Human:</b> “Dear Ms. Whitfield,”</p>
+        <p><b>Reason:</b> The CRM record specifies “Ms. Whitfield” as the verbatim salutation.</p>
+        <p style="margin-top:18px"><b>Reviewer attestation:</b> I reviewed three AI drafts, made three corrections, and traced each correction to its record.</p>
+        <div class="sign"><b>M. Osei</b><br>Second Writer · Reviewer<br>Reviewed 2027-03-19</div>
+      </div>
+      <div class="email-footer">All drafts, corrections, and report IDs are synthetic (SAMPLE).</div>
+    </div>`;
+}
+
+function releaseAuth() {
+  return `
+    <div class="email">
+      <div class="email-header">
+        <div class="from"><b>From:</b> Reporting pipeline · release gate</div>
+        <div class="subject">Release authorization · RPT-FY-2026-0142</div>
+        <div class="to"><b>To:</b> Audit register</div>
+        <div class="preheader">Six checks · four PASS · two HOLD · release blocked until named approver signs.</div>
+      </div>
+      <div class="email-body">
+        <p><b>Report:</b> RPT-FY-2026-0142 · ${E(CTX.fundName)} · FY2026</p>
+        <p><b>Release gate state:</b> 4 of 6 PASS · 2 HOLD · <span style="color:#8a1c2c;font-weight:700">NOT AUTHORIZED</span></p>
+        <table style="width:100%;border-collapse:collapse;font:12.5px var(--font-sans);margin:14px 0">
+          <thead><tr style="background:#f3f6fa;border-bottom:1px solid #dbe2ea"><th style="text-align:left;padding:8px 10px">Check</th><th style="text-align:left;padding:8px 10px">State</th><th style="text-align:left;padding:8px 10px">Owner</th><th style="text-align:left;padding:8px 10px">Evidence</th></tr></thead>
+          <tbody>
+            ${RELEASE_GATE.map(c => {
+              const st = { intent:'PASS', reconciliation:'PASS', consent:'HOLD', traceability:'PASS', attribution:'PASS', authorization:'HOLD' }[c.id];
+              const col = st === 'PASS' ? '#116a55' : '#8a1c2c';
+              return `<tr style="border-bottom:1px solid #eef2f6"><td style="padding:8px 10px"><b>${E(c.name)}</b></td><td style="padding:8px 10px;color:${col};font-weight:700">${st}</td><td style="padding:8px 10px">${E(c.owner)}</td><td style="padding:8px 10px">${E(c.rule)}</td></tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+        <p><b>What releases this report:</b></p>
+        <ul>
+          <li>Re-verify Maya’s story consent against the release date; if lapsed, remove the story.</li>
+          <li>Record the name and timestamp of the sponsor or delegate who authorizes release.</li>
+        </ul>
+      </div>
+      <div class="email-footer">All reports, gates, and dates are synthetic (SAMPLE).</div>
+    </div>`;
+}
+
+/* ============================================================
+   Prompts (unchanged for non-donor; tone-aware for donor)
+   ============================================================ */
+const PROMPTS = {
+  'dl-endowed': (t) => `ROLE: You are the Director of Stewardship Reporting writing a one-page endowed-fund impact letter to Ms. Whitfield, who established The Whitfield Scholarship Fund in 2024.
+
+TONE: ${TONES.find(x=>x.id===t).name} — ${TONES.find(x=>x.id===t).desc}
+
+FACTS (verbatim):
+- Fund: The Whitfield Scholarship Fund (DEMO-AID-01)
+- Purpose: "${CTX.purposeVerbatim}" (GA-2024-118)
+- Market value: $1,250,000 · Distribution: $55,000 · Spent: $46,000 · Carried: $9,000
+- Recipients: 18 · Persisted: 14
+- Story (Maya, consent to 2027-06-30): "${CTX.maya.quote}"
+
+STRUCTURE (7 sections, one paragraph each):
+1. Thank you + purpose verbatim
+2. What this year made possible (counts, one story paragraph)
+3. What we can count (financial statement in plain prose)
+4. How the fund was used (distribution / spent / carried)
+5. What we don't yet know (the $9,000 carry-forward, stated plainly with the plan)
+6. How this fits a larger goal (financial aid priority, no causal overclaim)
+7. What happens next (next report, invitation to a conversation)
+
+CONSTRAINTS:
+- No "breakthrough," "transformed," or causal language about the fund alone.
+- Every figure must trace to the certified FY2026 statement.
+- Do not name Maya by her full name; use the consented quote verbatim.
+- Reading level: grade 9 or below.
+
+RETURN: the letter as plain text.`,
+  'de-endowed': (t) => `ROLE: You are the Director of Stewardship Reporting. Write a digital report email to Ms. Whitfield announcing her FY2026 endowed-fund report is ready.
+
+TONE: ${TONES.find(x=>x.id===t).name}.
+
+LENGTH: 120–150 words.
+
+FACTS:
+- Fund: The Whitfield Scholarship Fund (DEMO-AID-01)
+- Recipients: 18 · Persisted: 16 of 18
+- Distribution: $55,000 · Spent: $46,000 · Carried: $9,000
+- Maya quote (consent to 2027-06-30): "${CTX.maya.quote}"
+
+STRUCTURE: salutation · headline · ring chart · CTA · Maya quote · closing sentence · signature.
+
+CONSTRAINTS:
+- Do not restate the full financial statement. Point to the report.
+- Use "supported," not "enabled graduation."
+- Every number must trace to the certified record.
+
+RETURN: the email as plain text with subject and preheader.`,
+  'th-thank': (t) => `ROLE: Write a 90-word thank-you note to a donor who has just made a gift to an endowed scholarship fund.
+
+TONE: ${TONES.find(x=>x.id===t).name}.
+
+FACTS:
+- Gift amount: $20,000 · Gift date: 2027-03-14
+- Fund: The Whitfield Scholarship Fund (DEMO-AID-01)
+- Purpose (verbatim): "${CTX.purposeVerbatim}"
+- Receipt: RCP-2027-0412
+
+CONSTRAINTS:
+- Do not pretend the gift has already done something (present/future tense, not past).
+- No story.
+- No "transform" or "change lives."
+
+RETURN: the note as plain text.`,
+  'de-underspend': (t) => `ROLE: Write a short, candid email to a leadership donor explaining that $9,000 of the fund's $55,000 distribution was not spent in the fiscal year, and that the balance is being carried forward.
+
+TONE: ${TONES.find(x=>x.id===t).name}.
+
+FACTS:
+- Distribution: $55,000 · Spent: $46,000 · Carried: $9,000
+- Reason: two eligible awards confirmed after the fiscal-year close; policy does not permit application after June 30
+- Plan: $9,000 will fund two additional awards in FY2027, subject to fund terms
+
+CONSTRAINTS:
+- No apologies that imply wrongdoing.
+- No "unfortunately" or "we regret."
+- Do not blame Finance or the aid office.
+- State the $9,000 plainly; do not minimize it.
+
+RETURN: the email as plain text with a subject line and preheader.`,
+  'de-renewal': (t) => `ROLE: You are a gift officer writing to a leadership donor 60 days before the fund's renewal window.
+
+TONE: ${TONES.find(x=>x.id===t).name}.
+
+GOAL: Ask for a conversation, not for a gift.
+
+FACTS:
+- Donor: Ms. Whitfield (P-1104)
+- Recipients: 18 · Persisted: 16 of 18
+- Carried forward: $9,000, to fund two additional awards
+- Report was sent 3 weeks ago
+
+CONSTRAINTS:
+- Do not ask for money.
+- Do not introduce new figures.
+- Do not re-tell the story.
+- Offer the officer's contact information.
+
+RETURN: the email as plain text with a subject line.`,
+  'de-followup': (t) => `ROLE: You are a gift officer writing to a donor seven days after their annual report was sent.
+
+TONE: ${TONES.find(x=>x.id===t).name}.
+
+STRUCTURE (3 short paragraphs, ~100 words):
+1. Note that the report has been with them a week.
+2. One specific question — name three doors: financial statement, story, fund's year.
+3. A one-line reply is enough; two-day follow-up commitment.
+
+RETURN: the email as plain text with a subject line.`,
+  'dl-family': (t) => `ROLE: You are the Director of Stewardship Reporting writing the first letter to a family who has just established a memorial scholarship fund.
+
+TONE: ${TONES.find(x=>x.id===t).name}.
+
+GOAL: Let the family know the fund is established, describe how the fund will be reported, and confirm the family has a say in how the name is used.
+
+CONSTRAINTS:
+- No story or quote in this letter.
+- No causal or outcome language; the fund is new.
+- No sentimentality that the family did not invite.
+
+RETURN: the letter as plain text.`
+};
+
+/* Non-donor prompts (unchanged from previous version) */
+PROMPTS['te-status'] = () => `ROLE: You are the Director of Stewardship Reporting. Write the weekly team status email for week 8 of the season. Under 250 words.`;
+PROMPTS['te-sla'] = () => `ROLE: You are the Director of Stewardship Reporting. Write a short follow-up email listing the reports past SLA, each with an owner and a next step. Under 180 words.`;
+PROMPTS['te-escalate'] = () => `ROLE: You are the Director of Stewardship Reporting writing an escalation memo to the Executive Director. Two decisions, one reply. Under 200 words.`;
+PROMPTS['ld-board'] = () => `ROLE: You are the Director of Stewardship Reporting preparing a one-page campaign impact summary for the board of trustees. Under 350 words.`;
+PROMPTS['ld-advisor'] = () => `ROLE: You are the Director of Stewardship Reporting preparing an advisory memo to advancement leadership. Three moves, options with costs, one decision requested. Under 400 words.`;
+PROMPTS['cp-ailog'] = () => `ROLE: You are the QA reviewer documenting the corrections made to an AI-generated donor report draft. Record (1) what the AI proposed, (2) what the human changed it to, (3) the reason, (4) the record the correction was made against.`;
+PROMPTS['cp-release'] = () => `ROLE: You are the reporting pipeline generating the release authorization record for a donor report. Show each of the six Release-Gate checks, its state, its owner, and the evidence or rule that justifies the state.`;
+
+/* ============================================================
+   State
+   ============================================================ */
+const state = { selected: 'dl-endowed', tab: 'preview', smart: null, tone: 'formal' };
+
+/* ============================================================
+   SMARTER ribbon
+   ============================================================ */
+function buildRibbon() {
+  const host = document.getElementById('smartRibbon');
+  host.innerHTML = SMARTER.map(s => `
+    <button type="button" class="smart-card ${state.smart === s.letter ? 'on' : ''}" role="tab" aria-selected="${state.smart === s.letter}" data-smart="${s.letter}">
+      <span class="let">${s.letter}</span>
+      <b>${E(s.name)}</b>
+      <span>${E(s.label)}</span>
+    </button>`).join('');
+  const d = document.getElementById('smartDetail');
+  if (state.smart) {
+    const s = SMARTER.find(x => x.letter === state.smart);
+    const arts = s.satisfiedBy.map(id => ARTIFACTS.find(a => a.id === id)).filter(Boolean);
+    d.innerHTML = `<b>${s.letter} · ${E(s.name)} — ${E(s.label)}</b><p style="margin:6px 0">${E(s.detail)}</p><div class="small"><b>${arts.length} message${arts.length === 1 ? '' : 's'}:</b> ${arts.map(a => `<a href="#" data-open="${E(a.id)}">${E(a.title)}</a>`).join(' · ')}</div>`;
+  } else {
+    d.innerHTML = `<b>Click a SMARTER letter</b> to see which messages satisfy that commitment.`;
+  }
+}
+
+/* ============================================================
+   Side rail
+   ============================================================ */
+function buildRail() {
+  const rails = ['Donor messages','Team messages','Leadership messages','Governance artifacts'];
+  const host = document.getElementById('libSide');
+  host.innerHTML = rails.map(r => `
+    <div class="group">
+      <h4>${E(r)}</h4>
+      ${ARTIFACTS.filter(a => a.rail === r).map(a => `
+        <button type="button" data-id="${E(a.id)}" class="${state.selected === a.id ? 'on' : ''}">
+          ${E(a.title)}
+          <small>${E(a.subtitle)}</small>
+        </button>`).join('')}
+    </div>`).join('');
+}
+
+/* ============================================================
+   Render artifact
+   ============================================================ */
+function renderArtifact() {
+  const a = ARTIFACTS.find(x => x.id === state.selected) || ARTIFACTS[0];
+  const host = document.getElementById('artHost');
+  const checks = RELEASE_GATE.map(c => {
+    const st = a.gate[c.id] || 'PASS';
+    const col = st === 'PASS' ? '#116a55' : st === 'HOLD' ? '#8a1c2c' : '#6b7c8f';
+    return `<tr style="border-bottom:1px solid #eef2f6">
+      <td style="padding:6px 8px;font:700 12px var(--font-sans);color:#152430">${E(c.name)}</td>
+      <td style="padding:6px 8px;font:700 12px var(--font-sans);color:${col}">${E(st)}</td>
+      <td style="padding:6px 8px;font:12px var(--font-sans);color:#4a5f73">${E(c.owner)}</td>
+      <td style="padding:6px 8px;font:12px var(--font-sans);color:#4a5f73">${E(c.rule)}</td>
+    </tr>`;
+  }).join('');
+  const smartChips = SMARTER.map(s => `<span class="${a.smart.indexOf(s.letter) >= 0 ? 'on' : ''}">${s.letter} · ${E(s.name)}</span>`).join('');
+  const tones = (a.tones || ['formal']).map(t => {
+    const info = TONES.find(x => x.id === t);
+    return `<button type="button" class="${state.tone === t ? 'on' : ''}" data-tone="${t}">${E(info.name)}</button>`;
+  }).join('');
+  const toneDesc = TONES.find(x => x.id === state.tone) || TONES[0];
+
+  /* body dispatch */
+  let body = '';
+  if (state.tab === 'preview') {
+    const fn = { 'dl-endowed': letterEndowed, 'de-endowed': emailEndowed, 'th-thank': thankNote, 'de-underspend': underspendEmail, 'de-renewal': renewalEmail, 'de-followup': followupEmail, 'dl-family': familyLetter, 'te-status': teamStatus, 'te-sla': teamSla, 'te-escalate': escalationMemo, 'ld-board': boardOnePager, 'ld-advisor': advisoryMemo, 'cp-ailog': aiChangeLog, 'cp-release': releaseAuth }[a.id];
+    body = fn ? fn(state.tone) : '<p class="small">No preview for this artifact.</p>';
+  } else if (state.tab === 'gate') {
+    body = `
+      <p class="small" style="margin-bottom:14px">The six Release-Gate checks this message must pass before it leaves the platform. A failed check is a stop, not a footnote.</p>
+      <table style="width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:12px">
+        <thead><tr style="background:#f3f6fa"><th style="text-align:left;padding:8px 10px;font:700 11px var(--font-sans);color:#4a5f73">Check</th><th style="text-align:left;padding:8px 10px;font:700 11px var(--font-sans);color:#4a5f73">State</th><th style="text-align:left;padding:8px 10px;font:700 11px var(--font-sans);color:#4a5f73">Owner</th><th style="text-align:left;padding:8px 10px;font:700 11px var(--font-sans);color:#4a5f73">Rule</th></tr></thead>
+        <tbody>${checks}</tbody>
+      </table>
+      <p class="note" style="margin-top:14px">A message that clears all six checks <em>with</em> a named approver on record is releasable. A message that clears all six <em>without</em> a named approver is the actual red flag.</p>`;
+  } else if (state.tab === 'prompt') {
+    const fn = PROMPTS[a.id];
+    body = `<p class="small" style="margin-bottom:14px">The prompt that would generate this message from verified fields.</p><pre class="prompt">${E(fn ? fn(state.tone) : 'No prompt for this artifact.')}</pre>`;
+  } else {
+    body = `<p class="small">Plain-text view is not available for this artifact.</p>`;
+  }
+
+  host.innerHTML = `
+    <div class="art-bar">
+      <div class="left">
+        <span class="meta sample">SAMPLE</span>
+        <span class="meta proposed">${E(a.format)}</span>
+        <strong style="font:700 14px var(--font-serif);color:var(--ink)">${E(a.title)}</strong>
+      </div>
+      <div class="right">
+        <button type="button" class="btn small" data-tab="preview" aria-pressed="${state.tab === 'preview'}">Preview</button>
+        <button type="button" class="btn small" data-tab="prompt" aria-pressed="${state.tab === 'prompt'}">AI prompt</button>
+        <button type="button" class="btn small" data-tab="gate" aria-pressed="${state.tab === 'gate'}">Release Gate</button>
+      </div>
+    </div>
+    ${(a.tones || []).length > 1 ? `
+      <div class="tone-bar">
+        <span class="lbl">Tone</span>
+        ${tones}
+        <span class="aud">${E(toneDesc.desc)}</span>
+      </div>` : ''}
+    <div class="art-body">
+      <div class="art-meta">
+        <span><b>From:</b> ${E(a.from)}</span>
+        <span><b>To:</b> ${E(a.to)}</span>
+        <span><b>Subject:</b> ${E(a.subject)}</span>
+      </div>
+      <div class="art-smart">${smartChips}</div>
+      <p class="small" style="margin:0 0 14px">${E(a.why)}</p>
+      ${body}
+    </div>`;
+}
+
+/* ============================================================
+   Events
+   ============================================================ */
+document.addEventListener('click', e => {
+  const s = e.target.closest('[data-smart]');
+  if (s) { state.smart = state.smart === s.getAttribute('data-smart') ? null : s.getAttribute('data-smart'); buildRibbon(); return; }
+  const open = e.target.closest('[data-open]');
+  if (open) { e.preventDefault(); state.selected = open.getAttribute('data-open'); buildRail(); renderArtifact(); document.getElementById('artHost').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+  const b = e.target.closest('#libSide button');
+  if (b) { state.selected = b.getAttribute('data-id'); buildRail(); renderArtifact(); return; }
+  const t = e.target.closest('[data-tab]');
+  if (t) { state.tab = t.getAttribute('data-tab'); renderArtifact(); return; }
+  const tn = e.target.closest('[data-tone]');
+  if (tn) { state.tone = tn.getAttribute('data-tone'); renderArtifact(); return; }
+});
+
+
+function persistPlaybookReturn(){ try { if(sessionStorage.getItem('aadLastPlaybook')) sessionStorage.setItem('aadReturnPlaybook', sessionStorage.getItem('aadLastPlaybook')); } catch(e){} }
+document.querySelectorAll('a[href^="./index"],a[href^="./playbook"],a[href^="./donor-profile"]').forEach(function(a){ a.addEventListener('click', persistPlaybookReturn); });
+(function(){
+  var btn=document.getElementById('returnBtn');
+  try {
+    var from=new URLSearchParams(location.search).get('return');
+    var target=(/^playbook\.html#(?:start|framework|brief|report|donor|standard|factory|delivery|toolkit|plan|measure|close|govern)$/.test(from||'')?from:'')||sessionStorage.getItem('aadReturnPlaybook')||sessionStorage.getItem('aadLastPlaybook');
+    if(btn && target){ btn.style.display='inline-block'; btn.addEventListener('click', function(){ location.href='./'+target; }); }
+  } catch(e){}
+})();
+buildRibbon();
+buildRail();
+renderArtifact();
+</script>
+</body>
+</html>
