@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-07.1",
-  "operating_statement": "SMARTER governs execution; the Release Gate certifies evidence; VERITAS structures the donor narrative.",
+  "version": "2026-11-08.1",
+  "operating_statement": "One Harvard coordinates stakeholders; SMARTER governs execution; the Six-Check Release Gate certifies evidence and authorization; VERITAS structures the donor narrative.",
   "veritas": [
     [
       "V",
@@ -78,5 +78,85 @@
         "owner": "Designated Release Authority"
       }
     ]
+  },
+  "programs": [
+    {
+      "id": "strategy",
+      "name": "Strategic leadership",
+      "file": "strategic-leadership.html",
+      "home": "start",
+      "deep": "northstar"
+    },
+    {
+      "id": "impact",
+      "name": "Donor impact reporting",
+      "file": "donor-impact-reporting.html",
+      "home": "start",
+      "deep": "reports"
+    },
+    {
+      "id": "team",
+      "name": "Team leadership & operations",
+      "file": "team-leadership.html",
+      "home": "start",
+      "deep": "team"
+    },
+    {
+      "id": "campaign",
+      "name": "Campaign & institutional initiatives",
+      "file": "campaign-initiatives.html",
+      "home": "start",
+      "deep": "campaign"
+    }
+  ],
+  "workspaces": [
+    "index.html",
+    "playbook.html",
+    "program-office.html",
+    "operations.html",
+    "communications.html",
+    "donor-profile.html"
+  ],
+  "synthetic_cases": [
+    {
+      "id": "endowed",
+      "name": "Endowed fund",
+      "basis": "Annual distribution",
+      "primary": 55000,
+      "spent": 46000,
+      "remaining": 9000
+    },
+    {
+      "id": "current",
+      "name": "Current-use",
+      "basis": "Received this cycle",
+      "primary": 180000,
+      "spent": 152500,
+      "remaining": 27500
+    },
+    {
+      "id": "capital",
+      "name": "Capital project",
+      "basis": "Project receipts",
+      "primary": 1960000,
+      "spent": 1720000,
+      "remaining": 240000
+    },
+    {
+      "id": "grant",
+      "name": "Restricted grant",
+      "basis": "Award budget",
+      "primary": 300000,
+      "spent": 211000,
+      "remaining": 89000
+    }
+  ],
+  "scope": "Independent stewardship reporting demonstration; not Harvard policy",
+  "provenance": "Every case financial amount and illustration is synthetic; no donor names, gift-officer notes or approval records are authentic.",
+  "frameworks": {
+    "One Harvard": "Cross-unit coordination and consensus without relying on positional authority",
+    "SMARTER": "Specifically · Measurably · Achievably · Relevantly · Time-bound · Evaluated · Reviewed",
+    "Six-Check Release Gate": "Intent · Reconciliation · Consent · Traceability · Attribution · Authorization",
+    "VERITAS": "Vision · Experience · Results · Investment · Truth · Advancement · Stewardship"
   }
 }

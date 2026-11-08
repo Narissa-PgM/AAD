@@ -182,8 +182,9 @@
 @media print{.ux-tabs,.board-nav,.nav-links,.source-fold,.open-btn{display:none!important}.ux-body{min-height:0}.photo-hero img{height:230px;aspect-ratio:auto}}
 
 </style>
-</head>
+<style id="wf-nav-style">.wf-navigator{font-family:system-ui,-apple-system,'Segoe UI',sans-serif!important;background:#fff!important;color:#284157!important;border-top:3px solid #a51c30!important;border-bottom:1px solid #d7e1e9!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:9px!important;flex-wrap:wrap!important;padding:7px 15px!important;min-height:43px!important;position:relative!important;z-index:69!important}.wf-navigator .wf-path{display:flex!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important}.wf-navigator .wf-path a,.wf-navigator .wf-path button{display:inline-flex!important;align-items:center!important;padding:5px 9px!important;background:#fff!important;color:#1e3851!important;border:1px solid #dae2e9!important;border-radius:7px!important;text-decoration:none!important;font:bold 11px/1.2 system-ui,sans-serif!important;cursor:pointer!important;min-height:29px!important}.wf-navigator a:hover,.wf-navigator button:hover{border-color:#a51c30!important;color:#a51c30!important}.wf-navigator .wf-path strong{font:bold 11px system-ui,sans-serif!important;color:#a51c30!important}.wf-navigator .wf-path .wf-return{background:#fbf0f2!important;color:#7e1527!important;border-color:#e4b8c1!important}.wf-navigator .wf-hint{font:11px/1.3 system-ui,sans-serif!important;color:#607184!important}.wf-navigator .wf-hint b{color:#a51c30}@media(max-width:700px){.wf-navigator{padding:7px 9px!important}.wf-navigator .wf-hint{display:none!important}}@media print{.wf-navigator{display:none!important}}</style></head>
 <body>
+<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./index.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><span class="wf-hint"><b>One Harvard</b> · SMARTER · Release Gate · VERITAS</span></nav>
 <div class="wrap">
   <div class="board-nav">
     <div class="brand">University Stewardship Operations Board<small>Independent work sample · aligned to the reporting platform and playbook</small></div>
@@ -1695,5 +1696,14 @@ renderPublicAlumni();renderOpsLayer();
 buildFlowSvg();
 buildDonorChips();
 </script>
+<script id="wf-nav-script">(function(){
+  const current=()=>{const name=location.pathname.split('/').pop()||'index.html';return name+(location.hash||'')};
+  const allowed=['index.html','workframe.html','playbook.html','program-office.html','strategic-leadership.html','donor-impact-reporting.html','team-leadership.html','campaign-initiatives.html','communications.html','donor-profile.html','operations.html'];
+  const label=(p)=>({'workframe.html':'Workframe','playbook.html':'Playbook','index.html':'Suite','program-office.html':'Program Office','strategic-leadership.html':'Strategy','donor-impact-reporting.html':'Donor Impact','team-leadership.html':'Team','campaign-initiatives.html':'Campaign','communications.html':'Communications','operations.html':'Operations','donor-profile.html':'Donor Profile'})[(p||'').split(/[?#]/)[0]]||'previous page';
+  function safe(x){if(!x || x.startsWith('/')||x.startsWith('//')||x.includes('..')||/[\\]/.test(x))return false;return allowed.includes(x.split(/[?#]/)[0])}
+  function render(){const target=new URLSearchParams(location.search).get('return') || sessionStorage.getItem('wfPreviousPage');const slot=document.getElementById('wf-return-slot');if(!slot||!safe(target)||target.split(/[?#]/)[0]===(location.pathname.split('/').pop()||'index.html'))return;const a=document.createElement('a');a.className='wf-return';a.href='./'+target;a.textContent='← Return to '+label(target)+(target.includes('#')?' · '+target.split('#')[1]:'');a.dataset.wfReturn='1';slot.appendChild(a)}
+  document.addEventListener('click',function(evt){const a=evt.target.closest('a[href]');if(!a||a.dataset.wfReturn==='1'||evt.defaultPrevented)return;let to;try{to=new URL(a.href,location.href)}catch{return}if(to.origin!==location.origin || to.pathname===location.pathname)return;const dest=to.pathname.split('/').pop();if(!allowed.includes(dest))return;const origin=current();try{sessionStorage.setItem('wfPreviousPage',origin)}catch{}if(!to.searchParams.has('return'))to.searchParams.set('return',origin);a.href=to.href},true);
+  try{render()}catch{};
+})();</script>
 </body>
 </html>
