@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "workspaces": [
     {
       "file": "profile.html",
@@ -63,11 +63,119 @@
     }
   ],
   "recommended_route": [
-    "profile.html",
     "workframe.html",
-    "donor-impact-reporting.html#reports",
-    "playbook.html#report",
-    "index.html#suite"
+    "index.html?report=endowed#reportgallery",
+    "donor-profile.html",
+    "communications.html",
+    "index.html#suite",
+    "index.html?report=current#reportgallery",
+    "index.html?report=grant#reportgallery",
+    "index.html?report=capital#reportgallery",
+    "playbook.html#start",
+    "operations.html",
+    "program-office.html#start",
+    "strategic-leadership.html#northstar",
+    "team-leadership.html#team",
+    "campaign-initiatives.html#campaign",
+    "bridge-builder.html#today"
   ],
-  "storage": "Browser localStorage, paths only"
+  "storage": "Browser localStorage, paths only",
+  "series_guide": [
+    {
+      "order": 1,
+      "url": "workframe.html",
+      "title": "Workframe",
+      "purpose": "The map. Two minutes, then leave."
+    },
+    {
+      "order": 2,
+      "url": "index.html?report=endowed#reportgallery",
+      "title": "Report Gallery — Endowed fund",
+      "purpose": "University Opportunity Endowment; $55,000 distributed, $46,000 spent, $9,000 available; 18 aid awards."
+    },
+    {
+      "order": 3,
+      "url": "donor-profile.html",
+      "title": "Donor profile",
+      "purpose": "Eleanor M. Whitfield."
+    },
+    {
+      "order": 4,
+      "url": "communications.html",
+      "title": "Communications",
+      "purpose": "Letter accompanying the endowed report."
+    },
+    {
+      "order": 5,
+      "url": "index.html#suite",
+      "title": "Operating Suite",
+      "purpose": "How the report is held, checked, and released."
+    },
+    {
+      "order": 6,
+      "url": "index.html?report=current#reportgallery",
+      "title": "Current-use gift",
+      "purpose": "Student Experience & Access Fund; report 02."
+    },
+    {
+      "order": 7,
+      "url": "index.html?report=grant#reportgallery",
+      "title": "Restricted grant",
+      "purpose": "Biomedical Training Grant; report 04."
+    },
+    {
+      "order": 8,
+      "url": "index.html?report=capital#reportgallery",
+      "title": "Capital project",
+      "purpose": "Learning Commons; report 03. Whole-project amounts."
+    },
+    {
+      "order": 9,
+      "url": "playbook.html#start",
+      "title": "Playbook",
+      "purpose": "The procedures behind the reports."
+    },
+    {
+      "order": 10,
+      "url": "operations.html",
+      "title": "Operations board",
+      "purpose": "Where the numbers come from."
+    },
+    {
+      "order": 11,
+      "url": "program-office.html#start",
+      "title": "Program office",
+      "purpose": "Schedule, capacity, and risks."
+    },
+    {
+      "order": 12,
+      "url": "strategic-leadership.html#northstar",
+      "title": "Strategic leadership",
+      "purpose": "Priorities and standards."
+    },
+    {
+      "order": 13,
+      "url": "team-leadership.html#team",
+      "title": "Team and operations",
+      "purpose": "Who does the work."
+    },
+    {
+      "order": 14,
+      "url": "campaign-initiatives.html#campaign",
+      "title": "Campaign and initiatives",
+      "purpose": "How reports serve a campaign."
+    },
+    {
+      "order": 15,
+      "url": "bridge-builder.html#today",
+      "title": "Open-door hub",
+      "purpose": "Daily team board."
+    }
+  ],
+  "quick_review": [
+    "workframe.html",
+    "index.html?report=endowed#reportgallery",
+    "donor-profile.html"
+  ],
+  "report_variant_parameter": "The Suite selects a report using ?report=endowed/current/grant/capital and #reportgallery."
 }
