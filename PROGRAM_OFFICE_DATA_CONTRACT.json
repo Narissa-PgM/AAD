@@ -1,0 +1,116 @@
+{
+  "source_file": "AAandD_Program_Playbook.html",
+  "source_handling": "Six phases, dates, gate windows and scenario estimates retained, unrelated gift-processing story adapted to stewardship reporting; all quantities illustrative.",
+  "program": {
+    "name": "University Stewardship Reporting Program · Six-Phase Operating Plan",
+    "problem": "Decentralized donor impact reports lack one controlled intake, evidence standard, approval path and production calendar. Reconciliation and claim validation can be duplicated or missed across schools and units.",
+    "outcome": "Create a coordinated reporting operation: gift-type report standards, certified source-to-claim evidence, a Six-Check Release Gate, timely mass delivery, and documented follow-up.",
+    "start": "2027-01-05",
+    "plannedWeeks": 24,
+    "deadlineWeek": 33,
+    "scope": {
+      "in": [
+        "Discover: Reporting inventory, service tiers, donor intent and source-data requirements",
+        "Design: Gift-type templates, source standards, VERITAS editorial structure and Release Gate",
+        "Build: Reporting intake, financial tie-outs, evidence packets, tracking and batch preflight",
+        "Pilot: Endowed and current-use report samples, program and Finance review",
+        "Scale: Capital and restricted-grant reporting; annual delivery calendar; staff training",
+        "Evaluate: Monthly scorecards, report retirement audit, acceptance and benefits review"
+      ],
+      "out": [
+        "Changes to systems of record without the data owner’s approval",
+        "Personnel and hiring decisions",
+        "New funding commitments",
+        "Policy changes owned by other offices"
+      ],
+      "awaiting": [
+        "Sponsor and owners approve scope at Gate 0 (proposed)",
+        "Access to institution-approved donor, fund and accounting sources (not included in this demonstration)",
+        "Academic, Gift Administration, Finance and privacy decisions before production",
+        "Illustrative 1.5 FTE planning capacity; replace with validated staffing assessment"
+      ],
+      "provenance": "PROPOSED — TRANSFORMED FROM ATTACHED DRAFT; NOT AN APPROVED INSTITUTIONAL PROGRAM"
+    }
+  },
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Discover",
+      "start": "2027-01-05",
+      "finish": "2027-01-26",
+      "gate": "G1"
+    },
+    {
+      "id": "P2",
+      "name": "Design",
+      "start": "2027-01-26",
+      "finish": "2027-02-23",
+      "gate": "G2"
+    },
+    {
+      "id": "P3",
+      "name": "Build",
+      "start": "2027-02-23",
+      "finish": "2027-04-06",
+      "gate": "G3"
+    },
+    {
+      "id": "P4",
+      "name": "Pilot",
+      "start": "2027-04-06",
+      "finish": "2027-05-04",
+      "gate": "G4"
+    },
+    {
+      "id": "P5",
+      "name": "Scale",
+      "start": "2027-05-04",
+      "finish": "2027-05-31",
+      "gate": "G5"
+    },
+    {
+      "id": "P6",
+      "name": "Measure",
+      "start": "2027-05-31",
+      "finish": "2027-06-21",
+      "gate": "G6"
+    }
+  ],
+  "gate_names": [
+    "Charter & authorization",
+    "Discover complete",
+    "Design complete",
+    "Build complete",
+    "Pilot complete",
+    "Scale complete",
+    "Measure complete"
+  ],
+  "release_gate": "Intent / Reconciliation / Consent / Traceability / Attribution / Authorization",
+  "editorial": "VERITAS: Vision / Experience / Results / Investment / Truth / Advancement / Stewardship",
+  "workstream_package_titles": {
+    "1.1": "Report inventory and intake process map",
+    "1.2": "Donor intent and evidence exception analysis",
+    "1.3": "Reporting baseline KPIs",
+    "1.4": "Lean Six Sigma Define–Measure: reporting SIPOC, value-stream map and baseline",
+    "1.5": "Stewardship request intake, triage and SLA baseline",
+    "2.1": "Gift-type reporting standards and templates",
+    "2.2": "Source-to-statement reconciliation rules",
+    "2.3": "Report taxonomy, segmentation and service tiers",
+    "2.4": "QA plan: Six-Check Release Gate, traceability and defect log",
+    "3.1": "Automated synthetic reporting batch import and duplicate check",
+    "3.2": "Fund-to-report financial reconciliation and exceptions",
+    "3.3": "Annual stewardship delivery dashboard",
+    "3.4": "Stress-test reporting source integrity and links",
+    "4.1": "Pilot endowed and current-use reporting cases",
+    "4.2": "Finance, program and stewardship review sign-off",
+    "4.3": "Smoke test report links, donor previews and release stops",
+    "4.4": "UAT: six checks, report viewer and batch preflight",
+    "5.1": "Scale to four report families and audience tiers",
+    "5.2": "Gift-officer and report-writer training",
+    "5.3": "Security, controlled delivery, SOP runbook and hypercare",
+    "6.1": "Verified reporting benefits and timeliness review",
+    "6.2": "Expand, revise or retire decision",
+    "6.3": "Lean Six Sigma Control: report cycle and exceptions chart",
+    "6.4": "Stewardship quality and decision-usefulness audit"
+  }
+}

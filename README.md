@@ -1,63 +1,55 @@
-# Stewardship Operations Suite · GitHub Pages package
+# University Stewardship Operating Suite — Program Office integration
 
-Independent, fictional university stewardship operating prototype. Not a university system or an adopted policy.
+This package integrates the attached `AAandD_Program_Playbook.html` into the existing operating suite while preventing two conflicting program definitions.
 
-## Open the site
+## Where each piece lives
 
-Upload the package contents, including the `assets` folder, to the repository root. Deploy GitHub Pages from `main` / `(root)`.
+- `index.html` — **Suite** (default landing page). Select **Program Office** from the left navigation for an interactive six-phase implementation view, action register, status changes, and links to the advanced controls.
+- `program-office.html` — **Advanced Program Office** with 11 working views: Start Here, Year Plan, Analyze & Predict, Command Center, Initiate, Plan, Execute, Monitor & Control, Close & Handover, AI & Decision Support, Governance & Provenance. Includes a full 24-package Gantt, Kanban, risk/benefit visualizations, RACI, cost forecasts, gated decisions, and a startup self-check.
+- `playbook.html` — **Executive Playbook**. The Plan & Roadmap chapter connects the proposal to the Program Office Gantt, Kanban and governance; Toolkit connects to the command center. It retains its unique donor-report SOPs and controls rather than duplicating the new page.
+- `communications.html` — donor communications and story library.
+- `operations.html` — data flow, automation and human review companion.
+- `donor-profile.html` — detailed synthetic donor profile.
+- `assets/` — required Suite CSS and JS, concept image and synthetic CSV import example.
 
-- `index.html` — default **Stewardship Operations Suite** dashboard, with live interactive modules at `#suite`
-- `index.html#brief` — executive brief / full prior platform overview
-- `index.html#reportgallery` — four canonical complete synthetic donor reports
-- `index.html#trace` — evidence and source traceability
-- `index.html#masscalendar` — annual stewardship calendar
-- `playbook.html#donor` — integrated donor-review playbook
-- `communications.html` — donor and team storytelling library
-- `donor-profile.html` — detailed fictional donor record
-- `operations.html` — data flow and tracking deep dive
+## Unified frameworks
 
-**Upload the full ZIP contents together.** The new dashboard requires `assets/suite.js`, `assets/suite.css`, and `assets/steward_scene.webp`. Uploading only `index.html` will display a missing-assets explanation.
+**One Harvard:** consensus across decentralized schools, Finance, Gift Administration, Advancement Services, academic stakeholders and gift officers.
 
-## What is functional in a browser
+**SMARTER:** reporting scope, measurements, attainable rollout, relevance to mission, time windows, evaluation and review.
 
-1. Open nine connected modules using the Suite navigation.
-2. Choose fictional donors, inspect giving records and fund descriptions.
-3. Add sample gift-officer notes and relationship communications; they are saved in browser localStorage.
-4. Create sample reports; financial bridge validation runs and all six gates begin on HOLD.
-5. Toggle demo Release Gate checks; reviewers must enter their name and rationale to record a simulated decision. If checks are missing, the system blocks a requested 'ready' decision.
-6. Draft messages using the seven-section VERITAS structure, edit the text, copy or export HTML (no sending).
-7. Import synthetic CSV with columns `donor_id,report_id,type,amount,owner,due` and run bulk preflight; download a sample CSV in the Batch screen.
-8. Track report owners, due dates, sample exceptions, financial totals and outcome descriptions.
-9. Export simulated review events and batch events, reset the demo, or export all fictional records to JSON.
-10. Follow live links to the existing four reports, calendar, communications library, playbook and donor dossier.
+**Six-Check Release Gate:** Intent · Reconciliation · Consent · Traceability · Attribution · Authorization. Evidence and human authorization control publication.
 
-## Shared framework
+**VERITAS:** Vision · Experience · Results · Investment · Truth · Advancement · Stewardship. Only the donor narrative/editorial structure uses this acronym.
 
-- **One Harvard** — proposed cross-unit coordination method, not an asserted adopted Harvard-wide operating policy.
-- **SMARTER** — scope, measures, achievability, relevance, timing, evaluation and review.
-- **Six-Check Release Gate** — Intent, Reconciliation, Consent, Traceability, Attribution, Authorization.
-- **VERITAS** — Vision, Experience, Results, Investment, Truth, Advancement, Stewardship (editorial narrative only).
-- **AA&D values** — respect, inclusion, trust, collaboration, continuous improvement and open communication.
+## Dates and synthetic data
 
-## Canonical financial case amounts
+The user-provided playbook originally described an FAS research/gift-processing initiative with unrelated PIMS tasks and a November 2026 start. This version **adapts those work packages to stewardship reporting** and **rebaselines its six-phase, 24-week scenario to January–June 2027**, as used by the companion Executive Playbook. The rebaseline shifts the attached draft's sample phase/gate/action dates consistently, preserving dependency windows. These are not actual institutional plans.
 
-| Case | Total / available | Spent | Balance | Meaning |
-| --- | ---: | ---: | ---: | --- |
-| SIM-END-2026 | $55,000 | $46,000 | $9,000 | Endowed-fund annual distribution |
-| SIM-USE-2026 | $180,000 | $152,500 | $27,500 | Current-use gift receipts |
-| SIM-CAP-2026 | $1,960,000 | $1,720,000 | $240,000 | Project-wide gifts received vs spending; **not one donor's giving** |
-| SIM-GRT-2026 | $300,000 | $211,000 | $89,000 | Grant-wide budget vs actual; **not one donor's giving** |
+P50/P80 estimates, EVM, original risk readings, RACI roles, KPI histories, staffing, forecasts and financial benefits are **illustrative**, retained for methodological demonstration and not represented as Harvard operating metrics. No donor or financial system is connected.
 
-All records are synthetic. The four canonical reports in the existing platform are the reference for financial models. The donor giving history for fictional Eleanor M. Whitfield totals $1,220,000 across six receipts.
+The Suite's Program Office table and the advanced Program Office Kanban use the same browser-local storage key (`aad_stewardship_program_board_v1`). Changes update the other view on reload or reentry. This is not multi-user synchronization or an auditable backend. No real email is sent and no approval is granted.
 
-## Critical security boundary
+## Deploy to GitHub Pages
 
-This is a **working local prototype**, not a production, multi-user application. GitHub Pages is publicly readable static hosting. Browser localStorage is not a secure donor database. The prototype deliberately has **no CRM access, no authenticated role authorization, no secure donor document serving, no real mailing, and no server-backed immutable audit history**.
-
-**Never put real donor identities, gift histories, gift agreements, emails, passwords, access tokens or unredacted records into this repository or browser demo.**
-
-A production build would require institutional approvals, privacy and legal review, SSO + role-based authorization, encrypted backend/database, approved data integrations, server-side audit, consent checks, verified templates, email suppression handling, approved distribution infrastructure, security/UAT/accessibility reviews and operations support.
+1. Extract the ZIP. Upload all site files and the **entire `assets/` folder** to the repository root (e.g. `narissa-pgm/AAD`).
+2. In GitHub repository **Settings → Pages**, publish the correct branch and root directory.
+3. Visit `/AAD/` for the Suite, `/AAD/program-office.html#plan` for the Program Office Gantt, and `/AAD/playbook.html#plan` for the executive roadmap.
+4. Test the report links, Program Office status update, browser refresh, `#execute` Kanban, return to playbook and mobile layout after deployment.
+5. Do not commit identifiable donor records, gifts, notes, addresses, or credentials to a public repository.
 
 ## Testing
 
-See `SUITE_QA_RESULTS.json` and `QA_SUMMARY.md`. Tests exercised Chromium in an isolated in-memory document because this runtime blocked local URL navigation; the actual GitHub Pages deployment still requires a final live click-through.
+The package was run with a headless Chromium in-memory browser. The advanced page's own startup check passed all 16 checks, including 11 chapter renders, 24 Gantt packages, the RACI invariant, 793 linked details, provenance labels and no duplicate IDs. The external regression checks passed 21/21, including Suite Program Office actions, chapter navigation, Playbook links, and mobile width. JavaScript syntax checked with Node. Live GitHub Pages remains to be tested once deployed.
+
+
+## Strategic Leadership · new addition (November 2026)
+- `strategic-leadership.html` is a new interactive strategy workspace, linked from Operating Suite > Strategic Leadership and the Playbook.
+- Public FY2026 Harvard financial and announced research figures are URL-cited and labeled **PUBLIC**.
+- The January–December 2027 implementation quarters are **PROPOSED**; workflow capacity assumptions, scenario outputs, and simulated KPIs are **SYNTHETIC / FORECAST**. No Harvard production data is represented.
+- Framework: One Harvard = working method; SMARTER = execution; Six-Check Release Gate = evidence and authorization; VERITAS = donor-facing narrative.
+- No real donor profiles or external data endpoints are included.
+
+
+## People & Collaboration Leadership upgrade (November 2026)
+The strategic-leadership.html#leadership tab is a functional demo of a One Harvard team plan, six partner records, portfolio prioritization with capacity constraints, an AI/human review workflow, and executive communications in four channels. Planning data and contact entries are SYNTHETIC / PROPOSED and stored only in this browser. All real donor and staff information stays in authorized systems.

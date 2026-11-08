@@ -72,3 +72,29 @@ body.suite-active>footer{display:none}
 .ss-app .ss-step:nth-child(5){background:linear-gradient(#fff0f2,#f1dbe0);border-top:4px solid #9e253b}
 .ss-app .ss-step:nth-child(6){background:linear-gradient(#f2eefb,#e5def4);border-top:4px solid #6d4b99}
 @media(max-width:720px){body.suite-active>header .hw{padding:9px 12px!important}body.suite-active>header .brand h1{font-size:15px}body.suite-active>header .brand p{font-size:10px}body.suite-active>header .mk{width:31px;height:31px;font-size:12px}body.suite-active>header .hbtn a:not([href*="playbook"]),body.suite-active>header .hbtn #prt,body.suite-active>header .hbtn #theme{display:none!important}body.suite-active>header .hbtn .btn{font-size:10px;padding:6px!important}.ss-app .ss-nav button{font-size:12px}}
+
+/* Stewardship Program Office · integrated controls */
+.ss-app .ss-prog-strip{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:12px 0;padding:14px 16px;border:1px solid #dce4eb;border-left:5px solid #a51c30;border-radius:12px;background:linear-gradient(110deg,#fff,#f8f5f7)}
+.ss-app .ss-prog-strip>div:first-child{flex:1;min-width:220px}
+.ss-app .ss-prog-strip small{font:800 10px system-ui;color:#852238;letter-spacing:.08em;display:block}
+.ss-app .ss-prog-strip b{display:block;font:700 17px Cambria,serif;color:#20364a;margin:3px 0}
+.ss-app .ss-prog-strip span{display:block;font:12px/1.5 system-ui;color:#647488}
+.ss-app .ss-prog-links{display:flex;gap:6px;flex-wrap:wrap}
+.ss-app .ss-program-hero{position:relative;min-height:180px;border-radius:15px;background:#26384f url('./steward_scene.webp') center 48%/cover;display:flex;align-items:flex-end;overflow:hidden;margin:10px 0 13px}
+.ss-app .ss-program-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#152839f2,#20364bb7 56%,#20364b22)}
+.ss-app .ss-program-hero-copy{position:relative;color:#fff;max-width:750px;padding:20px}
+.ss-app .ss-program-hero h3{color:white;font:700 27px Cambria,serif;margin:0 0 5px}
+.ss-app .ss-program-hero p{font:13px/1.5 system-ui;color:#f2f4f6;margin:0 0 6px}
+.ss-app .ss-program-hero small{font:10px system-ui;color:#fff2cf}
+.ss-app .ss-program-kpis{margin:12px 0}
+.ss-app .ss-program-phase-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:12px 0}
+.ss-app a.ss-program-phase{text-decoration:none;display:flex;flex-direction:column;gap:5px;padding:12px 10px;background:#fff;border:1px solid #dce4eb;border-top:4px solid #9b253b;border-radius:11px;color:#284058}
+.ss-app a.ss-program-phase:hover{background:#fceef0;border-color:#9e576c}
+.ss-app .ss-program-phase small{font:800 10px system-ui;color:#953448}.ss-app .ss-program-phase b{font:700 16px Cambria,serif}.ss-app .ss-program-phase span{font:12px/1.4 system-ui;flex:1;color:#53677d}.ss-app .ss-program-phase em{font:700 10px system-ui;color:#617286;font-style:normal}
+.ss-app .ss-program-connect{display:grid;gap:7px}
+.ss-app .ss-program-connect a{display:flex;gap:11px;padding:10px;border:1px solid #e4eaf0;background:#f9fbfd;border-radius:9px;text-decoration:none;color:#253d57}
+.ss-app .ss-program-connect a:hover{background:#fdf0f2;border-color:#c79aaa}
+.ss-app .ss-program-connect svg{width:22px;height:22px;flex-shrink:0;color:#93253b}
+.ss-app .ss-program-connect b{display:block;font-size:13px}.ss-app .ss-program-connect small{display:block;font:11px/1.4 system-ui;color:#607185}
+@media(max-width:1150px){.ss-app .ss-program-phase-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:660px){.ss-app .ss-program-phase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ss-app .ss-program-hero h3{font-size:21px}}

@@ -1,0 +1,132 @@
+{
+  "passed": 31,
+  "total": 31,
+  "errors": [],
+  "results": [
+    [
+      "10 chapter tabs",
+      true
+    ],
+    [
+      "render overview",
+      true
+    ],
+    [
+      "render mission",
+      true
+    ],
+    [
+      "render strategy",
+      true
+    ],
+    [
+      "render context",
+      true
+    ],
+    [
+      "render standards",
+      true
+    ],
+    [
+      "render advisory",
+      true
+    ],
+    [
+      "render leadership",
+      true
+    ],
+    [
+      "render campaign",
+      true
+    ],
+    [
+      "render outlook",
+      true
+    ],
+    [
+      "render selfcheck",
+      true
+    ],
+    [
+      "leadership lens team",
+      true
+    ],
+    [
+      "leadership lens stakeholders",
+      true
+    ],
+    [
+      "leadership lens portfolio",
+      true
+    ],
+    [
+      "leadership lens improve",
+      true
+    ],
+    [
+      "leadership lens communications",
+      true
+    ],
+    [
+      "leadership lens donor",
+      true
+    ],
+    [
+      "6 partner cards",
+      true
+    ],
+    [
+      "partner dialog",
+      true
+    ],
+    [
+      "6 portfolio tasks",
+      true
+    ],
+    [
+      "status change",
+      true
+    ],
+    [
+      "capacity change",
+      true
+    ],
+    [
+      "portfolio CSV export",
+      true
+    ],
+    [
+      "executive brief sample",
+      true
+    ],
+    [
+      "contact event logged",
+      true
+    ],
+    [
+      "contact CSV export",
+      true
+    ],
+    [
+      "6 gate inputs",
+      true
+    ],
+    [
+      "gate control responds",
+      true
+    ],
+    [
+      "mobile no global overflow",
+      true
+    ],
+    [
+      "playbook plan link",
+      true
+    ],
+    [
+      "suite leadership link",
+      true
+    ]
+  ],
+  "browser_mode": "Chromium set_content; live navigation not verified"
+}

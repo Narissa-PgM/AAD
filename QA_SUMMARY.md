@@ -1,17 +1,23 @@
-# Suite smoke-test results
+# Integration smoke test and data audit
 
-- **34 of 34 checks passed.**
-- No JavaScript page errors in the tested flows.
-- All nine Suite modules opened; financial infographic panels and links rendered.
-- New report creation, sample note entry, communication entry, gate hold enforcement, audit event recording, synthetic CSV import, and preflight logs passed.
-- Mobile page-level horizontal overflow: none at 768px, 390px or 360px.
-- The offending recruiting text was removed from the revised HTML files.
-- Local file and cross-page path references resolve to packaged files.
+**Scope:** Advanced Program Office + Suite sidebar/overview + Executive Playbook links.
 
-## Browser testing limit
+| Check | Result |
+|---|---|
+| JavaScript syntax, advanced program source | PASS |
+| JavaScript syntax, Suite assets | PASS |
+| JavaScript syntax, executive playbook | PASS |
+| Advanced Program Office's internal startup self-check | **16/16 PASS** |
+| Browser regression on 11 advanced chapters and Suite controls | **21/21 PASS** |
+| Full advanced WBS/Gantt | **24/24 work packages rendered** |
+| RACI exactly one A per activity | PASS |
+| Gantt phase finish dates equal gates | PASS |
+| Status edit stored in shared browser key | PASS (synthetic local demo) |
+| Six phase cards and thirteen directly editable task rows | PASS |
+| Desktop and responsive widths (390px, 768px, 1280px) | PASS — no page overflow in checked Advanced view |
+| Browser JavaScript exceptions during tested paths | 0 |
+| External GitHub Pages live navigation | NOT VERIFIED; deploy and test |
 
-Tests rendered the exact HTML, CSS, image, and JavaScript inline in an isolated Chromium page. Local HTTP and `file://` navigation were blocked by this environment, so the deployed GitHub Pages URL has **not** been visited or certified. Links have been checked structurally and hash navigation exercised, but live GitHub deployment needs post-upload verification.
+**Data corrections:** The uploaded source contained a different FAS research/gift-processing initiative, a PIMS work package, and `Company Description` as a role. The updated case is explicitly adapted to stewardship reporting. Dates are rebased to match the existing January–June 2027 six-phase program. Numerical assumptions were retained as sample estimates, not verified institutional data.
 
-## Future production requirements
-
-This is an operational browser prototype using only fictional data, not a secure multiuser system. A real system requires approved CRM, financial and donor-data integrations, a backend, SSO/RBAC, server audit logging, permissions and consent verification, approved mailing infrastructure, monitoring and institutional approvals.
+**Limit:** The Program Office reports are demonstrations, not production reconciliations or authorized approval records. Local storage is browser-only and is not secure collaborative state.
