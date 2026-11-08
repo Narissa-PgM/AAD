@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Proposed front door for the stewardship workframe: one portfolio, four programs, one shared operating contract. Sample for review.">
+<meta name="author" content="Candidate work sample">
+<title>The stewardship operating frame — proposed front door</title>
+<style>
+  :root{
+    --bg:#f4f7fb;--card:#fff;--ink:#1b2b3a;--muted:#5c6e80;--line:#d7e0e8;
+    --crim:#8d1c34;--crim-deep:#6e1428;--soft:#f7f1f3;--gold:#85611f;
+    --blue:#1f4e79;--green:#0f6e62;--amber:#8a5a10;--purple:#5c3d8f;
+    --serif:Cambria,Georgia,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--serif)}
+  a{color:var(--blue)}
+  a:focus-visible,button:focus-visible{outline:3px solid #2d80b2;outline-offset:3px}
+  .skip{position:absolute;left:12px;top:-60px;background:#fff;color:var(--ink);padding:8px 12px;border-radius:6px;z-index:20}
+  .skip:focus{top:12px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  header{background:linear-gradient(135deg,var(--crim-deep),var(--crim));color:#fff;padding:34px 0 24px;border-bottom:5px solid var(--gold)}
+  .kicker{font:700 11px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#f0d5da;margin:0 0 8px}
+  h1{font-size:clamp(34px,4.6vw,54px);line-height:1.02;letter-spacing:-.02em;margin:0 0 10px;max-width:920px}
+  .tagline{font-size:clamp(17px,2vw,21px);line-height:1.4;color:#f7e8ea;margin:0;max-width:760px}
+  .by{font:14px/1.4 var(--sans);color:#f0d5da;margin:14px 0 0}
+  .top-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .top-actions a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font:700 12px/1 var(--sans);letter-spacing:.02em;padding:9px 13px;border:1px solid rgba(255,255,255,.4);border-radius:7px;color:#fff}
+  .top-actions a.primary{background:#fff;color:var(--crim-deep);border-color:#fff}
+  .top-actions a:hover{background:rgba(255,255,255,.14)}
+  .top-actions a.primary:hover{background:#f7e8ea}
+  .jump{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .jump a{font:700 11.5px/1 var(--sans);text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.32);padding:6px 10px;border-radius:99px}
+  .jump a:hover{background:rgba(255,255,255,.12)}
+  main{padding:26px 0 36px}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:16px}
+  .level{font:700 10.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--crim);margin:0 0 6px}
+  h2{font-size:clamp(24px,2.6vw,32px);line-height:1.15;letter-spacing:-.015em;margin:0 0 8px}
+  h3{font-size:18px;line-height:1.25;margin:0}
+  .lead{font-size:16.5px;line-height:1.55;color:var(--muted);max-width:76ch;margin:0 0 16px}
+  .glance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:16px 0 0}
+  .glance div{border:1px solid var(--line);border-top:3px solid var(--crim);border-radius:8px;padding:9px 10px;background:var(--soft)}
+  .glance b{display:block;font-size:24px;line-height:1.1;color:var(--crim)}
+  .glance span{display:block;font:11px/1.35 var(--sans);color:var(--muted);margin-top:2px}
+  .glance div:nth-child(2){border-top-color:var(--blue)}.glance div:nth-child(3){border-top-color:var(--green)}.glance div:nth-child(4){border-top-color:var(--gold)}
+  .programs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:14px}
+  .program{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:10px;padding:13px 14px;transition:transform .16s ease,box-shadow .16s ease}
+  .program:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(20,35,50,.10)}
+  .program:nth-child(2){border-top-color:var(--green)}.program:nth-child(3){border-top-color:var(--amber)}.program:nth-child(4){border-top-color:var(--purple)}
+  .program .num{font:700 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--crim)}
+  .program h3{font-size:20px;margin:4px 0 3px}
+  .program p{font-size:14px;color:var(--muted);margin:0 0 8px}
+  .program .proof{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:7px;margin-top:auto}
+  .program .open{font:700 11.5px/1 var(--sans);color:var(--crim);margin-top:8px;display:flex;justify-content:space-between;align-items:center}
+  .chain{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .chain .step{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:7px;padding:10px 11px;background:#f8fafc}
+  .chain .step:nth-child(2){border-left-color:var(--green)}.chain .step:nth-child(3){border-left-color:var(--amber)}.chain .step:nth-child(4){border-left-color:var(--purple)}
+  .chain b{display:block;font-size:13px;margin-bottom:2px}
+  .chain span{display:block;font-size:11.5px;color:var(--muted);line-height:1.4}
+  .return{grid-column:1/-1;border:1px dashed var(--line);border-radius:7px;padding:8px 10px;font:600 11.5px/1.4 var(--sans);color:var(--muted);text-align:center;background:#fbfcfe}
+  .contract{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}
+  .contract .frame{border:1px solid var(--line);border-radius:8px;padding:10px 11px;background:#f8fafc}
+  .contract .kind{font:700 9px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--crim);display:block;margin-bottom:3px}
+  .contract h3{font-size:15px;margin-bottom:3px}
+  .contract p{font-size:11.5px;line-height:1.4;color:var(--muted);margin:0}
+  .route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}
+  .route a{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:11px;background:#f8fafc}
+  .route a:hover{border-color:var(--crim)}
+  .route b{display:block;color:var(--crim);font-size:14px}
+  .route span{display:block;font:11.5px/1.4 var(--sans);color:var(--muted);margin-top:2px}
+  .note{font-size:11.5px;line-height:1.5;color:var(--muted);margin:12px 0 0}
+  footer{padding:0 0 34px;color:var(--muted);font-size:11.5px;line-height:1.55}
+  footer .wrap{border-top:1px solid var(--line);padding-top:13px}
+  .badge{display:inline-block;font:700 9.5px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#664d03;background:#fff3cd;border:1px solid #d4a843;border-radius:4px;padding:2px 7px;margin-left:6px;vertical-align:2px}
+  @media(max-width:900px){.programs{grid-template-columns:1fr 1fr}.contract,.glance{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.wrap{padding:0 15px}header{padding:24px 0 18px}.programs,.contract,.glance,.chain,.route{grid-template-columns:1fr}.band{padding:17px 15px;border-radius:10px}h1{font-size:34px}}
+  @media print{header{background:#fff;color:#000;border-bottom:2px solid #000}.kicker,.by,.tagline,.top-actions,.jump{color:#333}.top-actions,.jump{display:none}.band,.program,.chain .step,.contract .frame,.route a{break-inside:avoid;box-shadow:none}a{color:#000;text-decoration:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the sample</a>
+<header>
+  <div class="wrap">
+    <p class="kicker">Hiring team · proposed front door · sample for review</p>
+    <h1>The stewardship operating frame</h1>
+    <p class="tagline">One portfolio. Four programs. One visible delivery system. This page is the map; the work is in the programs.</p>
+    <p class="by">Narissara Khomkhai · Director of Stewardship Reporting · Alumni Affairs and Development</p>
+    <div class="top-actions">
+      <a class="primary" href="#programs">See the four programs →</a>
+      <a href="#contract">The shared operating contract</a>
+      <a href="#route">How to review this</a>
+    </div>
+    <nav class="jump" aria-label="On this page">
+      <a href="#frame">The frame</a>
+      <a href="#programs">Programs</a>
+      <a href="#chain">How work moves</a>
+      <a href="#contract">Shared contract</a>
+      <a href="#route">Review route</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <section class="band" id="frame" aria-labelledby="frame-title">
+      <p class="level">Profile → portfolio → program → project</p>
+      <h2 id="frame-title">The frame, in one screen</h2>
+      <p class="lead">The role holds one portfolio. The portfolio contains four durable program areas. Projects move through those programs. The frame does not duplicate the dates, staffing or dollar figures inside the programs; it tells you where to find them and how the work connects.</p>
+      <div class="glance" aria-label="At a glance">
+        <div><b>1</b><span>Portfolio, held by the Director</span></div>
+        <div><b>4</b><span>Programs, each with a worked platform</span></div>
+        <div><b>1</b><span>Shared delivery and release contract</span></div>
+        <div><b>3 min</b><span>To understand the map</span></div>
+      </div>
+      <p class="note"><span class="badge">Sample</span> This is the proposed front-door version. It removes duplicated operational detail, fixes the program links, and makes each program openable.</p>
+    </section>
+
+    <section class="band" id="programs" aria-labelledby="programs-title">
+      <p class="level">One portfolio · four programs</p>
+      <h2 id="programs-title">Choose a program. Open the evidence.</h2>
+      <p class="lead">Each program has a different audience and a different proof. The frame links to the working platform rather than repeating its numbers.</p>
+      <div class="programs">
+        <a class="program" href="Strategic_Leadership_Platform_v2.html">
+          <span class="num">Program 1 · Strategic leadership</span>
+          <h3>Set the priorities and the standard.</h3>
+          <p>Reporting strategy, gift-type standards, advisory memos and the decision to extend or close work.</p>
+          <div class="proof"><strong>What it proves:</strong> strategy on a page, a standard per gift type, and a defensible decision record.</div>
+          <div class="open"><span>Open the strategic platform</span><span>↗</span></div>
+        </a>
+        <a class="program" href="Donor_Impact_Reporting_Stewardship_v2.html">
+          <span class="num">Program 2 · Donor impact reporting</span>
+          <h3>Turn a gift into a true report.</h3>
+          <p>One donor record, four gift-type reports, intent and evidence from agreement to release.</p>
+          <div class="proof"><strong>What it proves:</strong> four report families, a six-check release gate and a donor-centered report anatomy.</div>
+          <div class="open"><span>Open the donor platform</span><span>↗</span></div>
+        </a>
+        <a class="program" href="Team_Leadership_Operations_v2.html">
+          <span class="num">Program 3 · Team leadership &amp; operations</span>
+          <h3>Build the team that can carry it.</h3>
+          <p>Roles, capacity, QA, cross-team collaboration, improvement and the release calendar.</p>
+          <div class="proof"><strong>What it proves:</strong> a named team model, workload allocation, quality gates and a capacity plan.</div>
+          <div class="open"><span>Open the team platform</span><span>↗</span></div>
+        </a>
+        <a class="program" href="Campaign_Institutional_Initiatives_v2.html">
+          <span class="num">Program 4 · Campaign &amp; institutional initiatives</span>
+          <h3>Connect the campaign to what it changed.</h3>
+          <p>Campaign model, impact products, academic partnerships, recognition and public narrative.</p>
+          <div class="proof"><strong>What it proves:</strong> campaign evidence, four priorities, six products and a recognition control path.</div>
+          <div class="open"><span>Open the campaign platform</span><span>↗</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="band" id="chain" aria-labelledby="chain-title">
+      <p class="level">How the four programs move work</p>
+      <h2 id="chain-title">Standards down. Certified reports across. Questions back up.</h2>
+      <p class="lead">This is the operating logic, not an org chart. Strategy sets the standard; donor and campaign turn it into products; team operations staffs the work and holds the release gate.</p>
+      <div class="chain">
+        <div class="step"><b>1 · Strategic leadership</b><span>Sets priorities, tiers, standards and the questions the other programs answer.</span></div>
+        <div class="step"><b>2 · Donor impact reporting</b><span>Turns the standard into a donor record, evidence set and report.</span></div>
+        <div class="step"><b>2 · Campaign &amp; institutional initiatives</b><span>Turns the priority into a board, public or school-facing product.</span></div>
+        <div class="step"><b>3 · Team leadership &amp; operations</b><span>Staffs both production lines, keeps the calendar and holds the six-check release gate.</span></div>
+        <div class="return">↑ Responses, exceptions and questions return to Strategic Leadership</div>
+      </div>
+    </section>
+
+    <section class="band" id="contract" aria-labelledby="contract-title">
+      <p class="level">Shared by every program</p>
+      <h2 id="contract-title">One contract, four kinds of discipline</h2>
+      <p class="lead">The four frameworks are not interchangeable. One is a working principle, one is a goal test, one is a control, and one is a donor narrative.</p>
+      <div class="contract">
+        <div class="frame"><span class="kind">Principle</span><h3>One Harvard</h3><p>Schools, gift officers, Finance, Communications and data owners agree the work. The role coordinates; it does not claim authority over their systems.</p></div>
+        <div class="frame"><span class="kind">Test</span><h3>SMARTER</h3><p>Specific, measurable, achievable, relevant, time-bound, evaluable and reviewable. The test is whether the work can be checked, not whether the acronym is displayed.</p></div>
+        <div class="frame"><span class="kind">Control</span><h3>Release Gate</h3><p>Intent, reconciliation, consent, traceability, attribution and authorization. A project status does not release a report; the gate does.</p></div>
+        <div class="frame"><span class="kind">Narrative</span><h3>VERITAS</h3><p>A donor-narrative mnemonic built from the letters of <em>Veritas</em>: vision, experience, results, investment, truth, advancement, stewardship. The University motto itself means truth.</p></div>
+      </div>
+      <p class="note">The Release Gate here is the publication authorization. Each platform's six QA gates are production checks; the platform pages are the source of truth for their own QA sequence.</p>
+    </section>
+
+    <section class="band" id="route" aria-labelledby="route-title">
+      <p class="level">How to review this</p>
+      <h2 id="route-title">Three routes, one decision</h2>
+      <p class="lead">A hiring reviewer should not have to read everything to judge the work. Start at the level you need.</p>
+      <div class="route">
+        <a href="#frame"><b>3 minutes · The map</b><span>Read this page. Decide whether the portfolio logic holds.</span></a>
+        <a href="#programs"><b>10 minutes · One program</b><span>Open the program closest to the role. Check the evidence, not the decoration.</span></a>
+        <a href="Strategic_Leadership_Platform_v2.html"><b>Deep dive · The portfolio</b><span>Open all four platforms and compare the standard, the team and the campaign.</span></a>
+      </div>
+      <p class="note">The four working platforms contain the detailed dates, dollar figures, FTE assumptions and synthetic labels. This frame intentionally stays at the level of the portfolio so those details have one source of truth.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Sample front door for review.</strong> The design and structure are proposed. Program links point to the four working platforms in this portfolio. Published facts, synthesized operating values and planning estimates are labelled inside each program. This page is not an authorized institutional plan, a university system or a production donor record.</p>
+  </div>
+</footer>
+</body>
+</html>
