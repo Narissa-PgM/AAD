@@ -1,0 +1,1749 @@
+{
+  "static": {
+    "total_files": 11,
+    "js_syntax": [
+      {
+        "file": "campaign-initiatives.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "campaign-initiatives.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "communications.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "communications.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "donor-impact-reporting.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "donor-impact-reporting.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "donor-profile.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "donor-profile.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "donor-profile.html",
+        "block": 2,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "index.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "index.html",
+        "block": 2,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "operations.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "operations.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "playbook.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "playbook.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "program-office.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "program-office.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "strategic-leadership.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "strategic-leadership.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "team-leadership.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "team-leadership.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "workframe.html",
+        "block": 0,
+        "pass": true,
+        "error": ""
+      },
+      {
+        "file": "workframe.html",
+        "block": 1,
+        "pass": true,
+        "error": ""
+      }
+    ],
+    "links": [
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./donor-impact-reporting.html#reports",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "reports",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./donor-impact-reporting.html?return=campaign-initiatives.html%23products#reports",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "reports",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./playbook.html#plan",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./playbook.html#report",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "report",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "campaign-initiatives.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./index.html#comms",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "comms",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./playbook.html#delivery",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "delivery",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./playbook.html#donor",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "donor",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "communications.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./communications.html",
+        "target": "communications.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./donor-profile.html",
+        "target": "donor-profile.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./index.html#reportgallery",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "reportgallery",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./index.html#reports",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "reports",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./operations.html",
+        "target": "operations.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./playbook.html#donor",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "donor",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./playbook.html#report",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "report",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./program-office.html#plan",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./strategic-leadership.html#start",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-impact-reporting.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./communications.html",
+        "target": "communications.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./index.html#flow",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "flow",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./playbook.html#donor",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "donor",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "donor-profile.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./communications.html",
+        "target": "communications.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "index.html",
+        "href": "./operations.html#systems",
+        "target": "operations.html",
+        "file_exists": true,
+        "hash": "systems",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./playbook.html#donor",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "donor",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./playbook.html?case=${encodeURIComponent(chosen)}#report",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "report",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "index.html",
+        "href": "/index.html",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "operations.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "operations.html",
+        "href": "./playbook.html",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "operations.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "operations.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "operations.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./campaign-initiatives.html?return=playbook.html%23plan#partnerships",
+        "target": "campaign-initiatives.html",
+        "file_exists": true,
+        "hash": "partnerships",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./campaign-initiatives.html?return=playbook.html%23plan#plan",
+        "target": "campaign-initiatives.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./campaign-initiatives.html?return=playbook.html%23plan#recognition",
+        "target": "campaign-initiatives.html",
+        "file_exists": true,
+        "hash": "recognition",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./campaign-initiatives.html?return=playbook.html%23plan#start",
+        "target": "campaign-initiatives.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./communications.html",
+        "target": "communications.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./donor-impact-reporting.html?return=playbook.html%23report#cadence",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "cadence",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./donor-impact-reporting.html?return=playbook.html%23report#reports",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "reports",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./donor-impact-reporting.html?return=playbook.html%23report#trust",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "trust",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./donor-profile.html",
+        "target": "donor-profile.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "playbook.html",
+        "href": "./program-office.html#execute",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "execute",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./program-office.html#governance",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "governance",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./program-office.html#plan",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23framework#northstar",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "northstar",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23plan#comms",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "comms",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23plan#evidence",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "evidence",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23plan#plan",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23plan#projects",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "projects",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23plan#team",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "team",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./strategic-leadership.html?return=playbook.html%23start#start",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./team-leadership.html?return=playbook.html%23plan#capacity",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "capacity",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./team-leadership.html?return=playbook.html%23plan#collaboration",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "collaboration",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./team-leadership.html?return=playbook.html%23plan#quality",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "quality",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./team-leadership.html?return=playbook.html%23plan#start",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./team-leadership.html?return=playbook.html%23plan#team",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "team",
+        "hash_valid": null
+      },
+      {
+        "source": "playbook.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "program-office.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./index.html?suiteTab=batch#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./index.html?suiteTab=calendar#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./index.html?suiteTab=gate#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./index.html?suiteTab=program#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./index.html?suiteTab=reports#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./playbook.html#donor",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "donor",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./playbook.html#plan",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "program-office.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./campaign-initiatives.html#start",
+        "target": "campaign-initiatives.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./index.html",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./playbook.html#donor",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "donor",
+        "hash_valid": true
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./program-office.html",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./team-leadership.html#team",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "team",
+        "hash_valid": null
+      },
+      {
+        "source": "strategic-leadership.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./donor-impact-reporting.html#trust",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "trust",
+        "hash_valid": true
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./playbook.html#plan",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "plan",
+        "hash_valid": true
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./strategic-leadership.html#team",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "team",
+        "hash_valid": true
+      },
+      {
+        "source": "team-leadership.html",
+        "href": "./workframe.html#programs",
+        "target": "workframe.html",
+        "file_exists": true,
+        "hash": "programs",
+        "hash_valid": null
+      },
+      {
+        "source": "workframe.html",
+        "href": "./campaign-initiatives.html#campaign",
+        "target": "campaign-initiatives.html",
+        "file_exists": true,
+        "hash": "campaign",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./communications.html",
+        "target": "communications.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "workframe.html",
+        "href": "./donor-impact-reporting.html#cadence",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "cadence",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./donor-impact-reporting.html#reports",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "reports",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./donor-impact-reporting.html#stories",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "stories",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./donor-impact-reporting.html#trust",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "trust",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./donor-impact-reporting.html?case=",
+        "target": "donor-impact-reporting.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "workframe.html",
+        "href": "./donor-profile.html",
+        "target": "donor-profile.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "workframe.html",
+        "href": "./index.html#suite",
+        "target": "index.html",
+        "file_exists": true,
+        "hash": "suite",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./operations.html",
+        "target": "operations.html",
+        "file_exists": true,
+        "hash": "",
+        "hash_valid": null
+      },
+      {
+        "source": "workframe.html",
+        "href": "./playbook.html#standard",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "standard",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./playbook.html#start",
+        "target": "playbook.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./program-office.html#start",
+        "target": "program-office.html",
+        "file_exists": true,
+        "hash": "start",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./strategic-leadership.html#northstar",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "northstar",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./strategic-leadership.html#operating",
+        "target": "strategic-leadership.html",
+        "file_exists": true,
+        "hash": "operating",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./team-leadership.html#quality",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "quality",
+        "hash_valid": true
+      },
+      {
+        "source": "workframe.html",
+        "href": "./team-leadership.html#team",
+        "target": "team-leadership.html",
+        "file_exists": true,
+        "hash": "team",
+        "hash_valid": true
+      }
+    ],
+    "arithmetic": [
+      {
+        "id": "endowed",
+        "pass": true
+      },
+      {
+        "id": "current",
+        "pass": true
+      },
+      {
+        "id": "capital",
+        "pass": true
+      },
+      {
+        "id": "grant",
+        "pass": true
+      }
+    ]
+  },
+  "browser": [
+    {
+      "file": "campaign-initiatives.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nSkip to the"
+        },
+        {
+          "name": "open #start",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #northstar",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #campaign",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #products",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #partnerships",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #recognition",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #dataai",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #plan",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #evidence",
+          "pass": true,
+          "detail": "chapter visible"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "communications.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nOperating S"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "donor-impact-reporting.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nSkip to the"
+        },
+        {
+          "name": "open #start",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #northstar",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #reports",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #cadence",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #trust",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #stories",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #special",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #plan",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #evidence",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "report gallery renders four cases",
+          "pass": true,
+          "detail": [
+            null,
+            4
+          ]
+        },
+        {
+          "name": "case select endowed",
+          "pass": true,
+          "detail": [
+            null,
+            "true"
+          ]
+        },
+        {
+          "name": "case select current",
+          "pass": true,
+          "detail": [
+            null,
+            "true"
+          ]
+        },
+        {
+          "name": "case select capital",
+          "pass": true,
+          "detail": [
+            null,
+            "true"
+          ]
+        },
+        {
+          "name": "case select grant",
+          "pass": true,
+          "detail": [
+            null,
+            "true"
+          ]
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "donor-profile.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nOperating S"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "index.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nNK\nUniversi"
+        },
+        {
+          "name": "suite #suite",
+          "pass": true,
+          "detail": "OPERATING SUITE\nHome\nDonor portfolio\nReporting & impact"
+        },
+        {
+          "name": "suite #brief",
+          "pass": true,
+          "detail": "◉\nOverview\nOperating dashboard, mission, report models "
+        },
+        {
+          "name": "suite #command",
+          "pass": true,
+          "detail": "M\nMeasurably\nHow the reporting portfolio performs, in n"
+        },
+        {
+          "name": "suite #factory",
+          "pass": true,
+          "detail": "A\nAchievably\nWhether the team can produce it on time: t"
+        },
+        {
+          "name": "suite #mission",
+          "pass": true,
+          "detail": "R\nRelevantly\nWhy it matters: the mission, the values an"
+        },
+        {
+          "name": "suite #flow",
+          "pass": true,
+          "detail": "▤\nPlaybook\nHow to run it: donor and team messages, data"
+        },
+        {
+          "name": "suite #comms",
+          "pass": true,
+          "detail": "▤\nPlaybook\nHow to run it: donor and team messages, data"
+        },
+        {
+          "name": "suite #reportgallery",
+          "pass": true,
+          "detail": "A\nAchievably\nWhether the team can produce it on time: t"
+        },
+        {
+          "name": "suite #automation",
+          "pass": true,
+          "detail": "A\nAchievably\nWhether the team can produce it on time: t"
+        },
+        {
+          "name": "suite #year",
+          "pass": true,
+          "detail": "T\nTime-bound\nWhen, and on time: the reporting year, the"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "operations.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nUniversity "
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "playbook.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nUNIVERSITY "
+        },
+        {
+          "name": "playbook #start",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #framework",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #brief",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #report",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #donor",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #standard",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #factory",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #delivery",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #toolkit",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #plan",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #measure",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #close",
+          "pass": true,
+          "detail": "active"
+        },
+        {
+          "name": "playbook #govern",
+          "pass": true,
+          "detail": "active"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "program-office.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nSkip to the"
+        },
+        {
+          "name": "program office #start",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #year",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #analyze",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #command",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #initiate",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #plan",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #execute",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #monitor",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #close",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #ai",
+          "pass": true,
+          "detail": 1
+        },
+        {
+          "name": "program office #governance",
+          "pass": true,
+          "detail": 1
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "strategic-leadership.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nSkip to the"
+        },
+        {
+          "name": "open #start",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #northstar",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #operating",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #team",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #projects",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #dataai",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #comms",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #plan",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #evidence",
+          "pass": true,
+          "detail": "chapter visible"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "team-leadership.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "◈ Workframe\nSuite\nPlaybook\nProgram Office\nOne Harvard · SMARTER · Release Gate · VERITAS\nSkip to the"
+        },
+        {
+          "name": "open #start",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #northstar",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #team",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #capacity",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #quality",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #collaboration",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #improvement",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #dataai",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #plan",
+          "pass": true,
+          "detail": "chapter visible"
+        },
+        {
+          "name": "open #evidence",
+          "pass": true,
+          "detail": "chapter visible"
+        }
+      ],
+      "runtime_errors": []
+    },
+    {
+      "file": "workframe.html",
+      "tests": [
+        {
+          "name": "initial render",
+          "pass": true,
+          "detail": "Skip to operating frame\nS\nStewardship Operations Workframe\nOne portfolio · Four programs · Shared co"
+        },
+        {
+          "name": "Six workflow stages",
+          "pass": true,
+          "detail": 6
+        },
+        {
+          "name": "workflow stage 1",
+          "pass": true,
+          "detail": [
+            null,
+            "Understand the donor and their purpose"
+          ]
+        },
+        {
+          "name": "workflow stage 2",
+          "pass": true,
+          "detail": [
+            null,
+            "Plan the right reporting product"
+          ]
+        },
+        {
+          "name": "workflow stage 3",
+          "pass": true,
+          "detail": [
+            null,
+            "Verify certified statements and source claims"
+          ]
+        },
+        {
+          "name": "workflow stage 4",
+          "pass": true,
+          "detail": [
+            null,
+            "Tell the story through VERITAS"
+          ]
+        },
+        {
+          "name": "workflow stage 5",
+          "pass": true,
+          "detail": [
+            null,
+            "Pass the Six-Check Release Gate"
+          ]
+        },
+        {
+          "name": "workflow stage 6",
+          "pass": true,
+          "detail": [
+            null,
+            "Deliver at scale and learn from the outcome"
+          ]
+        },
+        {
+          "name": "financial case 1",
+          "pass": true,
+          "detail": [
+            null,
+            "Arithmetic check: PASS — bridge reconciles. Report authorization is not implied."
+          ]
+        },
+        {
+          "name": "financial case 2",
+          "pass": true,
+          "detail": [
+            null,
+            "Arithmetic check: PASS — bridge reconciles. Report authorization is not implied."
+          ]
+        },
+        {
+          "name": "financial case 3",
+          "pass": true,
+          "detail": [
+            null,
+            "Arithmetic check: PASS — bridge reconciles. Report authorization is not implied."
+          ]
+        },
+        {
+          "name": "financial case 4",
+          "pass": true,
+          "detail": [
+            null,
+            "Arithmetic check: PASS — bridge reconciles. Report authorization is not implied."
+          ]
+        },
+        {
+          "name": "Run offline link preflight gracefully",
+          "pass": true,
+          "detail": [
+            null,
+            "0 / 14 reachable"
+          ]
+        },
+        {
+          "name": "Export QA JSON button present",
+          "pass": true,
+          "detail": 1
+        }
+      ],
+      "runtime_errors": []
+    }
+  ]
+}

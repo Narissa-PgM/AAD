@@ -1,0 +1,57 @@
+
+/* Independent cross-page trail/compass, isolated from source platform CSS */
+.aad-nav-widget{position:fixed;right:18px;bottom:18px;z-index:99995;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;line-height:1.4;color:#203346;isolation:isolate}
+.aad-nav-widget,.aad-nav-widget *{box-sizing:border-box}
+.aad-nav-launch{display:flex;align-items:center;gap:10px;max-width:min(350px,calc(100vw - 22px));padding:10px 14px;border:1px solid #bfcdd8;border-radius:14px;background:#fff;color:#273b50;box-shadow:0 8px 35px rgba(31,52,73,.21);cursor:pointer;min-height:52px;text-align:left;font-family:inherit;line-height:1.3;transition:transform .13s}
+.aad-nav-launch:hover{transform:translateY(-1px);border-color:#a51c30}
+.aad-nav-launch:focus-visible,.aad-nav-panel :focus-visible{outline:3px solid #b88333;outline-offset:2px}
+.aad-nav-glyph{display:grid;place-items:center;width:33px;height:33px;border-radius:10px;background:#a51c30;color:#fff;font:700 16px Georgia,serif;flex:none}
+.aad-nav-launch-text{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+.aad-nav-launch-text b{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#21384d}
+.aad-nav-launch-text small{font-size:10.5px;color:#667688;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aad-nav-expander{font-size:17px;color:#a51c30}
+.aad-nav-panel{display:none;position:absolute;right:0;bottom:62px;width:min(440px,calc(100vw - 22px));max-height:min(77vh,710px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border:1px solid #cad6df;border-radius:17px;box-shadow:0 25px 65px rgba(20,36,52,.27);color:#24364b}
+.aad-nav-widget[data-open="true"] .aad-nav-panel{display:block}
+.aad-nav-panel-head{padding:15px 16px 13px;background:linear-gradient(110deg,#fff,#f7f1f2);border-bottom:1px solid #dfe6ed;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.aad-nav-panel-head h2{font:700 21px/1.2 Cambria,Georgia,serif;margin:3px 0 4px;color:#822035}
+.aad-nav-panel-head p{font-size:11px;margin:0;color:#5e6c7c}
+.aad-nav-kicker{font-size:10px;letter-spacing:.1em;font-weight:800;text-transform:uppercase;color:#a51c30}
+.aad-nav-close{background:#fff;border:1px solid #cfd9e1;color:#344759;border-radius:8px;min-width:30px;height:30px;cursor:pointer;font-size:20px;line-height:1}
+.aad-nav-panel-body{padding:12px 15px 16px}
+.aad-nav-here{border:1px solid #dce4ea;border-radius:10px;padding:9px 11px;background:#f9fbfd}
+.aad-nav-here small{font-size:10px;letter-spacing:.07em;color:#6e7c8a;font-weight:750;text-transform:uppercase;display:block}
+.aad-nav-here b{font:700 15px/1.3 Cambria,Georgia,serif;display:block;color:#203c54;margin:4px 0}
+.aad-nav-here span{display:block;color:#596b7c;font-size:11px}
+.aad-nav-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}
+.aad-nav-actions a,.aad-nav-actions button{border:1px solid #cbd6de;text-decoration:none;background:#fff;color:#1c425f;border-radius:8px;padding:9px 10px;font:700 11px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;min-height:37px}
+.aad-nav-actions a:hover,.aad-nav-actions button:hover{border-color:#a51c30;color:#a51c30}
+.aad-nav-actions a.primary{background:#a51c30;color:#fff;border-color:#a51c30}
+.aad-nav-progress{height:7px;background:#edf1f5;border-radius:999px;overflow:hidden;margin:7px 0 3px}
+.aad-nav-progress i{display:block;background:linear-gradient(90deg,#a51c30,#c78b41);height:100%;border-radius:999px}
+.aad-nav-group{margin-top:15px}
+.aad-nav-group h3{display:flex;align-items:center;justify-content:space-between;margin:0 0 7px;color:#3c5062;font:800 10px system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.aad-nav-link-list{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.aad-nav-link{display:flex;align-items:flex-start;gap:7px;padding:9px 8px;text-align:left;border-radius:9px;background:#fff;text-decoration:none;color:#1e3c54;border:1px solid #dbe3ea;min-height:51px;font-size:11.5px;line-height:1.25}
+.aad-nav-link:hover{background:#fbf6f7;border-color:#ca9faa;color:#792338}
+.aad-nav-link[aria-current="page"]{background:#fdf0f2;border-color:#a51c30}
+.aad-nav-link .aad-nav-n{display:grid;place-items:center;flex:none;font:700 11px Cambria,serif;color:#a51c30;border:1px solid #ecd7da;background:#fff;width:23px;height:23px;border-radius:6px}
+.aad-nav-link strong{display:block;font-size:11.4px;color:#2b4152;font-weight:750}
+.aad-nav-link small{display:block;font-size:9.5px;color:#6b7b8c;margin-top:2px}
+.aad-nav-trail{display:flex;flex-direction:column;gap:5px}
+.aad-nav-trail a{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #e0e7ed;border-radius:8px;padding:7px 9px;font-size:11.5px;background:#fafcfe;color:#34536d;text-decoration:none}
+.aad-nav-trail a span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aad-nav-trail a small{color:#8b6b38;flex:none}
+.aad-nav-route{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.aad-nav-route a{border:1px solid #dae4ed;border-radius:99px;padding:5px 8px;font-size:10.5px;text-decoration:none;color:#3b586c;background:#fff}
+.aad-nav-route a[data-done="true"]{border-color:#bfd6cc;background:#f2faf6;color:#27664f}
+.aad-nav-route a[aria-current="step"]{border-color:#a51c30;color:#a51c30;font-weight:800}
+.aad-nav-footer{margin-top:13px;border-top:1px solid #e6ebef;padding-top:10px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.aad-nav-footer p{font-size:10px;color:#6d7d8c;margin:0;max-width:245px}
+.aad-nav-reset{background:transparent;border:0;color:#84243a;text-decoration:underline;cursor:pointer;font-size:10.5px;padding:3px}
+.aad-nav-widget[data-open="true"] .aad-nav-launch{border-color:#a51c30}
+@media(max-width:600px){.aad-nav-widget{right:9px;bottom:9px}.aad-nav-launch{padding:7px 9px;min-height:45px}.aad-nav-glyph{width:28px;height:28px;border-radius:7px}.aad-nav-launch-text b{font-size:11px}.aad-nav-launch-text small{font-size:9.5px}.aad-nav-panel{bottom:54px;max-height:min(75vh,630px)}.aad-nav-panel-body{padding:11px}.aad-nav-panel-head{padding:12px}}
+@media print{.aad-nav-widget{display:none!important}}
+
+/* Portfolio-wide navigation preference: immediate section changes, no animated travel.
+   Applies to same-document anchors as well as the shared Journey Navigator. */
+html, body { scroll-behavior: auto !important; }

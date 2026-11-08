@@ -1,0 +1,83 @@
+{
+  "campaign-initiatives.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "career-profile.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 1
+  },
+  "communications.html": {
+    "css_smooth_fixed": 0,
+    "js_smooth_fixed": 1,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "donor-impact-reporting.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "donor-profile.html": {
+    "css_smooth_fixed": 0,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "index.html": {
+    "css_smooth_fixed": 0,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 1,
+    "career_jump_fixed": 0
+  },
+  "operations.html": {
+    "css_smooth_fixed": 0,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "playbook.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "profile.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "program-office.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "strategic-leadership.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "team-leadership.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "workframe.html": {
+    "css_smooth_fixed": 1,
+    "js_smooth_fixed": 0,
+    "conditional_scroll_fixed": 0,
+    "career_jump_fixed": 0
+  },
+  "assets/wayfinder.css": {
+    "global_immediate_scroll": true
+  }
+}

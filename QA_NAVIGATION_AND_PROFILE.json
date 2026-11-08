@@ -1,0 +1,99 @@
+{
+  "pages_tested": 12,
+  "page_results": [
+    {
+      "page": "profile.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "workframe.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "index.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "playbook.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "strategic-leadership.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "donor-impact-reporting.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "team-leadership.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "campaign-initiatives.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "program-office.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "operations.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "donor-profile.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    },
+    {
+      "page": "communications.html",
+      "pass": true,
+      "navigator_links": 12,
+      "errors": []
+    }
+  ],
+  "return_to_exact_playbook_chapter": true,
+  "mobile_results": [
+    {
+      "page": "Mobile profile.html",
+      "pass": true
+    },
+    {
+      "page": "Mobile workframe.html",
+      "pass": true
+    },
+    {
+      "page": "Mobile index.html",
+      "pass": true
+    }
+  ],
+  "local_html_links_checked": 108,
+  "missing_local_targets": [],
+  "inline_js_checked": 23,
+  "inline_js_failures": [],
+  "navigation_scope": "Browser visit trail (not production data, approval or task-completion tracking)",
+  "browser_method": "Isolated in-memory Chromium tests because file/network navigation is blocked in this sandbox",
+  "all_pass": true
+}

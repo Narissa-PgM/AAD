@@ -1,0 +1,180 @@
+{
+  "tests": [
+    {
+      "name": "Suite group suite and all its pages",
+      "pass": true,
+      "detail": "2"
+    },
+    {
+      "name": "Suite group s1 and all its pages",
+      "pass": true,
+      "detail": "5"
+    },
+    {
+      "name": "Suite group command and all its pages",
+      "pass": true,
+      "detail": "standalone group page"
+    },
+    {
+      "name": "Suite group factory and all its pages",
+      "pass": true,
+      "detail": "4"
+    },
+    {
+      "name": "Suite group mission and all its pages",
+      "pass": true,
+      "detail": "3"
+    },
+    {
+      "name": "Suite group masscalendar and all its pages",
+      "pass": true,
+      "detail": "3"
+    },
+    {
+      "name": "Suite group outcomes and all its pages",
+      "pass": true,
+      "detail": "standalone group page"
+    },
+    {
+      "name": "Suite group trace and all its pages",
+      "pass": true,
+      "detail": "standalone group page"
+    },
+    {
+      "name": "Suite group comms and all its pages",
+      "pass": true,
+      "detail": "5"
+    },
+    {
+      "name": "Suite JS error-free",
+      "pass": true,
+      "detail": "True"
+    },
+    {
+      "name": "Operations layer flow",
+      "pass": true,
+      "detail": "01 / STAGE\nIntake\nSeven governed sources\n02 / STAGE\nReconcil"
+    },
+    {
+      "name": "Operations layer automation",
+      "pass": true,
+      "detail": "Automation owns the repetitive controls\nA1\nIngest + de-dupli"
+    },
+    {
+      "name": "Operations layer humans",
+      "pass": true,
+      "detail": "Who approves what?\n1\nWriter + gift officer\nDonor relationshi"
+    },
+    {
+      "name": "Operations layer alerts",
+      "pass": true,
+      "detail": "Simulated batch size \n500\n1,243\n2,500\n5,000\nShow \nAll scenar"
+    },
+    {
+      "name": "Operations layer release",
+      "pass": true,
+      "detail": "CONTROLS CHECKED\n0/18\n\nIllustrative manual completion\n\nEVIDE"
+    },
+    {
+      "name": "Operations public alumni cards loaded",
+      "pass": true,
+      "detail": "3"
+    },
+    {
+      "name": "Operations 23-node data flow exists",
+      "pass": true,
+      "detail": "23"
+    },
+    {
+      "name": "Operations JS error-free",
+      "pass": true,
+      "detail": "True"
+    },
+    {
+      "name": "Donor dossier overview",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier giving",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier fund",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier notes",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier story",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier reports",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier review",
+      "pass": true,
+      "detail": "true"
+    },
+    {
+      "name": "Donor dossier JS error-free",
+      "pass": true,
+      "detail": "True"
+    },
+    {
+      "name": "Communications catalog rendered",
+      "pass": true,
+      "detail": "SAMPLE\nLETTER\nAnnual endowed fund impact letter\nPreview\nAI prompt\nRelease Gate\nTONE\nFormal"
+    },
+    {
+      "name": "Communications artifact switch",
+      "pass": true,
+      "detail": "14"
+    },
+    {
+      "name": "Communications JS error-free",
+      "pass": true,
+      "detail": "True"
+    }
+  ],
+  "suite_page_destinations": [
+    "advisory",
+    "automation",
+    "brief",
+    "capacity",
+    "command",
+    "comms",
+    "decision",
+    "dict",
+    "factory",
+    "flow",
+    "masscalendar",
+    "method",
+    "mission",
+    "outcomes",
+    "quals",
+    "recon",
+    "reportgallery",
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "suite",
+    "trace",
+    "track",
+    "year"
+  ],
+  "summary": {
+    "passed": 29,
+    "total": 29
+  }
+}

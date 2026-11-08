@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "workspaces": [
+    {
+      "file": "profile.html",
+      "title": "Professional Profile",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "workframe.html",
+      "title": "Workframe",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "index.html",
+      "title": "Suite",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "strategic-leadership.html",
+      "title": "Strategic",
+      "type": "program"
+    },
+    {
+      "file": "donor-impact-reporting.html",
+      "title": "Donor",
+      "type": "program"
+    },
+    {
+      "file": "team-leadership.html",
+      "title": "Team",
+      "type": "program"
+    },
+    {
+      "file": "campaign-initiatives.html",
+      "title": "Campaign",
+      "type": "program"
+    },
+    {
+      "file": "playbook.html",
+      "title": "Playbook",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "program-office.html",
+      "title": "Program Office",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "operations.html",
+      "title": "Operations",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "donor-profile.html",
+      "title": "Donor Dossier",
+      "type": "foundation/workspace"
+    },
+    {
+      "file": "communications.html",
+      "title": "Communications",
+      "type": "foundation/workspace"
+    }
+  ],
+  "recommended_route": [
+    "profile.html",
+    "workframe.html",
+    "donor-impact-reporting.html#reports",
+    "playbook.html#report",
+    "index.html#suite"
+  ],
+  "storage": "Browser localStorage, paths only"
+}

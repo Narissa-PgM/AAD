@@ -1,0 +1,59 @@
+# Instant navigation regression checks
+
+**Passed: 55/55**
+
+- PASS · campaign-initiatives.html · no smooth navigation
+- PASS · campaign-initiatives.html · inline script 1 parses
+- PASS · campaign-initiatives.html · inline script 2 parses
+- PASS · career-profile.html · no smooth navigation
+- PASS · career-profile.html · inline script 0 parses
+- PASS · career-profile.html · inline script 2 parses
+- PASS · career-profile.html · inline script 3 parses
+- PASS · career-profile.html · inline script 4 parses
+- PASS · communications.html · no smooth navigation
+- PASS · communications.html · inline script 0 parses
+- PASS · communications.html · inline script 1 parses
+- PASS · communications.html · inline script 2 parses
+- PASS · donor-impact-reporting.html · no smooth navigation
+- PASS · donor-impact-reporting.html · inline script 1 parses
+- PASS · donor-impact-reporting.html · inline script 2 parses
+- PASS · donor-profile.html · no smooth navigation
+- PASS · donor-profile.html · inline script 0 parses
+- PASS · donor-profile.html · inline script 1 parses
+- PASS · donor-profile.html · inline script 2 parses
+- PASS · donor-profile.html · inline script 3 parses
+- PASS · index.html · no smooth navigation
+- PASS · index.html · inline script 0 parses
+- PASS · index.html · inline script 2 parses
+- PASS · index.html · inline script 3 parses
+- PASS · operations.html · no smooth navigation
+- PASS · operations.html · inline script 0 parses
+- PASS · operations.html · inline script 1 parses
+- PASS · operations.html · inline script 2 parses
+- PASS · playbook.html · no smooth navigation
+- PASS · playbook.html · inline script 1 parses
+- PASS · playbook.html · inline script 2 parses
+- PASS · profile.html · no smooth navigation
+- PASS · profile.html · inline script 0 parses
+- PASS · program-office.html · no smooth navigation
+- PASS · program-office.html · inline script 1 parses
+- PASS · program-office.html · inline script 2 parses
+- PASS · strategic-leadership.html · no smooth navigation
+- PASS · strategic-leadership.html · inline script 1 parses
+- PASS · strategic-leadership.html · inline script 2 parses
+- PASS · team-leadership.html · no smooth navigation
+- PASS · team-leadership.html · inline script 1 parses
+- PASS · team-leadership.html · inline script 2 parses
+- PASS · workframe.html · no smooth navigation
+- PASS · workframe.html · inline script 0 parses
+- PASS · workframe.html · inline script 1 parses
+- PASS · workframe.html · inline script 2 parses
+- PASS · career-profile.html · browser computed scroll behavior is auto
+- PASS · career-profile.html · experience graph is present
+- PASS · career-profile.html · experience nav immediately updates hash
+- PASS · career-profile.html · experience nav does not keep animating
+- PASS · career-profile.html · section tracker opens target directly
+- PASS · career-profile.html · tracker highlights current section
+- PASS · career-profile.html · no runtime exceptions in tested interactions
+- PASS · profile.html · browser computed scroll behavior is auto
+- PASS · profile.html · chapter movement completes without smooth animation

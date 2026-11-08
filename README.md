@@ -1,3 +1,13 @@
+# Stewardship Operating Portfolio — navigable GitHub Pages suite
+
+**New:** `profile.html` is the aligned professional executive profile. Every HTML page now includes a persistent **Journey Navigator** with a 12-workspace map, chapter-aware current location, previous stop, resume-playbook link, and a suggested 5-stop reviewer route. The tracker stores only URLs/page visits in the browser's localStorage; it does not store donor content or transmit data.
+
+Suggested hiring link: `https://narissa-pgm.github.io/AAD/profile.html` (profile first) or `https://narissa-pgm.github.io/AAD/workframe.html` (operating map first). Existing `index.html` remains the Operating Suite root to preserve links.
+
+Upload *all* files and the `assets/` folder. The new `assets/wayfinder.css` and `assets/wayfinder.js` are required; replacing an HTML file alone does not install the navigator. Clear browser local storage using the navigator's **Clear visit history** link if necessary.
+
+The original uploaded professional profile discussed a different, fictional analytics-director role. The new `profile.html` focuses the relevant career evidence on a **proposed AA&D stewardship role** and removes that unrelated posting/financial model from the public site. Career figures are as reported in the supplied professional profile, not independently verified.
+
 # Stewardship Operating Workframe · GitHub Pages package
 
 ## Deployment
