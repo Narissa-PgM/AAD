@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow"><meta name="description" content="An interactive operating map connecting four stewardship programs, shared working tools and the donor evidence-to-impact workflow."><title>Stewardship Operating Workframe · Four Programs, One Connected Suite</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow"><meta name="description" content="A proposed One Harvard stewardship impact circle connecting the continuous donor relationship cycle, four programs, evidence, feedback and improvement."><title>Impact Circle: A One Harvard Stewardship Model · AAD Workframe</title>
 <style>
 :root{--red:#a51c30;--red2:#7e1527;--navy:#1e3851;--ink:#243243;--muted:#607184;--line:#dce4ed;--wash:#f5f8fb;--gold:#ad7d30;--green:#137666;--blue:#356b9b;--purple:#6b55a1;--serif:Cambria,Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',sans-serif;--shadow:0 8px 28px rgba(26,51,73,.075)}
 *{box-sizing:border-box}html{scroll-behavior:auto;scroll-padding-top:84px}body{margin:0;background:#f3f6fa;color:var(--ink);font:16px/1.55 var(--serif);overflow-x:hidden}button,input{font:inherit}button,a{cursor:pointer}a{color:var(--blue);text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #bd8a24;outline-offset:3px}button{border:0}h1,h2,h3,p,figure{margin:0}h1,h2,h3{line-height:1.15}.shell{width:min(1250px,calc(100% - 38px));margin:auto}.eyebrow{font:700 10px/1.2 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--red)}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0)}.skip{position:absolute;top:-99px;left:10px;background:#fff;padding:8px 12px;z-index:200}.skip:focus{top:10px}.icon{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:none}.icon.sm{width:18px;height:18px}
@@ -15,6 +15,37 @@
 @media(max-width:650px){.shell{width:min(100% - 22px,1250px)}.mast-inner{flex-wrap:wrap;padding:9px 0;gap:8px}.mast-actions{width:100%;margin:0;justify-content:space-between}.brand strong{font-size:16px}.hero{min-height:380px}.hero-photo{background-image:linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.83)),url('./assets/steward_scene.webp')}.hero-body{padding:25px 18px}.hero p{font-size:15px}.section{padding:18px 14px}.map-grid{grid-template-columns:1fr;grid-template-areas:'hub' 'p1' 'p2' 'p3' 'p4'}.intro-strip,.contract-grid,.tools,.case-panel,.auditbar,.flow-detail{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,minmax(0,1fr))}.gate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.financials{gap:3px}.money{padding:10px 2px}.money strong{font-size:16px}.mathsign{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media print{.mast,.hero .actions,.footer,.navlink,.no-print,.preflight-list,.btn,.case-tabs{display:none!important}.hero{min-height:0}.hero-photo{opacity:.2}.section{break-inside:avoid}.frame-map{break-inside:avoid}.map-card{box-shadow:none}.flow-step{break-inside:avoid}body{background:#fff}}
+
+/* Impact Circle: consistent, face-free, accessible illustration in the Workframe. */
+.impact-circle-shell{border:1px solid #d9e2eb;border-radius:16px;padding:18px;margin:0 0 18px;background:linear-gradient(160deg,#fff,#f8fafc)}
+.impact-circle-intro{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(230px,.8fr);gap:20px;align-items:center}
+.impact-circle-intro h3,.impact-program-intro h3{color:var(--navy);font:700 clamp(21px,2.1vw,27px)/1.2 var(--serif);margin:6px 0}
+.impact-circle-intro p,.impact-program-intro p{font:13px/1.55 var(--sans);color:#54687b;max-width:86ch}
+.impact-principle{border-left:4px solid var(--red);padding:12px 14px;background:#fff;border-radius:0 9px 9px 0}
+.impact-principle strong{display:block;font:700 16px var(--serif);color:#862339}
+.impact-principle span{display:block;font:12px/1.45 var(--sans);margin:6px 0;color:#445b70}
+.impact-principle small{display:block;font:10px/1.5 var(--sans);color:#7a6670}
+.impact-wheel{position:relative;max-width:1100px;margin:15px auto 0;overflow:hidden;border-radius:12px;border:1px solid #e4e9ed;background:#fff}
+.impact-wheel img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain}
+#impact-hitlayer{position:absolute;inset:0;width:100%;height:calc(100% - 30px);pointer-events:none;overflow:visible}
+.impact-hitshape{fill:transparent;stroke:transparent;pointer-events:all;cursor:pointer;transition:fill .12s,stroke .12s}
+.impact-hitshape:hover,.impact-hitshape:focus-visible,.impact-hitshape[aria-pressed="true"]{fill:rgba(165,28,48,.10);stroke:rgba(165,28,48,.72);stroke-width:5;outline:none}
+.impact-wheel figcaption{font:10px/1.45 var(--sans);color:#637586;padding:8px 11px;background:#f9fbfc}
+.impact-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0 10px}
+.impact-stage{display:flex;align-items:center;gap:9px;text-align:left;border:1px solid #d9e3eb;background:#fff;border-radius:10px;padding:10px;color:var(--navy);min-height:51px}
+.impact-stage span{flex:none;border:1px solid #e7d6d9;background:#faf2f4;color:var(--red);border-radius:8px;padding:5px 7px;font:800 11px var(--sans)}
+.impact-stage strong{font:700 12px/1.3 var(--sans)}
+.impact-stage:hover,.impact-stage[aria-pressed="true"]{background:#fff5f6;border-color:var(--red)}
+.impact-detail{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(220px,.75fr);gap:18px;padding:15px;border:1px solid #e0e6ed;background:#fff;border-radius:11px}
+.impact-detail h4{color:var(--navy);font:700 19px var(--serif);margin:4px 0 7px}
+.impact-detail p{font:12px/1.5 var(--sans);color:#51677a;margin-bottom:10px}
+.impact-evidence{font:12px/1.55 var(--sans);border-left:3px solid var(--gold);padding:3px 0 3px 12px;color:#53667a}
+.impact-evidence strong{color:var(--navy)}
+.impact-return{font:12px/1.5 var(--sans);color:#526878;margin:11px 0 0;padding:8px 11px;background:#f7f9fb;border-radius:8px}
+.impact-program-intro{padding:10px 4px 14px}
+@media(max-width:900px){.impact-circle-intro{grid-template-columns:1fr}.impact-legend{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-detail{grid-template-columns:1fr}}
+@media(max-width:520px){.impact-circle-shell{padding:10px}.impact-legend{grid-template-columns:1fr}.impact-stage{min-height:43px}.impact-wheel figcaption{font-size:9px}}
+@media print{#impact-hitlayer,.impact-legend,.impact-detail .btn{display:none}.impact-circle-shell,.impact-wheel{break-inside:avoid}}
 </style><link rel="stylesheet" href="./assets/wayfinder.css">
 <link rel="stylesheet" href="./assets/visual-explorer.css">
 </head><body>
@@ -30,16 +61,32 @@
 <symbol id="ico-heart" viewBox="0 0 48 48"><path d="M24 42 7 24C-1 11 15 1 24 14 33 1 49 11 41 24z"/></symbol>
 <symbol id="ico-brief" viewBox="0 0 48 48"><rect x="5" y="15" width="38" height="26" rx="3"/><path d="M18 15v-7h12v7M5 27h38M22 24v6h4v-6"/></symbol>
 </defs></svg>
-<header class="mast"><div class="shell mast-inner"><div class="mark">S</div><div class="brand"><strong>Stewardship Operations Workframe</strong><small>One portfolio · Four programs · Shared controls</small></div><nav class="mast-actions" aria-label="Site navigation"><a class="navlink" href="./index.html#suite">Operating Suite</a><a class="navlink" href="./playbook.html#start">Executive Playbook</a><a class="navlink" href="#programs">Four Programs</a></nav></div></header>
+<header class="mast"><div class="shell mast-inner"><div class="mark">S</div><div class="brand"><strong>Stewardship Operations Workframe</strong><small>One portfolio · Four programs · Shared controls</small></div><nav class="mast-actions" aria-label="Site navigation"><a class="navlink" href="./index.html#suite">Operating Suite</a><a class="navlink" href="./playbook.html#start">Executive Playbook</a><a class="navlink" href="#programs">Impact Circle</a></nav></div></header>
 <main id="main" class="shell">
- <section class="hero" aria-label="Operating frame overview"><div class="hero-photo" role="img" aria-label="Illustrative academic stewardship workbench with donor reports, reporting laptop, calendar and quality checklists"></div><div class="hero-body"><div class="eyebrow">Independent university stewardship operating model</div><h1>One connected system. Four programs. Clear donor impact.</h1><p>Coordinate strategic priorities, donor evidence, high-performing teams and campaign commitments—then track every report through human review, verified approval and responsible delivery.</p><div class="actions"><a class="btn red" href="#programs">Explore the four programs</a><a class="btn ghost" href="./index.html#suite">Open the working Suite</a><a class="btn ghost" href="#journey">Follow a report</a></div><p class="footnote"><span class="pill proposed">PROPOSED WORKFRAME</span> <span class="pill syn">SYNTHETIC DONOR EXAMPLES</span> Public portfolio demonstration, not an authorized institutional system.</p></div></section>
+ <section class="hero" aria-label="Operating frame overview"><div class="hero-photo" role="img" aria-label="Illustrative academic stewardship workbench with donor reports, reporting laptop, calendar and quality checklists"></div><div class="hero-body"><div class="eyebrow">Independent university stewardship operating model</div><h1>One connected system. Four programs. Clear donor impact.</h1><p>Coordinate strategic priorities, donor evidence, high-performing teams and campaign commitments—then track every report through human review, verified approval and responsible delivery.</p><div class="actions"><a class="btn red" href="#programs">Explore the Impact Circle</a><a class="btn ghost" href="./index.html#suite">Open the working Suite</a><a class="btn ghost" href="#journey">Follow a report</a></div><p class="footnote"><span class="pill proposed">PROPOSED WORKFRAME</span> <span class="pill syn">SYNTHETIC DONOR EXAMPLES</span> Public portfolio demonstration, not an authorized institutional system.</p></div></section>
  <div class="intro-strip" aria-label="Workframe at a glance">
   <div class="intro-stat"><svg class="icon"><use href="#ico-target"/></svg><div><strong>1</strong><small>Stewardship portfolio</small></div></div>
   <div class="intro-stat"><svg class="icon"><use href="#ico-people"/></svg><div><strong>4</strong><small>Distinct strategic programs</small></div></div>
   <div class="intro-stat"><svg class="icon"><use href="#ico-report"/></svg><div><strong>4</strong><small>Linked fictional report families</small></div></div>
   <div class="intro-stat"><svg class="icon"><use href="#ico-check"/></svg><div><strong>6</strong><small>Formal Release Gate checks</small></div></div>
  </div>
- <section class="section" id="programs"><div class="section-head"><div><div class="eyebrow">The big picture · interactive portfolio architecture</div><h2>Four programs, one shared reporting mission</h2><p>Choose a node to open a working program at its actual chapter—not a summary popup. Each program has distinct ownership and evidence, connected by the same operating discipline.</p></div><span class="pill proposed">PROPOSED PROGRAM ARCHITECTURE</span></div><div class="frame-map"><div class="map-grid">
+ <section class="section" id="programs"><div class="section-head"><div><div class="eyebrow">The big picture · continuous stewardship · proposed One Harvard alignment</div><h2>Impact Circle: A One Harvard Stewardship Model</h2><p>A continuous, inclusive cycle of donor intent, coordinated action, credible impact, feedback and stronger relationships. One Harvard connects institutional strategy, academic partners, Advancement and shared purpose; SMARTER, the Six-Check Release Gate and VERITAS provide distinct execution, assurance and storytelling disciplines.</p></div><span class="pill proposed">PROPOSED PROGRAM ARCHITECTURE</span></div>
+ <div class="impact-circle-shell" id="impact-circle" aria-labelledby="impact-circle-heading">
+   <div class="impact-circle-intro">
+     <div><div class="eyebrow">01 · THE CONTINUOUS LOOP</div><h3 id="impact-circle-heading">Stewardship continues after the report is delivered</h3><p>Explore seven connected stages. Every outcome informs the next planning cycle: listen to donors, verify evidence, communicate impact, learn from feedback and strengthen relationships. Choose a segment of the artwork or a stage below to see a practical next step.</p></div>
+     <div class="impact-principle"><strong>One Harvard · one shared purpose</strong><span>Connect units and stakeholders without suggesting one centralized system or formal authority over them.</span><small>Proposed, independent work-sample model · not an official Harvard framework</small></div>
+   </div>
+   <figure class="impact-wheel">
+     <img src="./assets/visual_stewardship_cycle.webp" alt="Seven-stage circular stewardship diagram showing planning, evidence gathering, reporting, certification, donor engagement, evaluation and improvement around a continuous loop." loading="eager" decoding="async" width="1672" height="941">
+     <svg id="impact-hitlayer" aria-label="Interactive, transparent stage regions on the Impact Circle" role="group" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid meet"></svg>
+     <figcaption>Original stewardship-cycle infographic · interactive regions contain no overlaid labels. The seven accessible stage controls are directly below.</figcaption>
+   </figure>
+   <div id="impact-legend" class="impact-legend" role="group" aria-label="Select one of seven stages of the stewardship cycle"></div>
+   <div id="impact-detail" class="impact-detail" aria-live="polite"></div>
+   <p class="impact-return"><strong>Continuous improvement is the point:</strong> stage 07 informs stage 01, while donor feedback, academic evidence and operational learning shape the next stewardship decision. All displayed workflows are illustrative.</p>
+ </div>
+ <div class="impact-program-intro"><div class="eyebrow">02 · FOUR CONNECTED STRATEGIC PROGRAMS</div><h3>Four programs, one unified stewardship mission</h3><p>The circle is the relationship and learning model. These four programs are the organizational workstreams that support it; select a card to open its live working chapter.</p></div>
+<div class="frame-map"><div class="map-grid">
   <a class="map-card" data-p="p1" data-from="programs" href="./strategic-leadership.html#northstar"><span class="p-ico"><svg class="icon"><use href="#ico-target"/></svg></span><span><strong>01 · Strategic Leadership</strong><small>Set priorities, standards, service tiers and the decisions reports should support.</small><em>Open strategy & standards →</em></span></a>
   <a class="map-card" data-p="p2" data-from="programs" href="./donor-impact-reporting.html#reports"><span class="p-ico"><svg class="icon"><use href="#ico-report"/></svg></span><span><strong>02 · Donor Impact Reporting</strong><small>Turn gift agreements, certified finance and academic evidence into four credible report families.</small><em>Open the report library →</em></span></a>
   <a class="map-card" data-p="p3" data-from="programs" href="./team-leadership.html#team"><span class="p-ico"><svg class="icon"><use href="#ico-people"/></svg></span><span><strong>03 · Team & Operations</strong><small>Coach teams, allocate capacity, assure quality and keep the shared calendar on track.</small><em>Open team workbench →</em></span></a>
@@ -110,5 +157,46 @@
 })();</script>
 <script defer src="./assets/wayfinder.js"></script>
 <script defer src="./assets/visual-explorer.js"></script>
+
+<script id="impact-circle-behavior">
+(function(){
+ 'use strict';
+ const stages=[
+  {name:'Plan & Prioritize',description:'Start with mission, gift intent, donor preferences and institutional priorities. Confirm the reporting purpose, service tier, calendar and accountable collaborators.',evidence:'Strategic objectives · gift-intent terms · reporting inventory',owner:'Stewardship strategy, gift officers and academic partners',url:'./strategic-leadership.html#northstar'},
+  {name:'Prepare & Gather',description:'Bring together authorized Finance, Advancement and academic evidence. Reconcile period, purpose, definitions and source lineage before interpretation.',evidence:'Certified finance bridge · approved academic evidence · provenance',owner:'Finance, Gift Administration and program partners',url:'./operations.html'},
+  {name:'Produce & Personalize',description:'Connect verified outcomes with a meaningful donor story, using the proposed VERITAS editorial framework and the donor’s communication preferences.',evidence:'Approved narrative · accessible report · documented consent',owner:'Stewardship Reporting, Communications and gift officers',url:'./communications.html'},
+  {name:'Review & Certify',description:'Apply the Six-Check Release Gate: Intent, Reconciliation, Consent, Traceability, Attribution and Authorization. Do not equate a working demo with formal approval.',evidence:'Exception log · named reviewer · versioned sign-off',owner:'Finance, academic reviewers and authorized release owners',url:'./playbook.html#start'},
+  {name:'Deliver & Engage',description:'Deliver only authorized stewardship material, invite relevant feedback and offer relationship-centered follow-up instead of ending at publication.',evidence:'Channel preferences · contact log · approved impact report',owner:'Gift officers, Advancement and constituent partners',url:'./index.html?report=endowed#reportgallery'},
+  {name:'Evaluate & Learn',description:'Measure reporting timeliness, quality, source traceability, relationship feedback and follow-up signals against defined baselines.',evidence:'SMARTER scorecard · response themes · quality review',owner:'Stewardship leadership and Program Office',url:'./program-office.html#start'},
+  {name:'Improve & Scale',description:'Use feedback and operational learning to revise procedures, capacity plans, stories and service priorities; feed improvements back to the next planning cycle.',evidence:'Decision log · SOP revisions · prioritized improvements',owner:'Team leads, Program Office and strategic sponsors',url:'./team-leadership.html#team'}
+ ];
+ const svg=document.getElementById('impact-hitlayer'),list=document.getElementById('impact-legend'),detail=document.getElementById('impact-detail');
+ if(!svg||!list||!detail)return;
+ const ns='http://www.w3.org/2000/svg',cx=526,cy=517,inner=128,outer=307,delta=360/7;
+ function point(r,a){return [cx+r*Math.cos(a),cy+r*Math.sin(a)].map(n=>n.toFixed(2)).join(' ')}
+ function sector(i){const a0=(-90-delta/2+i*delta)*Math.PI/180,a1=(-90+delta/2+i*delta)*Math.PI/180;return 'M '+point(inner,a0)+' L '+point(outer,a0)+' A '+outer+' '+outer+' 0 0 1 '+point(outer,a1)+' L '+point(inner,a1)+' A '+inner+' '+inner+' 0 0 0 '+point(inner,a0)+' Z'}
+ const paths=[];
+ stages.forEach((stage,i)=>{
+  const path=document.createElementNS(ns,'path');
+  path.setAttribute('d',sector(i));path.setAttribute('class','impact-hitshape');path.setAttribute('role','button');path.setAttribute('tabindex','0');path.setAttribute('aria-pressed','false');path.setAttribute('aria-label','Select stage '+(i+1)+': '+stage.name);
+  path.addEventListener('click',()=>choose(i));
+  path.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i)}});
+  svg.appendChild(path);paths.push(path);
+  const button=document.createElement('button');button.type='button';button.className='impact-stage';button.setAttribute('aria-pressed','false');
+  const number=document.createElement('span');number.textContent=String(i+1).padStart(2,'0');const title=document.createElement('strong');title.textContent=stage.name;button.append(number,title);
+  button.addEventListener('click',()=>choose(i));list.appendChild(button);
+ });
+ function choose(i){const x=stages[i];
+  Array.from(list.children).forEach((n,k)=>n.setAttribute('aria-pressed',String(k===i)));paths.forEach((p,k)=>p.setAttribute('aria-pressed',String(k===i)));
+  detail.replaceChildren();
+  const main=document.createElement('div'),eyebrow=document.createElement('div'),h=document.createElement('h4'),p=document.createElement('p'),a=document.createElement('a'),side=document.createElement('div');
+  eyebrow.className='eyebrow';eyebrow.textContent='Stage '+String(i+1).padStart(2,'0')+' of 07 · Impact Circle';
+  h.textContent=x.name;p.textContent=x.description;
+  a.className='btn red';a.href=x.url;a.textContent='Open the corresponding working section →';
+  main.append(eyebrow,h,p,a);side.className='impact-evidence';const b1=document.createElement('strong'),b2=document.createElement('strong');b1.textContent='Evidence and control';b2.textContent='Coordinating partners';side.append(b1,document.createElement('br'),document.createTextNode(x.evidence),document.createElement('br'),document.createElement('br'),b2,document.createElement('br'),document.createTextNode(x.owner));detail.append(main,side);
+ }
+ choose(0);
+})();
+</script>
 </body>
 </html>
