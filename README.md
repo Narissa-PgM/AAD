@@ -1,24 +1,63 @@
-# University Stewardship Executive Work Sample · GitHub Pages package
+# Stewardship Operations Suite · GitHub Pages package
 
-Upload **all six HTML pages** and `.nojekyll` to the root of your `AAD` repository. These are independent portfolio demonstrations; do not upload real donor information.
+Independent, fictional university stewardship operating prototype. Not a university system or an adopted policy.
 
-- `index.html` — Reporting Platform, four synthetic donor reports, data flow, automation and tracking.
-- `playbook.html` — Operating Playbook, **now includes Donor Review Workspace as a native interactive chapter** (`#donor`).
-- `communications.html` — Storytelling and communications library, featuring the illustrated five-stage donor-story infographic.
-- `donor-profile.html` — Optional extended synthetic dossier; the principal donor-review workflow is inside the playbook.
-- `operations.html` — Existing Operations Board (unchanged).
-- `FRAMEWORK_CONTRACT.json` — Shared narrative/release standards.
+## Open the site
 
-## Playbook ↔ platform return navigation
-The playbook writes its current section to session storage on section navigation and outbound links. The main platform includes a "Return to playbook" button, preserving the last chapter. State is kept in the same browser tab and domain; it is not a permanent user profile and is not transferred between private tabs or devices. Direct links such as `playbook.html#donor` also work.
+Upload the package contents, including the `assets` folder, to the repository root. Deploy GitHub Pages from `main` / `(root)`.
 
-## Common terminology
-- SMARTER governs execution.
-- The **Six-Check Release Gate** covers Intent, Reconciliation, Consent, Traceability, Attribution and Authorization.
-- VERITAS structures the donor narrative: Vision, Experience, Results, Investment, Truth, Advancement, Stewardship.
+- `index.html` — default **Stewardship Operations Suite** dashboard, with live interactive modules at `#suite`
+- `index.html#brief` — executive brief / full prior platform overview
+- `index.html#reportgallery` — four canonical complete synthetic donor reports
+- `index.html#trace` — evidence and source traceability
+- `index.html#masscalendar` — annual stewardship calendar
+- `playbook.html#donor` — integrated donor-review playbook
+- `communications.html` — donor and team storytelling library
+- `donor-profile.html` — detailed fictional donor record
+- `operations.html` — data flow and tracking deep dive
 
-## Synthetic data reconciliation
-The source donor-profile draft had conflicts: a header claiming five gifts / $1.20M while the receipt ledger showed six gifts / $1.22M; dates were inconsistent with its July–June FY2026 close; the cohort count was 14 continuing vs the platform's canonical 16; and the FY2026 principal-gift tally was $0 despite FY2026 receipts. The corrected work sample uses **six gifts / $1.22M**, fiscal-year-consistent synthetic dates, **16 of 18** continuing with two pending, and a separate $660K FY2026 receipt total. Financial distribution remains **$55K = $46K spent + $9K carried**. Never mistake donor contributions for spending distributions.
+**Upload the full ZIP contents together.** The new dashboard requires `assets/suite.js`, `assets/suite.css`, and `assets/steward_scene.webp`. Uploading only `index.html` will display a missing-assets explanation.
 
-## Demo-only controls
-Release-gate toggles and reviewer logs in the playbook operate solely in browser memory. "DEMO READY" never authorizes a send; GitHub Pages contains no connection to CRM, institutional financial systems or email services.
+## What is functional in a browser
+
+1. Open nine connected modules using the Suite navigation.
+2. Choose fictional donors, inspect giving records and fund descriptions.
+3. Add sample gift-officer notes and relationship communications; they are saved in browser localStorage.
+4. Create sample reports; financial bridge validation runs and all six gates begin on HOLD.
+5. Toggle demo Release Gate checks; reviewers must enter their name and rationale to record a simulated decision. If checks are missing, the system blocks a requested 'ready' decision.
+6. Draft messages using the seven-section VERITAS structure, edit the text, copy or export HTML (no sending).
+7. Import synthetic CSV with columns `donor_id,report_id,type,amount,owner,due` and run bulk preflight; download a sample CSV in the Batch screen.
+8. Track report owners, due dates, sample exceptions, financial totals and outcome descriptions.
+9. Export simulated review events and batch events, reset the demo, or export all fictional records to JSON.
+10. Follow live links to the existing four reports, calendar, communications library, playbook and donor dossier.
+
+## Shared framework
+
+- **One Harvard** — proposed cross-unit coordination method, not an asserted adopted Harvard-wide operating policy.
+- **SMARTER** — scope, measures, achievability, relevance, timing, evaluation and review.
+- **Six-Check Release Gate** — Intent, Reconciliation, Consent, Traceability, Attribution, Authorization.
+- **VERITAS** — Vision, Experience, Results, Investment, Truth, Advancement, Stewardship (editorial narrative only).
+- **AA&D values** — respect, inclusion, trust, collaboration, continuous improvement and open communication.
+
+## Canonical financial case amounts
+
+| Case | Total / available | Spent | Balance | Meaning |
+| --- | ---: | ---: | ---: | --- |
+| SIM-END-2026 | $55,000 | $46,000 | $9,000 | Endowed-fund annual distribution |
+| SIM-USE-2026 | $180,000 | $152,500 | $27,500 | Current-use gift receipts |
+| SIM-CAP-2026 | $1,960,000 | $1,720,000 | $240,000 | Project-wide gifts received vs spending; **not one donor's giving** |
+| SIM-GRT-2026 | $300,000 | $211,000 | $89,000 | Grant-wide budget vs actual; **not one donor's giving** |
+
+All records are synthetic. The four canonical reports in the existing platform are the reference for financial models. The donor giving history for fictional Eleanor M. Whitfield totals $1,220,000 across six receipts.
+
+## Critical security boundary
+
+This is a **working local prototype**, not a production, multi-user application. GitHub Pages is publicly readable static hosting. Browser localStorage is not a secure donor database. The prototype deliberately has **no CRM access, no authenticated role authorization, no secure donor document serving, no real mailing, and no server-backed immutable audit history**.
+
+**Never put real donor identities, gift histories, gift agreements, emails, passwords, access tokens or unredacted records into this repository or browser demo.**
+
+A production build would require institutional approvals, privacy and legal review, SSO + role-based authorization, encrypted backend/database, approved data integrations, server-side audit, consent checks, verified templates, email suppression handling, approved distribution infrastructure, security/UAT/accessibility reviews and operations support.
+
+## Testing
+
+See `SUITE_QA_RESULTS.json` and `QA_SUMMARY.md`. Tests exercised Chromium in an isolated in-memory document because this runtime blocked local URL navigation; the actual GitHub Pages deployment still requires a final live click-through.

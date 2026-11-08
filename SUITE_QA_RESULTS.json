@@ -1,0 +1,178 @@
+{
+  "checks": [
+    {
+      "name": "Landing route opens Operating Suite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Infographic hero image rendered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Seven VERITAS links",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Six workflow stages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Six Release Gate cards",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No original double navigation in Suite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Create form opens",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New report added",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New report starts with six holds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gate blocks unsupported release",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Review decision audited",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Adding note updates record",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Contact event recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSV import creates held report",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Batch preflight produces log",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Module loads: Analytics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Module loads: Calendar & alerts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Module loads: Communications",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Module loads: Governance & settings",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Module loads: Home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Home metric reflects imported records",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Framework links to complete reports",
+      "passed": true,
+      "detail": "about:blank#reportgallery"
+    },
+    {
+      "name": "Return route displays Suite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile no page overflow 768px",
+      "passed": true,
+      "detail": "768 / 768"
+    },
+    {
+      "name": "Mobile no page overflow 390px",
+      "passed": true,
+      "detail": "390 / 390"
+    },
+    {
+      "name": "Mobile no page overflow 360px",
+      "passed": true,
+      "detail": "360 / 360"
+    },
+    {
+      "name": "No page JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Linked local assets exist: index.html",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Linked local assets exist: donor-profile.html",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Linked local assets exist: playbook.html",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Linked local assets exist: communications.html",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Linked local assets exist: operations.html",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Unwanted quote removed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Candidate planning phrase removed",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "passed": 34,
+  "total": 34,
+  "browserErrors": [],
+  "limitations": "Chromium testing was done using in-memory HTML because local HTTP and file navigation are blocked by environment policy; actual GitHub hosting not verified."
+}
