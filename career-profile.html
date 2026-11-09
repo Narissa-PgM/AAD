@@ -1258,6 +1258,41 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 .vw-card .vw-soon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#1C2B3A,#2B3C4E);color:#C9D2DB;font:600 13px/1.4 var(--ui);text-align:center;padding:16px}
 @media (max-width:760px){.vw-grid{grid-template-columns:minmax(0,1fr)}}
 @media print{.vw{display:none}}
+
+/* left section tracker removed (top navigation is enough) */
+.ep-track{display:none!important}
+
+/* work experience and role mix */
+.xp{margin:20px 0 0}
+.xp-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.xp-head h3{margin:0;font:700 20px/1.2 Cambria,Georgia,serif;color:var(--ink)}
+.xp-head span{font-size:12.5px;color:var(--muted)}
+.xp-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:16px;align-items:start}
+.xp-grid .roles{min-width:0}
+.xp-mix{margin:0!important;min-width:0}
+@media (max-width:980px){.xp-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* chart data: read by screen readers, printed on paper, not shown on screen */
+.chart-data{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.chart-data table{border-collapse:collapse;width:100%;font-size:12px;margin:6px 0 14px}
+.chart-data th,.chart-data td{border:1px solid #CDD3D9;padding:4px 6px;text-align:left;vertical-align:top}
+.chart-data caption{text-align:left;font-weight:700;padding:0 0 4px}
+@media print{.chart-data{position:static!important;width:auto;height:auto;margin:16px 0 0;overflow:visible;clip:auto;clip-path:none;white-space:normal;break-before:page}.chart-data h3{font:700 16px Cambria,Georgia,serif;margin:0 0 4px}}
+
+/* DataHub: animated data flow */
+#netDatahub .net-links{pointer-events:none}
+#netDatahub .net-links path.dh-flow{stroke-dasharray:5 7;animation:dhDash 1.3s linear infinite}
+#netDatahub .net-links circle.dh-dot{filter:drop-shadow(0 0 3px rgba(255,255,255,.9))}
+@keyframes dhDash{to{stroke-dashoffset:-24}}
+#netDatahub .hub{animation:dhPulse 2.8s ease-out infinite}
+@keyframes dhPulse{0%{box-shadow:0 0 0 0 rgba(165,28,48,.32),0 10px 24px -14px rgba(16,24,40,.4)}70%{box-shadow:0 0 0 16px rgba(165,28,48,0),0 10px 24px -14px rgba(16,24,40,.4)}100%{box-shadow:0 0 0 0 rgba(165,28,48,0),0 10px 24px -14px rgba(16,24,40,.4)}}
+#netDatahub.dh-anim .node,#netDatahub.dh-anim .hub{opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease;transition-delay:calc(var(--i,0) * 55ms)}
+#netDatahub.dh-anim.dh-live .node,#netDatahub.dh-anim.dh-live .hub{opacity:1;transform:none}
+#netDatahub.dh-paused .net-links path.dh-flow,#netDatahub.dh-paused .hub{animation-play-state:paused}
+.dh-ctl{display:flex;justify-content:flex-end;margin:0 0 6px}
+.dh-ctl button{border:1px solid var(--line-strong,#CDD3D9);background:#fff;border-radius:999px;padding:6px 12px;font:600 12px var(--ui);color:var(--ink);cursor:pointer}
+.dh-ctl button[aria-pressed="true"]{background:#13171C;color:#fff;border-color:#13171C}
+@media (prefers-reduced-motion:reduce){#netDatahub .net-links path.dh-flow,#netDatahub .hub{animation:none}#netDatahub.dh-anim .node,#netDatahub.dh-anim .hub{opacity:1;transform:none;transition:none}#netDatahub .dh-dot{display:none}}
 </style>
 <link rel="stylesheet" href="./assets/aad-model.css">
 </head>
@@ -1401,6 +1436,67 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         <div class="viz-body" id="careerChart"></div>
         <figcaption class="viz-foot"><b>Reading the chart:</b> each bar is one position or independent practice, plotted on the same calendar. Overlap denotes concurrent work; the dashed line marks today. Hover or focus a bar for dates and duration; select it for the responsibility mix.</figcaption>
       </figure>
+
+      <div class="xp" id="experience" aria-labelledby="xp-title">
+        <div class="xp-head"><h3 id="xp-title">Work experience and role mix</h3><span>Select a role for its responsibilities and how the time was split</span></div>
+        <div class="xp-grid">
+          <div class="roles">
+            <button class="role" type="button" data-job="now" aria-haspopup="dialog" aria-controls="roleDialog" aria-pressed="false" style="--rc:#2F6B4F">
+              <span class="role-when">2008 – Present</span>
+              <span>
+                <span class="role-title">Data Analytics &amp; Reporting Practitioner</span>
+                <span class="role-org">Independent Practice — Remote · concurrent with institutional roles</span>
+              </span>
+              <span class="role-open">Role mix</span>
+            </button>
+            <button class="role" type="button" data-job="harvard" aria-haspopup="dialog" aria-controls="roleDialog" aria-pressed="false" style="--rc:#A51C30">
+              <span class="role-when">Apr 2019 – Nov 2025</span>
+              <span>
+                <span class="role-title">IT Reporting, Data &amp; Business Analyst · Faculty Affairs Data Owner</span>
+                <span class="role-org">Harvard University, Cambridge · FAS Office for Faculty Affairs</span>
+              </span>
+              <span class="role-open">Role mix</span>
+            </button>
+            <button class="role" type="button" data-job="andover" aria-haspopup="dialog" aria-controls="roleDialog" aria-pressed="false" style="--rc:#8A651F">
+              <span class="role-when">Aug 2016 – Apr 2019</span>
+              <span>
+                <span class="role-title">Assistant Director of Gift Services &amp; Reporting</span>
+                <span class="role-org">Phillips Academy, Andover · Office of Academy Resources</span>
+              </span>
+              <span class="role-open">Role mix</span>
+            </button>
+            <button class="role" type="button" data-job="uams" aria-haspopup="dialog" aria-controls="roleDialog" aria-pressed="false" style="--rc:#2B5C8A">
+              <span class="role-when">May 2008 – Jul 2016</span>
+              <span>
+                <span class="role-title">Associate Director of Donor Records and Advancement Information Service</span>
+                <span class="role-org">U of AR for Medical Sciences, Little Rock · Institutional Advancement</span>
+              </span>
+              <span class="role-open">Role mix</span>
+            </button>
+            <button class="role" type="button" data-job="early" aria-haspopup="dialog" aria-controls="roleDialog" aria-pressed="false" style="--rc:#626D7A">
+              <span class="role-when">2005 – 2008</span>
+              <span>
+                <span class="role-title">Research and program support</span>
+                <span class="role-org">U of AR for Medical Sciences, Little Rock · College of Medicine and College of Pharmacy</span>
+              </span>
+              <span class="role-open">Role mix</span>
+            </button>
+            <button class="role" type="button" data-job="unctad" aria-haspopup="dialog" aria-controls="roleDialog" aria-pressed="false" style="--rc:#5A6371">
+              <span class="role-when">2002 – 2005</span>
+              <span>
+                <span class="role-title">Global communications &amp; e-commerce</span>
+                <span class="role-org">UNCTAD Trade Point Chiang Mai, Thailand</span>
+              </span>
+              <span class="role-open">Role mix</span>
+            </button>
+          </div>
+          <figure class="viz xp-mix">
+            <div class="viz-head"><div><h3>Responsibility mix by role</h3><p class="dek">Each bar is one role at 100%. Segments are the listed responsibilities in rounded 5-point shares. Hover a segment for its share.</p></div></div>
+            <div class="viz-body" id="mixChart"></div>
+            <figcaption class="viz-foot">Colour identifies a responsibility within a role, not across roles.</figcaption>
+          </figure>
+        </div>
+      </div>
       <div class="print-roles" id="rolePrint"></div>
     </div>
   </section>
@@ -1809,23 +1905,10 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         <a class="btn primary" href="mailto:Narissa.K9@proton.me">Start a conversation</a>
       </div>
 
-      <details class="details">
-        <summary>Data behind the charts (tables for screen readers and print)</summary>
-        <div class="details-body">
-<table>
-            <caption style="text-align:left;font:700 11px var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 0 6px">Career record</caption>
-            <thead><tr><th>Role</th><th>Dates</th><th>Duration</th><th>Responsibilities</th></tr></thead>
-            <tbody>
-              <tr><td>Global communications &amp; e-commerce · UNCTAD Trade Point Chiang Mai</td><td>2002 – 2005</td><td>about 36 months</td><td>Communications, e-commerce, conference operations, translation</td></tr>
-              <tr><td>Research and program support · UAMS College of Medicine and College of Pharmacy</td><td>2005 – 2008</td><td>about 40 months</td><td>PI grant proposals, budgets and sponsor reports (College of Medicine); program assessments and reconciliations</td></tr>
-              <tr><td>Associate Director of Donor Records and Advancement Information Service</td><td>May 2008 – Jul 2016</td><td>99 months</td><td>60K profiles; 20K+ transactions annually; controls and online giving</td></tr>
-              <tr><td>Assistant Director of Gift Services &amp; Reporting</td><td>Aug 2016 – Apr 2019</td><td>32 months</td><td>$400M campaign analytics; General Ledger bridge; controls</td></tr>
-              <tr><td>Faculty Affairs Data Owner</td><td>Apr 2019 – Nov 2025</td><td>79 months</td><td>50+ chairs; piloted the seven-source DataHub; appointments and promotions</td></tr>
-              <tr><td>Data Analytics &amp; Reporting Practitioner · Independent Practice (Remote)</td><td>2008 – Present</td><td>Concurrent practice since 2008</td><td>Crystal Reports and SQL reporting; Oracle/SQL Server; analytics and BI; specifications; QA and stress testing; Lean Six Sigma; governed self-service</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
+      <section class="chart-data" id="chartData" aria-label="Chart data as tables">
+        <h3>Chart data</h3>
+        <p>The career timeline and the responsibility mix, as tables. Built from the same records as the charts.</p>
+      </section>
     </div>
   </section>
 
@@ -2643,6 +2726,7 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
     }
   };
 
+  window.CP_JOBS = JOBS;
   /* ============================================================
      RESPONSIBILITY MIX BY ROLE
      ============================================================ */
@@ -3152,6 +3236,48 @@ btn.addEventListener('click',function(){set(btn.getAttribute('aria-pressed')!=='
   var src=v.querySelector('source');if(!src)return;
   src.addEventListener('error',function(){var d=document.createElement('div');d.className='vw-soon';d.textContent='Video coming soon';v.replaceWith(d)});
 });
+})();
+
+(function(){'use strict';
+/* ---- Chart data as tables (screen readers and print), built from the same JOBS records ---- */
+var host=document.getElementById('chartData'), J=window.CP_JOBS;
+if(host&&J){
+  var order=['now','harvard','andover','uams','early','unctad'];
+  function tbl(cap,heads,rows){var t=document.createElement('table'),c=document.createElement('caption');c.textContent=cap;t.appendChild(c);
+    var th=document.createElement('thead'),tr=document.createElement('tr');heads.forEach(function(h){var x=document.createElement('th');x.scope='col';x.textContent=h;tr.appendChild(x)});th.appendChild(tr);t.appendChild(th);
+    var tb=document.createElement('tbody');rows.forEach(function(r){var tr2=document.createElement('tr');r.forEach(function(v,i){var x=document.createElement(i?'td':'th');if(!i)x.scope='row';x.textContent=v;tr2.appendChild(x)});tb.appendChild(tr2)});t.appendChild(tb);return t}
+  function mo(n){var y=Math.floor(n/12),m=n%12;return (y?y+' yr':'')+(y&&m?' ':'')+(m?m+' mo':'')}
+  host.appendChild(tbl('Career timeline',['Role','Organization','Dates','Length'],order.filter(function(k){return J[k]}).map(function(k){var j=J[k];return [j.title,String(j.org).replace(/\.$/,''),j.when,j.months?mo(j.months):'']})));
+  host.appendChild(tbl('Responsibility mix by role (5-point shares that add to 100)',['Role','Responsibility','Share'],[].concat.apply([],order.filter(function(k){return J[k]}).map(function(k){return J[k].shares.map(function(s){return [J[k].title,s.name,s.pct+'%']})}))));
+}
+
+/* ---- DataHub: animated flow from sources into the hub and out to the uses ---- */
+var net=document.getElementById('netDatahub'),svg=document.getElementById('netDatahubLinks');
+if(!net||!svg)return;
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce)return;
+var NS='http://www.w3.org/2000/svg';
+[].forEach.call(net.querySelectorAll('.node,.hub'),function(n,i){n.style.setProperty('--i',i)});
+net.classList.add('dh-anim');
+var shown=function(){net.classList.add('dh-live')};
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){shown();io.disconnect()}})},{threshold:.15});io.observe(net)}else shown();
+setTimeout(shown,4000);
+function animate(){
+  var paths=[].slice.call(svg.querySelectorAll('path:not([data-dh])'));
+  paths.forEach(function(p,i){
+    p.setAttribute('data-dh','1');p.classList.add('dh-flow');
+    var c=document.createElementNS(NS,'circle');c.setAttribute('r','3.2');c.setAttribute('class','dh-dot');c.setAttribute('fill',p.getAttribute('stroke')||'#A51C30');
+    var am=document.createElementNS(NS,'animateMotion');am.setAttribute('dur',(2.4+(i%5)*0.35).toFixed(2)+'s');am.setAttribute('begin',(-(i*0.37)%2.4).toFixed(2)+'s');am.setAttribute('repeatCount','indefinite');am.setAttribute('path',p.getAttribute('d'));
+    c.appendChild(am);svg.appendChild(c);
+  });
+  if(paused&&svg.pauseAnimations)svg.pauseAnimations();
+}
+var paused=false;
+var mo2=new MutationObserver(function(){if(svg.querySelector('path:not([data-dh])'))animate()});
+mo2.observe(svg,{childList:true});animate();
+var panel=document.getElementById('panel-datahub');
+if(panel){var ctl=document.createElement('div');ctl.className='dh-ctl';var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','false');b.textContent='Pause motion';ctl.appendChild(b);panel.insertBefore(ctl,panel.firstChild);
+  b.addEventListener('click',function(){paused=!paused;b.setAttribute('aria-pressed',String(paused));b.textContent=paused?'Play motion':'Pause motion';net.classList.toggle('dh-paused',paused);if(svg.pauseAnimations){if(paused)svg.pauseAnimations();else svg.unpauseAnimations()}})}
 })();
 </script>
 <script defer src="./assets/wayfinder.js"></script>
