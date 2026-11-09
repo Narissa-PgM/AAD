@@ -925,7 +925,14 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 #ep-image-viewer[open]{display:block}
 @media(max-width:760px){.ic-figure,.ep-new-infographic{width:100%;max-width:none}}
 @media print{.ic-figure,.ep-new-infographic{width:100%;box-shadow:none}#ep-image-viewer{display:none!important}}
-</style><link rel="stylesheet" href="./assets/visual-explorer.css">
+</style><style id="aad-stewardship-partnership-network">
+.ic-network-intro{margin:20px auto 12px;padding:14px 18px;max-width:990px;border-top:1px solid #e0e8ef}
+.ic-network-intro h3{font:700 clamp(20px,2.1vw,27px)/1.24 Cambria,Georgia,serif;color:#233e55;margin:4px 0 8px}
+.ic-network-intro p:not(.section-k){font:13px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#50697c;margin:0}
+.ep-network-figure{width:min(76%,1080px);max-width:1080px;margin:10px auto 22px}
+@media(max-width:760px){.ep-network-figure{width:100%;max-width:none}.ic-network-intro{padding:14px 7px}}
+</style>
+<link rel="stylesheet" href="./assets/visual-explorer.css">
 </head>
 
 <body>
@@ -1356,6 +1363,18 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
     <div class="ic-process" aria-label="Plain-language summary of the continuous stewardship process">
       <span>01 Plan</span><span>02 Gather</span><span>03 Produce</span><span>04 Review</span><span>05 Engage</span><span>06 Learn</span><span>07 Improve</span><strong>↺ Repeat</strong>
     </div>
+    
+    <div class="ic-network-intro" id="stewardship-network-heading">
+      <p class="section-k">One Harvard · the people and partnerships behind stewardship</p>
+      <h3>The Stewardship Partnership Network</h3>
+      <p>The Impact Circle describes <strong>how stewardship continues</strong>; this network shows <strong>who contributes</strong> across Advancement, academic units, Finance, communications and enterprise services. Coordination aligns the work without asserting formal authority over partner offices.</p>
+    </div>
+    <figure class="ep-new-infographic ep-network-figure" id="stewardship-network" aria-labelledby="stewardship-network-caption">
+      <button class="ep-image-zoom" type="button" data-ep-zoom="network" aria-label="Enlarge the Stewardship Partnership Network infographic">
+        <img src="./assets/visual_partnership_network.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Illustrative One Harvard Stewardship Partnership Network with a central Stewardship Reporting Office, Advancement partners, enterprise support, and scholarship, research, capital-project, faculty and student outcomes."/>
+      </button>
+      <figcaption id="stewardship-network-caption"><strong>Stewardship Partnership Network.</strong> A conceptual AA&amp;D collaboration map, not a validated institutional organization chart, endorsement, or confirmation of current units and reporting relationships. Select to enlarge and read the labels.</figcaption>
+    </figure>
     <div class="ic-support">
       <div class="ic-support-head"><h3>Three supporting methods—not three more programs</h3><p>Select a method to see its purpose, practical checks and the relevant working section.</p></div>
       <div class="ic-methods">
@@ -1489,18 +1508,8 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         <button class="ep-image-zoom" type="button" data-ep-zoom="smarter" aria-label="Enlarge the seven-stage SMARTER operating-cycle infographic">
           <img src="./assets/smarter-operating-cycle-2026.svg" alt="SMARTER operating cycle: Specific, Measurable, Attainable, Relevant, Time-bound, Evaluate and Review, returning to Specific." loading="lazy" decoding="async"/>
         </button>
-        <figcaption><strong>SMARTER execution discipline.</strong> Use the infographic to read the full seven-stage decision cycle; the linked explanation and original chart remain available below.</figcaption>
+        <figcaption><strong>SMARTER execution discipline.</strong> One visual shows the seven checkpoints and their continuous feedback cycle. The governance and decision-rights reference follows below.</figcaption>
       </figure>
-      <div class="split-viz">
-        <figure class="viz" style="margin:0"><div class="viz-head"><div><h3>SMARTER · seven decision checkpoints</h3><p class="dek">This is the execution and measurement framework for the archived analytics demonstration; it is distinct from the current Impact Circle stewardship process above.</p></div></div><div class="viz-body smarter-ring" id="smarterChart"></div>
-          <figcaption class="viz-foot">Specific → Measurable → Attainable → Relevant → Time-bound → Evaluate → Review. Review feeds the next round of Specific.</figcaption></figure>
-        <div><div class="clock-row" style="grid-template-columns:1fr">
-          <div class="layer" style="padding:14px 16px"><b>5 months · Planned delivery</b><small>23 weeks across 6 phases; first value at the pilot gate.</small></div>
-          <div class="layer" style="padding:14px 16px"><b>8 months · P80 schedule</b><small>80% of 3,000 simulated schedules finish by then; 89% chance of meeting the 32-week deadline.</small></div>
-          <div class="layer" style="padding:14px 16px"><b>36 months · Economic and benefits horizon</b><small>Estimated investment ≈ $135K; 3-year ROI 92% on the stated assumptions; payback about 16 months.</small></div>
-          <div class="layer" style="padding:14px 16px;background:var(--crimson-l);border-color:#EFD3D8"><b style="color:var(--crimson-d)">The guardrail</b><small style="color:#6B4A50">The Director of Analytics &amp; Reporting coordinates planning, evidence and follow-through. Approval authority stays with the offices that hold it — described below.</small></div>
-        </div></div>
-      </div>
       <p class="section-label" style="margin-top:24px">Shared governance · roles and institutional boundaries</p>
       <div class="dtable-wrap"><table class="dtable"><thead><tr><th>Decision or workflow</th><th>Proposed coordination</th><th>Retained authority / sign-off</th></tr></thead><tbody><tr><td>Strategic priorities and sequencing</td><td>Prepare options, impacts, dependencies and decision logs.</td><td>Vice Provost for Academic Affairs and authorized governance</td></tr><tr><td>Data definitions, quality and access</td><td>Maintain the metric dictionary, quality rules and access matrix.</td><td>Data owners, stewards and information security</td></tr><tr><td>Budget, spend and contracts</td><td>Model cost, monitor approved spending, escalate variance.</td><td>Finance and authorized signatories</td></tr><tr><td>People and appointment decisions</td><td>Keep records complete, timely and permissioned.</td><td>HR, faculty bodies and authorized offices</td></tr><tr><td>Systems, security and releases</td><td>Run smoke tests, UAT and the release gate; document handoff.</td><td>IT, information security and system owners</td></tr></tbody></table></div>
       <p class="note" style="margin-top:12px">The professional experience above is the career record; this alignment and the proposal are explicitly proposed work samples prepared for the Director of Analytics &amp; Reporting application. Published references are representative, not a verified internal inventory.</p>
@@ -2812,7 +2821,7 @@ dlg.querySelector('[data-ic-close]').addEventListener('click',()=>dlg.close());d
 (function(){'use strict';
 const dlg=document.getElementById('ep-image-viewer'),img=document.getElementById('ep-viewer-image'),title=document.getElementById('ep-viewer-title');if(!dlg||!img)return;
 let prior;
-document.querySelectorAll('[data-ep-zoom]').forEach(button=>button.addEventListener('click',()=>{const source=button.querySelector('img');if(!source||!source.getAttribute('src'))return;prior=button;img.src=source.currentSrc||source.src;img.alt=source.alt;title.textContent=({impact:'Impact Circle · One Harvard Stewardship Model',roadmap:'Eight-step donor-report release roadmap',smarter:'SMARTER · Decision-and-delivery cycle'})[button.dataset.epZoom]||'Infographic';if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');}));
+document.querySelectorAll('[data-ep-zoom]').forEach(button=>button.addEventListener('click',()=>{const source=button.querySelector('img');if(!source||!source.getAttribute('src'))return;prior=button;img.src=source.currentSrc||source.src;img.alt=source.alt;title.textContent=({impact:'Impact Circle · One Harvard Stewardship Model',roadmap:'Eight-step donor-report release roadmap',smarter:'SMARTER · Decision-and-delivery cycle',network:'The Stewardship Partnership Network'})[button.dataset.epZoom]||'Infographic';if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');}));
 document.getElementById('ep-viewer-close').addEventListener('click',()=>dlg.close());
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});dlg.addEventListener('close',()=>{img.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';if(prior)prior.focus({preventScroll:true})});
 })();
