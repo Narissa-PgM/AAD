@@ -230,6 +230,91 @@
     <div class="note" style="margin-top:14px">The story is fictional. Every name, amount, and detail is labeled <span class="meta sample">SAMPLE</span>. The purpose of the spine is to show that donor messages are not isolated artifacts — they are chapters. That continuity is what makes a donor feel seen.</div>
   </section>
 
+  <section class="panel" id="video-thanks" aria-labelledby="vt-title">
+    <style>
+      #video-thanks{scroll-margin-top:90px}
+      .vt-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px;align-items:start}
+      .vt-video{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+      .vt-video video{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;background:#1d2b3d}
+      .vt-video figcaption{padding:10px 14px;font-size:13px;line-height:1.45;color:#5b6b7d}
+      .vt-video figcaption b{display:block;color:var(--ink);font:700 15px/1.3 var(--font-serif)}
+      .vt-mail{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+      .vt-tabs{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);background:#f8f9fb}
+      .vt-tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font:700 12px var(--font-sans);color:#284157;cursor:pointer}
+      .vt-tabs button[aria-selected="true"]{background:#a51c30;border-color:#a51c30;color:#fff}
+      .vt-head{padding:10px 14px;border-bottom:1px dashed var(--line);font-size:13px;color:#5b6b7d}
+      .vt-head b{color:var(--ink)}
+      .vt-body{padding:12px 14px 14px;white-space:pre-line;font:15px/1.6 var(--font-serif);color:var(--ink);max-height:420px;overflow:auto}
+      .vt-cta{display:inline-block;margin:2px 0;padding:6px 12px;border-radius:999px;background:#a51c30;color:#fff;font:700 12.5px var(--font-sans)}
+      .vt-checks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+      .vt-checks div{border:1px solid var(--line);border-top:4px solid #16745c;border-radius:10px;padding:10px 12px;background:#fff;font-size:13px;line-height:1.45;color:#5b6b7d}
+      .vt-checks b{display:block;color:var(--ink);font:700 14px/1.3 var(--font-serif);margin-bottom:2px}
+      .vt-checks small{display:block;font:700 10px var(--font-sans);letter-spacing:.5px;text-transform:uppercase;color:#16745c;margin-bottom:3px}
+      @media (max-width:900px){.vt-grid{grid-template-columns:minmax(0,1fr)}.vt-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media (max-width:560px){.vt-checks{grid-template-columns:minmax(0,1fr)}}
+    </style>
+    <h2 id="vt-title">Video thank-you · the fellowship story</h2>
+    <p class="lead" style="margin-bottom:8px">The Whitfield family’s second gift: the <em>Whitfield Family Graduate Fellowship</em>, created in 2026 through FAS’s Research Accelerator Challenge. A four-minute video introduces the first fellow, Lena, and a short email from the gift officer delivers it. Maya’s scholarship story continues above; this is the same donor relationship, one fund over.</p>
+    <div style="margin-bottom:14px"><span class="tag">Sample · donor, fund and student are fictional</span><span class="tag blue">Program facts from Harvard public announcements</span><span class="tag green">AI-made video · human-approved</span></div>
+    <div class="vt-grid">
+      <figure class="vt-video">
+        <video controls preload="none" playsinline poster="./assets/thumbs/video-story.webp" width="1920" height="1080"><source src="./Story.mp4" type="video/mp4"></video>
+        <figcaption><b>Lena’s story · 4 min</b>Made with Google NotebookLM from an approved brief: program facts, the fictional fellow’s words, and a set story arc. No figures beyond the sources.</figcaption>
+      </figure>
+      <div class="vt-mail">
+        <div class="vt-tabs" role="tablist" aria-label="Email tone">
+          <button type="button" role="tab" id="vt-t-warm" aria-selected="true" aria-controls="vt-p-warm">Warm · gift officer</button>
+          <button type="button" role="tab" id="vt-t-formal" aria-selected="false" aria-controls="vt-p-formal" tabindex="-1">Formal · stewardship office</button>
+        </div>
+        <div role="tabpanel" id="vt-p-warm" aria-labelledby="vt-t-warm"><div class="vt-head"><b>Subject:</b> A thank-you from Lena, made possible by you</div><div class="vt-body">Dear Eleanor,
+
+I wanted to share something special with you and your family.
+
+This fall, a new Ph.D. student began her first semester at Harvard because of the Whitfield Family Graduate Fellowship. Her name is Lena, and she studies how to turn sunlight into clean fuel. When we asked what the fellowship means to her, she said it was the reason she could say yes.
+
+We made a short video so you could meet her:
+<span class="vt-cta">▶ Watch Lena’s story (4 minutes)</span>
+
+Your fellowship covers her tuition, health insurance and stipend for five years, giving her the freedom to pursue bold questions from her very first day in the lab. Because it is endowed, it will do the same for a new student in every generation.
+
+You are also part of something larger. Together with fellow donors, you helped create 50 endowed Ph.D. fellowships in the Faculty of Arts and Sciences this year.
+
+Thank you for believing in someone you hadn’t met yet. I’d love to tell you more about Lena’s work whenever it’s convenient for you.
+
+With gratitude,
+[Gift officer name]
+[Title], FAS Development</div></div>
+        <div role="tabpanel" id="vt-p-formal" aria-labelledby="vt-t-formal" hidden><div class="vt-head"><b>Subject:</b> Your fellowship at work: a message from Harvard</div><div class="vt-body">Dear Mrs. Whitfield and family,
+
+On behalf of the Faculty of Arts and Sciences, thank you for establishing the Whitfield Family Graduate Fellowship.
+
+We are delighted to introduce the first Whitfield Fellow, Lena, a first-year Ph.D. student in chemistry. We invite you to watch a brief video in which she shares what your support has made possible:
+<span class="vt-cta">▶ Watch the video (4 minutes)</span>
+
+Your fellowship provides tuition, health insurance and a stipend for five years. As an endowed fund, it will support a Ph.D. student in perpetuity. It is one of 50 endowed fellowships established this year by a community of donors committed to the next generation of scholars.
+
+You will receive your annual fellowship report each fall, with updates on Lena’s progress and the fund’s financial summary.
+
+With deep appreciation,
+[Name]
+Director of Stewardship Reporting
+Harvard Alumni Affairs and Development</div></div>
+      </div>
+    </div>
+    <div class="vt-checks" aria-label="Before it is sent">
+      <div><small>Consent</small><b>Student consent on record</b>Lena’s name, words and image are used only with a signed consent dated before release.</div>
+      <div><small>Reconciliation</small><b>Fund facts confirmed</b>Support terms and fund status confirmed by FAS Finance; no figure appears that is not in the record.</div>
+      <div><small>Intent</small><b>Gift officer review</b>Purpose and naming match the gift agreement; the gift officer approves the tone and timing.</div>
+      <div><small>Authorization</small><b>Named approver signs</b>Nothing is sent until a named approver signs; delivery and the follow-up call are logged in the CRM.</div>
+    </div>
+    <script>
+    (function(){var tabs=[].slice.call(document.querySelectorAll('#video-thanks [role=tab]'));
+      function sel(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on})}
+      tabs.forEach(function(b,i){b.addEventListener('click',function(){sel(b)});b.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus()}})});
+    })();
+    </script>
+  </section>
+
   <section class="panel">
     <h2>SMARTER · the seven commitments every message passes</h2>
     <p class="lead" style="margin-bottom:10px">Click a commitment to see which messages satisfy it, and how tone changes the voice without changing the facts.</p>
