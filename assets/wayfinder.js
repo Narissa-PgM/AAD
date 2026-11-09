@@ -2,9 +2,9 @@
 /* Stewardship Journey Navigator v2 — ScrollSpy / Visibility / URL State. A public/static-site navigation tool; it stores only page paths, not donor data. */
 (function(){'use strict';
   var BASE=[
-    ['profile.html','Professional Profile','Start here','P'],
-    ['career-profile.html','Detailed Career Profile','2008–Present interactive timeline','E'],
-    ['workframe.html','Portfolio Workframe','Four-program map','W'],
+    ['career-profile.html','Career Profile','Start here · capability with proof','P'],
+    ['fas-stewardship.html','FAS Pilot Brief','SMARTER plan for FAS stewardship','F'],
+    ['workframe.html','Portfolio Workframe','Operating model & role coverage','W'],
     ['index.html','Operating Suite','Live demonstration','S'],
     ['strategic-leadership.html','Strategic Leadership','Program 1','1'],
     ['donor-impact-reporting.html','Donor Impact Reporting','Program 2','2'],
@@ -15,11 +15,11 @@
     ['operations.html','Operations & Alerts','Tracking & release','A'],
     ['donor-profile.html','Donor Dossier','Synthetic record','D'],
     ['communications.html','Communications Studio','Donor storytelling','C'],
-    ['bridge-builder.html','Bridge Builder & Team Calendar','Open-door scheduling and shared progress','◈']
+    ['impact-circle.html','Impact Circle','Annual wheel, open door & team calendar','◈']
   ];
   var KEY='aad_wayfinder_v1';
-  var route=["workframe.html","index.html?report=endowed#reportgallery","donor-profile.html","communications.html","index.html#suite","index.html?report=current#reportgallery","index.html?report=grant#reportgallery","index.html?report=capital#reportgallery","playbook.html#start","operations.html","program-office.html#start","strategic-leadership.html#northstar","team-leadership.html#team","campaign-initiatives.html#campaign","bridge-builder.html#today"];
-  var GUIDE=[["workframe.html","Workframe","The map. Two minutes, then leave."],["index.html?report=endowed#reportgallery","Report Gallery — Endowed fund","University Opportunity Endowment · $55,000 distributed · $46,000 spent · $9,000 available · 18 aid awards"],["donor-profile.html","Donor profile","Eleanor M. Whitfield · fictional donor dossier"],["communications.html","Communications","The donor letter accompanying the endowed report"],["index.html#suite","Operating Suite","How reports are held, checked and released"],["index.html?report=current#reportgallery","Current-use gift","Student Experience & Access Fund · report 02"],["index.html?report=grant#reportgallery","Restricted grant","Biomedical Training Grant · report 04"],["index.html?report=capital#reportgallery","Capital project","Learning Commons · report 03 · whole-project figures"],["playbook.html#start","Playbook","Procedures behind the reports"],["operations.html","Operations board","Where the numbers come from"],["program-office.html#start","Program office","Schedule, capacity and risks"],["strategic-leadership.html#northstar","Strategic leadership","Priorities and standards"],["team-leadership.html#team","Team and operations","Who does the work"],["campaign-initiatives.html#campaign","Campaign and initiatives","How reports serve a campaign"],["bridge-builder.html#today","Open-door hub","Daily team board"]];
+  var route=["workframe.html","index.html?report=endowed#reportgallery","donor-profile.html","communications.html","index.html#suite","index.html?report=current#reportgallery","index.html?report=grant#reportgallery","index.html?report=capital#reportgallery","playbook.html#start","operations.html","program-office.html#start","strategic-leadership.html#northstar","team-leadership.html#team","campaign-initiatives.html#campaign","impact-circle.html#today"];
+  var GUIDE=[["workframe.html","Workframe","The map. Two minutes, then leave."],["index.html?report=endowed#reportgallery","Report Gallery — Endowed fund","University Opportunity Endowment · $55,000 distributed · $46,000 spent · $9,000 available · 18 aid awards"],["donor-profile.html","Donor profile","Eleanor M. Whitfield · fictional donor dossier"],["communications.html","Communications","The donor letter accompanying the endowed report"],["index.html#suite","Operating Suite","How reports are held, checked and released"],["index.html?report=current#reportgallery","Current-use gift","Student Experience & Access Fund · report 02"],["index.html?report=grant#reportgallery","Restricted grant","Biomedical Training Grant · report 04"],["index.html?report=capital#reportgallery","Capital project","Learning Commons · report 03 · whole-project figures"],["playbook.html#start","Playbook","Procedures behind the reports"],["operations.html","Operations board","Where the numbers come from"],["program-office.html#start","Program office","Schedule, capacity and risks"],["strategic-leadership.html#northstar","Strategic leadership","Priorities and standards"],["team-leadership.html#team","Team and operations","Who does the work"],["campaign-initiatives.html#campaign","Campaign and initiatives","How reports serve a campaign"],["impact-circle.html#today","Open-door hub","Daily team board"]];
   var config={};BASE.forEach(function(v){config[v[0]]=v});
   function file(){return document.documentElement.getAttribute('data-aad-page')||decodeURIComponent(location.pathname.split('/').pop())||'index.html'}
   function base(fileName){return fileName.split('#')[0].split('?')[0]}
@@ -68,7 +68,7 @@
       '<div class="aad-nav-panel-body"><nav class="aad-nav-breadcrumb" aria-label="You are here"><span>Portfolio</span><i aria-hidden="true">›</i><span>'+esc((config[cur]||["","Page"])[1])+'</span>'+(section()?'<i aria-hidden="true">›</i><strong>'+esc(section())+'</strong>':'')+'</nav><div class="aad-nav-here"><small>Current location</small><b>'+esc(section()?((config[cur]||['','Profile'])[1]+' · '+section()):label(loc()))+'</b><span>Current workspace and chapter are shown above. The visit trail remembers how you arrived here.</span></div>'+
       '<div class="aad-nav-actions">'+
       (origin?'<a class="primary" href="'+esc(href(origin))+'" data-wf-go="'+esc(origin)+'">← Return to '+esc(config[base(origin)][1])+'</a>':p?'<a class="primary" href="'+esc(href(p))+'" data-wf-go="'+esc(p)+'">← Previous stop</a>':'<a class="primary" href="./workframe.html" data-wf-go="workframe.html">Open portfolio map</a>')+
-      (state.playbook&&cur!=='playbook.html'?'<a href="'+esc(href(state.playbook))+'" data-wf-go="'+esc(state.playbook)+'">Resume Playbook</a>':'<a href="./profile.html" data-wf-go="profile.html">Professional profile</a>')+
+      (state.playbook&&cur!=='playbook.html'?'<a href="'+esc(href(state.playbook))+'" data-wf-go="'+esc(state.playbook)+'">Resume Playbook</a>':'<a href="./career-profile.html" data-wf-go="career-profile.html">Professional profile</a>')+
       '<a href="./workframe.html" data-wf-go="workframe.html">Four-program map</a><a href="./index.html#suite" data-wf-go="index.html#suite">Operating Suite</a></div>'+
       '<div class="aad-nav-guide"><b>Reading position</b><span>ScrollSpy highlights the visible section. Use the links to jump instantly, and Return to retrace your path.</span></div>'+
       '<div class="aad-nav-group"><h3>Exploration trail <span>'+state.visited.length+'/'+BASE.length+' visited</span></h3><div class="aad-nav-progress"><i style="width:'+progress+'%"></i></div><p style="font-size:10.5px;color:#607486;margin:5px 0 0">Visited means opened—not approved, completed, or verified.</p></div>'+
@@ -86,8 +86,7 @@
   function setupStaticScrollSpy(){
     var page=file();
     var paths={
-      'profile.html':['record','experience','mission','programs','first-year','path','credentials'],
-      'workframe.html':['programs','journey','cases','contract','tools','qa']
+      'workframe.html':['programs','model','coverage','journey','cases','contract','tools','qa']
     };
     var ids=paths[page];
     if(!ids)return;
