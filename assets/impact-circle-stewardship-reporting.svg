@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" width="1672" height="941" role="img" aria-labelledby="impactTitle impactDesc">
+<title id="impactTitle">The Impact Circle Stewardship Reporting</title>
+<desc id="impactDesc">A proposed One Harvard continuous stewardship model. Seven linked stages around a central mission: plan and prioritize, prepare and gather, produce and personalize, review and certify, deliver and engage, evaluate and learn, improve and scale. Coordination does not imply formal authority over Harvard units.</desc>
+<defs>
+ <marker id="arrow" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M 0 0 L 7 3.5 L 0 7 Z" fill="#A6B6C1"/></marker>
+ <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#173047" flood-opacity=".10"/></filter>
+ <linearGradient id="background" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F3F7FA"/></linearGradient>
+</defs>
+<rect width="1672" height="941" rx="24" fill="url(#background)"/>
+<text x="836" y="65" font-family="Cambria,Georgia,serif" font-size="42" font-weight="700" fill="#203B53" text-anchor="middle">The Impact Circle Stewardship Reporting</text>
+<text x="836" y="101" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#63798B" text-anchor="middle">Connecting Purpose · Evidence · Impact · Relationships</text>
+<path d="M 650 120 H 1022" stroke="#B42E45" stroke-width="4" stroke-linecap="round"/>
+<circle cx="836" cy="502" r="255" fill="none" stroke="#DCE5EB" stroke-width="13" stroke-dasharray="14 15"/>
+<circle cx="836" cy="502" r="177" fill="#FFFFFF" stroke="#D7E4EC" stroke-width="2" filter="url(#shadow)"/>
+<path d="M 836.0 328.0 L 836.0 277.0" fill="none" stroke="#9E2B42" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 972.0 393.5 L 1011.9 361.7" fill="none" stroke="#356E97" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1005.6 540.7 L 1055.4 552.1" fill="none" stroke="#6A569A" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 911.5 658.8 L 933.6 704.7" fill="none" stroke="#A47C39" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 760.5 658.8 L 738.4 704.7" fill="none" stroke="#2D7A70" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 666.4 540.7 L 616.6 552.1" fill="none" stroke="#496C85" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 700.0 393.5 L 660.1 361.7" fill="none" stroke="#AC5C4B" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="836" y="449" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" letter-spacing="4" fill="#9E2B42" text-anchor="middle">ONE HARVARD</text>
+<text x="836" y="493" font-family="Cambria,Georgia,serif" font-size="36" font-weight="700" fill="#233C53" text-anchor="middle">Shared purpose</text>
+<text x="836" y="526" font-family="Cambria,Georgia,serif" font-size="28" fill="#365871" text-anchor="middle">Local accountability</text>
+<path d="M 777 543 H 895" stroke="#A47C39" stroke-width="2.5"/>
+<text x="836" y="573" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#667F91" text-anchor="middle">Coordinate · align · enable</text>
+<g class="stage" aria-label="Stage 01: Plan &amp; Prioritize: Mission · donor intent">
+ <rect x="715.0" y="157.0" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="715.0" y="157.0" width="7" height="112" rx="3.5" fill="#9E2B42"/>
+ <text x="738.0" y="183.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#9E2B42">STAGE 01</text>
+ <text x="738.0" y="209.0" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Plan &amp;</text>
+ <text x="738.0" y="231.0" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Prioritize</text>
+ <text x="738.0" y="254.0" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Mission · donor intent</text>
+ </g>
+<g class="stage" aria-label="Stage 02: Prepare &amp; Gather: Authorized source evidence">
+ <rect x="941.0" y="265.8" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="941.0" y="265.8" width="7" height="112" rx="3.5" fill="#356E97"/>
+ <text x="964.0" y="291.8" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#356E97">STAGE 02</text>
+ <text x="964.0" y="317.8" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Prepare &amp;</text>
+ <text x="964.0" y="339.8" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Gather</text>
+ <text x="964.0" y="362.8" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Authorized source evidence</text>
+ </g>
+<g class="stage" aria-label="Stage 03: Produce &amp; Personalize: Outcome narrative · consent">
+ <rect x="996.8" y="510.3" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="996.8" y="510.3" width="7" height="112" rx="3.5" fill="#6A569A"/>
+ <text x="1019.8" y="536.3" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#6A569A">STAGE 03</text>
+ <text x="1019.8" y="562.3" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Produce &amp;</text>
+ <text x="1019.8" y="584.3" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Personalize</text>
+ <text x="1019.8" y="607.3" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Outcome narrative · consent</text>
+ </g>
+<g class="stage" aria-label="Stage 04: Review &amp; Certify: Six-Check Release Gate">
+ <rect x="840.4" y="706.4" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="840.4" y="706.4" width="7" height="112" rx="3.5" fill="#A47C39"/>
+ <text x="863.4" y="732.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#A47C39">STAGE 04</text>
+ <text x="863.4" y="758.4" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Review &amp;</text>
+ <text x="863.4" y="780.4" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Certify</text>
+ <text x="863.4" y="803.4" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Six-Check Release Gate</text>
+ </g>
+<g class="stage" aria-label="Stage 05: Deliver &amp; Engage: Donor communication">
+ <rect x="589.6" y="706.4" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="589.6" y="706.4" width="7" height="112" rx="3.5" fill="#2D7A70"/>
+ <text x="612.6" y="732.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#2D7A70">STAGE 05</text>
+ <text x="612.6" y="758.4" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Deliver &amp;</text>
+ <text x="612.6" y="780.4" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Engage</text>
+ <text x="612.6" y="803.4" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Donor communication</text>
+ </g>
+<g class="stage" aria-label="Stage 06: Evaluate &amp; Learn: Feedback · measurable value">
+ <rect x="433.2" y="510.3" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="433.2" y="510.3" width="7" height="112" rx="3.5" fill="#496C85"/>
+ <text x="456.2" y="536.3" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#496C85">STAGE 06</text>
+ <text x="456.2" y="562.3" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Evaluate &amp;</text>
+ <text x="456.2" y="584.3" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Learn</text>
+ <text x="456.2" y="607.3" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Feedback · measurable value</text>
+ </g>
+<g class="stage" aria-label="Stage 07: Improve &amp; Scale: Actions · next cycle">
+ <rect x="489.0" y="265.8" width="242" height="112" rx="18" fill="#ffffff" stroke="#D8E3EB" stroke-width="1.6"/>
+ <rect x="489.0" y="265.8" width="7" height="112" rx="3.5" fill="#AC5C4B"/>
+ <text x="512.0" y="291.8" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#AC5C4B">STAGE 07</text>
+ <text x="512.0" y="317.8" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Improve &amp;</text>
+ <text x="512.0" y="339.8" font-family="Cambria,Georgia,serif" font-size="19.5" font-weight="700" fill="#223E53">Scale</text>
+ <text x="512.0" y="362.8" font-family="Arial,Helvetica,sans-serif" font-size="11.7" fill="#687F91">Actions · next cycle</text>
+ </g>
+<rect x="244" y="864" width="1184" height="47" rx="15" fill="#FFFFFF" stroke="#D9E3EA"/>
+<text x="836" y="884" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="15" fill="#9C3041">THE LOOP CONTINUES</text>
+<text x="836" y="902" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#5B7183">Stage 07 informs Stage 01 · Donor feedback shapes the next round · Illustrative proposed model</text>
+</svg>
