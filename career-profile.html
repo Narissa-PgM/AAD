@@ -909,7 +909,23 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 .ep-gov-note{margin:13px 0 0;color:#65778a;font:11px/1.5 system-ui,sans-serif}
 @media(max-width:650px){.ep-governance-map{padding:12px}.ep-gov-bottom{grid-template-columns:1fr;gap:10px}.ep-gov-node{padding:13px}}
 </style>
-<link rel="stylesheet" href="./assets/visual-explorer.css">
+<style id="aad-portfolio-infographic-sizing">
+/* Executive summary at 50% width; enlarge without navigating away or obscuring text. */
+.ic-figure,.ep-new-infographic{width:min(50%,720px);max-width:720px;min-width:0;margin:17px auto 16px;border:1px solid #dbe4eb;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 7px 22px rgba(28,51,70,.08)}
+.ic-figure .ep-image-zoom,.ep-new-infographic .ep-image-zoom{all:unset;display:block;width:100%;box-sizing:border-box;cursor:zoom-in}
+.ic-figure .ep-image-zoom:focus-visible,.ep-new-infographic .ep-image-zoom:focus-visible{outline:3px solid #a51c30;outline-offset:-4px}
+.ic-figure .ep-image-zoom img,.ep-new-infographic .ep-image-zoom img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain}
+.ep-new-infographic figcaption{font:11px/1.5 system-ui,sans-serif;color:#607589;padding:9px 12px;background:#f8fafc}
+#ep-image-viewer{max-width:96vw;max-height:94vh;width:min(1500px,96vw);padding:12px;border-radius:13px;border:1px solid #d9e2e8;background:#fff;box-shadow:0 18px 65px rgba(20,42,60,.25);overflow:auto}
+#ep-image-viewer::backdrop{background:rgba(21,35,47,.69)}
+#ep-image-viewer .ep-viewer-head{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:0 3px 9px}
+#ep-image-viewer .ep-viewer-head b{font:700 18px Cambria,Georgia,serif;color:#243e54}
+#ep-image-viewer .ep-viewer-head button{border:1px solid #cfdce5;border-radius:8px;background:#fff;padding:7px 13px;font-weight:700;cursor:pointer}
+#ep-image-viewer img{display:block;width:100%;height:auto;max-height:calc(94vh - 100px);object-fit:contain}
+#ep-image-viewer[open]{display:block}
+@media(max-width:760px){.ic-figure,.ep-new-infographic{width:100%;max-width:none}}
+@media print{.ic-figure,.ep-new-infographic{width:100%;box-shadow:none}#ep-image-viewer{display:none!important}}
+</style><link rel="stylesheet" href="./assets/visual-explorer.css">
 </head>
 
 <body>
@@ -1332,10 +1348,10 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
     </div>
     <figure class="ic-figure">
       <h3 class="ic-visual-title">The Impact Circle Stewardship Reporting</h3>
-      <a href="./workframe.html#programs" aria-label="Open the interactive seven-stage Impact Circle on the Workframe">
-        <img src="./assets/impact-circle-stewardship-reporting.svg" width="1672" height="941" loading="lazy" decoding="async" alt="The Impact Circle Stewardship Reporting: seven-stage continuous donor stewardship model, from planning through engagement, evaluation and improvement.">
-      </a>
-      <figcaption><strong>The Impact Circle Stewardship Reporting</strong> — seven connected stages. Select the illustration to explore working steps and coordinating partners; no links cover the image.</figcaption>
+      <button type="button" class="ep-image-zoom" data-ep-zoom="impact" aria-label="Enlarge Impact Circle infographic">
+        <img src="./assets/one_harvard_impact_circle.png" onerror="this.onerror=null;this.src='./assets/impact-circle-stewardship-reporting.svg'" width="1672" height="941" loading="lazy" decoding="async" alt="The Impact Circle Stewardship Reporting: seven-stage continuous donor stewardship model, from planning through engagement, evaluation and improvement.">
+      </button>
+      <figcaption><strong>Impact Circle · A One Harvard Stewardship Model.</strong> The image is shown at 50% of the section width on desktop. Open the image to view the full seven-stage infographic; no text overlays the artwork.</figcaption>
     </figure>
     <div class="ic-process" aria-label="Plain-language summary of the continuous stewardship process">
       <span>01 Plan</span><span>02 Gather</span><span>03 Produce</span><span>04 Review</span><span>05 Engage</span><span>06 Learn</span><span>07 Improve</span><strong>↺ Repeat</strong>
@@ -1438,6 +1454,12 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         <p class="ep-clock-note">The long economic horizon is not a 36-month delivery schedule. The P80 estimate is a simulation, not a committed deadline. Values are illustrative; stage-gate approvals are not implied.</p>
       </div>
       <p class="section-label" style="margin-top:22px" id="platforms">Eight delivery-assurance controls · in the order they run</p>
+      <figure class="ep-new-infographic" id="eight-control-roadmap-figure" hidden>
+        <button class="ep-image-zoom" type="button" data-ep-zoom="roadmap" aria-label="Enlarge the eight-control reporting roadmap image">
+          <img src="./assets/eight_step_delivery_assurance_roadmap.png" alt="Eight-step donor-report release roadmap: intake and scope, gift intent, source assembly, reconciliation, narrative and design quality, traceability, authorization, and post-release review." loading="lazy" decoding="async" onload="this.closest('figure').hidden=false" onerror="this.closest('figure').hidden=true"/>
+        </button>
+        <figcaption><strong>Illustrative donor-report release roadmap</strong> · This graphic illustrates the stewardship reporting release path, while the technical assurance controls below remain part of the separate archived analytics case.</figcaption>
+      </figure>
       <p class="note" style="margin:-4px 0 0">These <strong>controls</strong> run inside the four workstreams — PIMS operations, QA/QC, stress testing and data integrity, smoke tests, acceptance testing, security and handoff, value audit, and Lean Six Sigma.</p>
       <div class="demos" style="margin-top:12px"><a class="demo" data-ep="as-lss" style="--da:#6d4e8c" href="#concept" aria-haspopup="dialog"><span class="badge">Step 1 · weeks 1–22</span><h3>Process improvement (Lean Six Sigma)</h3><p>Project charter, SIPOC, value-stream map, control chart and control plan. Owner: Process improvement lead.</p><span class="open">Process sigma level: baseline → +0.5σ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-pims" style="--da:#2b5c8a" href="#concept" aria-haspopup="dialog"><span class="badge">Step 2 · weeks 1–3</span><h3>PIMS operations &amp; service requests</h3><p>Request catalog, triage rules, SLA targets and a PIMS run-book. Owner: Operations lead.</p><span class="open">Requests closed within SLA: ≥ 95% <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-qa" style="--da:#2f6b4f" href="#concept" aria-haspopup="dialog"><span class="badge">Step 3 · weeks 4–6</span><h3>QA/QC</h3><p>Quality plan, review checklists, defect-severity scale and defect log. Owner: QA lead.</p><span class="open">Defects escaping to production: ≤ 5% of all defects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-stress" style="--da:#8a651f" href="#concept" aria-haspopup="dialog"><span class="badge">Step 4 · weeks 8–13</span><h3>Stress testing &amp; data integrity</h3><p>Load and volume test results; reconciliation to the system of record. Owner: Data engineer.</p><span class="open">Control totals reconciled to source: 100% · 0 critical breaks <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-smoke" style="--da:#a51c30" href="#concept" aria-haspopup="dialog"><span class="badge">Step 5 · weeks 14–17</span><h3>Smoke tests &amp; critical user journeys</h3><p>CUJ list and a 10-minute smoke script run after every release or refresh. Owner: QA lead.</p><span class="open">CUJs passing before each release: 100% <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-uat" style="--da:#246850" href="#concept" aria-haspopup="dialog"><span class="badge">Step 6 · weeks 14–16</span><h3>Acceptance testing</h3><p>Acceptance criteria, UAT scripts and a signed acceptance. Owner: Business owner.</p><span class="open">UAT cases passed: ≥ 95% · 0 open critical <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-sec" style="--da:#465d75" href="#concept" aria-haspopup="dialog"><span class="badge">Step 7 · weeks 18–20</span><h3>Security, delivery &amp; handoff</h3><p>Access matrix, security sign-off, runbook, training and 30-day hypercare. Owner: Information security + program lead.</p><span class="open">Access review complete · critical findings: 100% · 0 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a><a class="demo" data-ep="as-value" style="--da:#9b691c" href="#concept" aria-haspopup="dialog"><span class="badge">Step 8 · weeks 21–22</span><h3>Value audit &amp; decision usefulness</h3><p>Benefits vs. baseline, decisions informed, user survey and an extend / fix / close decision. Owner: Executive sponsor.</p><span class="open">Leaders rating outputs useful for decisions: ≥ 4 / 5 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></a></div>
       <div class="callout" style="margin-top:14px"><strong>Decision rights:</strong> the Director of Analytics &amp; Reporting coordinates planning, requirements, evidence and follow-through. Vice Provost for Academic Affairs and the offices that own finance, IT and security, HR and academic decisions retain their approval responsibilities.</div>
@@ -1463,6 +1485,12 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
       </div>
       <div class="beacon-grid" style="margin-top:14px"><article class="beacon" style="--bc:#a51c30"><h3><i>M</i>Mission &amp; service</h3><p>PIMS service-request intake, triage &amp; SLA baseline.</p><small>Proposed: A5</small></article><article class="beacon" style="--bc:#2b5c8a"><h3><i>E</i>Excellence &amp; quality</h3><p>Quality rules &amp; alerts.</p><small>Proposed: B3</small></article><article class="beacon" style="--bc:#2f6b4f"><h3><i>I</i>Integrity &amp; stewardship</h3><p>Stress tests &amp; data-integrity reconciliation.</p><small>Proposed: B4</small></article><article class="beacon" style="--bc:#7b559a"><h3><i>C</i>Collaboration</h3><p>Benefits review; Executive dashboards.</p><small>Proposed: D1 · B2</small></article><article class="beacon" style="--bc:#9b691c"><h3><i>N</i>Innovation</h3><p>Stakeholder interviews; Smoke tests &amp; critical user journeys (CUJs).</p><small>Proposed: A1 · C2</small></article><article class="beacon" style="--bc:#465d75"><h3><i>S</i>Sustainability</h3><p>Data pipeline; Extend-or-close decision.</p><small>Proposed: B1 · D2</small></article></div>
       <p class="section-label" style="margin-top:24px">SMARTER · a decision-and-delivery operating cycle</p>
+      <figure class="ep-new-infographic" id="smarter-cycle-image" hidden>
+        <button class="ep-image-zoom" type="button" data-ep-zoom="smarter" aria-label="Enlarge the seven-stage SMARTER operating-cycle infographic">
+          <img src="./assets/smarter_operating_cycle_infographic.png" alt="SMARTER operating cycle: Specific, Measurable, Attainable, Relevant, Time-bound, Evaluate and Review, returning to Specific." loading="lazy" decoding="async" onload="this.closest('figure').hidden=false" onerror="this.closest('figure').hidden=true"/>
+        </button>
+        <figcaption><strong>SMARTER execution discipline.</strong> Use the infographic to read the full seven-stage decision cycle; the linked explanation and original chart remain available below.</figcaption>
+      </figure>
       <div class="split-viz">
         <figure class="viz" style="margin:0"><div class="viz-head"><div><h3>SMARTER · seven decision checkpoints</h3><p class="dek">This is the execution and measurement framework for the archived analytics demonstration; it is distinct from the current Impact Circle stewardship process above.</p></div></div><div class="viz-body smarter-ring" id="smarterChart"></div>
           <figcaption class="viz-foot">Specific → Measurable → Attainable → Relevant → Time-bound → Evaluate → Review. Review feeds the next round of Specific.</figcaption></figure>
@@ -2778,6 +2806,15 @@ veritas:{name:'VERITAS · Communicate & Engage',desc:'A proposed donor narrative
 let previous=null;
 document.querySelectorAll('[data-ic-method]').forEach(btn=>btn.addEventListener('click',()=>{const data=records[btn.dataset.icMethod];if(!data)return;previous=btn;title.textContent=data.name;body.replaceChildren();const p=document.createElement('p');p.textContent=data.desc;body.append(p);const list=document.createElement('ol');data.items.forEach(line=>{const li=document.createElement('li');li.textContent=line;list.appendChild(li)});body.append(list);const a=document.createElement('a');a.className='btn primary';a.href=data.href;a.textContent=data.cta+' →';body.append(a);dlg.showModal();dlg.querySelector('[data-ic-close]').focus({preventScroll:true})}));
 dlg.querySelector('[data-ic-close]').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});dlg.addEventListener('close',()=>{if(previous)previous.focus({preventScroll:true})});
+})();
+</script><dialog id="ep-image-viewer" aria-label="Expanded infographic"><div class="ep-viewer-head"><b id="ep-viewer-title">Infographic</b><button type="button" id="ep-viewer-close">Close ×</button></div><img id="ep-viewer-image" alt="" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="/></dialog>
+<script id="ep-infographic-viewer-behavior">
+(function(){'use strict';
+const dlg=document.getElementById('ep-image-viewer'),img=document.getElementById('ep-viewer-image'),title=document.getElementById('ep-viewer-title');if(!dlg||!img)return;
+let prior;
+document.querySelectorAll('[data-ep-zoom]').forEach(button=>button.addEventListener('click',()=>{const source=button.querySelector('img');if(!source||!source.getAttribute('src'))return;prior=button;img.src=source.currentSrc||source.src;img.alt=source.alt;title.textContent=({impact:'Impact Circle · One Harvard Stewardship Model',roadmap:'Eight-step donor-report release roadmap',smarter:'SMARTER · Decision-and-delivery cycle'})[button.dataset.epZoom]||'Infographic';if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');}));
+document.getElementById('ep-viewer-close').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});dlg.addEventListener('close',()=>{img.src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';if(prior)prior.focus({preventScroll:true})});
 })();
 </script><script defer src="./assets/wayfinder.js"></script>
 <script defer src="./assets/visual-explorer.js"></script>
