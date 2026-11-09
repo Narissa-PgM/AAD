@@ -1242,6 +1242,22 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 .net-label.net-sub{margin-top:10px}
 @media (max-width:1100px){.om-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.ai-flow,.hb-keys,.fz-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ai-demo{grid-template-columns:1fr}}
 @media (max-width:560px){.ai-flow,.hb-keys,.fz-grid{grid-template-columns:1fr}.ai-flow li button::after{display:none}.hb{grid-template-columns:70px minmax(0,1fr)}.ltr-paper{padding:16px}}
+/* video walkthroughs */
+.vw{margin:20px 0 6px}
+.vw-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.vw-head h3{margin:0;font:700 20px/1.2 Cambria,Georgia,serif;color:var(--ink)}
+.vw-head span{font-size:12.5px;color:var(--muted)}
+.vw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vw-card{min-width:0;margin:0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.vw-card video{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#1C2B3A}
+.vw-card figcaption{padding:11px 14px 13px;display:flex;flex-direction:column;gap:3px}
+.vw-card figcaption b{font:700 15.5px/1.25 Cambria,Georgia,serif;color:var(--ink)}
+.vw-card figcaption span{font-size:13px;line-height:1.45;color:var(--muted)}
+.vw-card figcaption a{margin-top:4px;font:700 12px/1 var(--ui);color:var(--crimson);text-decoration:none}
+.vw-card figcaption a:hover{text-decoration:underline}
+.vw-card .vw-soon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#1C2B3A,#2B3C4E);color:#C9D2DB;font:600 13px/1.4 var(--ui);text-align:center;padding:16px}
+@media (max-width:760px){.vw-grid{grid-template-columns:minmax(0,1fr)}}
+@media print{.vw{display:none}}
 </style>
 <link rel="stylesheet" href="./assets/aad-model.css">
 </head>
@@ -1358,6 +1374,20 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
           <span class="kx-h">Grant proposals that helped secure program funding</span>
           <small>UAMS College of Medicine · PI support, ANGELS telemedicine</small>
         </button>
+      </div>
+
+      <div class="vw" aria-labelledby="vw-title">
+        <div class="vw-head"><h3 id="vw-title">Watch the work</h3><span>Two short videos, AI-narrated with Google NotebookLM from my own sources</span></div>
+        <div class="vw-grid">
+          <figure class="vw-card">
+            <video controls preload="none" playsinline poster="./assets/thumbs/video-hub.webp" width="1280" height="700" aria-describedby="vw-hub-cap"><source src="./Stewardship_Hub.mp4" type="video/mp4"></video>
+            <figcaption id="vw-hub-cap"><b>Impact Circle · Stewardship Hub walkthrough</b><span>6½ min · How One Harvard partners, the seven-stage Impact Circle, SMARTER gates and VERITAS reports fit together, and the hub's team tools.</span><a href="./impact-circle.html">Open the hub ↗</a></figcaption>
+          </figure>
+          <figure class="vw-card">
+            <video controls preload="metadata" playsinline width="1280" height="720" aria-describedby="vw-story-cap"><source src="./Story.mp4" type="video/mp4"></video>
+            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>A stewardship video for an endowed Ph.D. fellowship. The donor, fund and student are fictional.</span><a href="./communications.html">See the donor letters ↗</a></figcaption>
+          </figure>
+        </div>
       </div>
 
       <figure class="viz">
@@ -3114,6 +3144,14 @@ function set(paused){if(paused)svg.pauseAnimations();else svg.unpauseAnimations(
 var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(rm){btn.hidden=true;svg.pauseAnimations();}
 btn.addEventListener('click',function(){set(btn.getAttribute('aria-pressed')!=='true')});
+})();
+
+(function(){'use strict';
+/* If a video file is not uploaded yet, show a calm placeholder instead of a broken player */
+[].forEach.call(document.querySelectorAll('.vw-card video'),function(v){
+  var src=v.querySelector('source');if(!src)return;
+  src.addEventListener('error',function(){var d=document.createElement('div');d.className='vw-soon';d.textContent='Video coming soon';v.replaceWith(d)});
+});
 })();
 </script>
 <script defer src="./assets/wayfinder.js"></script>
