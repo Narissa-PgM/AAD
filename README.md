@@ -1,39 +1,32 @@
-# Stewardship Operating Portfolio — navigable GitHub Pages suite
+# AA&D Stewardship Reporting Portfolio · GitHub Pages
 
-**New:** `profile.html` is the aligned professional executive profile. Every HTML page now includes a persistent **Journey Navigator** with a 12-workspace map, chapter-aware current location, previous stop, resume-playbook link, and a suggested 5-stop reviewer route. The tracker stores only URLs/page visits in the browser's localStorage; it does not store donor content or transmit data.
+Work samples for the **Director of Stewardship Reporting** role (Harvard Alumni Affairs & Development), by Narissara Khomkhai. All donor names, funds and figures are synthetic or labeled planning estimates.
 
-Suggested hiring link: `https://narissa-pgm.github.io/AAD/profile.html` (profile first) or `https://narissa-pgm.github.io/AAD/workframe.html` (operating map first). Existing `index.html` remains the Operating Suite root to preserve links.
+## Start here
+* `career-profile.html` — capability with proof (start here)
+* `fas-stewardship.html` — FAS stewardship pilot brief, organized by SMARTER
+* `workframe.html` — the operating model wheel and the **role-coverage map** (every posting duty linked to its proof)
 
-Upload *all* files and the `assets/` folder. The new `assets/wayfinder.css` and `assets/wayfinder.js` are required; replacing an HTML file alone does not install the navigator. Clear browser local storage using the navigator's **Clear visit history** link if necessary.
+## One operating model, every page
+**One Harvard → Impact Circle → SMARTER → VERITAS**
 
-The original uploaded professional profile discussed a different, fictional analytics-director role. The new `profile.html` focuses the relevant career evidence on a **proposed AA&D stewardship role** and removes that unrelated posting/financial model from the public site. Career figures are as reported in the supplied professional profile, not independently verified.
+| Layer | Answers | Definition |
+|---|---|---|
+| One Harvard | Who | Leading across offices without formal authority; each office keeps its decisions, everyone shares the automation, standards and evidence log. |
+| Impact Circle | When | Seven stages every reporting year: Plan & Prioritize · Prepare & Gather · Produce & Personalize · Review & Certify · Deliver & Engage · Evaluate & Learn · Improve & Scale. |
+| SMARTER | How | One gate per stage, in order: Specific · Measurable · Attainable · Relevant · Time-bound · Evaluate · Review. The **Six-Check Release Gate** (Intent · Reconciliation · Consent · Traceability · Attribution · Authorization) sits at Review & Certify. |
+| VERITAS | What | Every report carries Vision · Experience · Results · Investment · Truth · Advancement · Stewardship (a proposed editorial mnemonic, not an expansion of the University motto). |
 
-# Stewardship Operating Workframe · GitHub Pages package
+### Automation that keeps it consistent
+* `assets/aad-model.js` + `assets/aad-model.css` — the single source of truth for the four models, the Release Gate and the posting's responsibilities. Pages render their model graphics from it: `<div data-aad-model="wheel|ribbon|coverage">`, and any element with `data-aad-open` opens the model.
+* `tools/unify.py` — re-applies the canonical wording, loads the module and places the graphics. Idempotent; run it after rebuilding any page.
+* `tools/check_models.py` — fails if a page drifts (old model order, non-canonical SMARTER labels, links to retired pages). Runs on every push via `.github/workflows/model-consistency.yml`.
 
-## Deployment
-Upload **all files and the `assets/` folder** to the root of your `narissa-pgm/AAD` repository.
+## Pages
+* Four working programs: `strategic-leadership.html`, `donor-impact-reporting.html`, `team-leadership.html`, `campaign-initiatives.html`
+* `index.html` — Operating Suite (report gallery and release gate)
+* `impact-circle.html` — Impact Circle infographics, open-door requests and team calendar
+* Supporting workspaces: `playbook.html`, `program-office.html`, `operations.html`, `communications.html`, `donor-profile.html`
+* Retired (redirects kept so old links work): `profile.html` → `career-profile.html`, `bridge-builder.html` → `impact-circle.html`
 
-* `workframe.html` — the new cross-program visual front door. Suggested portfolio-facing link: https://narissa-pgm.github.io/AAD/workframe.html
-* `index.html` — retain the interactive Operating Suite at the existing site root to preserve previously published deep links.
-* `playbook.html` — the Executive Playbook.
-* Four working programs: `strategic-leadership.html`, `donor-impact-reporting.html`, `team-leadership.html`, `campaign-initiatives.html`.
-* Supporting workspaces: `program-office.html`, `operations.html`, `communications.html`, `donor-profile.html`.
-
-The four program links in the uploaded draft had obsolete filenames. They have been replaced with checked, existing files and chapter IDs. Do not rename the HTML files during upload.
-
-## Framework definitions
-* **One Harvard** — cross-unit coordination without asserting control over decentralized systems.
-* **SMARTER** — Specifically, Measurably, Achievably, Relevantly, Time-bound, Evaluated, Reviewed.
-* **Six-Check Release Gate** — Intent, Reconciliation, Consent, Traceability, Attribution, Authorization.
-* **VERITAS** — Vision, Experience, Results, Investment, Truth, Advancement, Stewardship. This is a **proposed donor editorial mnemonic**, not an official expansion of Harvard's Latin motto.
-
-The metadata and case bridges are versioned in `FRAMEWORK_CONTRACT.json`. Existing applications still contain their own datasets and editorial logic; the new manifest is an audited synchronization reference, **not** a live shared database.
-
-## Navigation
-All working pages include the compact Workframe / Suite / Playbook / Program Office toolbar. Cross-page HTML links append an encoded `return` address, preserving the previous page's chapter; a session-storage fallback is also used.
-
-## Provenance
-All donor profiles, finances, gift-officer notes, approval records, campaign goals, and staffing scores in sample workspaces remain synthetic. GitHub Pages is public static hosting, not an approved donor-data system, credential store, or mass-email sender.
-
-## Validation
-See `QA_WHOLE_SUITE.md` for file-level, route, arithmetic, and browser smoke-test findings. On GitHub Pages, open `workframe.html#qa` to run the built-in HTTP reachability preflight. This is a **reachability diagnostic only**, not proof of production functionality.
+Upload all files and the `assets/` folder; do not rename HTML files.

@@ -2,7 +2,7 @@
   "version": "2.0",
   "workspaces": [
     {
-      "file": "profile.html",
+      "file": "career-profile.html",
       "title": "Professional Profile",
       "type": "foundation/workspace"
     },
@@ -77,7 +77,7 @@
     "strategic-leadership.html#northstar",
     "team-leadership.html#team",
     "campaign-initiatives.html#campaign",
-    "bridge-builder.html#today"
+    "impact-circle.html#today"
   ],
   "storage": "Browser localStorage, paths only",
   "series_guide": [
@@ -167,7 +167,7 @@
     },
     {
       "order": 15,
-      "url": "bridge-builder.html#today",
+      "url": "impact-circle.html#today",
       "title": "Open-door hub",
       "purpose": "Daily team board."
     }

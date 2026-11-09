@@ -177,9 +177,10 @@
 </style>
 <style id="wf-nav-style">.wf-navigator{font-family:system-ui,-apple-system,'Segoe UI',sans-serif!important;background:#fff!important;color:#284157!important;border-top:3px solid #a51c30!important;border-bottom:1px solid #d7e1e9!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:9px!important;flex-wrap:wrap!important;padding:7px 15px!important;min-height:43px!important;position:relative!important;z-index:69!important}.wf-navigator .wf-path{display:flex!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important}.wf-navigator .wf-path a,.wf-navigator .wf-path button{display:inline-flex!important;align-items:center!important;padding:5px 9px!important;background:#fff!important;color:#1e3851!important;border:1px solid #dae2e9!important;border-radius:7px!important;text-decoration:none!important;font:bold 11px/1.2 system-ui,sans-serif!important;cursor:pointer!important;min-height:29px!important}.wf-navigator a:hover,.wf-navigator button:hover{border-color:#a51c30!important;color:#a51c30!important}.wf-navigator .wf-path strong{font:bold 11px system-ui,sans-serif!important;color:#a51c30!important}.wf-navigator .wf-path .wf-return{background:#fbf0f2!important;color:#7e1527!important;border-color:#e4b8c1!important}.wf-navigator .wf-hint{font:11px/1.3 system-ui,sans-serif!important;color:#607184!important}.wf-navigator .wf-hint b{color:#a51c30}@media(max-width:700px){.wf-navigator{padding:7px 9px!important}.wf-navigator .wf-hint{display:none!important}}@media print{.wf-navigator{display:none!important}}</style><link rel="stylesheet" href="./assets/wayfinder.css">
 <link rel="stylesheet" href="./assets/visual-explorer.css">
+<link rel="stylesheet" href="./assets/aad-model.css">
 </head>
 <body>
-<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./index.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><span class="wf-hint"><b>One Harvard</b> · SMARTER · Release Gate · VERITAS</span></nav>
+<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./index.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><button type="button" class="wf-hint wf-model" data-aad-open="ic-1" title="Open the operating model"><b>One Harvard</b> → Impact Circle → SMARTER → VERITAS <span aria-hidden="true">↗</span></button></nav>
 <div class="wrap">
 
 <div class="contextbar no-print">
@@ -326,11 +327,11 @@ const CTX = {
 const SMARTER = [
   { letter: 'S', name: 'Specific', label: 'One question, one message', detail: 'Each message answers exactly one question the reader has: what did my gift do, is my fund well run, did something go wrong, what happens next, or did you hear me?', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','de-renewal','de-followup','th-thank','dl-family'] },
   { letter: 'M', name: 'Measurable', label: 'Every number has a source', detail: 'Every figure in the message is already in the record — certified statement, aid ledger, cohort file. The message translates the record into plain language; it does not add to it.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','te-status','ld-board'] },
-  { letter: 'A', name: 'Achievable', label: 'Written for one reader', detail: 'The message is written for one reader, in their preferred channel, at the moment it is useful. A renewal ask that arrives after the report is a different message from one that arrives six weeks later.', satisfiedBy: ['de-endowed','de-renewal','de-followup','th-thank','dl-family'] },
+  { letter: 'A', name: 'Attainable', label: 'Written for one reader', detail: 'The message is written for one reader, in their preferred channel, at the moment it is useful. A renewal ask that arrives after the report is a different message from one that arrives six weeks later.', satisfiedBy: ['de-endowed','de-renewal','de-followup','th-thank','dl-family'] },
   { letter: 'R', name: 'Relevant', label: 'Tied to the gift’s purpose', detail: 'Every message quotes the purpose from the gift agreement — verbatim, not paraphrased. The message connects the donor to the specific work their fund supports, not to a generic institutional claim.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','th-thank','dl-family'] },
   { letter: 'T', name: 'Time-bound', label: 'Sent when it matters', detail: 'Every message has a moment: 48 hours after a gift, one week after a report, 60 days before renewal. The message that arrives a month late is not the same message.', satisfiedBy: ['th-thank','de-renewal','de-followup','te-status','te-sla','te-escalate'] },
-  { letter: 'E', name: 'Evaluated', label: 'Read against what changed', detail: 'Each message is evaluated after send — opens, replies, renewals, questions raised — and the result is logged. The next message is informed by the last one.', satisfiedBy: ['dl-endowed','de-renewal','te-status','ld-advisor'] },
-  { letter: 'R', name: 'Reviewed', label: 'Named human approval', detail: 'No message leaves the platform without a named approver on record. The six-check Release Gate exists so that a reviewer can say "I read this and it is true" — with a timestamp.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','de-renewal','dl-family','te-escalate','ld-board','ld-advisor','cp-release','cp-ailog'] }
+  { letter: 'E', name: 'Evaluate', label: 'Read against what changed', detail: 'Each message is evaluated after send — opens, replies, renewals, questions raised — and the result is logged. The next message is informed by the last one.', satisfiedBy: ['dl-endowed','de-renewal','te-status','ld-advisor'] },
+  { letter: 'R', name: 'Review', label: 'Named human approval', detail: 'No message leaves the platform without a named approver on record. The six-check Release Gate exists so that a reviewer can say "I read this and it is true" — with a timestamp.', satisfiedBy: ['dl-endowed','de-endowed','de-underspend','de-renewal','dl-family','te-escalate','ld-board','ld-advisor','cp-release','cp-ailog'] }
 ];
 
 /* ============================================================
@@ -1359,5 +1360,6 @@ renderArtifact();
 })();</script>
 <script defer src="./assets/wayfinder.js"></script>
 <script defer src="./assets/visual-explorer.js"></script>
+<script src="./assets/aad-model.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAS Stewardship Reporting · Pilot brief · Narissara Khomkhai</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23A51C30%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Georgia%27 font-size=%2715%27 font-weight=%27700%27 fill=%27white%27 text-anchor=%27middle%27%3ENK%3C/text%3E%3C/svg%3E">
+<meta name="description" content="A SMARTER pilot brief for FAS donor impact reporting: automation prepares the report, people certify what donors read.">
+<style>
+:root{
+  --crimson:#A51C30;--crimson-d:#751422;--crimson-l:#FBEEF0;
+  --ink:#13171C;--slate:#3B4754;--muted:#5C6774;--faint:#6E7780;
+  --line:#E1E5EA;--line-strong:#CDD3D9;--bg:#EEF1F4;--paper:#fff;--paper-2:#F7F9FA;--paper-3:#EFF2F5;
+  --c-s:#A51C30;--c-m:#2F5D8A;--c-a:#2F6B4F;--c-r:#8A651F;--c-t:#2D6E73;--c-e:#5B4A8A;--c-v:#3B4754;
+  --shadow:0 14px 34px -20px rgba(16,24,40,.35),0 2px 6px -3px rgba(16,24,40,.08);
+  --r-sm:8px;--r-md:12px;--r-lg:16px;
+  --ui:"Inter","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:Cambria,Georgia,"Times New Roman",serif;
+  --header-h:60px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--ui);-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+a{color:var(--crimson)}
+a:hover{color:var(--crimson-d)}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;z-index:99}
+.skip:focus{left:8px}
+
+/* header */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:none}
+.brand-mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(150deg,#B52338,var(--crimson-d));color:#fff;font:700 14px/1 var(--serif)}
+.brand-txt strong{display:block;font:700 15px/1.15 var(--serif)}
+.brand-txt small{display:block;font-size:11.5px;color:var(--muted)}
+.nav{display:flex;gap:4px;margin-left:auto;align-items:center}
+.nav a{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--slate);font:600 12.5px/1 var(--ui);padding:7px 9px;border-radius:8px}
+.nav a b{display:grid;place-items:center;width:22px;height:22px;border-radius:6px;background:color-mix(in srgb,var(--lc) 12%,#fff);color:var(--lc);font:700 13px/1 var(--serif)}
+.nav a:hover{background:var(--paper-3);color:var(--ink)}
+.nav a[aria-current="true"]{background:color-mix(in srgb,var(--lc) 10%,#fff);color:var(--ink)}
+.nav a[aria-current="true"] b{background:var(--lc);color:#fff}
+.acts{display:flex;gap:6px;flex:none}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);font:600 12.5px/1 var(--ui);padding:8px 12px;border-radius:999px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--paper-2);color:var(--ink)}
+.btn.primary{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.btn.primary:hover{background:var(--crimson-d);color:#fff}
+.btn svg{width:15px;height:15px}
+.btn:disabled{opacity:.45;cursor:default}
+
+/* hero */
+.hero{padding:34px 0 26px;background:linear-gradient(180deg,#fff 0%,#fff 70%,var(--bg) 100%);border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:30px;align-items:start}
+.eyebrow{margin:0 0 10px;font:700 11px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--crimson)}
+.hero h1{margin:0 0 12px;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-.01em}
+.lede{margin:0 0 16px;font-size:16.5px;line-height:1.55;color:var(--slate);max-width:640px}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--paper-2);margin-bottom:16px}
+.meta div{padding:9px 12px;font-size:13px;line-height:1.35}
+.meta div+div{border-left:1px solid var(--line)}
+.meta small{display:block;font:700 10px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.trio{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.trio button{all:unset;box-sizing:border-box;cursor:pointer;display:block;height:100%;padding:12px 13px;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:var(--r-md);background:#fff}
+.trio button:hover,.trio button:focus-visible{box-shadow:var(--shadow);outline:none;border-color:color-mix(in srgb,var(--c) 40%,var(--line))}
+.trio i{font-style:normal;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--c);color:#fff;font:700 12px/1 var(--ui);margin-right:6px}
+.trio b{font:700 15.5px/1.2 var(--serif)}
+.trio span{display:block;margin-top:6px;font-size:13px;line-height:1.45;color:var(--slate)}
+.status{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:12.5px;color:var(--muted)}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#C9A043}
+
+/* SMARTER index */
+.index{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:16px;box-shadow:var(--shadow)}
+.index h2{margin:0 0 2px;font-size:19px}
+.index p.sub{margin:0 0 12px;font-size:13px;color:var(--muted)}
+.idx{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.idx a{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:center;gap:10px;padding:7px 10px 7px 7px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:linear-gradient(90deg,color-mix(in srgb,var(--lc) 7%,#fff),#fff 55%)}
+.idx a:hover,.idx a:focus-visible{border-color:color-mix(in srgb,var(--lc) 50%,var(--line));outline:none}
+.idx .L{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:var(--lc);color:#fff;font:700 21px/1 var(--serif)}
+.idx strong{display:block;font:700 15px/1.2 var(--serif)}
+.idx small{display:block;font-size:12px;line-height:1.35;color:var(--muted)}
+.idx em{font-style:normal;font:700 11px/1 var(--ui);color:var(--lc)}
+
+/* sections */
+main{padding:6px 0 30px}
+.sx{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px 24px;scroll-margin-top:calc(var(--header-h) + 14px);box-shadow:0 1px 0 rgba(16,24,40,.03)}
+.sx-head{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:center;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sx-head .L{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;background:var(--lc);color:#fff;font:700 36px/1 var(--serif);box-shadow:0 8px 18px -10px var(--lc)}
+.sx-k{margin:0 0 3px;font:700 11px/1.3 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--lc)}
+.sx-head h2{margin:0;font-size:clamp(22px,2.4vw,28px);line-height:1.15}
+.sx-head p.cap{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+.blk{margin-top:20px}
+.blk:first-of-type{margin-top:0}
+.blk-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 10px}
+.blk-h h3{margin:0;font-size:19px}
+.blk-h span{font-size:12.5px;color:var(--muted)}
+.tip{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.tag-ill{display:inline-block;font:700 10px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:#7A5B12;background:#FBF3DF;border:1px solid #EBD9A8;border-radius:999px;padding:4px 8px;vertical-align:middle}
+.pick{all:unset;box-sizing:border-box;cursor:pointer}
+.pick:focus-visible{outline:2px solid var(--lc,var(--crimson));outline-offset:2px}
+
+/* S: problem */
+.problem{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px}
+.ps{margin:0;padding:16px 18px;border-left:5px solid var(--lc);background:var(--paper-2);border-radius:0 var(--r-md) var(--r-md) 0;font:400 16.5px/1.55 var(--serif);color:var(--ink)}
+.ps strong{color:var(--lc)}
+.checks{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.checks span{font:600 12px/1 var(--ui);padding:6px 10px;border-radius:999px;background:#EAF4EE;color:#2F6B4F}
+.dci{display:grid;gap:8px}
+.dci div{border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.dci small{display:block;font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--lc)}
+.dci b{display:block;font:700 14.5px/1.3 var(--serif)}
+.dci span{font-size:12.5px;color:var(--muted)}
+.fam{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.fam .pick{display:flex;flex-direction:column;gap:4px;padding:13px 14px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;position:relative}
+.fam .pick:hover{box-shadow:var(--shadow)}
+.fam svg{width:34px;height:34px;color:var(--lc)}
+.fam b{font:700 15px/1.2 var(--serif)}
+.fam span{font-size:12.5px;line-height:1.4;color:var(--muted)}
+.fam .now{position:absolute;top:10px;right:10px;font:700 10px/1 var(--ui);letter-spacing:.06em;text-transform:uppercase;background:var(--lc);color:#fff;border-radius:999px;padding:4px 7px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin-top:10px}
+.tiers .pick{display:block;padding:11px 14px;background:var(--paper-2)}
+.tiers .pick+.pick{border-left:1px solid var(--line)}
+.tiers .pick:hover{background:#fff}
+.tiers b{font:700 14.5px/1.2 var(--serif)}
+.tiers span{display:block;font-size:12.5px;line-height:1.4;color:var(--slate);margin-top:3px}
+.tiers i{font-style:normal;float:right;font:700 10.5px/1 var(--ui);color:var(--lc);padding-top:3px}
+.cover{width:100%;border-collapse:collapse;font-size:13.5px}
+.cover th,.cover td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cover thead th{font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--paper-2)}
+.cover td:first-child{font:700 14px/1.3 var(--serif);width:24%}
+.cover td:last-child{white-space:nowrap;width:1%}
+.lt{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--lc);color:#fff;font:700 12.5px/1 var(--serif);margin:0 2px 2px 0}
+
+/* M */
+.hyp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.hyp div{padding:12px 14px}
+.hyp div+div{border-left:1px solid var(--line)}
+.hyp small{display:block;font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--lc);margin-bottom:4px}
+.hyp p{margin:0;font-size:13.5px;line-height:1.45;color:var(--slate)}
+.hyp-s{margin:0 0 12px;font:400 15.5px/1.55 var(--serif);color:var(--ink)}
+.two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px}
+.hrs{border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;background:#fff}
+.hrs-row{display:grid;grid-template-columns:110px minmax(0,1fr) 62px;align-items:center;gap:10px;padding:5px 4px;border-radius:8px;width:100%}
+.hrs-row:hover{background:var(--paper-2)}
+.hrs-row b{font:700 14px/1.2 var(--serif)}
+.hrs-bars{display:grid;gap:3px}
+.hrs-bars i{display:block;height:10px;border-radius:5px}
+.hrs-bars i.b{background:#CBD2D9}
+.hrs-bars i.a{background:var(--lc)}
+.hrs-row em{font-style:normal;font:700 12.5px/1 var(--ui);color:var(--ink);text-align:right}
+.hrs-tot{display:flex;justify-content:space-between;gap:10px;margin-top:8px;padding-top:10px;border-top:1px dashed var(--line-strong);font-size:13px;color:var(--slate)}
+.hrs-tot b{font:700 18px/1 var(--serif);color:var(--lc)}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-bottom:8px}
+.legend span::before{content:"";display:inline-block;width:18px;height:8px;border-radius:4px;margin-right:6px;vertical-align:1px;background:var(--sw)}
+.tests{display:grid;gap:8px}
+.tests .pick{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.tests .pick:hover{box-shadow:var(--shadow)}
+.tests svg{width:44px;height:44px}
+.tests b{font:700 15px/1.2 var(--serif)}
+.tests span{display:block;font-size:12.5px;color:var(--muted)}
+.tests-note{margin:2px 0 0;padding:10px 12px;border-radius:10px;background:var(--paper-2);font-size:13px;line-height:1.45;color:var(--slate)}
+.kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.kpi .pick{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:var(--r-md);background:#fff}
+.kpi .pick:hover{box-shadow:var(--shadow)}
+.kpi small{font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.kpi b{font:700 15px/1.25 var(--serif)}
+.kpi span{font-size:12.5px;line-height:1.4;color:var(--muted)}
+.kpi .lag{margin-top:auto;padding-top:6px;font:700 10.5px/1 var(--ui);color:var(--faint)}
+
+/* A */
+.src{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.src th,.src td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.src tr:last-child td{border-bottom:0}
+.src thead th{background:var(--paper-2);font:700 14px/1.25 var(--serif);border-left:1px solid var(--line)}
+.src thead th:first-child{border-left:0;font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.src thead .pick{display:block;color:var(--ink)}
+.src thead .pick small{display:block;font:600 11.5px/1.3 var(--ui);color:var(--lc);margin-top:2px}
+.src tbody th{font:700 10.5px/1.3 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);width:16%;background:#fff}
+.src td{border-left:1px solid var(--line);color:var(--slate)}
+.fr{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink)}
+.fr i{display:flex;gap:2px}
+.fr i::before,.fr i::after,.fr i span{content:"";display:block;width:14px;height:8px;border-radius:2px;background:#DDE2E7}
+.fr.low i::before{background:#3E8A62}
+.fr.med i::before,.fr.med i span{background:#C9A043}
+.fr.high i::before,.fr.high i span,.fr.high i::after{background:#A51C30}
+.fz{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.fz .pick{display:flex;flex-direction:column;gap:4px;padding:12px 13px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff}
+.fz .pick:hover{box-shadow:var(--shadow)}
+.fz b{font:700 15px/1.2 var(--serif)}
+.fz span{font-size:12.5px;line-height:1.4;color:var(--muted)}
+.pill{align-self:flex-start;font:700 10.5px/1 var(--ui);letter-spacing:.05em;text-transform:uppercase;padding:5px 8px;border-radius:999px}
+.pill.ready{background:#EAF4EE;color:#2F6B4F}
+.pill.watch{background:#FBF3DF;color:#7A5B12}
+.pill.bind{background:var(--crimson-l);color:var(--crimson)}
+.pill.man{background:#EAF0F7;color:#2F5D8A}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px}
+.tranche{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tranche .pick{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%}
+.tranche .pick:hover{background:var(--paper-2)}
+.tranche i{font-style:normal;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:color-mix(in srgb,var(--lc) 14%,#fff);color:var(--lc);font:700 13px/1 var(--ui)}
+.tranche b{font:700 14.5px/1.2 var(--serif)}
+.tranche span{display:block;font-size:12.5px;line-height:1.4;color:var(--muted)}
+.calc{border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;background:linear-gradient(180deg,color-mix(in srgb,var(--lc) 5%,#fff),#fff)}
+.calc h4{margin:0 0 2px;font-size:16px}
+.calc p.sub{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+.sl{display:grid;grid-template-columns:minmax(0,1fr) 70px;gap:4px 10px;align-items:center;margin-bottom:8px}
+.sl label{font-size:13px;color:var(--slate)}
+.sl output{font:700 13.5px/1 var(--ui);text-align:right;color:var(--ink)}
+.sl input{grid-column:1/-1;width:100%;accent-color:var(--lc)}
+.res{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.res div{padding:9px 10px;border-radius:9px;background:#fff;border:1px solid var(--line)}
+.res b{display:block;font:700 21px/1.1 var(--serif);color:var(--lc)}
+.res span{font-size:11.5px;color:var(--muted)}
+.check{margin-top:10px;padding:9px 11px;border-radius:9px;background:#FBF3DF;font-size:12.5px;line-height:1.45;color:#5E4710}
+
+/* R */
+.oh-cap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.ladder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-items:end}
+.ladder li{display:flex}
+.ladder .pick{width:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;padding:10px 11px;border-radius:10px 10px 4px 4px;border:1px solid var(--line);background:color-mix(in srgb,var(--lc) calc(var(--h) * 1%),#fff);position:relative}
+.ladder .pick:hover{box-shadow:var(--shadow)}
+.ladder small{font:700 10.5px/1 var(--ui);color:var(--lc);letter-spacing:.06em}
+.ladder b{font:700 14.5px/1.2 var(--serif)}
+.ladder span{font-size:12px;line-height:1.35;color:var(--slate)}
+.ladder .ceil{border:2px solid var(--lc)}
+.ladder .ceil::before{content:"Pilot ceiling";position:absolute;top:-10px;left:10px;background:var(--lc);color:#fff;font:700 10px/1 var(--ui);padding:4px 7px;border-radius:999px}
+.ladder .no{background:repeating-linear-gradient(135deg,#fff 0 8px,#F4F5F7 8px 16px);border-style:dashed}
+.draft{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.letter{margin:0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-md);background:#FFFDF8;font:400 15px/1.7 var(--serif);color:var(--ink)}
+.letter mark{background:#E4F1E9;border-bottom:2px solid #2F6B4F;padding:0 2px;border-radius:3px}
+.letter mark sup{font:700 9.5px/1 var(--ui);color:#2F6B4F;margin-left:2px}
+.letter mark.hold{background:#FBF3DF;border-bottom-color:#C9A043}
+.letter mark.hold sup{color:#7A5B12}
+.letter .syn{display:block;margin-top:8px;font:600 11.5px/1.3 var(--ui);color:var(--muted)}
+.rv{margin:0;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--paper-2)}
+.rv h4{margin:0 0 8px;font-size:15.5px}
+.rv ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.rv li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;font-size:13px;line-height:1.4;color:var(--slate)}
+.rv li::before{content:"✓";color:#2F6B4F;font-weight:700}
+.rv .rule{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line-strong);font:700 13.5px/1.4 var(--serif);color:var(--crimson)}
+.ver{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.ver .pick{width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border:1px solid var(--line);border-radius:10px;text-align:center;background:#fff}
+.ver .pick:hover{background:var(--paper-2)}
+.ver i{font-style:normal;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--crimson);color:#fff;font:700 17px/1 var(--serif)}
+.ver b{font:700 13px/1.2 var(--serif)}
+.ver span{font-size:11.5px;line-height:1.3;color:var(--muted)}
+
+/* T */
+.gantt{width:100%;height:auto;display:block}
+.gantt text{font-family:var(--ui)}
+.gantt .mo{font-size:11px;fill:#6E7780}
+.gantt .ph{font:700 13.5px var(--serif);fill:#13171C}
+.gantt .phs{font-size:11px;fill:#5C6774}
+.gt{cursor:pointer;outline:none}
+.gt rect.bar{stroke:#fff;stroke-width:2}
+.gt:hover rect.bar,.gt:focus-visible rect.bar{stroke:#13171C;stroke-width:2}
+.gt:focus-visible .ph{text-decoration:underline}
+.gate-note{margin:10px 0 0;padding:10px 12px;border-left:4px solid var(--lc);background:var(--paper-2);border-radius:0 9px 9px 0;font-size:13px;line-height:1.5;color:var(--slate)}
+.ph-list{display:none;list-style:none;margin:0;padding:0;gap:6px}
+.ph-list .pick{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 11px;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:9px}
+.ph-list b{font:700 14px/1.2 var(--serif)}
+.ph-list small{font:700 11px/1 var(--ui);color:var(--muted)}
+.d30-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.meter{flex:1 1 220px;max-width:360px;display:flex;align-items:center;gap:10px;font:700 12.5px/1 var(--ui);color:var(--slate)}
+.meter i{flex:1;height:8px;border-radius:4px;background:var(--paper-3);overflow:hidden}
+.meter i span{display:block;height:100%;width:0;background:var(--lc);transition:width .2s}
+.d30{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.wk{border:1px solid var(--line);border-top:4px solid var(--lc);border-radius:var(--r-md);padding:11px 12px;background:#fff}
+.wk h4{margin:0 0 8px;font-size:15px}
+.wk h4 small{display:block;font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--lc)}
+.wk label{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;align-items:start;font-size:13px;line-height:1.4;color:var(--slate);padding:5px 0;cursor:pointer}
+.wk input{margin:2px 0 0;accent-color:var(--lc);width:16px;height:16px}
+.wk input:checked+span{color:var(--faint);text-decoration:line-through}
+
+/* E */
+.risks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.risks .pick{display:flex;flex-direction:column;gap:4px;padding:12px 13px;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px;background:#fff}
+.risks .pick:hover{box-shadow:var(--shadow)}
+.risks small{font:700 10.5px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.risks b{font:700 14.5px/1.25 var(--serif)}
+.risks span{font-size:12px;line-height:1.4;color:var(--muted)}
+.risks span::before{content:"Tripwire · ";font-weight:700;color:var(--ink)}
+.perm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.perm div{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;background:#fff}
+.perm h4{margin:0 0 8px;font-size:15px;display:flex;align-items:center;gap:8px}
+.perm h4 i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 13px/1 var(--ui);background:var(--c)}
+.perm ul{margin:0;padding-left:17px;font-size:13px;line-height:1.5;color:var(--slate)}
+.raci{width:100%;border-collapse:collapse;font-size:13px}
+.raci th,.raci td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.raci thead th{background:var(--paper-2);font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.raci td:first-child{font:700 14px/1.3 var(--serif);color:var(--ink)}
+.raci td.A{font-weight:700;color:var(--ink)}
+.raci td.A::before{content:"A";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:4px;background:var(--lc);color:#fff;font:700 11px/1 var(--ui);margin-right:6px;vertical-align:1px}
+.ctl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.zoom{all:unset;box-sizing:border-box;display:block;width:100%;cursor:zoom-in;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:#fff}
+.zoom img{display:block;width:100%;height:auto}
+.zoom:focus-visible{outline:2px solid var(--crimson);outline-offset:2px}
+.sop8{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.sop8 .pick{width:100%;display:flex;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line);border-radius:9px;font:700 13.5px/1.25 var(--serif);color:var(--ink);background:#fff}
+.sop8 .pick:hover{background:var(--paper-2)}
+.sop8 b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--lc);color:#fff;font:700 11.5px/1 var(--ui)}
+
+/* Review */
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.shmap{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:var(--r-md);background:#fff}
+.shmap text{font-family:var(--ui)}
+.sd{cursor:pointer;outline:none}
+.sd circle{stroke:#fff;stroke-width:3}
+.sd:hover circle,.sd:focus-visible circle{stroke:#13171C;stroke-width:2.5}
+.sd text{font:700 12.5px var(--serif);fill:#13171C}
+.sh-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sh-list .pick{width:100%;display:grid;grid-template-columns:12px minmax(0,1fr);gap:10px;align-items:start;padding:8px 10px;border:1px solid var(--line);border-radius:9px}
+.sh-list .pick:hover{background:var(--paper-2)}
+.sh-list i{width:12px;height:12px;border-radius:50%;background:var(--c);margin-top:4px}
+.sh-list b{font:700 14px/1.2 var(--serif)}
+.sh-list span{display:block;font-size:12.5px;color:var(--muted)}
+.gd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.gd .pick{display:flex;flex-direction:column;gap:4px;padding:12px 13px;border-radius:var(--r-md);border:1px solid var(--line);background:color-mix(in srgb,var(--c) 6%,#fff)}
+.gd .pick:hover{box-shadow:var(--shadow)}
+.gd svg{width:28px;height:28px;color:var(--c)}
+.gd b{font:700 16px/1.2 var(--serif);color:var(--c)}
+.gd span{font-size:12.5px;line-height:1.4;color:var(--slate)}
+.story{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.story li{padding:12px 14px;background:#fff;position:relative}
+.story li+li{border-left:1px solid var(--line)}
+.story small{display:block;font:700 10.5px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--lc);margin-bottom:4px}
+.story p{margin:0;font-size:13px;line-height:1.45;color:var(--slate)}
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.proof a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-md);text-decoration:none;color:var(--ink);background:var(--paper-2)}
+.proof a:hover{background:#fff;box-shadow:var(--shadow)}
+.proof b{display:block;font:700 15px/1.25 var(--serif)}
+.proof span{display:block;font-size:12.5px;line-height:1.4;color:var(--muted);margin-top:3px}
+.proof em{display:block;margin-top:6px;font:700 11px/1 var(--ui);font-style:normal;color:var(--crimson)}
+.see{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.see a{display:block;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;text-decoration:none;color:var(--ink);background:#fff}
+.see a:hover{box-shadow:var(--shadow)}
+.see img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);background:var(--paper-3)}
+.see b{display:block;padding:9px 12px 2px;font:700 14.5px/1.25 var(--serif)}
+.see span{display:block;padding:0 12px 11px;font-size:12px;color:var(--muted)}
+.close{margin-top:26px;padding:22px 24px;border-radius:var(--r-lg);background:linear-gradient(135deg,#1C2B3A,#2B3C4E);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.close h2{margin:0;color:#fff;font-size:22px}
+.close p{margin:4px 0 0;color:#C9D2DB;font-size:14px}
+footer{padding:18px 0 40px;font-size:12px;line-height:1.5;color:var(--muted)}
+
+/* popup */
+.md-dlg{border:0;padding:0;border-radius:var(--r-lg);width:min(620px,calc(100vw - 24px));max-height:calc(100vh - 40px);box-shadow:0 30px 70px -20px rgba(16,24,40,.5)}
+.md-dlg::backdrop{background:rgba(19,23,28,.45)}
+.md-in{display:flex;flex-direction:column;max-height:calc(100vh - 40px)}
+.md-head{display:flex;justify-content:space-between;gap:12px;padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+.md-k{margin:0 0 4px;font:700 11px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--crimson)}
+.md-head h2{margin:0;font-size:22px;line-height:1.2}
+.md-x{all:unset;cursor:pointer;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:400 24px/1 var(--ui);color:var(--slate);flex:none}
+.md-x:hover,.md-x:focus-visible{background:var(--paper-3)}
+.md-body{padding:14px 20px;overflow:auto}
+.md-sec{margin-bottom:12px}
+.md-sec h4{margin:0 0 3px;font:700 11px/1.3 var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.md-sec p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink)}
+.md-chip{display:inline-block;margin-bottom:10px;font:700 11px/1 var(--ui);padding:5px 9px;border-radius:999px;background:var(--paper-3);color:var(--slate)}
+.md-chip.md-automation{background:#E4F1E9;color:#2F6B4F}
+.md-chip.md-people{background:var(--crimson-l);color:var(--crimson)}
+.md-chip.md-shared{background:#FBF3DF;color:#7A5B12}
+.md-foot{display:flex;justify-content:space-between;gap:10px;padding:12px 20px;border-top:1px solid var(--line);background:var(--paper-2)}
+.img-dlg{border:0;padding:0;border-radius:var(--r-lg);width:min(1100px,calc(100vw - 24px));max-height:calc(100vh - 30px);background:#fff}
+.img-dlg::backdrop{background:rgba(19,23,28,.6)}
+.img-dlg .md-head{align-items:center}
+.img-dlg img{display:block;width:100%;height:auto}
+.img-dlg .md-body{padding:12px}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav a span{display:none}
+  .fz{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .risks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ver{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .hero-grid,.problem,.two,.case,.draft,.ctl,.sh{grid-template-columns:1fr}
+  .fam,.kpi,.gd,.proof,.see,.d30{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hyp{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hyp div:nth-child(3){border-left:0}
+  .hyp div:nth-child(n+3){border-top:1px solid var(--line)}
+  .story{grid-template-columns:1fr}
+  .story li+li{border-left:0;border-top:1px solid var(--line)}
+  .ladder{grid-template-columns:1fr;align-items:stretch}
+  .ladder .pick{border-radius:10px}
+  .perm{grid-template-columns:1fr}
+  .brand-txt small{display:none}
+}
+@media (max-width:760px){
+  .topbar-in{flex-wrap:wrap;gap:8px;padding:8px 14px}
+  .nav{order:3;width:100%;margin:0;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .acts .btn span{display:none}
+  .wrap{padding:0 14px}
+  .sx{padding:16px 14px 18px}
+  .sx-head{grid-template-columns:48px minmax(0,1fr);gap:12px}
+  .sx-head .L{width:48px;height:48px;font-size:27px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div:nth-child(3){border-left:0}
+  .meta div:nth-child(n+3){border-top:1px solid var(--line)}
+  .trio,.tiers,.res{grid-template-columns:1fr}
+  .tiers .pick+.pick{border-left:0;border-top:1px solid var(--line)}
+  .fam,.kpi,.gd,.proof,.see,.d30,.fz,.risks,.hyp,.sop8{grid-template-columns:1fr}
+  .hyp div+div{border-left:0;border-top:1px solid var(--line)}
+  .ver{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gantt{display:none}
+  .ph-list{display:grid}
+  .src thead{display:none}
+  .src,.src tbody,.src tr,.src td,.src th{display:block;width:100%}
+  .src tbody th{border-left:0;padding-bottom:2px}
+  .src td{border-left:0}
+  .src td::before{content:attr(data-h);display:block;font:700 12.5px/1.3 var(--serif);color:var(--lc)}
+  .scroll-x{overflow-x:auto}
+  .cover td:last-child{white-space:normal}
+  .hrs-row{grid-template-columns:84px minmax(0,1fr) 54px}
+}
+@media print{
+  .topbar,.acts,.oh-motion,.md-dlg,.img-dlg,.close .btn{display:none!important}
+  body{background:#fff}
+  .sx{break-inside:auto;box-shadow:none;border:0;padding:10px 0}
+  .hero{background:#fff}
+  .blk{break-inside:avoid}
+}
+
+/* fixes after visual review */
+.nav a{white-space:nowrap}
+.see img{height:auto}
+.hrs-tot b{font-family:var(--ui);white-space:nowrap}
+.oh-nd .t.sm{font-size:11.5px}
+footer{padding-top:22px}
+@media (max-width:760px){
+  .ladder .pick{min-height:0!important}
+  .shmap{display:none}
+  .cover thead,.raci thead{display:none}
+  .cover,.cover tbody,.cover tr,.cover td,.raci,.raci tbody,.raci tr,.raci td{display:block;width:100%!important}
+  .cover tr,.raci tr{padding:10px 0;border-bottom:1px solid var(--line)}
+  .cover td,.raci td{border:0;padding:3px 0}
+  .cover td:last-child{white-space:normal}
+  .raci td[data-h]::before{content:attr(data-h) " · ";font:700 10.5px/1.3 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .raci td.A::before{content:"Accountable · ";display:inline;background:none;color:var(--lc);width:auto;height:auto;font:700 10.5px/1.3 var(--ui);letter-spacing:.06em;text-transform:uppercase}
+}
+
+/* One Harvard and Impact Circle alignment */
+.al{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px;align-items:start}
+.oh3{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:8px}
+.oh3 li{font-size:13.5px;line-height:1.5;color:var(--slate);padding:8px 12px;border-left:4px solid #2F6B4F;background:var(--paper-2);border-radius:0 9px 9px 0}
+.oh3 b{color:var(--ink);font-family:var(--serif)}
+.pt{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.pt .pick{width:100%;display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;font:700 13px/1.25 var(--serif);color:var(--ink);background:#fff}
+.pt .pick:hover{background:var(--paper-2)}
+.icm{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.icm .pick{width:100%;display:grid;grid-template-columns:24px minmax(0,1fr) auto;column-gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff}
+.icm .pick:hover{background:var(--paper-2)}
+.icm i{grid-row:span 2;font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--crimson);color:#fff;font:700 12px/1 var(--ui)}
+.icm b{font:700 14px/1.2 var(--serif)}
+.icm .pick>span{grid-column:2;font-size:12px;color:var(--muted)}
+.icm em .lt{color:#fff}
+.icm em{grid-column:3;grid-row:1/span 2;font-style:normal;white-space:nowrap}
+@media (max-width:900px){.al{grid-template-columns:1fr}}
+@media (max-width:760px){.pt{grid-template-columns:1fr}}
+
+/* loop */
+.oh-fig{margin:0 0 12px}
+.oh-fig figcaption,.om-img figcaption{font-size:12.5px;color:var(--muted);margin-top:6px}
+.oh-loop{width:100%;height:auto;display:block}
+.oh-loop text{font-family:Cambria,Georgia,serif}
+.oh-loop .lane{font:700 13px var(--ui)}
+.oh-loop .note{font-size:12.5px;font-style:italic;fill:#6E7780}
+.oh-nd{cursor:pointer;outline:none}
+.oh-nd rect{fill:#fff;stroke:var(--c);stroke-width:2}
+.oh-nd:hover rect,.oh-nd:focus-visible rect{fill:color-mix(in srgb,var(--c) 14%,#fff);stroke-width:3.5}
+.oh-nd .num{font:700 13px var(--ui);fill:#fff}
+.oh-nd .t{font-size:15px;font-weight:700;fill:#13171C}
+.oh-nd .s{font-size:11px;fill:#5C6774}
+.oh-nd .a{font:700 11px var(--ui)}
+.oh-mlist{display:none;list-style:none;margin:0 0 12px;padding:0;gap:6px}
+.oh-mlist button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:8px;background:#fff;font:700 14px/1.2 Cambria,Georgia,serif;color:var(--ink)}
+.oh-mlist b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--c);color:#fff;font:700 11.5px/1 var(--ui)}
+.oh-mlist em{margin-left:auto;font:700 11px/1 var(--ui);font-style:normal;color:var(--c)}
+@media (max-width:760px){.oh-fig{display:none}.oh-mlist{display:grid}}
+.oh-cap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.oh-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:radial-gradient(#fff,#E9C98B 45%,#8A651F);border:1px solid #8A651F;margin-right:6px;vertical-align:-1px}
+.oh-motion{font:600 12px/1 var(--ui);color:var(--ink);background:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px;cursor:pointer}
+.oh-motion[aria-pressed="true"]{background:var(--paper-3)}
+.oh-nd rect{filter:drop-shadow(0 2px 3px rgba(20,30,45,.10))}
+.oh-nd .t{font-size:14.5px}
+.oh-nd .t.sm{font-size:12.5px}
+.ld-ic{width:22px;height:22px;fill:none;stroke:var(--c);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:2px}
+@media (prefers-reduced-motion: reduce){.oh-tokens{display:none}}
+@media (max-width:1100px){.lk-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.lk-grid{grid-template-columns:1fr}}
+@media print{.oh-tokens,.oh-motion{display:none!important}}
+
+</style>
+<link rel="stylesheet" href="./assets/aad-model.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="career-profile.html" aria-label="Narissara Khomkhai, open the career profile">
+      <span class="brand-mark" aria-hidden="true">NK</span>
+      <span class="brand-txt"><strong>Narissara Khomkhai</strong><small>FAS stewardship reporting · pilot brief</small></span>
+    </a>
+    <nav class="nav" aria-label="SMARTER index">
+      <a href="#specific" style="--lc:var(--c-s)"><b>S</b><span>Specific</span></a>
+      <a href="#measurable" style="--lc:var(--c-m)"><b>M</b><span>Measurable</span></a>
+      <a href="#attainable" style="--lc:var(--c-a)"><b>A</b><span>Attainable</span></a>
+      <a href="#relevant" style="--lc:var(--c-r)"><b>R</b><span>Relevant</span></a>
+      <a href="#time-bound" style="--lc:var(--c-t)"><b>T</b><span>Time-bound</span></a>
+      <a href="#evaluate" style="--lc:var(--c-e)"><b>E</b><span>Evaluate</span></a>
+      <a href="#review" style="--lc:var(--c-v)"><b>R</b><span>Review</span></a>
+    </nav>
+    <div class="acts">
+      <a class="btn" href="mailto:Narissa.K9@proton.me"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Email</span></a>
+      <button class="btn" id="printBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="7" rx="2"/><path d="M7 16h10v4H7z"/></svg><span>Print</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">FAS stewardship · Director of Stewardship Reporting</p>
+      <h1>Automation prepares the report. People decide what donors read.</h1>
+      <p class="lede">A one-season pilot for FAS donor impact reporting: fund reports drafted from checked, source-tagged facts, certified by a named person, and delivered on time, so the team's hours go to personal stewardship instead of copy, paste and reconcile.</p>
+      <div class="meta">
+        <div><small>Program</small>FAS donor impact reporting</div>
+        <div><small>Pilot</small>Human-in-the-loop report preparation</div>
+        <div><small>Owner</small>Director of Stewardship Reporting</div>
+        <div><small>Sponsor</small>Executive Director, Stewardship &amp; Donor Engagement</div>
+      </div>
+      <ol class="trio">
+        <li><button type="button" data-model="hero-1" style="--c:#2F6B4F"><i>1</i><b>Automation prepares</b><span>Pulls gift, fund and beneficiary data, ties it to the ledger, drafts from approved templates.</span></button></li>
+        <li><button type="button" data-model="hero-2" style="--c:#A51C30"><i>2</i><b>People certify</b><span>A steward edits and a named approver signs. Nothing sends without them.</span></button></li>
+        <li><button type="button" data-model="hero-3" style="--c:#8A651F"><i>3</i><b>The cycle learns</b><span>Every edit carries a reason code that improves next season's templates.</span></button></li>
+      </ol>
+      <p class="status">Built on my One Harvard and Impact Circle models. Figures are planning estimates, validated in the first 30 days.</p>
+    </div>
+    <aside class="index" aria-labelledby="idx-title">
+      <h2 id="idx-title">SMARTER index</h2>
+      <p class="sub">Seven sections, in the order I plan with.</p>
+      <ol class="idx">
+        <li><a href="#specific" style="--lc:var(--c-s)"><span class="L">S</span><span><strong>Specific</strong><small>Problem · scope · decision rights</small></span><em>01</em></a></li>
+        <li><a href="#measurable" style="--lc:var(--c-m)"><span class="L">M</span><span><strong>Measurable</strong><small>Hypothesis · hours · KPIs</small></span><em>02</em></a></li>
+        <li><a href="#attainable" style="--lc:var(--c-a)"><span class="L">A</span><span><strong>Attainable</strong><small>Sources · feasibility · business case</small></span><em>03</em></a></li>
+        <li><a href="#relevant" style="--lc:var(--c-r)"><span class="L">R</span><span><strong>Relevant</strong><small>One Harvard · Impact Circle · autonomy limit · VERITAS</small></span><em>04</em></a></li>
+        <li><a href="#time-bound" style="--lc:var(--c-t)"><span class="L">T</span><span><strong>Time-bound</strong><small>Phases · gates · first 30 days</small></span><em>05</em></a></li>
+        <li><a href="#evaluate" style="--lc:var(--c-e)"><span class="L">E</span><span><strong>Evaluate</strong><small>Risks · AI permissions · release controls</small></span><em>06</em></a></li>
+        <li><a href="#review" style="--lc:var(--c-v)"><span class="L">R</span><span><strong>Review</strong><small>Adoption · gate decision · storyline</small></span><em>07</em></a></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<main id="main" class="wrap">
+<div class="aadm-host-pad"><div data-aad-model="ribbon"></div></div>
+
+<!-- ============ S · SPECIFIC ============ -->
+<section class="sx" id="specific" style="--lc:var(--c-s)" aria-labelledby="s-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">S</span><div><p class="sx-k">Specific · purpose, audience, owner, scope</p><h2 id="s-title">The decision, the owner, and the number</h2></div></div>
+
+  <div class="blk problem">
+    <div>
+      <p class="ps">Every reporting season, FAS stewardship staff spend an estimated <strong>40 hours per batch of 25 endowed-fund reports</strong> gathering fund financials, beneficiary names and stories from separate systems, reconciling them to the ledger, and drafting, because there is no shared check before drafting begins. The decision this pilot supports: <strong>which report families are ready for a drafting assist and the digital platform, and where staff time should go first.</strong></p>
+      <div class="checks"><span>✓ Names the decision</span><span>✓ Names the owner</span><span>✓ Names the number</span></div>
+    </div>
+    <div class="dci">
+      <div><small>Decides</small><b>Director of Stewardship Reporting</b><span>Pilot scope, standards, templates</span></div>
+      <div><small>Approves gates</small><b>Executive Director, Stewardship &amp; Donor Engagement</b><span>Scope, scale-out, AI permissions</span></div>
+      <div><small>Consulted</small><b>Gift officers · FAS Finance · Financial Aid · GSAS · Faculty Affairs · Advancement Solutions</b><span>Donor strategy · ledger · beneficiary data · security</span></div>
+      <div><small>Informed</small><b>Managing directors · FAS Development leadership</b><span>Monthly scorecard</span></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Scope: four report families, one at a time</h3><span>Click a family for audience, sources and cadence</span></div>
+    <div class="fam">
+      <button type="button" class="pick" data-model="rf-1"><span class="now">Pilot first</span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 16 6l13 6-13 6z"/><path d="M8 15v6c3 3 13 3 16 0v-6"/><path d="M29 12v8"/></svg><b>Endowed fund reports</b><span>Scholarships and professorships</span></button>
+      <button type="button" class="pick" data-model="rf-2"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M19.5 11.5c-1-1.2-6-1.8-6 1.3 0 3.4 6.5 1.8 6.5 5.2 0 3.1-5.2 2.6-6.8 1.2M16 8.5v15"/></svg><b>Current-use gift reports</b><span>Funds spent in the year given</span></button>
+      <button type="button" class="pick" data-model="rf-3"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 27h24M6 27V13l10-6 10 6v14"/><path d="M11 27v-8h10v8M11 15h2M19 15h2"/></svg><b>Capital project summaries</b><span>Buildings and spaces in progress</span></button>
+      <button type="button" class="pick" data-model="rf-4"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h11l6 6v18H8z"/><path d="M19 4v6h6M12 16h9M12 20h9M12 24h5"/></svg><b>Foundation &amp; restricted grants</b><span>Terms, outcomes and spend by line</span></button>
+    </div>
+    <div class="tiers" role="group" aria-label="Customization tiers">
+      <button type="button" class="pick" data-model="tier-1"><i>Most volume</i><b>Standard</b><span>Template plus fund data. AI drafts; a steward checks every fact.</span></button>
+      <button type="button" class="pick" data-model="tier-2"><i>Middle</i><b>Personalized</b><span>AI drafts; a writer adds the personal paragraph and story.</span></button>
+      <button type="button" class="pick" data-model="tier-3"><i>Fewest, most hours</i><b>Custom</b><span>Major donors and foundations. The writer leads; AI only gathers and checks.</span></button>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Where the posting's four areas show up</h3><span>Letters point to the SMARTER sections</span></div>
+    <div class="scroll-x"><table class="cover">
+      <thead><tr><th>Posting area</th><th>What this pilot delivers</th><th>Sections</th></tr></thead>
+      <tbody>
+        <tr><td>Strategic Leadership</td><td>Report-family standards and templates, one report standard for every family, One Harvard partnerships across FAS offices, and a scorecard leadership can read in a minute.</td><td><span class="lt" style="--lc:var(--c-s)">S</span><span class="lt" style="--lc:var(--c-m)">M</span><span class="lt" style="--lc:var(--c-r)">R</span></td></tr>
+        <tr><td>Donor Impact Reporting &amp; Stewardship</td><td>Cadence and customization by family, a gift-agreement check before drafting, and drafts that combine stories, outcomes and fund financials with every fact tagged to its source.</td><td><span class="lt" style="--lc:var(--c-s)">S</span><span class="lt" style="--lc:var(--c-r)">R</span><span class="lt" style="--lc:var(--c-e)">E</span></td></tr>
+        <tr><td>Team Leadership &amp; Operations</td><td>Staff hours by step and tier, release controls with named sign-offs, a first month built around the team, and an adoption plan.</td><td><span class="lt" style="--lc:var(--c-m)">M</span><span class="lt" style="--lc:var(--c-t)">T</span><span class="lt" style="--lc:var(--c-e)">E</span><span class="lt" style="--lc:var(--c-v)">R</span></td></tr>
+        <tr><td>Campaign &amp; Institutional Initiatives</td><td>Story capture with consent from deans and program directors, campaign summaries as a scale-out family, and fund-level totals that roll up to campaign reporting.</td><td><span class="lt" style="--lc:var(--c-a)">A</span><span class="lt" style="--lc:var(--c-t)">T</span><span class="lt" style="--lc:var(--c-v)">R</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============ M · MEASURABLE ============ -->
+<section class="sx" id="measurable" style="--lc:var(--c-m)" aria-labelledby="m-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">M</span><div><p class="sx-k">Measurable · baseline, KPIs, evidence</p><h2 id="m-title">Who benefits, what changes, by how much, and the test</h2></div></div>
+
+  <div class="blk">
+    <p class="hyp-s">We believe a human-in-the-loop preparation workflow, run in shadow mode on endowed scholarship reports and then scaled to four families, will deliver reports on time with no release errors and cut preparation hours by 30% or more within one reporting season. AI never sends a report and never supplies a figure of its own.</p>
+    <div class="hyp">
+      <div><small>Who benefits</small><p>Stewardship writers and coordinators, gift officers, and the donors who read the reports.</p></div>
+      <div><small>What changes</small><p>Facts arrive checked and source-tagged before anyone writes a sentence.</p></div>
+      <div><small>By how much</small><p>Preparation time down 30% or more; on-time delivery at 95% or better.</p></div>
+      <div><small>The test</small><p>Quality, adoption and impact targets all pass on two batches in a row.</p></div>
+    </div>
+  </div>
+
+  <div class="blk two">
+    <div>
+      <div class="blk-h"><h3>Where the hours go: one batch of 25 reports</h3><span class="tag-ill">Illustrative</span></div>
+      <div class="hrs">
+        <div class="legend"><span style="--sw:#CBD2D9">Today (estimate)</span><span style="--sw:var(--c-m)">With the pilot</span></div>
+        <button type="button" class="pick hrs-row" data-model="h-1"><b>Gather</b><span class="hrs-bars"><i class="b" style="width:75%"></i><i class="a" style="width:41.7%"></i></span><em>9 → 5</em></button>
+        <button type="button" class="pick hrs-row" data-model="h-2"><b>Reconcile</b><span class="hrs-bars"><i class="b" style="width:66.7%"></i><i class="a" style="width:41.7%"></i></span><em>8 → 5</em></button>
+        <button type="button" class="pick hrs-row" data-model="h-3"><b>Draft</b><span class="hrs-bars"><i class="b" style="width:100%"></i><i class="a" style="width:50%"></i></span><em>12 → 6</em></button>
+        <button type="button" class="pick hrs-row" data-model="h-4"><b>Review</b><span class="hrs-bars"><i class="b" style="width:58.3%"></i><i class="a" style="width:58.3%"></i></span><em>7 → 7</em></button>
+        <button type="button" class="pick hrs-row" data-model="h-5"><b>Send &amp; log</b><span class="hrs-bars"><i class="b" style="width:33.3%"></i><i class="a" style="width:16.7%"></i></span><em>4 → 2</em></button>
+        <div class="hrs-tot"><span>Hours per batch <b>40 → 25</b></span><span>Review time is held flat on purpose.</span></div>
+      </div>
+      <p class="tip">The split is my planning estimate. Week 3 time-logs one real batch to replace it.</p>
+    </div>
+    <div>
+      <div class="blk-h"><h3>All three tests must pass</h3></div>
+      <div class="tests">
+        <button type="button" class="pick" data-model="t-1"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#E1E5EA" stroke-width="6"/><circle cx="22" cy="22" r="18" fill="none" stroke="#2F5D8A" stroke-width="6" stroke-dasharray="110.8 113.1" transform="rotate(-90 22 22)"/></svg><span><b>Quality: 98% source match</b><span>Draft facts accepted without correction</span></span></button>
+        <button type="button" class="pick" data-model="t-2"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#E1E5EA" stroke-width="6"/><circle cx="22" cy="22" r="18" fill="none" stroke="#2F6B4F" stroke-width="6" stroke-dasharray="79.2 113.1" transform="rotate(-90 22 22)"/></svg><span><b>Adoption: 70% weekly use</b><span>Staff start from the draft, not a blank page</span></span></button>
+        <button type="button" class="pick" data-model="t-3"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18" fill="none" stroke="#E1E5EA" stroke-width="6"/><circle cx="22" cy="22" r="18" fill="none" stroke="#A51C30" stroke-width="6" stroke-dasharray="107.4 113.1" transform="rotate(-90 22 22)"/></svg><span><b>Impact: 95% on time</b><span>With preparation hours down at least 30%</span></span></button>
+        <p class="tests-note">Quality without adoption delivers nothing. Adoption without impact is expensive theater. Impact without quality does not survive the first donor question.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>KPI families</h3><span>Each has a baseline, a target and a named owner</span></div>
+    <div class="kpi">
+      <button type="button" class="pick" data-model="kpi-1" style="--c:#2F5D8A"><small>Delivery</small><b>On time, fewer hours</b><span>Reports out by due date; hours per report by tier</span></button>
+      <button type="button" class="pick" data-model="kpi-2" style="--c:#A51C30"><small>Quality</small><b>Zero release errors</b><span>Every figure tagged and tied to the ledger before release</span></button>
+      <button type="button" class="pick" data-model="kpi-3" style="--c:#2F6B4F"><small>Adoption</small><b>Drafts used, reasons logged</b><span>Weekly use; overrides with a reason code</span></button>
+      <button type="button" class="pick" data-model="kpi-4" style="--c:#8A651F"><small>Donor response</small><b>Engagement and renewal</b><span>Opens, gift officer follow-ups, renewal and upgrade</span><span class="lag">Lagging · tracked, not a gate</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ A · ATTAINABLE ============ -->
+<section class="sx" id="attainable" style="--lc:var(--c-a)" aria-labelledby="a-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">A</span><div><p class="sx-k">Attainable · capacity, budget, data, approvals</p><h2 id="a-title">Sources, access, feasibility, and what it costs</h2></div></div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Top three sources, side by side</h3><span>Read across to see where access friction concentrates</span></div>
+    <table class="src">
+      <thead><tr><th>Source</th>
+        <th><button type="button" class="pick" data-model="src-1">Gift &amp; fund records<small>Advancement CRM</small></button></th>
+        <th><button type="button" class="pick" data-model="src-2">Fund financials<small>FAS Finance</small></button></th>
+        <th><button type="button" class="pick" data-model="src-3">Beneficiaries &amp; outcomes<small>Financial Aid · GSAS · Faculty Affairs</small></button></th></tr></thead>
+      <tbody>
+        <tr><th>Gives the report</th><td data-h="Gift &amp; fund records">Donor, fund name, purpose, naming, gift-agreement terms</td><td data-h="Fund financials">Market value, distribution, spending</td><td data-h="Beneficiaries &amp; outcomes">Recipients, chair holders, outcomes, stories</td></tr>
+        <tr><th>Who controls access</th><td data-h="Gift &amp; fund records">AA&amp;D system owners</td><td data-h="Fund financials">FAS Finance</td><td data-h="Beneficiaries &amp; outcomes">Each office, under a data-sharing agreement</td></tr>
+        <tr><th>Refresh</th><td data-h="Gift &amp; fund records">Daily</td><td data-h="Fund financials">Monthly; final after fiscal-year close</td><td data-h="Beneficiaries &amp; outcomes">Per term or appointment</td></tr>
+        <tr><th>Sensitivity</th><td data-h="Gift &amp; fund records">Donor personal data</td><td data-h="Fund financials">Internal financial</td><td data-h="Beneficiaries &amp; outcomes">Student records (FERPA) and story consent</td></tr>
+        <tr><th>Access friction</th><td data-h="Gift &amp; fund records"><span class="fr low"><i><span></span></i>Low</span></td><td data-h="Fund financials"><span class="fr med"><i><span></span></i>Medium · timing</span></td><td data-h="Beneficiaries &amp; outcomes"><span class="fr high"><i><span></span></i>High · binding</span></td></tr>
+      </tbody>
+    </table>
+    <p class="tip">Owners and routes are my working assumptions; week 2 confirms each one with the office that holds it.</p>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Feasibility</h3><span>Why this is buildable now, and where the binding constraint is</span></div>
+    <div class="fz">
+      <button type="button" class="pick" data-model="fz-1"><span class="pill ready">Ready</span><b>Technical</b><span>Templates, CRM exports and an approved AI environment already exist.</span></button>
+      <button type="button" class="pick" data-model="fz-2"><span class="pill watch">Watch</span><b>Data</b><span>Final fund figures land after fiscal-year close.</span></button>
+      <button type="button" class="pick" data-model="fz-3"><span class="pill bind">Binding</span><b>Organizational</b><span>Protected review hours in peak season.</span></button>
+      <button type="button" class="pick" data-model="fz-4"><span class="pill ready">Ready</span><b>Financial</b><span>Early phases run on staff time and current tools.</span></button>
+      <button type="button" class="pick" data-model="fz-5"><span class="pill man">Managed</span><b>Privacy &amp; compliance</b><span>FERPA, consent, anonymity and gift terms checked before drafting.</span></button>
+    </div>
+  </div>
+
+  <div class="blk case">
+    <div>
+      <div class="blk-h"><h3>Spend is released in tranches</h3></div>
+      <ol class="tranche">
+        <li><button type="button" class="pick" data-model="tr-0"><i>T0</i><span><b>Readiness</b><span>Staff time only: baselines, access, templates.</span></span></button></li>
+        <li><button type="button" class="pick" data-model="tr-1"><i>T1</i><span><b>Shadow pilot</b><span>Approved AI seats for the pilot team and template build time.</span></span></button></li>
+        <li><button type="button" class="pick" data-model="tr-2"><i>T2</i><span><b>Scale and platform</b><span>Released only against hours back measured in T1.</span></span></button></li>
+      </ol>
+    </div>
+    <div class="calc" id="calc">
+      <h4>Test the return yourself</h4>
+      <p class="sub">Move the sliders. The savings are not yet measured, so see how the case holds if they are wrong. <span class="tag-ill">Illustrative</span></p>
+      <div class="sl"><label for="cR">Reports a year</label><output id="oR" for="cR"></output><input id="cR" type="range" min="200" max="2000" step="50" value="800"></div>
+      <div class="sl"><label for="cH">Hours saved per report</label><output id="oH" for="cH"></output><input id="cH" type="range" min="0.1" max="1.2" step="0.05" value="0.6"></div>
+      <div class="sl"><label for="cA">Adoption</label><output id="oA" for="cA"></output><input id="cA" type="range" min="20" max="100" step="5" value="70"></div>
+      <div class="sl"><label for="cC">Loaded cost per hour</label><output id="oC" for="cC"></output><input id="cC" type="range" min="35" max="95" step="5" value="55"></div>
+      <div class="res" aria-live="polite">
+        <div><b id="rH">0</b><span>hours back a year</span></div>
+        <div><b id="rV">$0</b><span>staff time redirected</span></div>
+        <div><b id="rF">0</b><span>full-time equivalent</span></div>
+      </div>
+      <p class="check">Check before the gate review: 0.6 hours a report is the 15 hours a batch from the chart, spread over 25 reports. The report count comes from the reporting calendar in week 1, not from me.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ R · RELEVANT ============ -->
+<section class="sx" id="relevant" style="--lc:var(--c-r)" aria-labelledby="r-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">R</span><div><p class="sx-k">Relevant · mission, donor intent, stewardship, risk</p><h2 id="r-title">One Harvard, the Impact Circle, and where people stay in charge</h2></div></div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>One Harvard: lead across offices, automate with guardrails</h3><span>Click a partner for what they own, what the pilot asks, and what they get back</span></div>
+    <div class="al">
+      <button type="button" class="zoom" data-zoom="assets/visual_partnership_network.webp" data-zoom-title="One Harvard stewardship partnership network"><img src="assets/visual_partnership_network.webp" width="1672" height="941" alt="One Harvard stewardship partnership network: stewardship reporting at the center, connected to development, finance, academic units and communications" loading="lazy"></button>
+      <div>
+        <ul class="oh3">
+          <li><b>Each office keeps its decisions.</b> Finance certifies figures, units own outcomes, gift officers own the donor relationship.</li>
+          <li><b>Shared automation and standards.</b> One calendar, one fact sheet per fund, one evidence log, used by everyone.</li>
+          <li><b>I bring the evidence and the follow-up.</b> Leading without formal authority: clear asks, fixed dates, results shared back.</li>
+        </ul>
+        <ul class="pt">
+          <li><button type="button" class="pick" data-model="pt-1" style="--c:#A51C30">FAS Development &amp; gift officers</button></li>
+          <li><button type="button" class="pick" data-model="pt-2" style="--c:#2F5D8A">FAS Finance</button></li>
+          <li><button type="button" class="pick" data-model="pt-3" style="--c:#2D6E73">Financial Aid &amp; GSAS</button></li>
+          <li><button type="button" class="pick" data-model="pt-4" style="--c:#2F6B4F">Faculty Affairs &amp; academic units</button></li>
+          <li><button type="button" class="pick" data-model="pt-5" style="--c:#5B4A8A">Institutional Research</button></li>
+          <li><button type="button" class="pick" data-model="pt-6" style="--c:#8A651F">Advancement Communications</button></li>
+          <li><button type="button" class="pick" data-model="pt-7" style="--c:#3B4754">Advancement Solutions</button></li>
+          <li><button type="button" class="pick" data-model="pt-8" style="--c:#7A5B12">Prospect Management &amp; Research</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Impact Circle: the pilot on every lap</h3><span>Seven stages with FAS partners · the letter is each stage’s SMARTER gate</span></div>
+    <div class="al">
+      <button type="button" class="zoom" data-zoom="assets/visual_stewardship_cycle.webp" data-zoom-title="Impact Circle: the seven-stage stewardship reporting cycle"><img src="assets/visual_stewardship_cycle.webp" width="1672" height="941" alt="Impact Circle: seven-stage stewardship reporting cycle from Plan and Prioritize to Improve and Scale" loading="lazy"></button>
+      <ol class="icm">
+        <li><button type="button" class="pick" data-model="ic-1"><i>1</i><b>Plan &amp; Prioritize</b><span>Report families, tiers, calendar</span><em><span class="lt" style="--lc:var(--c-s)" title="SMARTER gate">S</span></em></button></li>
+        <li><button type="button" class="pick" data-model="ic-2"><i>2</i><b>Prepare &amp; Gather</b><span>Source pulls, access, consent</span><em><span class="lt" style="--lc:var(--c-m)" title="SMARTER gate">M</span></em></button></li>
+        <li><button type="button" class="pick" data-model="ic-3"><i>3</i><b>Produce &amp; Personalize</b><span>Level 2 drafts to the VERITAS standard</span><em><span class="lt" style="--lc:var(--c-a)" title="SMARTER gate">A</span></em></button></li>
+        <li><button type="button" class="pick" data-model="ic-4"><i>4</i><b>Review &amp; Certify</b><span>Reviewer checklist, named approver</span><em><span class="lt" style="--lc:var(--c-r)" title="SMARTER gate">R</span></em></button></li>
+        <li><button type="button" class="pick" data-model="ic-5"><i>5</i><b>Deliver &amp; Engage</b><span>Platform or mail, gift officer follow-up</span><em><span class="lt" style="--lc:var(--c-t)" title="SMARTER gate">T</span></em></button></li>
+        <li><button type="button" class="pick" data-model="ic-6"><i>6</i><b>Evaluate &amp; Learn</b><span>Three tests, KPIs, reason codes</span><em><span class="lt" style="--lc:var(--c-e)" title="SMARTER gate">E</span></em></button></li>
+        <li><button type="button" class="pick" data-model="ic-7"><i>7</i><b>Improve &amp; Scale</b><span>Gate decision, next report family</span><em><span class="lt" style="--lc:var(--c-v)" title="SMARTER gate">R</span></em></button></li>
+      </ol>
+    </div>
+    <p class="tip">The circle never closes: reason codes and donor response from one season become the plan for the next, so support for the donor grows each year instead of starting over.</p>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>The One Harvard loop: six steps, two lanes</h3><span>Click a step for its controls</span></div>
+    <figure class="oh-fig" style="margin:0">
+      <svg class="oh-loop" id="ohLoop" viewBox="0 -16 940 352" role="group" aria-label="Pilot loop: three automation steps, two people steps and a shared learning step, animated">
+<defs><marker id="ohAr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6E7780"/></marker>
+<radialGradient id="ohTok"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#E9C98B"/><stop offset="1" stop-color="#8A651F"/></radialGradient>
+<linearGradient id="ohLaneA" x1="0" x2="1"><stop offset="0" stop-color="#E4F1E9"/><stop offset="1" stop-color="#F3F9F5"/></linearGradient>
+<linearGradient id="ohLaneP" x1="0" x2="1"><stop offset="0" stop-color="#FBEEF0"/><stop offset="1" stop-color="#F8E3E7"/></linearGradient>
+<path id="ohRoute" d="M100 85 L400 85 C520 85 550 150 550 250 L700 250 C830 250 850 190 850 85 C850 -16 100 -16 100 85"/></defs>
+<rect x="30" y="18" width="910" height="136" rx="10" fill="url(#ohLaneA)"/>
+<rect x="30" y="184" width="910" height="136" rx="10" fill="url(#ohLaneP)"/>
+<text x="14" y="86" transform="rotate(-90 14 86)" text-anchor="middle" class="lane" fill="#2F6B4F">Automation</text>
+<text x="14" y="252" transform="rotate(-90 14 252)" text-anchor="middle" class="lane" fill="#A51C30">People decide</text>
+<path d="M162 85 L186 85" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
+<path d="M312 85 L336 85" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
+<path d="M462 85 C520 85 550 150 550 213" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
+<path d="M612 250 L636 250" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
+<path d="M762 250 C830 250 850 190 850 122" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
+<path d="M850 50 C850 -16 100 -16 100 50" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)" stroke-dasharray="6 5"/>
+<text x="475" y="-3" text-anchor="middle" class="note">each cycle starts better than the last</text>
+<text x="585" y="160" class="note" fill="#A51C30">handoff to a person</text>
+<g class="oh-tokens" aria-hidden="true">
+<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="9s" begin="0s" repeatCount="indefinite" rotate="0"><mpath href="#ohRoute"/></animateMotion></g>
+<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="9s" begin="-3s" repeatCount="indefinite" rotate="0"><mpath href="#ohRoute"/></animateMotion></g>
+<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="9s" begin="-6s" repeatCount="indefinite" rotate="0"><mpath href="#ohRoute"/></animateMotion></g>
+</g>
+<g class="oh-nd" tabindex="0" role="button" data-model="oh-1" aria-label="Step 1: Pull" style="--c:#2F6B4F"><rect x="34" y="47" width="132" height="76" rx="10"/><g transform="translate(44 58)" class="ic" fill="none" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="10" cy="4" rx="7" ry="2.6"/><path d="M3 4v12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V4"/><path d="M3 10c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6"/></g><circle cx="34" cy="47" r="12" fill="#2F6B4F"/><text x="34" y="51.5" text-anchor="middle" class="num">1</text><text x="110" y="73" text-anchor="middle" class="t">Pull</text><text x="100" y="95" text-anchor="middle" class="s">Scheduled, read-only</text><text x="100" y="112" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+<g class="oh-nd" tabindex="0" role="button" data-model="oh-2" aria-label="Step 2: Match & flag" style="--c:#2F6B4F"><rect x="184" y="47" width="132" height="76" rx="10"/><g transform="translate(194 58)" class="ic" fill="none" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v16M5 18h10M4 6h12"/><path d="M4 6l-3 6h6zM16 6l-3 6h6z"/></g><circle cx="184" cy="47" r="12" fill="#2F6B4F"/><text x="184" y="51.5" text-anchor="middle" class="num">2</text><text x="260" y="73" text-anchor="middle" dx="7" class="t sm">Match &amp; flag</text><text x="250" y="95" text-anchor="middle" class="s">Ledger tie-out</text><text x="250" y="112" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+<g class="oh-nd" tabindex="0" role="button" data-model="oh-3" aria-label="Step 3: Draft" style="--c:#2F6B4F"><rect x="334" y="47" width="132" height="76" rx="10"/><g transform="translate(344 58)" class="ic" fill="none" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7l4 4V18.5H5z"/><path d="M12 1.5v4h4M8 10h5M8 13h5"/></g><circle cx="334" cy="47" r="12" fill="#2F6B4F"/><text x="334" y="51.5" text-anchor="middle" class="num">3</text><text x="410" y="73" text-anchor="middle" class="t">Draft</text><text x="400" y="95" text-anchor="middle" class="s">Approved templates</text><text x="400" y="112" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+<g class="oh-nd" tabindex="0" role="button" data-model="oh-4" aria-label="Step 4: Review" style="--c:#A51C30"><rect x="484" y="212" width="132" height="76" rx="10"/><g transform="translate(494 223)" class="ic" fill="none" stroke="#A51C30" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l5 5"/></g><circle cx="484" cy="212" r="12" fill="#A51C30"/><text x="484" y="216.5" text-anchor="middle" class="num">4</text><text x="560" y="238" text-anchor="middle" class="t">Review</text><text x="550" y="260" text-anchor="middle" class="s">Evidence, exceptions</text><text x="550" y="277" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
+<g class="oh-nd" tabindex="0" role="button" data-model="oh-5" aria-label="Step 5: Approve & deliver" style="--c:#A51C30"><rect x="634" y="212" width="132" height="76" rx="10"/><g transform="translate(644 223)" class="ic" fill="none" stroke="#A51C30" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l9.5-9.5 2.5 2.5L5.5 17.5H3z"/><path d="M11 7l2.5 2.5M2 19.5h16"/></g><circle cx="634" cy="212" r="12" fill="#A51C30"/><text x="634" y="216.5" text-anchor="middle" class="num">5</text><text x="710" y="238" text-anchor="middle" dx="7" class="t sm">Approve &amp; deliver</text><text x="700" y="260" text-anchor="middle" class="s">Named approver signs</text><text x="700" y="277" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
+<g class="oh-nd" tabindex="0" role="button" data-model="oh-6" aria-label="Step 6: Learn" style="--c:#8A651F"><rect x="784" y="47" width="132" height="76" rx="10"/><g transform="translate(794 58)" class="ic" fill="none" stroke="#8A651F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7a7 7 0 0 0-12-1M4 13a7 7 0 0 0 12 1"/><path d="M16 2.5V7h-4.5M4 17.5V13h4.5"/></g><circle cx="784" cy="47" r="12" fill="#8A651F"/><text x="784" y="51.5" text-anchor="middle" class="num">6</text><text x="860" y="73" text-anchor="middle" class="t">Learn</text><text x="850" y="95" text-anchor="middle" class="s">Feeds the next cycle</text><text x="850" y="112" text-anchor="middle" class="a" fill="#8A651F">Shared</text></g>
+</svg>
+      <figcaption class="oh-cap"><span><span class="oh-dot"></span>Each token is one fund report moving through the loop.</span><button type="button" class="oh-motion" id="ohMotion" aria-pressed="false">Pause motion</button></figcaption>
+    </figure>
+    <ol class="oh-mlist" aria-label="Pilot loop steps">
+      <li><button type="button" data-model="oh-1" style="--c:#2F6B4F"><b>1</b>Pull<em>Automation</em></button></li>
+      <li><button type="button" data-model="oh-2" style="--c:#2F6B4F"><b>2</b>Match &amp; flag<em>Automation</em></button></li>
+      <li><button type="button" data-model="oh-3" style="--c:#2F6B4F"><b>3</b>Draft<em>Automation</em></button></li>
+      <li><button type="button" data-model="oh-4" style="--c:#A51C30"><b>4</b>Review<em>People</em></button></li>
+      <li><button type="button" data-model="oh-5" style="--c:#A51C30"><b>5</b>Approve &amp; deliver<em>People</em></button></li>
+      <li><button type="button" data-model="oh-6" style="--c:#8A651F"><b>6</b>Learn<em>Shared</em></button></li>
+    </ol>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>The autonomy limit</h3><span>The pilot climbs only when the evidence says it is safe</span></div>
+    <ol class="ladder">
+      <li><button type="button" class="pick" data-model="lv-0" style="--h:4;min-height:92px"><small>LEVEL 0</small><b>Manual</b><span>People gather, draft, check, send.</span></button></li>
+      <li><button type="button" class="pick" data-model="lv-1" style="--h:9;min-height:112px"><small>LEVEL 1</small><b>Assist</b><span>Automation gathers and flags. Custom tier stays here.</span></button></li>
+      <li><button type="button" class="pick ceil" data-model="lv-2" style="--h:16;min-height:132px"><small>LEVEL 2</small><b>Draft</b><span>AI drafts from tagged facts; a person edits; a named approver signs.</span></button></li>
+      <li><button type="button" class="pick" data-model="lv-3" style="--h:22;min-height:152px"><small>LEVEL 3</small><b>Batch sign-off</b><span>Standard tier only, after two clean batches.</span></button></li>
+      <li><button type="button" class="pick no" data-model="lv-4" style="--h:0;min-height:172px"><small>LEVEL 4</small><b>Not permitted</b><span>AI sends or schedules on its own.</span></button></li>
+    </ol>
+  </div>
+
+  <div class="blk draft">
+    <div>
+      <div class="blk-h"><h3>What a level 2 draft looks like</h3><span class="tag-ill">Synthetic example</span></div>
+      <blockquote class="letter">Dear Mr. and Mrs. Lindqvist, this year the <mark>Lindqvist Fund for Undergraduate Scholarships<sup>CRM</sup></mark> distributed <mark>$46,300<sup>Finance</sup></mark> toward the aid of <mark>two students in the Class of 2028<sup>Financial Aid</sup></mark>. <mark class="hold">One recipient, a first-generation student studying chemistry, wrote to thank you.<sup>Held · consent pending</sup></mark> Your fund was established in <mark>2009<sup>Gift agreement</sup></mark> to open Harvard to students who could not otherwise attend.
+      <span class="syn">Every highlight is a fact with a source tag. The amber one stays out until consent is recorded.</span></blockquote>
+    </div>
+    <aside class="rv">
+      <h4>The reviewer checks, every time</h4>
+      <ul>
+        <li>Every figure has a source tag and ties to the ledger.</li>
+        <li>Purpose and naming match the gift agreement.</li>
+        <li>No name or story without a consent flag; anonymity requests honored.</li>
+        <li>The personal paragraph sounds like Harvard, not a template.</li>
+        <li>Each edit gets a reason code.</li>
+      </ul>
+      <p class="rule">Nothing sends without a named approver. AI never supplies a figure.</p>
+    </aside>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>VERITAS: what every report carries</h3><span>One standard across all four families</span></div>
+    <ol class="ver">
+      <li><button type="button" class="pick" data-model="v-1"><i>V</i><b>Vision</b><span>Why the gift matters</span></button></li>
+      <li><button type="button" class="pick" data-model="v-2"><i>E</i><b>Experience</b><span>Who felt it</span></button></li>
+      <li><button type="button" class="pick" data-model="v-3"><i>R</i><b>Results</b><span>What changed</span></button></li>
+      <li><button type="button" class="pick" data-model="v-4"><i>I</i><b>Investment</b><span>Where the money went</span></button></li>
+      <li><button type="button" class="pick" data-model="v-5"><i>T</i><b>Truth</b><span>Every claim traceable</span></button></li>
+      <li><button type="button" class="pick" data-model="v-6"><i>A</i><b>Advancement</b><span>What comes next</span></button></li>
+      <li><button type="button" class="pick" data-model="v-7"><i>S</i><b>Stewardship</b><span>What we say back</span></button></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ T · TIME-BOUND ============ -->
+<section class="sx" id="time-bound" style="--lc:var(--c-t)" aria-labelledby="t-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">T</span><div><p class="sx-k">Time-bound · milestones, dates, review cadence</p><h2 id="t-title">Five phases, five gates, and the first 30 days</h2></div></div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Twelve months from start</h3><span>Click a phase for deliverables and gate criteria</span></div>
+    <svg class="gantt" viewBox="0 0 960 262" role="group" aria-label="Twelve-month phase plan with five gates"><rect x="214.0" y="30" width="61.3" height="222" fill="#F7F9FA"/><text class="mo" x="244.7" y="20" text-anchor="middle">M1</text><rect x="275.3" y="30" width="61.3" height="222" fill="#fff"/><text class="mo" x="306.0" y="20" text-anchor="middle">M2</text><rect x="336.7" y="30" width="61.3" height="222" fill="#F7F9FA"/><text class="mo" x="367.3" y="20" text-anchor="middle">M3</text><rect x="398.0" y="30" width="61.3" height="222" fill="#fff"/><text class="mo" x="428.7" y="20" text-anchor="middle">M4</text><rect x="459.3" y="30" width="61.3" height="222" fill="#F7F9FA"/><text class="mo" x="490.0" y="20" text-anchor="middle">M5</text><rect x="520.7" y="30" width="61.3" height="222" fill="#fff"/><text class="mo" x="551.3" y="20" text-anchor="middle">M6</text><rect x="582.0" y="30" width="61.3" height="222" fill="#F7F9FA"/><text class="mo" x="612.7" y="20" text-anchor="middle">M7</text><rect x="643.3" y="30" width="61.3" height="222" fill="#fff"/><text class="mo" x="674.0" y="20" text-anchor="middle">M8</text><rect x="704.7" y="30" width="61.3" height="222" fill="#F7F9FA"/><text class="mo" x="735.3" y="20" text-anchor="middle">M9</text><rect x="766.0" y="30" width="61.3" height="222" fill="#fff"/><text class="mo" x="796.7" y="20" text-anchor="middle">M10</text><rect x="827.3" y="30" width="61.3" height="222" fill="#F7F9FA"/><text class="mo" x="858.0" y="20" text-anchor="middle">M11</text><rect x="888.7" y="30" width="61.3" height="222" fill="#fff"/><text class="mo" x="919.3" y="20" text-anchor="middle">M12</text><g class="gt" tabindex="0" role="button" data-model="ph-0" aria-label="Phase 0 · Readiness, months 1 to 1"><text class="ph" x="8" y="51">Phase 0 · Readiness</text><text class="phs" x="8" y="67">Baseline, access, scope</text><rect class="bar" x="217.0" y="40" width="46.3" height="26" rx="7" fill="#5C6774"/><text x="227.0" y="57.5" fill="#fff" font-size="11.5" font-weight="700">M1</text><path d="M271.3 40.0 l13 13 l-13 13 l-13 -13z" fill="#fff" stroke="#5C6774" stroke-width="2"/><text x="271.3" y="57.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5C6774">G0</text></g><g class="gt" tabindex="0" role="button" data-model="ph-1" aria-label="Phase 1 · Foundation, months 2 to 3"><text class="ph" x="8" y="94">Phase 1 · Foundation</text><text class="phs" x="8" y="110">Templates, tags, regression set</text><rect class="bar" x="278.3" y="83" width="107.7" height="26" rx="7" fill="#2F5D8A"/><text x="288.3" y="100.5" fill="#fff" font-size="11.5" font-weight="700">M2–3</text><path d="M394.0 83.0 l13 13 l-13 13 l-13 -13z" fill="#fff" stroke="#2F5D8A" stroke-width="2"/><text x="394.0" y="100.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2F5D8A">G1</text></g><g class="gt" tabindex="0" role="button" data-model="ph-2" aria-label="Phase 2 · Shadow pilot, months 4 to 6"><text class="ph" x="8" y="137">Phase 2 · Shadow pilot</text><text class="phs" x="8" y="153">Scholarship reports, in parallel</text><rect class="bar" x="401.0" y="126" width="169.0" height="26" rx="7" fill="#2D6E73"/><text x="411.0" y="143.5" fill="#fff" font-size="11.5" font-weight="700">M4–6</text><path d="M578.0 126.0 l13 13 l-13 13 l-13 -13z" fill="#fff" stroke="#2D6E73" stroke-width="2"/><text x="578.0" y="143.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2D6E73">G2</text></g><g class="gt" tabindex="0" role="button" data-model="ph-3" aria-label="Phase 3 · Scale-out, months 7 to 9"><text class="ph" x="8" y="180">Phase 3 · Scale-out</text><text class="phs" x="8" y="196">Next families, platform cadence</text><rect class="bar" x="585.0" y="169" width="169.0" height="26" rx="7" fill="#2F6B4F"/><text x="595.0" y="186.5" fill="#fff" font-size="11.5" font-weight="700">M7–9</text><path d="M762.0 169.0 l13 13 l-13 13 l-13 -13z" fill="#fff" stroke="#2F6B4F" stroke-width="2"/><text x="762.0" y="186.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2F6B4F">G3</text></g><g class="gt" tabindex="0" role="button" data-model="ph-4" aria-label="Phase 4 · Operate &amp; improve, months 10 to 12"><text class="ph" x="8" y="223">Phase 4 · Operate &amp; improve</text><text class="phs" x="8" y="239">Standard work, quarterly review</text><rect class="bar" x="769.0" y="212" width="169.0" height="26" rx="7" fill="#8A651F"/><text x="779.0" y="229.5" fill="#fff" font-size="11.5" font-weight="700">M10–12</text><path d="M946.0 212.0 l13 13 l-13 13 l-13 -13z" fill="#fff" stroke="#8A651F" stroke-width="2"/><text x="946.0" y="229.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A651F">G4</text></g></svg>
+    <ol class="ph-list" aria-label="Phases">
+      <li><button type="button" class="pick" data-model="ph-0" style="--c:#5C6774"><small>M1</small><b>Phase 0 · Readiness</b><small>Gate 0</small></button></li>
+      <li><button type="button" class="pick" data-model="ph-1" style="--c:#2F5D8A"><small>M2–3</small><b>Phase 1 · Foundation</b><small>Gate 1</small></button></li>
+      <li><button type="button" class="pick" data-model="ph-2" style="--c:#2D6E73"><small>M4–6</small><b>Phase 2 · Shadow pilot</b><small>Gate 2</small></button></li>
+      <li><button type="button" class="pick" data-model="ph-3" style="--c:#2F6B4F"><small>M7–9</small><b>Phase 3 · Scale-out</b><small>Gate 3</small></button></li>
+      <li><button type="button" class="pick" data-model="ph-4" style="--c:#8A651F"><small>M10–12</small><b>Phase 4 · Operate &amp; improve</b><small>Gate 4</small></button></li>
+    </ol>
+    <p class="gate-note"><b>Gate discipline.</b> No phase advances until its criteria are met and signed. The Director recommends, the Executive Director decides, and managing directors are informed. A failed gate means iterate or shrink scope, never a quiet bypass.</p>
+  </div>
+
+  <div class="blk">
+    <div class="d30-head"><h3 style="margin:0;font-size:19px">First 30 days</h3><div class="meter"><i><span id="d30Bar"></span></i><span id="d30Count">0 of 12</span></div><button type="button" class="btn" id="d30Reset">Reset</button></div>
+    <div class="d30" id="d30">
+      <div class="wk"><h4><small>Week 1</small>Listen</h4>
+        <label><input type="checkbox"><span>One-to-ones with the Executive Director, managing directors and each team member</span></label>
+        <label><input type="checkbox"><span>List every report family with volume, due date and owner</span></label>
+        <label><input type="checkbox"><span>Collect current templates and last season's published reports</span></label></div>
+      <div class="wk"><h4><small>Week 2</small>Map</h4>
+        <label><input type="checkbox"><span>Confirm each source, its owner and access route; request read access</span></label>
+        <label><input type="checkbox"><span>Agree consent and FERPA rules with Financial Aid and GSAS</span></label>
+        <label><input type="checkbox"><span>Align the reporting calendar with FAS Finance close dates</span></label></div>
+      <div class="wk"><h4><small>Week 3</small>Measure</h4>
+        <label><input type="checkbox"><span>Time-log one batch end to end to replace the 40-hour estimate</span></label>
+        <label><input type="checkbox"><span>Choose the pilot family with the team</span></label>
+        <label><input type="checkbox"><span>Build a regression set from last season's reports</span></label></div>
+      <div class="wk"><h4><small>Week 4</small>Commit</h4>
+        <label><input type="checkbox"><span>Report standard v1 and the reviewer checklist</span></label>
+        <label><input type="checkbox"><span>Present KPI baselines and the risk register</span></label>
+        <label><input type="checkbox"><span>Gate 0 sign-off with the Executive Director</span></label></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ E · EVALUATE ============ -->
+<section class="sx" id="evaluate" style="--lc:var(--c-e)" aria-labelledby="e-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">E</span><div><p class="sx-k">Evaluate · usefulness, quality, timeliness, response</p><h2 id="e-title">Risks, permissions, and who signs</h2></div></div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Eight risks, each with an owner and a tripwire</h3><span>Click for mitigation and owner</span></div>
+    <div class="risks">
+      <button type="button" class="pick" data-model="rk-1" style="--c:#2F5D8A"><small>Data</small><b>Fund figures arrive late</b><span>No figures 10 business days before a batch is due</span></button>
+      <button type="button" class="pick" data-model="rk-2" style="--c:#A51C30"><small>Privacy</small><b>A name used without consent</b><span>Any draft with a name and no consent flag</span></button>
+      <button type="button" class="pick" data-model="rk-3" style="--c:#A51C30"><small>Accuracy</small><b>A figure no source supports</b><span>Any untagged figure in a draft</span></button>
+      <button type="button" class="pick" data-model="rk-4" style="--c:#8A651F"><small>Donor intent</small><b>Language drifts from the gift terms</b><span>Purpose mismatches in more than 2% of drafts</span></button>
+      <button type="button" class="pick" data-model="rk-5" style="--c:#2F6B4F"><small>Adoption</small><b>The old process runs alongside</b><span>Weekly use under 50% after four weeks</span></button>
+      <button type="button" class="pick" data-model="rk-6" style="--c:#2F6B4F"><small>Human</small><b>Reviewers approve without reading</b><span>A seeded test error passes review</span></button>
+      <button type="button" class="pick" data-model="rk-7" style="--c:#5B4A8A"><small>Capacity</small><b>Peak season crowds out the pilot</b><span>Pilot tasks slip two weeks</span></button>
+      <button type="button" class="pick" data-model="rk-8" style="--c:#5C6774"><small>Tool</small><b>The AI tool changes underneath us</b><span>Output shifts on the regression set</span></button>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>What the AI may and may not do</h3></div>
+    <div class="perm">
+      <div style="--c:#2F6B4F"><h4><i>✓</i>On its own</h4><ul><li>Pull read-only data from approved sources</li><li>Match amounts to the ledger and flag variances</li><li>Draft from tagged facts and approved templates</li><li>Suggest a story from the consented library</li></ul></div>
+      <div style="--c:#C9A043"><h4><i>!</i>Only with a person</h4><ul><li>Any figure or name that reaches the final</li><li>Every edit accepted into the report</li><li>Template and prompt changes</li><li>Release, with a named approver</li></ul></div>
+      <div style="--c:#A51C30"><h4><i>×</i>Never</h4><ul><li>Send or schedule a report</li><li>Change a source record</li><li>Invent or estimate a figure</li><li>Use data outside the approved environment</li></ul></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Decision rights</h3><span>One accountable person per row</span></div>
+    <div class="scroll-x"><table class="raci">
+      <thead><tr><th>Decision</th><th>Accountable</th><th>Responsible</th><th>Consulted</th><th>Informed</th></tr></thead>
+      <tbody>
+        <tr><td>Report standards and templates</td><td class="A">Director</td><td data-h="Responsible">Reporting team</td><td data-h="Consulted">Gift officers, Communications</td><td data-h="Informed">Executive Director</td></tr>
+        <tr><td>Release of a donor report</td><td class="A">Named approver</td><td data-h="Responsible">Steward</td><td data-h="Consulted">Gift officer for major donors</td><td data-h="Informed">Director</td></tr>
+        <tr><td>Source access and data use</td><td class="A">Data owner</td><td data-h="Responsible">Director</td><td data-h="Consulted">Advancement Solutions security</td><td data-h="Informed">Executive Director</td></tr>
+        <tr><td>Scale to the next family</td><td class="A">Executive Director</td><td data-h="Responsible">Director</td><td data-h="Consulted">Managing directors, FAS Finance</td><td data-h="Informed">FAS Development leadership</td></tr>
+        <tr><td>Change to AI permissions</td><td class="A">Executive Director</td><td data-h="Responsible">Director</td><td data-h="Consulted">Advancement Solutions, privacy</td><td data-h="Informed">Reporting team</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="blk ctl">
+    <div>
+      <div class="blk-h"><h3>Release controls: eight checkpoints</h3></div>
+      <button type="button" class="zoom" data-zoom="assets/eight-delivery-assurance-roadmap.svg" data-zoom-title="Eight-checkpoint release SOP"><img src="assets/eight-delivery-assurance-roadmap.svg" alt="Eight-checkpoint delivery assurance roadmap from intake to post-release review" loading="lazy"></button>
+    </div>
+    <ol class="sop8">
+      <li><button type="button" class="pick" data-model="p-1"><b>1</b>Intake &amp; scope</button></li>
+      <li><button type="button" class="pick" data-model="p-2"><b>2</b>Gift intent &amp; constraints</button></li>
+      <li><button type="button" class="pick" data-model="p-3"><b>3</b>Source assembly</button></li>
+      <li><button type="button" class="pick" data-model="p-4"><b>4</b>Reconciliation</button></li>
+      <li><button type="button" class="pick" data-model="p-5"><b>5</b>Narrative &amp; design QA</button></li>
+      <li><button type="button" class="pick" data-model="p-6"><b>6</b>Traceability &amp; evidence</button></li>
+      <li><button type="button" class="pick" data-model="p-7"><b>7</b>Authorization &amp; release</button></li>
+      <li><button type="button" class="pick" data-model="p-8"><b>8</b>Post-release review</button></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ R · REVIEW ============ -->
+<section class="sx" id="review" style="--lc:var(--c-v)" aria-labelledby="v-title">
+  <div class="sx-head"><span class="L" aria-hidden="true">R</span><div><p class="sx-k">Review · continue, adapt, scale or stop</p><h2 id="v-title">Adoption, the gate decision, and the storyline</h2></div></div>
+
+  <div class="blk sh">
+    <div>
+      <div class="blk-h"><h3>Stakeholder map</h3><span>Click a dot for what each group needs</span></div>
+      <svg class="shmap" viewBox="0 0 460 336" role="group" aria-label="Stakeholder map: influence over the pilot versus impact on their work"><rect x="56" y="16" width="195.0" height="140.0" fill="#F7F9FA"/><rect x="251.0" y="16" width="195.0" height="140.0" fill="#FBEEF0"/><rect x="56" y="156.0" width="195.0" height="140.0" fill="#fff"/><rect x="251.0" y="156.0" width="195.0" height="140.0" fill="#F7F9FA"/><rect x="56" y="16" width="390" height="280" fill="none" stroke="#CDD3D9"/><text x="64" y="32" font-size="10.5" font-weight="700" fill="#6E7780">KEEP SATISFIED</text><text x="438" y="32" text-anchor="end" font-size="10.5" font-weight="700" fill="#A51C30">PARTNER CLOSELY</text><text x="64" y="288" font-size="10.5" font-weight="700" fill="#6E7780">MONITOR</text><text x="438" y="288" text-anchor="end" font-size="10.5" font-weight="700" fill="#6E7780">KEEP INFORMED</text><text x="251.0" y="324" text-anchor="middle" font-size="12" fill="#5C6774">Impact of the pilot on their work →</text><text x="18" y="156.0" transform="rotate(-90 18 156.0)" text-anchor="middle" font-size="12" fill="#5C6774">Influence over the pilot →</text><g class="sd" tabindex="0" role="button" data-model="sh-1" aria-label="Gift officers"><circle cx="368" cy="78" r="10" fill="#A51C30"/><text x="354" y="82" text-anchor="end">Gift officers</text></g><g class="sd" tabindex="0" role="button" data-model="sh-2" aria-label="Stewardship team"><circle cx="407" cy="150" r="10" fill="#2F6B4F"/><text x="393" y="154" text-anchor="end">Stewardship team</text></g><g class="sd" tabindex="0" role="button" data-model="sh-3" aria-label="FAS Finance"><circle cx="196" cy="83" r="10" fill="#2F5D8A"/><text x="210" y="87" text-anchor="start">FAS Finance</text></g><g class="sd" tabindex="0" role="button" data-model="sh-4" aria-label="Exec. Director &amp; MDs"><circle cx="290" cy="36" r="10" fill="#5B4A8A"/><text x="276" y="40" text-anchor="end">Exec. Director &amp; MDs</text></g><g class="sd" tabindex="0" role="button" data-model="sh-5" aria-label="Data partners"><circle cx="165" cy="184" r="10" fill="#2D6E73"/><text x="179" y="188" text-anchor="start">Data partners</text></g><g class="sd" tabindex="0" role="button" data-model="sh-6" aria-label="Donors"><circle cx="345" cy="223" r="10" fill="#8A651F"/><text x="331" y="227" text-anchor="end">Donors</text></g></svg>
+    </div>
+    <ul class="sh-list">
+      <li><button type="button" class="pick" data-model="sh-1" style="--c:#A51C30"><i></i><span><b>Gift officers</b><span>Early drafts for top donors; a say in custom reports</span></span></button></li>
+      <li><button type="button" class="pick" data-model="sh-2" style="--c:#2F6B4F"><i></i><span><b>Stewardship team</b><span>Time back, training, ownership of templates</span></span></button></li>
+      <li><button type="button" class="pick" data-model="sh-3" style="--c:#2F5D8A"><i></i><span><b>FAS Finance</b><span>Ledger tie-out and a calendar that respects close</span></span></button></li>
+      <li><button type="button" class="pick" data-model="sh-4" style="--c:#5B4A8A"><i></i><span><b>Executive Director and managing directors</b><span>A one-page scorecard and clean gates</span></span></button></li>
+      <li><button type="button" class="pick" data-model="sh-5" style="--c:#2D6E73"><i></i><span><b>Financial Aid, GSAS, Faculty Affairs</b><span>A small, FERPA-safe ask on a fixed calendar</span></span></button></li>
+      <li><button type="button" class="pick" data-model="sh-6" style="--c:#8A651F"><i></i><span><b>Donors</b><span>Accurate, personal, on time</span></span></button></li>
+    </ul>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>At every gate: one of four decisions</h3></div>
+    <div class="gd">
+      <button type="button" class="pick" data-model="gd-1" style="--c:#2F5D8A"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 14h16M15 8l6 6-6 6"/></svg><b>Continue</b><span>All three tests pass: run the next batch unchanged.</span></button>
+      <button type="button" class="pick" data-model="gd-2" style="--c:#8A651F"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 10a9 9 0 0 1 16 0M22 18a9 9 0 0 1-16 0M22 4v6h-6M6 24v-6h6"/></svg><b>Adapt</b><span>Quality passes, adoption lags: fix the workflow, rerun in four weeks.</span></button>
+      <button type="button" class="pick" data-model="gd-3" style="--c:#2F6B4F"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 22 11 15l5 4 8-10M18 9h6v6"/></svg><b>Scale</b><span>Two clean batches in a row: add the next report family.</span></button>
+      <button type="button" class="pick" data-model="gd-4" style="--c:#A51C30"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="6" y="6" width="16" height="16" rx="3"/></svg><b>Stop</b><span>A release error or two missed quality targets: back to manual.</span></button>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Final-review storyline</h3></div>
+    <ol class="story">
+      <li><small>What</small><p>A human-in-the-loop preparation workflow for FAS fund reports, one family first.</p></li>
+      <li><small>Why</small><p>Staff hours go to gathering and reconciling instead of personal stewardship.</p></li>
+      <li><small>How</small><p>One Harvard partners, Impact Circle laps, automation with guardrails, SMARTER gates.</p></li>
+      <li><small>Risks</small><p>Data timing, consent and accuracy, each with an owner and a tripwire.</p></li>
+      <li><small>Next</small><p>First 30 days: baseline, access, pilot family, Gate 0.</p></li>
+    </ol>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>Why I can run this</h3><span>Evidence lives in the career profile</span></div>
+    <div class="proof">
+      <a href="career-profile.html#summary"><b>Campaign reporting tied to the ledger</b><span>Leadership pacing and fund reporting reconciled with the Comptroller.</span><em>Career profile →</em></a>
+      <a href="career-profile.html#conversions"><b>Three platform conversions</b><span>Gift history and fund rules carried across, hands-on.</span><em>Conversions →</em></a>
+      <a href="career-profile.html#impact-circle"><b>Automation with guardrails</b><span>The operating model this pilot is built on.</span><em>Operating model →</em></a>
+      <a href="donor-impact-reporting.html#reports"><b>Report families, worked</b><span>Sample endowed, current-use and capital reports.</span><em>Donor impact reporting →</em></a>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="blk-h"><h3>See it working</h3><span>Other pages in this portfolio</span></div>
+    <div class="see">
+      <a href="impact-circle.html#visuals"><img src="assets/thumbs/ic-atlas.webp" alt="Impact Circle page screenshot" loading="lazy" width="640" height="400"><b>Impact Circle</b><span>The seven-stage stewardship cycle</span></a>
+      <a href="donor-impact-reporting.html#trust"><img src="assets/thumbs/release-gate.webp" alt="Release gate page screenshot" loading="lazy" width="640" height="400"><b>Release gate</b><span>Checks before a report goes out</span></a>
+      <a href="workframe.html#contract"><img src="assets/thumbs/workframe.webp" alt="Workframe page screenshot" loading="lazy" width="640" height="400"><b>Workframe</b><span>The data contract behind each report</span></a>
+      <a href="playbook.html"><img src="assets/thumbs/playbook.webp" alt="Program playbook screenshot" loading="lazy" width="640" height="400"><b>Program playbook</b><span>Roles, calendar and standard work</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="close">
+  <div><h2>Ready to run the first 30 days.</h2><p>Happy to walk through any part of this pilot with the FAS stewardship team.</p></div>
+  <a class="btn primary" href="mailto:Narissa.K9@proton.me">Email Narissara</a>
+</div>
+</main>
+
+<footer class="wrap">Pilot brief for the FAS stewardship team. Donor names, funds and figures are synthetic or planning estimates, labeled where they appear, and are not Harvard data. Prepared by Narissara Khomkhai · November 2026.</footer>
+
+<dialog class="md-dlg" id="modelDlg" aria-labelledby="modelDlgTitle">
+  <div class="md-in">
+    <div class="md-head"><div><p class="md-k" id="modelDlgKicker"></p><h2 id="modelDlgTitle"></h2></div><button type="button" class="md-x" id="modelDlgClose" aria-label="Close">×</button></div>
+    <div class="md-body" id="modelDlgBody"></div>
+    <div class="md-foot"><button type="button" class="btn" id="modelPrev">← Previous</button><button type="button" class="btn primary" id="modelNext">Next →</button></div>
+  </div>
+</dialog>
+<dialog class="img-dlg" id="imgDlg" aria-labelledby="imgDlgTitle">
+  <div class="md-head"><h2 id="imgDlgTitle" style="font-size:18px;margin:0"></h2><button type="button" class="md-x" id="imgDlgClose" aria-label="Close">×</button></div>
+  <div class="md-body"><img id="imgDlgImg" alt=""></div>
+</dialog>
+
+<script>
+(function(){'use strict';
+// g = kicker, t = title, c = who leads (chip), s = [heading, text]
+var G=[
+ ['hero-1',{g:'The pilot in three moves · 1 of 3',t:'Automation prepares',c:'Automation',s:[['What it does','Read-only pulls of gift, fund and beneficiary data; amounts matched to the ledger; drafts assembled from approved templates with every fact tagged to its source.'],['What it never does','Send, schedule, change a source record, or supply a figure that is not in a source.']]}],
+ ['hero-2',{g:'The pilot in three moves · 2 of 3',t:'People certify',c:'People',s:[['What happens','A steward reviews and edits the draft with a checklist. A named approver signs before release; the gift officer joins for major donors and foundations.'],['Why it matters','Donors read a report Harvard stands behind. Accountability stays with a person, not a tool.']]}],
+ ['hero-3',{g:'The pilot in three moves · 3 of 3',t:'The cycle learns',c:'Shared',s:[['What happens','Each edit and override carries a reason code: wrong figure, tone, missing story, donor preference. Codes are reviewed monthly.'],['What changes','Templates, prompts and source checks improve between batches, so each season starts better than the last.']]}],
+
+ ['rf-1',{g:'Report family · 1 of 4',t:'Endowed fund reports',s:[['Audience','Fund holders of named scholarships and professorships.'],['Sources','Fund record and gift terms, fund financials, recipient or chair-holder data, stories with consent.'],['Cadence','Annual, after fiscal-year figures are final; digital platform for standard reports.'],['In the pilot','First. Endowed scholarship reports run in shadow mode in Phase 2; professorship reports follow in Phase 3.']]}],
+ ['rf-2',{g:'Report family · 2 of 4',t:'Current-use gift reports',s:[['Audience','Donors whose gifts are spent in the year given.'],['Sources','Gift record, expenditure by purpose, program outcomes.'],['Cadence','Annual, or at the end of the funded activity.'],['In the pilot','Phase 3, once the endowed template proves out.']]}],
+ ['rf-3',{g:'Report family · 3 of 4',t:'Capital project summaries',s:[['Audience','Donors to buildings and spaces.'],['Sources','Gift and pledge records, project milestones from the project office, approved photos.'],['Cadence','At milestones: design, groundbreaking, opening.'],['In the pilot','Phase 3, with milestone dates owned by the project office.']]}],
+ ['rf-4',{g:'Report family · 4 of 4',t:'Foundation & restricted grants',s:[['Audience','Foundations and corporate partners with reporting terms in the award.'],['Sources','Award terms, spend by budget line from Finance, outcomes from the program lead.'],['Cadence','As the award requires.'],['In the pilot','Custom tier: the writer leads and AI only gathers facts and checks figures. My grant-reporting work with principal investigators applies directly.']]}],
+ ['tier-1',{g:'Customization tier · 1 of 3',t:'Standard',s:[['What it is','Template plus fund data, delivered through the digital platform.'],['Automation’s part','Full draft from tagged facts.'],['People’s part','A steward checks every fact; the approver signs.']]}],
+ ['tier-2',{g:'Customization tier · 2 of 3',t:'Personalized',s:[['What it is','Standard content plus a personal paragraph and a beneficiary story.'],['Automation’s part','Draft and a story suggestion from the consented library.'],['People’s part','A writer writes the personal paragraph and chooses the story.']]}],
+ ['tier-3',{g:'Customization tier · 3 of 3',t:'Custom',s:[['What it is','Bespoke reports for major donors, foundations and corporate partners.'],['Automation’s part','Gathers facts and checks figures only. No drafting.'],['People’s part','The writer leads with the gift officer; the approver signs.'],['Staff time','Fewest reports, most hours per report. Tiering is how staff time gets allocated by complexity.']]}],
+
+ ['h-1',{g:'Hours per batch · step 1 of 5',t:'Gather · 9 → 5',c:'Automation',s:[['Today','Exports from three systems, copied into a working file.'],['With the pilot','Scheduled read-only pulls into one fact sheet per fund. People only chase what is missing.']]}],
+ ['h-2',{g:'Hours per batch · step 2 of 5',t:'Reconcile · 8 → 5',c:'Automation',s:[['Today','Fund figures checked by hand against Finance statements.'],['With the pilot','Automatic match to the ledger; people resolve only the flagged variances, with Finance.']]}],
+ ['h-3',{g:'Hours per batch · step 3 of 5',t:'Draft · 12 → 6',c:'Automation',s:[['Today','Each report written from a blank template.'],['With the pilot','AI drafts from tagged facts; writers spend their time on the personal paragraph and the story.']]}],
+ ['h-4',{g:'Hours per batch · step 4 of 5',t:'Review · 7 → 7',c:'People',s:[['Held flat on purpose','Review is where accuracy and donor trust come from. The pilot protects these hours rather than cutting them.'],['What improves','Reviewers check tagged facts against sources instead of hunting for them.']]}],
+ ['h-5',{g:'Hours per batch · step 5 of 5',t:'Send & log · 4 → 2',c:'Automation',s:[['Today','Manual formatting, upload and contact-report logging.'],['With the pilot','Merge, platform upload and CRM logging are automated after the approver signs.']]}],
+
+ ['t-1',{g:'Three tests · 1 of 3',t:'Quality',s:[['Measure','Share of draft facts accepted without correction, plus zero untagged figures.'],['Target','98% or better on two consecutive batches.'],['Owner','Reporting QA lead.']]}],
+ ['t-2',{g:'Three tests · 2 of 3',t:'Adoption',s:[['Measure','Share of reports in the pilot family started from the draft each week.'],['Target','70% or better by week four of the shadow pilot.'],['Owner','Director of Stewardship Reporting.']]}],
+ ['t-3',{g:'Three tests · 3 of 3',t:'Impact',s:[['Measure','On-time delivery and preparation hours per report, against the week 3 baseline.'],['Target','95% on time, hours down at least 30%.'],['Owner','Reporting operations lead.']]}],
+ ['kpi-1',{g:'KPI family · 1 of 4',t:'Delivery',s:[['Metrics','On-time delivery by family; hours per report by tier.'],['Baseline','Week 3 time-log and last season’s delivery dates.'],['Target','95% on time; hours down 30% in the pilot family.'],['Owner','Reporting operations lead.']]}],
+ ['kpi-2',{g:'KPI family · 2 of 4',t:'Quality',s:[['Metrics','Figures with a source tag; ledger tie-out before release; corrections after release.'],['Target','100%, 100% and zero.'],['Owner','The named approver for each report; QA lead for the rollup.']]}],
+ ['kpi-3',{g:'KPI family · 3 of 4',t:'Adoption',s:[['Metrics','Weekly use of drafts; overrides logged with a reason code.'],['Target','70% use; 90% of overrides with a reason.'],['Owner','Director of Stewardship Reporting.']]}],
+ ['kpi-4',{g:'KPI family · 4 of 4',t:'Donor response',s:[['Metrics','Digital report opens, gift officer follow-ups, renewal and upgrade rates against the prior year.'],['Why it is not a gate','It lags by a season or more and has many causes. It is tracked and reported, never used to pass or fail the pilot.'],['Owner','Gift officers, with the Director.']]}],
+
+ ['src-1',{g:'Source · 1 of 3',t:'Gift & fund records',s:[['What it gives','Donor, fund name and purpose, naming, gift-agreement terms, stewardship contacts and preferences.'],['Access','Existing role-based access to the advancement CRM.'],['Watch for','Anonymity requests and recognition preferences, carried into every draft header.']]}],
+ ['src-2',{g:'Source · 2 of 3',t:'Fund financials',s:[['What it gives','Market value, annual distribution and spending by fund.'],['Access','Through the FAS Finance reporting liaison.'],['Watch for','Timing. Figures are final only after fiscal-year close, so the calendar drafts narrative first and figures last.']]}],
+ ['src-3',{g:'Source · 3 of 3',t:'Beneficiaries & outcomes',s:[['What it gives','Scholarship recipients, professorship holders, research and program outcomes, student and faculty stories.'],['Access','Data-sharing agreements with Financial Aid, GSAS and Faculty Affairs; minimum fields only.'],['Why it binds','Student records fall under FERPA and stories need recorded consent. This is the slowest access to arrange, so it starts in week 2. My FAS faculty affairs reporting work (2019–2025) gives me a head start on the faculty side.']]}],
+ ['fz-1',{g:'Feasibility · 1 of 5',t:'Technical · Ready',s:[['Why','Templates, CRM exports and a university-approved AI environment exist today. The pilot needs no new system.'],['What we build','Source-tagged templates, a fact sheet per fund, and a regression set of last season’s reports.']]}],
+ ['fz-2',{g:'Feasibility · 2 of 5',t:'Data · Watch',s:[['Why','Fund figures are final only after fiscal-year close; beneficiary data needs agreements.'],['Response','Narrative-first calendar; data-sharing requests in week 2.']]}],
+ ['fz-3',{g:'Feasibility · 3 of 5',t:'Organizational · Binding',s:[['Why','The pilot depends on protected reviewer and gift officer hours during the busiest weeks of the season.'],['Response','Shadow mode on one family, sponsor-protected review hours, and a pilot calendar set around peak dates.']]}],
+ ['fz-4',{g:'Feasibility · 4 of 5',t:'Financial · Ready',s:[['Why','Phases 0–2 run on staff time and existing tools.'],['Response','Any new spend waits for measured hours back.']]}],
+ ['fz-5',{g:'Feasibility · 5 of 5',t:'Privacy & compliance · Managed',s:[['Checks before drafting','FERPA for student data, recorded consent for stories, donor anonymity, gift-agreement purpose and naming.'],['Where data lives','Only in the approved environment, with minimum fields.']]}],
+ ['tr-0',{g:'Tranche · 1 of 3',t:'T0 · Readiness',s:[['Spend','Staff time only.'],['Delivers','Baselines, source access, templates v1, Gate 0.']]}],
+ ['tr-1',{g:'Tranche · 2 of 3',t:'T1 · Shadow pilot',s:[['Spend','Approved AI seats for the pilot team and template build time.'],['Delivers','Two batches drafted in parallel and measured against the baseline.']]}],
+ ['tr-2',{g:'Tranche · 3 of 3',t:'T2 · Scale and platform',s:[['Spend','Template work for new families and any digital-platform integration.'],['Released when','Hours back from T1 are measured and the Executive Director signs Gate 2.']]}],
+
+ ['pt-1',{g:'One Harvard partner · 1 of 8',t:'FAS Development & gift officers',s:[['They own','The donor relationship and donor strategy for their portfolio.'],['The pilot asks','A review window for major-donor drafts and a say in custom reports.'],['They get back','Reports on time, with a follow-up suggestion they can use in the next conversation.']]}],
+ ['pt-2',{g:'One Harvard partner · 2 of 8',t:'FAS Finance',s:[['They own','Fund balances, distributions and spending, and the ledger.'],['The pilot asks','Fund figures on a calendar keyed to close, and one variance list per batch.'],['They get back','Fewer ad hoc requests and every donor figure tied to their ledger.']]}],
+ ['pt-3',{g:'One Harvard partner · 3 of 8',t:'Financial Aid & GSAS',s:[['They own','Scholarship and fellowship recipients, and student records under FERPA.'],['The pilot asks','Minimum fields once per term, with consent handled at the source.'],['They get back','One predictable request instead of many, and no student data outside the approved environment.']]}],
+ ['pt-4',{g:'One Harvard partner · 4 of 8',t:'Faculty Affairs & academic units',s:[['They own','Professorship holders, faculty and program outcomes, and the stories behind them.'],['The pilot asks','Chair-holder updates and outcome notes at set points in the year.'],['They get back','Donor reports that represent their faculty and programs accurately.']]}],
+ ['pt-5',{g:'One Harvard partner · 5 of 8',t:'Institutional Research',s:[['They own','Official outcome and benchmark figures.'],['The pilot asks','Approved outcome measures that reports may cite.'],['They get back','Consistent use of official numbers in donor materials.']]}],
+ ['pt-6',{g:'One Harvard partner · 6 of 8',t:'Advancement Communications',s:[['They own','Voice, design, accessibility and the story library.'],['The pilot asks','Template design, tone review, and consent-tagged stories.'],['They get back','Templates that keep Harvard’s voice at scale.']]}],
+ ['pt-7',{g:'One Harvard partner · 7 of 8',t:'Advancement Solutions',s:[['They own','The advancement CRM, data security and the approved AI environment.'],['The pilot asks','Read-only access, a security review, and regression testing when tools change.'],['They get back','A governed use of AI with logged access and no writes to source systems.']]}],
+ ['pt-8',{g:'One Harvard partner · 8 of 8',t:'Prospect Management & Research',s:[['They own','Donor engagement data and strategy signals.'],['The pilot asks','Help reading donor response after delivery.'],['They get back','Stewardship response linked to the donor record for the next strategy review.']]}],
+ ['ic-1',{g:'Impact Circle · stage 1 of 7',t:'Plan & Prioritize',s:[['SMARTER gate','S · Specific'],['What happens','Align donor intent, the reporting calendar and institutional priorities.'],['FAS partners','FAS Development and gift officers.'],['In this pilot','Report families and customization tiers, and a calendar keyed to Finance close.'],['Where it lives','S · Specific and T · Time-bound.']]}],
+ ['ic-2',{g:'Impact Circle · stage 2 of 7',t:'Prepare & Gather',s:[['SMARTER gate','M · Measurable'],['What happens','Collect fund, impact and stakeholder inputs.'],['FAS partners','FAS Finance, Financial Aid, GSAS, Faculty Affairs, Institutional Research.'],['In this pilot','Read-only pulls into one fact sheet per fund; consent and FERPA checks before anything is drafted.'],['Where it lives','A · Attainable.']]}],
+ ['ic-3',{g:'Impact Circle · stage 3 of 7',t:'Produce & Personalize',s:[['SMARTER gate','A · Attainable'],['What happens','Build reports for each audience.'],['FAS partners','Advancement Communications and the stewardship writers.'],['In this pilot','AI drafts from tagged facts; writers add the personal paragraph and story; every report meets the VERITAS standard.'],['Where it lives','R · Relevant.']]}],
+ ['ic-4',{g:'Impact Circle · stage 4 of 7',t:'Review & Certify',s:[['SMARTER gate','R · Relevant'],['What happens','Verify accuracy, traceability and approvals.'],['FAS partners','FAS Finance and the unit that owns the outcome.'],['In this pilot','Reviewer checklist, ledger tie-out, eight release checkpoints and a named approver.'],['Where it lives','E · Evaluate.']]}],
+ ['ic-5',{g:'Impact Circle · stage 5 of 7',t:'Deliver & Engage',s:[['SMARTER gate','T · Time-bound'],['What happens','Share the report and support the donor conversation.'],['FAS partners','Gift officers and front-line fundraising.'],['In this pilot','Delivery through the digital platform or by mail, logged in the CRM, with a follow-up suggestion for the gift officer.'],['Where it lives','M · Measurable (delivery and donor response KPIs).']]}],
+ ['ic-6',{g:'Impact Circle · stage 6 of 7',t:'Evaluate & Learn',s:[['SMARTER gate','E · Evaluate'],['What happens','Measure usefulness, response and stewardship quality.'],['FAS partners','Prospect Management & Research.'],['In this pilot','The three tests, the KPI families and the reason codes from every edit.'],['Where it lives','M · Measurable and E · Evaluate.']]}],
+ ['ic-7',{g:'Impact Circle · stage 7 of 7',t:'Improve & Scale',s:[['SMARTER gate','R · Review'],['What happens','Refine templates, workflows and practices, then start the next lap.'],['FAS partners','Advancement Solutions and the Executive Director.'],['In this pilot','The gate decision (continue, adapt, scale or stop) and the next report family.'],['Where it lives','R · Review.']]}],
+ ['oh-1',{g:'Pilot loop · step 1 of 6',t:'Pull',c:'Automation',s:[['What happens','Scheduled, read-only pulls of gift, fund and beneficiary data into one fact sheet per fund.'],['Control','Approved sources only; minimum fields; no writes back.']]}],
+ ['oh-2',{g:'Pilot loop · step 2 of 6',t:'Match & flag',c:'Automation',s:[['What happens','Amounts matched to the ledger. Variances, missing gift terms and missing consent are flagged.'],['Control','A flagged fund cannot move to drafting until a person clears the flag.']]}],
+ ['oh-3',{g:'Pilot loop · step 3 of 6',t:'Draft',c:'Automation',s:[['What happens','A draft is assembled from the approved template for the family and tier, using tagged facts only.'],['Control','Every figure and name carries a source tag. Custom-tier reports skip this step.']]}],
+ ['oh-4',{g:'Pilot loop · step 4 of 6',t:'Review',c:'People',s:[['What happens','A steward edits with the reviewer checklist and writes the personal paragraph.'],['Control','Each edit carries a reason code. Seeded test errors keep review honest.']]}],
+ ['oh-5',{g:'Pilot loop · step 5 of 6',t:'Approve & deliver',c:'People',s:[['What happens','A named approver signs; the gift officer joins for major donors. The report is released through the platform or by mail.'],['Control','Nothing sends without a signature on record.']]}],
+ ['oh-6',{g:'Pilot loop · step 6 of 6',t:'Learn',c:'Shared',s:[['What happens','Reason codes and donor response are reviewed monthly; templates and checks are updated.'],['Control','Template and prompt changes are tested on the regression set before use.']]}],
+ ['lv-0',{g:'Autonomy limit · level 0',t:'Manual',s:[['Who does what','People gather, draft, check and send.'],['Where it applies','Today’s baseline.']]}],
+ ['lv-1',{g:'Autonomy limit · level 1',t:'Assist',s:[['Who does what','Automation gathers facts and flags mismatches; people draft.'],['Where it applies','Custom tier, permanently: major donors, foundations, corporate partners.']]}],
+ ['lv-2',{g:'Autonomy limit · level 2 · pilot ceiling',t:'Draft',s:[['Who does what','AI drafts from tagged facts; a person edits; a named approver signs.'],['Where it applies','Standard and personalized tiers during the pilot.']]}],
+ ['lv-3',{g:'Autonomy limit · level 3',t:'Batch sign-off',s:[['Who does what','The approver signs a batch after reading a sample plus every flagged report.'],['To get here','Standard tier only, after two clean batches, with written approval from the Executive Director.']]}],
+ ['lv-4',{g:'Autonomy limit · level 4',t:'Not permitted',s:[['What it would mean','AI sends or schedules reports on its own.'],['Status','Not on the roadmap.']]}],
+
+ ['v-1',{g:'VERITAS · 1 of 7',t:'Vision',s:[['The question','Why does this gift matter?'],['In the report','One sentence tying the gift to the purpose the donor chose.'],['Source','Gift agreement and unit mission.']]}],
+ ['v-2',{g:'VERITAS · 2 of 7',t:'Experience',s:[['The question','Who felt it?'],['In the report','A student, faculty or program story, used with consent.'],['Source','Academic unit, with a consent record.']]}],
+ ['v-3',{g:'VERITAS · 3 of 7',t:'Results',s:[['The question','What changed, and how do we know?'],['In the report','Specific, verifiable outcomes.'],['Source','Unit records and Institutional Research.']]}],
+ ['v-4',{g:'VERITAS · 4 of 7',t:'Investment',s:[['The question','Where did the money go?'],['In the report','Balances, distributions and spending, reconciled.'],['Source','The ledger, through FAS Finance.']]}],
+ ['v-5',{g:'VERITAS · 5 of 7',t:'Truth',s:[['The question','Can we trace every claim?'],['In the report','Each claim has a source, a reviewer and a date, and outcomes are attributed fairly.'],['Source','The evidence log from the release controls.']]}],
+ ['v-6',{g:'VERITAS · 6 of 7',t:'Advancement',s:[['The question','What’s next for the mission?'],['In the report','Where the work goes next.'],['Source','Unit plans and priorities.']]}],
+ ['v-7',{g:'VERITAS · 7 of 7',t:'Stewardship',s:[['The question','What do we say back?'],['In the report','Personal thanks and a clear next touchpoint.'],['Source','Gift officer and stewardship plan.']]}],
+
+ ['ph-0',{g:'Phase · 0 of 4 · month 1',t:'Readiness',s:[['Deliverables','Time-log baseline, source access requests, pilot family chosen, risk register, KPI baselines.'],['Gate 0','Baseline signed, access granted or scheduled, scope approved by the Executive Director.']]}],
+ ['ph-1',{g:'Phase · 1 of 4 · months 2–3',t:'Foundation',s:[['Deliverables','Source-tagged templates, VERITAS report standard, consent flags, reviewer checklist, regression set.'],['Gate 1','Drafts from the regression set match last season’s published reports with no untagged figures.']]}],
+ ['ph-2',{g:'Phase · 2 of 4 · months 4–6',t:'Shadow pilot',s:[['Deliverables','Endowed scholarship reports drafted alongside the current process; hours, edits and reason codes compared.'],['Gate 2','All three tests pass on two batches in a row.']]}],
+ ['ph-3',{g:'Phase · 3 of 4 · months 7–9',t:'Scale-out',s:[['Deliverables','Professorship, current-use and capital families added one at a time; digital-platform cadence set per family; campaign roll-up from fund totals.'],['Gate 3','Tests hold on each new family before the next one starts.']]}],
+ ['ph-4',{g:'Phase · 4 of 4 · months 10–12, then ongoing',t:'Operate & improve',s:[['Deliverables','Standard work, quarterly KPI review with leadership, season retrospective.'],['Gate 4','Annual review: continue, adapt, scale or stop.']]}],
+
+ ['rk-1',{g:'Risk · 1 of 8 · Data',t:'Fund figures arrive late',s:[['What could happen','Final figures land after fiscal-year close and squeeze the drafting window.'],['Mitigation','Narrative-first calendar; figures merged last; due dates set from Finance close dates.'],['Owner','Reporting operations lead, with the FAS Finance liaison.'],['Tripwire','No figures 10 business days before a batch is due.']]}],
+ ['rk-2',{g:'Risk · 2 of 8 · Privacy',t:'A name used without consent',s:[['What could happen','A student name or story reaches a draft without consent, or outside FERPA rules.'],['Mitigation','Consent flag required before a name or story can enter a draft; minimum fields; approved environment only.'],['Owner','Director, with Financial Aid and GSAS.'],['Tripwire','Any draft with a name and no consent flag stops the batch.']]}],
+ ['rk-3',{g:'Risk · 3 of 8 · Accuracy',t:'A figure no source supports',s:[['What could happen','A draft states an amount or count that is not in a source.'],['Mitigation','AI may use tagged facts only; ledger tie-out before approval.'],['Owner','The named approver.'],['Tripwire','Any untagged figure blocks release; one release error pauses the pilot.']]}],
+ ['rk-4',{g:'Risk · 4 of 8 · Donor intent',t:'Language drifts from the gift terms',s:[['What could happen','Purpose or naming in the report does not match the gift agreement.'],['Mitigation','Purpose and naming pulled into every draft header; checklist item at review.'],['Owner','Steward, with the gift officer for major donors.'],['Tripwire','Purpose mismatches in more than 2% of drafts.']]}],
+ ['rk-5',{g:'Risk · 5 of 8 · Adoption',t:'The old process runs alongside',s:[['What could happen','Staff keep their own files and the pilot adds work instead of removing it.'],['Mitigation','Templates co-designed with writers; hours back shown weekly; duplicate steps removed.'],['Owner','Director.'],['Tripwire','Weekly use under 50% after four weeks.']]}],
+ ['rk-6',{g:'Risk · 6 of 8 · Human',t:'Reviewers approve without reading',s:[['What could happen','Clean-looking drafts get approved on trust.'],['Mitigation','Seeded test errors in every batch; reviewer checklist; sampled second review.'],['Owner','Reporting QA lead.'],['Tripwire','A seeded error passes review.']]}],
+ ['rk-7',{g:'Risk · 7 of 8 · Capacity',t:'Peak season crowds out the pilot',s:[['What could happen','Reunions, events and deadlines take the hours the pilot needs.'],['Mitigation','One family in shadow mode; pilot calendar set around peak dates; review hours protected by the sponsor.'],['Owner','Executive Director, as sponsor.'],['Tripwire','Pilot tasks slip two weeks.']]}],
+ ['rk-8',{g:'Risk · 8 of 8 · Tool',t:'The AI tool changes underneath us',s:[['What could happen','Terms, cost or output behavior change without notice.'],['Mitigation','Templates and prompts kept in our own repository; tool-agnostic design; regression test on any change.'],['Owner','Advancement Solutions partner.'],['Tripwire','Output shifts on the regression set.']]}],
+
+ ['p-1',{g:'Release controls · checkpoint 1 of 8',t:'Intake & scope',s:[['What is checked','Audience, purpose, deadline and owner.'],['Automation’s part','The request creates the record and the due date.'],['Who signs','Stewardship lead.']]}],
+ ['p-2',{g:'Release controls · checkpoint 2 of 8',t:'Gift intent & constraints',s:[['What is checked','Gift terms, restrictions and donor preferences.'],['Automation’s part','Pulls gift-agreement terms and preferences into the brief.'],['Who signs','Gift officer and stewardship lead.']]}],
+ ['p-3',{g:'Release controls · checkpoint 3 of 8',t:'Source assembly',s:[['What is checked','Finance, advancement and program evidence.'],['Automation’s part','Scheduled pulls from the systems of record.'],['Who signs','Each data owner confirms their source.']]}],
+ ['p-4',{g:'Release controls · checkpoint 4 of 8',t:'Reconciliation',s:[['What is checked','Balances, distributions and approved spending.'],['Automation’s part','Matches to the ledger and flags variances.'],['Who signs','FAS Finance.']]}],
+ ['p-5',{g:'Release controls · checkpoint 5 of 8',t:'Narrative & design QA',s:[['What is checked','Accessibility, clarity and donor relevance.'],['Automation’s part','Template formatting and accessibility checks.'],['Who signs','Communications and stewardship.']]}],
+ ['p-6',{g:'Release controls · checkpoint 6 of 8',t:'Traceability & evidence',s:[['What is checked','Source, reviewer and date for every claim.'],['Automation’s part','Builds the evidence log as figures are pulled.'],['Who signs','Stewardship lead.']]}],
+ ['p-7',{g:'Release controls · checkpoint 7 of 8',t:'Authorization & release',s:[['What is checked','Required sign-off before publishing.'],['Automation’s part','Routes for approval. Nothing sends without a signature.'],['Who signs','The named approver.']]}],
+ ['p-8',{g:'Release controls · checkpoint 8 of 8',t:'Post-release review',s:[['What is checked','Feedback, exceptions and improvement actions.'],['Automation’s part','Logs delivery and donor response.'],['Who signs','Stewardship lead, feeding the next cycle.']]}],
+
+ ['sh-1',{g:'Stakeholder · 1 of 6 · partner closely',t:'Gift officers',s:[['What they need','Early sight of drafts for their top donors and a say in custom reports.'],['What I do','Draft-review window built into the calendar; custom tier stays writer-led with them.']]}],
+ ['sh-2',{g:'Stakeholder · 2 of 6 · partner closely',t:'Stewardship team',s:[['What they need','Time back, training, and ownership of the templates they use.'],['What I do','Co-design templates; weekly hours-back report; reason codes they define.']]}],
+ ['sh-3',{g:'Stakeholder · 3 of 6 · keep satisfied',t:'FAS Finance',s:[['What they need','Ledger tie-out on every figure and a calendar that respects close.'],['What I do','Due dates set from close dates; variance list sent once, not ad hoc.']]}],
+ ['sh-4',{g:'Stakeholder · 4 of 6 · partner closely',t:'Executive Director and managing directors',s:[['What they need','A one-page scorecard and clean gate decisions.'],['What I do','Monthly scorecard; gate packet with the three tests and a recommendation.']]}],
+ ['sh-5',{g:'Stakeholder · 5 of 6 · monitor',t:'Financial Aid, GSAS, Faculty Affairs',s:[['What they need','A small, FERPA-safe ask on a fixed calendar.'],['What I do','Minimum fields, one request per term, consent handled at the source.']]}],
+ ['sh-6',{g:'Stakeholder · 6 of 6 · keep informed',t:'Donors',s:[['What they need','Reports that are accurate, personal and on time.'],['What I do','Nothing about the pilot is visible to them except better, faster reports.']]}],
+ ['gd-1',{g:'Gate decision · 1 of 4',t:'Continue',s:[['When','Quality, adoption and impact all pass.'],['Next','Run the next batch unchanged.']]}],
+ ['gd-2',{g:'Gate decision · 2 of 4',t:'Adapt',s:[['When','Quality passes but adoption or impact lags.'],['Next','Fix the workflow, not the model; rerun in four weeks.']]}],
+ ['gd-3',{g:'Gate decision · 3 of 4',t:'Scale',s:[['When','All tests pass on two batches in a row.'],['Next','Add the next report family, one at a time.']]}],
+ ['gd-4',{g:'Gate decision · 4 of 4',t:'Stop',s:[['When','Any release error from an untagged figure, or quality under target twice.'],['Next','Return to the manual process and review before restarting.']]}]
+];
+var D={},ORDER=[];G.forEach(function(x){D[x[0]]=x[1];ORDER.push(x[0])});
+var dlg=document.getElementById('modelDlg');
+var $=function(i){return document.getElementById(i)},cur=null,opener=null;
+function grp(k){return k.replace(/-[^-]*$/,'')}
+function sib(k,dir){var g=grp(k),list=ORDER.filter(function(x){return grp(x)===g});return list[list.indexOf(k)+dir]||null}
+function render(k){var d=D[k];if(!d)return false;cur=k;
+  $('modelDlgKicker').textContent=d.g;$('modelDlgTitle').textContent=d.t;
+  var b=$('modelDlgBody');b.replaceChildren();
+  if(d.c){var ch=document.createElement('span');ch.className='md-chip md-'+d.c.toLowerCase();ch.textContent=d.c==='People'?'People decide':d.c;b.appendChild(ch)}
+  d.s.forEach(function(x){var sec=document.createElement('div');sec.className='md-sec';var h=document.createElement('h4');h.textContent=x[0];var p=document.createElement('p');p.textContent=x[1];sec.appendChild(h);sec.appendChild(p);b.appendChild(sec)});
+  $('modelPrev').disabled=!sib(k,-1);$('modelNext').disabled=!sib(k,1);return true}
+function open(k,from){if(!render(k))return;opener=from||null;if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');$('modelDlgClose').focus()}
+document.addEventListener('click',function(e){var t=e.target.closest('[data-model]');if(!t||dlg.contains(t))return;open(t.getAttribute('data-model'),t)});
+document.addEventListener('keydown',function(e){var t=e.target;if((e.key==='Enter'||e.key===' ')&&t&&t.matches&&t.matches('g[data-model]')){e.preventDefault();open(t.getAttribute('data-model'),t)}});
+$('modelDlgClose').addEventListener('click',function(){dlg.close()});
+$('modelPrev').addEventListener('click',function(){var k=sib(cur,-1);if(k)render(k)});
+$('modelNext').addEventListener('click',function(){var k=sib(cur,1);if(k)render(k)});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+dlg.addEventListener('close',function(){if(opener&&document.contains(opener))opener.focus({preventScroll:true})});
+
+// image zoom
+var idl=$('imgDlg');
+document.addEventListener('click',function(e){var z=e.target.closest('[data-zoom]');if(!z)return;$('imgDlgImg').src=z.getAttribute('data-zoom');$('imgDlgImg').alt=z.getAttribute('data-zoom-title')||'';$('imgDlgTitle').textContent=z.getAttribute('data-zoom-title')||'';idl.showModal()});
+$('imgDlgClose').addEventListener('click',function(){idl.close()});
+idl.addEventListener('click',function(e){if(e.target===idl)idl.close()});
+
+// print
+$('printBtn').addEventListener('click',function(){window.print()});
+
+// loop motion
+var svg=$('ohLoop'),mb=$('ohMotion');
+if(svg&&mb&&svg.pauseAnimations){
+  var setM=function(p){if(p)svg.pauseAnimations();else svg.unpauseAnimations();mb.setAttribute('aria-pressed',String(p));mb.textContent=p?'Play motion':'Pause motion'};
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){mb.hidden=true;svg.pauseAnimations()}
+  mb.addEventListener('click',function(){setM(mb.getAttribute('aria-pressed')!=='true')});
+}
+
+// calculator
+function fmt(n){return Math.round(n).toLocaleString('en-US')}
+function calc(){var r=+$('cR').value,h=+$('cH').value,a=+$('cA').value/100,c=+$('cC').value;
+  $('oR').textContent=fmt(r);$('oH').textContent=h.toFixed(2);$('oA').textContent=Math.round(a*100)+'%';$('oC').textContent='$'+c;
+  var hrs=r*h*a;$('rH').textContent=fmt(hrs);$('rV').textContent='$'+fmt(hrs*c/1000)+'K';$('rF').textContent=(hrs/1600).toFixed(2)}
+['cR','cH','cA','cC'].forEach(function(i){$(i).addEventListener('input',calc)});calc();
+
+// first 30 days
+var KEY='fasStew30',boxes=[].slice.call(document.querySelectorAll('#d30 input'));
+function saved(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(boxes.map(function(b){return b.checked})))}catch(e){}}
+function meter(){var n=boxes.filter(function(b){return b.checked}).length;$('d30Count').textContent=n+' of '+boxes.length;$('d30Bar').style.width=(n/boxes.length*100)+'%'}
+var s=saved();boxes.forEach(function(b,i){b.checked=!!s[i];b.addEventListener('change',function(){save();meter()})});meter();
+$('d30Reset').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});save();meter()});
+
+// section tracker
+var links=[].slice.call(document.querySelectorAll('.nav a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function spy(){var tb=document.querySelector('.topbar'),line=Math.max(160,(tb?tb.offsetHeight:60)+120),cur=-1;
+  secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=line)cur=i});
+  if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur=secs.length-1;
+  links.forEach(function(a,i){if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+var tick=false;window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){tick=false;spy()})}},{passive:true});
+window.addEventListener('resize',spy);spy();
+})();
+
+</script>
+<script src="./assets/aad-model.js" defer></script>
+</body>
+</html>

@@ -315,9 +315,10 @@
 </style>
 <style id="wf-nav-style">.wf-navigator{font-family:system-ui,-apple-system,'Segoe UI',sans-serif!important;background:#fff!important;color:#284157!important;border-top:3px solid #a51c30!important;border-bottom:1px solid #d7e1e9!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:9px!important;flex-wrap:wrap!important;padding:7px 15px!important;min-height:43px!important;position:relative!important;z-index:69!important}.wf-navigator .wf-path{display:flex!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important}.wf-navigator .wf-path a,.wf-navigator .wf-path button{display:inline-flex!important;align-items:center!important;padding:5px 9px!important;background:#fff!important;color:#1e3851!important;border:1px solid #dae2e9!important;border-radius:7px!important;text-decoration:none!important;font:bold 11px/1.2 system-ui,sans-serif!important;cursor:pointer!important;min-height:29px!important}.wf-navigator a:hover,.wf-navigator button:hover{border-color:#a51c30!important;color:#a51c30!important}.wf-navigator .wf-path strong{font:bold 11px system-ui,sans-serif!important;color:#a51c30!important}.wf-navigator .wf-path .wf-return{background:#fbf0f2!important;color:#7e1527!important;border-color:#e4b8c1!important}.wf-navigator .wf-hint{font:11px/1.3 system-ui,sans-serif!important;color:#607184!important}.wf-navigator .wf-hint b{color:#a51c30}@media(max-width:700px){.wf-navigator{padding:7px 9px!important}.wf-navigator .wf-hint{display:none!important}}@media print{.wf-navigator{display:none!important}}</style><link rel="stylesheet" href="./assets/wayfinder.css">
 <link rel="stylesheet" href="./assets/visual-explorer.css">
+<link rel="stylesheet" href="./assets/aad-model.css">
 </head>
 <body>
-<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./index.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><span class="wf-hint"><b>One Harvard</b> · SMARTER · Release Gate · VERITAS</span></nav>
+<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./index.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><button type="button" class="wf-hint wf-model" data-aad-open="ic-1" title="Open the operating model"><b>One Harvard</b> → Impact Circle → SMARTER → VERITAS <span aria-hidden="true">↗</span></button></nav>
 <div class="app">
   <aside class="rail" aria-label="Portfolio navigation">
     <div class="crest">
@@ -339,7 +340,7 @@
         <span class="tag gray">No identifiable donors or students</span>
       </div>
       <div class="actions">
-        <a class="btn" href="./#suite" title="Open the working Stewardship Operating Suite">Operating Suite ↗</a><a class="btn" href="./#reportgallery" title="Open complete reports">Reporting Platform ↗</a><a class="btn" href="./program-office.html#start" title="Open the interactive Program Office">Program Office ↗</a><a class="btn" href="./bridge-builder.html#today" title="Daily team pulse and open-door appointments">Open-Door Hub ↗</a><a class="btn" href="./communications.html" title="Open the message storytelling library">Comms library ↗</a><a class="btn" href="#donor" title="Open the donor review workspace inside this playbook">Donor workspace ↗</a><button class="btn" id="printBtn">Print dossier</button>
+        <a class="btn" href="./#suite" title="Open the working Stewardship Operating Suite">Operating Suite ↗</a><a class="btn" href="./#reportgallery" title="Open complete reports">Reporting Platform ↗</a><a class="btn" href="./program-office.html#start" title="Open the interactive Program Office">Program Office ↗</a><a class="btn" href="./impact-circle.html#today" title="Daily team pulse and open-door appointments">Open-Door Hub ↗</a><a class="btn" href="./communications.html" title="Open the message storytelling library">Comms library ↗</a><a class="btn" href="#donor" title="Open the donor review workspace inside this playbook">Donor workspace ↗</a><button class="btn" id="printBtn">Print dossier</button>
         <button class="btn" id="exportBtn">Export demo data</button>
       </div>
     </div>
@@ -531,13 +532,13 @@ const CASES = SHARED_REPORT_CASES;
 const FRAMEWORK = {
   vision:'Connect strategy, people, evidence and reporting systems through consensus, not formal authority; safeguard decentralized ownership while delivering dependable, donor-centered impact reports.',
   smarter:[
-    ['S','Specifically','Use one standard per gift type, calibrated to donor intent, relationship and fund architecture.','Define the deliverable, audience, cadence and exception pathway.'],
-    ['M','Measurably','Track on-time delivery, financial tie-outs, traceability, defect rates and approval completeness.','Baseline at Gate 1; review the monthly scorecard.'],
-    ['A','Achievably','Pilot existing field practice, adopt reusable controls, and retire low-value legacy reports gradually.','Build a minimum viable report factory before scaling.'],
-    ['R','Relevantly','Align outputs with institutional mission, donor purpose, VERITAS and advancement values.','Explain what each gift enabled without inventing causal outcomes.'],
+    ['S','Specific','Use one standard per gift type, calibrated to donor intent, relationship and fund architecture.','Define the deliverable, audience, cadence and exception pathway.'],
+    ['M','Measurable','Track on-time delivery, financial tie-outs, traceability, defect rates and approval completeness.','Baseline at Gate 1; review the monthly scorecard.'],
+    ['A','Attainable','Pilot existing field practice, adopt reusable controls, and retire low-value legacy reports gradually.','Build a minimum viable report factory before scaling.'],
+    ['R','Relevant','Align outputs with institutional mission, donor purpose, VERITAS and advancement values.','Explain what each gift enabled without inventing causal outcomes.'],
     ['T','Time-bound','Anchor calendars to fiscal close, reporting seasons and relationship/campaign commitments.','Surface T−14 and T−7 exceptions before deadlines are missed.'],
-    ['E','Evaluated','Review usefulness, timeliness, source quality, and avoidable rework each month.','Quarterly report-catalog and retirement review.'],
-    ['R','Reviewed','Require verifiable financials, donor intent, consent and named release authorization.','No unattended publication or donor send.']
+    ['E','Evaluate','Review usefulness, timeliness, source quality, and avoidable rework each month.','Quarterly report-catalog and retirement review.'],
+    ['R','Review','Require verifiable financials, donor intent, consent and named release authorization.','No unattended publication or donor send.']
   ],
   veritas:[['V','Vision'],['E','Experience'],['R','Results'],['I','Investment'],['T','Truth'],['A','Advancement'],['S','Stewardship']],
   values:['Respect','Inclusion','Trust','Collaboration','Continuous improvement','Open communication']
@@ -1567,7 +1568,7 @@ function details(key) {
     return;
   }
   if (kind === 'smarter') {
-    const map = { S: 'Specific', M: 'Measurable', A: 'Attainable', R: 'Relevant', T: 'Time-bound', E: 'Evaluated' };
+    const map = { S: 'Specific', M: 'Measurable', A: 'Attainable', R: 'Relevant', T: 'Time-bound', E: 'Evaluate' };
     show(id + ' · ' + (map[id] || 'Reviewed'), `<p>SMARTER delivery logic — a candidate-proposed operating discipline, not an official Harvard standard.</p><p>Each letter maps to a concrete operating commitment in the playbook: specific gift-type standards, measurable quality, attainable rollout, relevant mission alignment, time-bound calendar, evaluated benefits, and reviewed governance.</p>`);
     return;
   }
@@ -1764,5 +1765,6 @@ rememberPlaybookLocation();
 })();</script>
 <script defer src="./assets/wayfinder.js"></script>
 <script defer src="./assets/visual-explorer.js"></script>
+<script src="./assets/aad-model.js" defer></script>
 </body>
 </html>
