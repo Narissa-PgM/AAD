@@ -75,47 +75,50 @@
     ]
   };
   var PAGES = {
+    cp: ['career-profile.html', 'Career profile'],
+    fs: ['fas-stewardship.html', 'FAS pilot brief'],
+    op: ['operations.html', 'Operations'],
+    dp: ['donor-profile.html', 'Donor record'],
+    ar: ['archive.html', 'Detail (archive)'],
     sl: ['strategic-leadership.html', 'Strategic leadership'],
     dr: ['donor-impact-reporting.html', 'Donor impact reporting'],
     tl: ['team-leadership.html', 'Team leadership'],
     ci: ['campaign-initiatives.html', 'Campaign initiatives'],
-    su: ['index.html', 'Operating Suite'],
-    fs: ['fas-stewardship.html', 'FAS pilot brief'],
+    su: ['operating-suite.html', 'Operating Suite'],
     pb: ['playbook.html', 'Playbook'],
     po: ['program-office.html', 'Program office'],
-    op: ['operations.html', 'Operations'],
     co: ['communications.html', 'Communications'],
-    dp: ['donor-profile.html', 'Donor profile'],
     ic: ['impact-circle.html', 'Impact Circle'],
-    cp: ['career-profile.html', 'Career profile']
+    wf: ['workframe.html', 'Workframe']
   };
-  /* posting: Director of Stewardship Reporting (paraphrased). e = [page, hash, 'P' primary | 'S' supporting] */
+  var ARCHIVE = ['sl', 'dr', 'tl', 'ci', 'su', 'pb', 'po', 'co', 'ic', 'wf'];
+  /* posting: Director of Stewardship Reporting (paraphrased). e = [page, hash, 'P' primary | 'S' supporting | 'D' archived detail] */
   var ROLE = [
     { area: 'Strategic Leadership', c: '#A51C30', duties: [
-      { t: 'Impact reporting strategy tied to institutional priorities and campaign goals', st: 'ic-1', e: [['sl', '#northstar', 'P'], ['fs', '#specific', 'S'], ['po', '#start', 'S']] },
-      { t: 'Reporting standards, frameworks and templates for every gift type', st: 'ic-3', e: [['dr', '#reports', 'P'], ['pb', '#start', 'S'], ['fs', '#relevant', 'S']] },
-      { t: 'Advise leadership on impact storytelling, transparency and stewardship', st: 'ic-6', e: [['sl', '#comms', 'P'], ['co', '', 'S']] },
-      { t: 'Campaign and board-level impact communications', st: 'ic-5', e: [['ci', '#campaign', 'P'], ['sl', '#comms', 'S']] }
+      { t: 'Impact reporting strategy tied to institutional priorities and campaign goals', st: 'ic-1', e: [['fs', '#specific', 'P'], ['cp', '#impact-circle', 'S'], ['sl', '#northstar', 'D']] },
+      { t: 'Reporting standards, frameworks and templates for every gift type', st: 'ic-3', e: [['fs', '#specific', 'P'], ['op', '#weekly-loop', 'S'], ['dr', '#reports', 'D']] },
+      { t: 'Advise leadership on impact storytelling, transparency and stewardship', st: 'ic-6', e: [['fs', '#review', 'P'], ['cp', '#impact-circle', 'S'], ['sl', '#comms', 'D']] },
+      { t: 'Campaign and board-level impact communications', st: 'ic-5', e: [['fs', '#fellowship', 'P'], ['ci', '#campaign', 'D']] }
     ] },
     { area: 'Donor Impact Reporting & Stewardship', c: '#2F5D8A', duties: [
-      { t: 'Annual endowed fund, scholarship, research and capital reports', st: 'ic-3', e: [['su', '?report=endowed#reportgallery', 'P'], ['dr', '#reports', 'S'], ['dp', '', 'S']] },
-      { t: 'Reporting cadence, complexity and customization, including the digital platform', st: 'ic-1', e: [['dr', '#cadence', 'P'], ['fs', '#season', 'S'], ['op', '#weekly-loop', 'S']] },
-      { t: 'Alignment with gift agreements, donor intent and compliance', st: 'ic-4', e: [['dr', '#trust', 'P'], ['op', '', 'S'], ['fs', '#evaluate', 'S']] },
-      { t: 'Custom reports for major donors, foundations and corporate partners', st: 'ic-3', e: [['dr', '#special', 'P'], ['dp', '', 'S']] },
-      { t: 'Stories, outcome data and financials combined into donor-centered materials', st: 'ic-2', e: [['co', '', 'P'], ['su', '?report=current#reportgallery', 'S'], ['fs', '#relevant', 'S']] },
-      { t: 'Stewardship materials for gift officers’ cultivation, renewal and upgrade', st: 'ic-5', e: [['dp', '', 'P'], ['co', '', 'S']] }
+      { t: 'Annual endowed fund, scholarship, research and capital reports', st: 'ic-3', e: [['dp', '', 'P'], ['fs', '#season', 'S'], ['su', '?report=endowed#reportgallery', 'D']] },
+      { t: 'Reporting cadence, complexity and customization, including the digital platform', st: 'ic-1', e: [['fs', '#season', 'P'], ['op', '#weekly-loop', 'S'], ['dr', '#cadence', 'D']] },
+      { t: 'Alignment with gift agreements, donor intent and compliance', st: 'ic-4', e: [['dp', '', 'P'], ['op', '#weekly-loop', 'S'], ['dr', '#trust', 'D']] },
+      { t: 'Custom reports for major donors, foundations and corporate partners', st: 'ic-3', e: [['fs', '#fellowship', 'P'], ['dp', '', 'S'], ['dr', '#special', 'D']] },
+      { t: 'Stories, outcome data and financials combined into donor-centered materials', st: 'ic-2', e: [['dp', '', 'P'], ['fs', '#fellowship', 'S'], ['co', '', 'D']] },
+      { t: 'Stewardship materials for gift officers’ cultivation, renewal and upgrade', st: 'ic-5', e: [['fs', '#fellowship', 'P'], ['dp', '', 'S'], ['dr', '#special', 'D']] }
     ] },
     { area: 'Team Leadership & Operations', c: '#2F6B4F', duties: [
-      { t: 'High-level donor strategy with managing directors and the Executive Director', st: 'ic-1', e: [['sl', '#team', 'P'], ['po', '#start', 'S']] },
-      { t: 'Lead, mentor and develop the reporting team', st: 'ic-7', e: [['tl', '#team', 'P'], ['cp', '#summary', 'S']] },
-      { t: 'Allocate staff time by report complexity', st: 'ic-1', e: [['tl', '#capacity', 'P'], ['fs', '#measurable', 'S'], ['po', '#start', 'S']] },
-      { t: 'Quality assurance processes and timelines', st: 'ic-4', e: [['tl', '#quality', 'P'], ['op', '#weekly-loop', 'S'], ['fs', '#evaluate', 'S']] },
-      { t: 'Collaboration across advancement teams and better workflows', st: 'ic-7', e: [['tl', '#collaboration', 'P'], ['ic', '#visuals', 'S'], ['pb', '#start', 'S']] }
+      { t: 'High-level donor strategy with managing directors and the Executive Director', st: 'ic-1', e: [['fs', '#specific', 'P'], ['sl', '#team', 'D']] },
+      { t: 'Lead, mentor and develop the reporting team', st: 'ic-7', e: [['cp', '#summary', 'P'], ['op', '#weekly-loop', 'S'], ['tl', '#team', 'D']] },
+      { t: 'Allocate staff time by report complexity', st: 'ic-1', e: [['fs', '#measurable', 'P'], ['op', '#weekly-loop', 'S'], ['tl', '#capacity', 'D']] },
+      { t: 'Quality assurance processes and timelines', st: 'ic-4', e: [['op', '#weekly-loop', 'P'], ['fs', '#evaluate', 'S'], ['tl', '#quality', 'D']] },
+      { t: 'Collaboration across advancement teams and better workflows', st: 'ic-7', e: [['fs', '#fellowship', 'P'], ['cp', '#impact-circle', 'S'], ['tl', '#collaboration', 'D']] }
     ] },
     { area: 'Campaign & Institutional Initiatives', c: '#8A651F', duties: [
-      { t: 'Campaign impact summaries, milestone reports and public narratives', st: 'ic-5', e: [['ci', '#products', 'P'], ['su', '?report=capital#reportgallery', 'S']] },
-      { t: 'Capture stories and outcomes with deans and program directors', st: 'ic-2', e: [['ci', '#partnerships', 'P'], ['ic', '#visuals', 'S']] },
-      { t: 'Donor recognition publications and annual impact reports', st: 'ic-5', e: [['ci', '#recognition', 'P'], ['su', '?report=grant#reportgallery', 'S']] }
+      { t: 'Campaign impact summaries, milestone reports and public narratives', st: 'ic-5', e: [['fs', '#fellowship', 'P'], ['ci', '#products', 'D']] },
+      { t: 'Capture stories and outcomes with deans and program directors', st: 'ic-2', e: [['dp', '', 'P'], ['fs', '#fellowship', 'S'], ['ci', '#partnerships', 'D']] },
+      { t: 'Donor recognition publications and annual impact reports', st: 'ic-5', e: [['fs', '#season', 'P'], ['ci', '#recognition', 'D']] }
     ] }
   ];
   var LAYERS = [
@@ -348,7 +351,7 @@
   /* -------------------------------------------------------------- coverage */
   function buildCoverage(host) {
     host.classList.add('aadm', 'aadm-cov'); host.textContent = '';
-    var cols = ['sl', 'dr', 'tl', 'ci', 'su', 'fs', 'pb', 'po', 'op', 'co', 'dp', 'ic', 'cp'];
+    var cols = ['cp', 'fs', 'op', 'dp', 'ar'];
     var total = 0, covered = 0;
     ROLE.forEach(function (a) { a.duties.forEach(function (d) { total++; if (d.e.some(function (x) { return x[2] === 'P'; })) covered++; }); });
     /* summary bars */
@@ -378,15 +381,16 @@
         var m = el('td', { class: 'aadm-hm-m' }, [el('button', { type: 'button', class: 'aadm-mini', 'data-open': st.id, title: 'Impact Circle stage ' + st.n + ': ' + st.name, text: String(st.n) }), el('button', { type: 'button', class: 'aadm-mini s', 'data-open': 'sm-' + st.gate, style: '--c:' + L.c, title: 'SMARTER gate: ' + L.w, text: L.k })]);
         tr.appendChild(m);
         cols.forEach(function (c) {
-          var hit = d.e.filter(function (x) { return x[0] === c; })[0], td = el('td', { class: 'aadm-hm-c' });
-          if (hit) td.appendChild(el('a', { href: href(c, hit[1]), class: hit[2] === 'P' ? 'p' : 's', title: (hit[2] === 'P' ? 'Primary evidence: ' : 'Supporting: ') + PAGES[c][1], 'aria-label': (hit[2] === 'P' ? 'Primary evidence in ' : 'Supporting evidence in ') + PAGES[c][1] }));
+          var hit = d.e.filter(function (x) { return c === 'ar' ? ARCHIVE.indexOf(x[0]) >= 0 : x[0] === c; })[0], td = el('td', { class: 'aadm-hm-c' });
+          if (hit) { var pg = c === 'ar' ? hit[0] : c, kind = hit[2] === 'P' ? 'p' : hit[2] === 'D' ? 'd' : 's', lab = { p: 'Primary evidence in ', s: 'Supporting evidence in ', d: 'More detail in ' }[kind] + PAGES[pg][1];
+            td.appendChild(el('a', { href: href(pg, hit[1]), class: kind, title: lab, 'aria-label': lab })); }
           tr.appendChild(td);
         });
         tbody.appendChild(tr);
       });
     });
     tb.appendChild(tbody); wrap.appendChild(tb); host.appendChild(wrap);
-    host.appendChild(el('p', { class: 'aadm-hm-key' }, [el('span', { class: 'p' }), ' Primary work sample   ', el('span', { class: 's' }), ' Supporting evidence   · Numbers are Impact Circle stages; letters are the SMARTER gate. Click a duty to open its primary sample.']));
+    host.appendChild(el('p', { class: 'aadm-hm-key' }, [el('span', { class: 'p' }), ' Primary work sample   ', el('span', { class: 's' }), ' Supporting evidence   ', el('span', { class: 'd' }), ' Older detail, by section   · Numbers are Impact Circle stages; letters are the SMARTER gate. Click a duty to open its primary sample.']));
     host.addEventListener('click', function (e) { var t = e.target.closest('[data-open]'); if (t) openDialog(t.getAttribute('data-open'), t); });
   }
 

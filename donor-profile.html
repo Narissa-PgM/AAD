@@ -157,6 +157,16 @@
   .vchk b{display:block;font:700 13px var(--font-sans)}
   .vchk small{display:block;font:12px/1.45 var(--font-sans);color:var(--muted)}
 
+  .vmail{margin-top:16px}
+  .vt-mail{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+  .vt-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);background:#f8f9fb}
+  .vt-tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font:700 12px var(--font-sans);color:#284157;cursor:pointer}
+  .vt-tabs button[aria-selected="true"]{background:#a51c30;border-color:#a51c30;color:#fff}
+  .vt-head{padding:10px 14px;border-bottom:1px dashed var(--line);font:13px var(--font-sans);color:#5b6b7d}
+  .vt-head b{color:var(--ink)}
+  .vt-body{padding:12px 14px 14px;white-space:pre-line;font:15px/1.6 var(--font-serif);color:var(--ink);max-height:420px;overflow:auto}
+  .vt-cta{display:inline-block;margin:2px 0;padding:6px 12px;border-radius:999px;background:#a51c30;color:#fff;font:700 12.5px var(--font-sans)}
+
   /* Prior reports */
   .reports-table{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
   table.reports{border-collapse:collapse;width:100%;font:12px/1.4 var(--font-sans);min-width:720px}
@@ -206,13 +216,13 @@
 <link rel="stylesheet" href="./assets/aad-model.css">
 </head>
 <body>
-<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./index.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><button type="button" class="wf-hint wf-model" data-aad-open="ic-1" title="Open the operating model"><b>One Harvard</b> → Impact Circle → SMARTER → VERITAS <span aria-hidden="true">↗</span></button></nav>
+<nav class="wf-navigator no-print" aria-label="Connected stewardship program navigation"><div class="wf-path"><a href="./workframe.html#programs">◈ Workframe</a><a href="./operating-suite.html#suite">Suite</a><a href="./playbook.html#start">Playbook</a><a href="./program-office.html#start">Program Office</a><span id="wf-return-slot"></span></div><button type="button" class="wf-hint wf-model" data-aad-open="ic-1" title="Open the operating model"><b>One Harvard</b> → Impact Circle → SMARTER → VERITAS <span aria-hidden="true">↗</span></button></nav>
 <div class="wrap">
 
 <div class="contextbar no-print">
   <div class="left">
     <button class="btn" id="returnBtn" style="display:none">← Return to playbook</button>
-    <a class="btn" href="./index.html#suite">Operating Suite</a>
+    <a class="btn" href="./operating-suite.html#suite">Operating Suite</a>
     <a class="btn" href="./playbook.html#donor">Playbook donor review</a>
   </div>
   <div class="right">
@@ -569,13 +579,57 @@
           <ul class="vchk">
             <li><span class="state hold">Hold</span><div><b>Traceability</b><small>The chart scene shows federal fellowships “−60%” with no source. Cite a published figure or cut the number from the scene.</small></div></li>
             <li><span class="state hold">Hold</span><div><b>Accuracy of image</b><small>The opening lab scene shows a different student from the fellow the email names. Re-cut so scenes of “Lena” match her, or caption them as illustrative.</small></div></li>
-            <li><span class="state na">Verify</span><div><b>Intent</b><small>“5 full years of support” must match the fellowship’s gift terms before release.</small></div></li>
+            <li><span class="state na">Verify</span><div><b>Intent</b><small>“5 full years of support” in the video and “five years” in both emails must match the fellowship’s gift terms before release.</small></div></li>
             <li><span class="state pass">Pass</span><div><b>Consent</b><small>Lena’s consent covers her first name, words and likeness in a video, signed before release. The illustrated likeness is covered by the same consent.</small></div></li>
             <li><span class="state na">Verify</span><div><b>Attribution</b><small>The end card says the donor, fund and student are fictional. Add “Illustrations made with AI” to the end card and the intro email.</small></div></li>
             <li><span class="state na">Pending</span><div><b>Authorization</b><small>Gift officer review, then the named approver signs. Status stays “On hold” until both Holds clear.</small></div></li>
           </ul>
           <div class="note amber" style="margin-top:10px"><b>Why it matters:</b> a video is easier to share than a PDF, so one unsourced number travels further. The same six checks apply to every format.</div>
         </div>
+      </div>
+
+      <div class="vmail" id="story-email">
+        <h4>The email that delivers it</h4>
+        <p class="small" style="margin:0 0 8px">Two tones. The gift officer sends the warm version as their own thank-you; the stewardship office uses the formal version only when it delivers a report.</p>
+        <div class="vt-mail">
+        <div class="vt-tabs" role="tablist" aria-label="Email tone">
+          <button type="button" role="tab" id="vt-t-warm" aria-selected="true" aria-controls="vt-p-warm">Warm · gift officer</button>
+          <button type="button" role="tab" id="vt-t-formal" aria-selected="false" aria-controls="vt-p-formal" tabindex="-1">Formal · report delivery</button>
+        </div>
+        <div role="tabpanel" id="vt-p-warm" aria-labelledby="vt-t-warm"><div class="vt-head"><b>Subject:</b> A thank-you from Lena, made possible by you</div><div class="vt-body">Dear Eleanor,
+
+I wanted to share something special with you and your family.
+
+This fall, a new Ph.D. student began her first semester at Harvard because of the Whitfield Family Graduate Fellowship. Her name is Lena, and she studies how to turn sunlight into clean fuel. When we asked what the fellowship means to her, she said it was the reason she could say yes.
+
+We made a short video so you could meet her:
+<span class="vt-cta">▶ Watch Lena’s story (4 minutes)</span>
+
+Your fellowship covers her tuition, health insurance and stipend for five years, giving her the freedom to pursue bold questions from her very first day in the lab. Because it is endowed, it will do the same for a new student in every generation.
+
+You are also part of something larger. Together with fellow donors, you helped create 50 endowed Ph.D. fellowships in the Faculty of Arts and Sciences this year.
+
+Thank you for believing in someone you hadn’t met yet. I’d love to tell you more about Lena’s work whenever it’s convenient for you.
+
+With gratitude,
+[Gift officer name]
+[Title], FAS Development</div></div>
+        <div role="tabpanel" id="vt-p-formal" aria-labelledby="vt-t-formal" hidden><div class="vt-head"><b>Subject:</b> Your fellowship at work: a message from Harvard</div><div class="vt-body">Dear Mrs. Whitfield and family,
+
+On behalf of the Faculty of Arts and Sciences, thank you for establishing the Whitfield Family Graduate Fellowship.
+
+We are delighted to introduce the first Whitfield Fellow, Lena, a first-year Ph.D. student in chemistry. We invite you to watch a brief video in which she shares what your support has made possible:
+<span class="vt-cta">▶ Watch the video (4 minutes)</span>
+
+Your fellowship provides tuition, health insurance and a stipend for five years. As an endowed fund, it will support a Ph.D. student in perpetuity. It is one of 50 endowed fellowships established this year by a community of donors committed to the next generation of scholars.
+
+You will receive your annual fellowship report each winter, with updates on Lena’s progress and the fund’s financial summary.
+
+With deep appreciation,
+[Name]
+Director of Stewardship Reporting
+Harvard Alumni Affairs and Development</div></div>
+      </div>
       </div>
     </div>
 
@@ -711,6 +765,26 @@
 'use strict';
 const $ = (s, ctx = document) => ctx.querySelector(s);
 const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+// Email tone tabs (story tab) and deep links into the story tab
+document.addEventListener('click', e => {
+  const b = e.target.closest && e.target.closest('.vt-tabs [role="tab"]');
+  if (!b) return;
+  const list = b.parentElement;
+  list.querySelectorAll('[role="tab"]').forEach(t => { const on = t === b; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; const p = document.getElementById(t.getAttribute('aria-controls')); if (p) p.hidden = !on; });
+});
+document.addEventListener('keydown', e => {
+  const b = e.target.closest && e.target.closest('.vt-tabs [role="tab"]');
+  if (!b || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
+  const tabs = [...b.parentElement.querySelectorAll('[role="tab"]')]; const n = tabs[(tabs.indexOf(b) + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+  n.click(); n.focus(); e.preventDefault();
+});
+window.addEventListener('DOMContentLoaded', () => {
+  const h = (location.hash || '').slice(1);
+  if (h === 'story-video' || h === 'story-email') {
+    const tab = document.querySelector('[role="tab"][data-tab="story"]'); if (tab) tab.click();
+    const t = document.getElementById(h); if (t) setTimeout(() => t.scrollIntoView({ block: 'start' }), 80);
+  }
+});
 document.addEventListener('click', e => {
   const g = e.target.closest && e.target.closest('[data-goto-tab]');
   if (!g) return;
@@ -773,7 +847,7 @@ $('#rv-clear').addEventListener('click', () => {
   <h3>Where this profile connects</h3>
   <div class="jumpgrid">
     <div class="jumpcard"><b>Messages & storytelling</b><p>Draft the donor letter, email and follow-up using the same fictional record, tone controls and message prompts.</p><a class="btn" href="./communications.html">Open communications library →</a></div>
-    <div class="jumpcard"><b>Reporting platform</b><p>See the complete fictional report, release state and linked donor record in the main platform.</p><a class="btn" href="./index.html#flow">Open reporting platform →</a></div>
+    <div class="jumpcard"><b>Reporting platform</b><p>See the complete fictional report, release state and linked donor record in the main platform.</p><a class="btn" href="./operating-suite.html#flow">Open reporting platform →</a></div>
     <div class="jumpcard"><b>Operating playbook</b><p>Review the batch-delivery controls, release decisions, SOPs and calendar that govern this record before send.</p><a class="btn" href="./playbook.html#donor">Open integrated donor review →</a></div>
   </div>
 </section>
@@ -791,11 +865,11 @@ $('#rv-clear').addEventListener('click', () => {
 })();
 </script>
 <script id="wf-nav-script">(function(){
-  const current=()=>{const name=location.pathname.split('/').pop()||'index.html';return name+(location.hash||'')};
-  const allowed=['index.html','workframe.html','playbook.html','program-office.html','strategic-leadership.html','donor-impact-reporting.html','team-leadership.html','campaign-initiatives.html','communications.html','donor-profile.html','operations.html'];
-  const label=(p)=>({'workframe.html':'Workframe','playbook.html':'Playbook','index.html':'Suite','program-office.html':'Program Office','strategic-leadership.html':'Strategy','donor-impact-reporting.html':'Donor Impact','team-leadership.html':'Team','campaign-initiatives.html':'Campaign','communications.html':'Communications','operations.html':'Operations','donor-profile.html':'Donor Profile'})[(p||'').split(/[?#]/)[0]]||'previous page';
+  const current=()=>{const name=location.pathname.split('/').pop()||'operating-suite.html';return name+(location.hash||'')};
+  const allowed=['operating-suite.html','workframe.html','playbook.html','program-office.html','strategic-leadership.html','donor-impact-reporting.html','team-leadership.html','campaign-initiatives.html','communications.html','donor-profile.html','operations.html'];
+  const label=(p)=>({'workframe.html':'Workframe','playbook.html':'Playbook','operating-suite.html':'Suite','program-office.html':'Program Office','strategic-leadership.html':'Strategy','donor-impact-reporting.html':'Donor Impact','team-leadership.html':'Team','campaign-initiatives.html':'Campaign','communications.html':'Communications','operations.html':'Operations','donor-profile.html':'Donor Profile'})[(p||'').split(/[?#]/)[0]]||'previous page';
   function safe(x){if(!x || x.startsWith('/')||x.startsWith('//')||x.includes('..')||/[\\]/.test(x))return false;return allowed.includes(x.split(/[?#]/)[0])}
-  function render(){const target=new URLSearchParams(location.search).get('return') || sessionStorage.getItem('wfPreviousPage');const slot=document.getElementById('wf-return-slot');if(!slot||!safe(target)||target.split(/[?#]/)[0]===(location.pathname.split('/').pop()||'index.html'))return;const a=document.createElement('a');a.className='wf-return';a.href='./'+target;a.textContent='← Return to '+label(target)+(target.includes('#')?' · '+target.split('#')[1]:'');a.dataset.wfReturn='1';slot.appendChild(a)}
+  function render(){const target=new URLSearchParams(location.search).get('return') || sessionStorage.getItem('wfPreviousPage');const slot=document.getElementById('wf-return-slot');if(!slot||!safe(target)||target.split(/[?#]/)[0]===(location.pathname.split('/').pop()||'operating-suite.html'))return;const a=document.createElement('a');a.className='wf-return';a.href='./'+target;a.textContent='← Return to '+label(target)+(target.includes('#')?' · '+target.split('#')[1]:'');a.dataset.wfReturn='1';slot.appendChild(a)}
   document.addEventListener('click',function(evt){const a=evt.target.closest('a[href]');if(!a||a.dataset.wfReturn==='1'||evt.defaultPrevented)return;let to;try{to=new URL(a.href,location.href)}catch{return}if(to.origin!==location.origin || to.pathname===location.pathname)return;const dest=to.pathname.split('/').pop();if(!allowed.includes(dest))return;const origin=current();try{sessionStorage.setItem('wfPreviousPage',origin)}catch{}if(!to.searchParams.has('return'))to.searchParams.set('return',origin);a.href=to.href},true);
   try{render()}catch{};
 })();</script>

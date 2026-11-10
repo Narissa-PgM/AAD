@@ -12,7 +12,7 @@
       "type": "foundation/workspace"
     },
     {
-      "file": "index.html",
+      "file": "operating-suite.html",
       "title": "Suite",
       "type": "foundation/workspace"
     },
@@ -64,13 +64,13 @@
   ],
   "recommended_route": [
     "workframe.html",
-    "index.html?report=endowed#reportgallery",
+    "operating-suite.html?report=endowed#reportgallery",
     "donor-profile.html",
     "communications.html",
-    "index.html#suite",
-    "index.html?report=current#reportgallery",
-    "index.html?report=grant#reportgallery",
-    "index.html?report=capital#reportgallery",
+    "operating-suite.html#suite",
+    "operating-suite.html?report=current#reportgallery",
+    "operating-suite.html?report=grant#reportgallery",
+    "operating-suite.html?report=capital#reportgallery",
     "playbook.html#start",
     "operations.html",
     "program-office.html#start",
@@ -89,7 +89,7 @@
     },
     {
       "order": 2,
-      "url": "index.html?report=endowed#reportgallery",
+      "url": "operating-suite.html?report=endowed#reportgallery",
       "title": "Report Gallery — Endowed fund",
       "purpose": "University Opportunity Endowment; $55,000 distributed, $46,000 spent, $9,000 available; 18 aid awards."
     },
@@ -107,25 +107,25 @@
     },
     {
       "order": 5,
-      "url": "index.html#suite",
+      "url": "operating-suite.html#suite",
       "title": "Operating Suite",
       "purpose": "How the report is held, checked, and released."
     },
     {
       "order": 6,
-      "url": "index.html?report=current#reportgallery",
+      "url": "operating-suite.html?report=current#reportgallery",
       "title": "Current-use gift",
       "purpose": "Student Experience & Access Fund; report 02."
     },
     {
       "order": 7,
-      "url": "index.html?report=grant#reportgallery",
+      "url": "operating-suite.html?report=grant#reportgallery",
       "title": "Restricted grant",
       "purpose": "Biomedical Training Grant; report 04."
     },
     {
       "order": 8,
-      "url": "index.html?report=capital#reportgallery",
+      "url": "operating-suite.html?report=capital#reportgallery",
       "title": "Capital project",
       "purpose": "Learning Commons; report 03. Whole-project amounts."
     },
@@ -174,7 +174,7 @@
   ],
   "quick_review": [
     "workframe.html",
-    "index.html?report=endowed#reportgallery",
+    "operating-suite.html?report=endowed#reportgallery",
     "donor-profile.html"
   ],
   "report_variant_parameter": "The Suite selects a report using ?report=endowed/current/grant/capital and #reportgallery."

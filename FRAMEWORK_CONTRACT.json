@@ -110,7 +110,7 @@
     }
   ],
   "workspaces": [
-    "index.html",
+    "operating-suite.html",
     "playbook.html",
     "program-office.html",
     "operations.html",

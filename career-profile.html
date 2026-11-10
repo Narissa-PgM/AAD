@@ -1310,6 +1310,9 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 .oh-loop.oh-paused .oh-flow{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.oh-flow{animation:none}.oh-pip{display:none}}
 @media print{.oh-pip{display:none}.oh-flow{animation:none}}
+.lk-grid.lk-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){.lk-grid.lk-4{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.lk-grid.lk-4{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="./assets/aad-model.css">
 </head>
@@ -1353,9 +1356,9 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
       <p class="lede">I turn gift, fund and faculty records into reports that leaders and donors can trust: <strong>reconciled to the ledger, traceable to the source and delivered on time</strong>. I also convert the platforms those reports run on, and automate the repetitive work so people can spend their time on decisions.</p>
       
       <div class="hero-actions">
-        <a class="btn primary" href="./impact-circle.html#wheel">Open the interactive Impact Circle <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <a class="btn primary" href="./fas-stewardship.html">Read the FAS pilot brief <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
         
-        <a class="btn" href="./workframe.html#programs">Explore the Workframe</a>
+        <a class="btn" href="./archive.html">Detail by section</a>
       </div>
       <ul class="contact">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Cambridge, Massachusetts</li>
@@ -1437,7 +1440,7 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
           </figure>
           <figure class="vw-card">
             <video controls preload="none" playsinline poster="./assets/thumbs/video-story-247.webp" width="1920" height="1080" aria-describedby="vw-story-cap"><source src="./Story.mp4" type="video/mp4"></video>
-            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>4 min · A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. The donor, fund and student are fictional.</span><a href="./communications.html#video-thanks">See the email and send checks ↗</a></figcaption>
+            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>4 min · A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. The donor, fund and student are fictional.</span><a href="./donor-profile.html#story-email">See the email and the Release Gate review ↗</a></figcaption>
           </figure>
         </div>
       </div>
@@ -1884,15 +1887,15 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         </ol>
       </div>
       <div class="om-links" aria-label="See it working">
-        <p class="om-sub">See it working · other pages in this portfolio</p>
-        <div class="lk-grid">
-          <a class="lk" href="./impact-circle.html#visuals"><span class="lk-img"><img src="./assets/thumbs/ic-atlas.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the impact circle infographic atlas page"></span><span class="lk-body"><b>Impact Circle infographic atlas</b><span>Clickable stages and partner areas, each with a worked example.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./workframe.html#contract"><span class="lk-img"><img src="./assets/thumbs/workframe.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the all models in the workframe page"></span><span class="lk-body"><b>All models in the Workframe</b><span>One Harvard, the Impact Circle, SMARTER (with its Release Gate) and VERITAS on one page.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./donor-impact-reporting.html#trust"><span class="lk-img"><img src="./assets/thumbs/release-gate.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the release gate in action page"></span><span class="lk-body"><b>Release gate in action</b><span>The six checks on a sample fund, with a publication hold.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./donor-impact-reporting.html#reports"><span class="lk-img"><img src="./assets/thumbs/endowed-report.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the sample endowed-fund report page"></span><span class="lk-body"><b>Sample endowed-fund report</b><span>Four report families, including an annual endowed-fund report.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./playbook.html"><span class="lk-img"><img src="./assets/thumbs/playbook.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the stewardship reporting playbook page"></span><span class="lk-body"><b>Stewardship reporting playbook</b><span>From donor intent to evidence: the operating guide, chapter by chapter.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./donor-profile.html"><span class="lk-img"><img src="./assets/thumbs/donor-profile.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the illustrative donor profile page"></span><span class="lk-body"><b>Illustrative donor profile</b><span>The review workspace a steward reads before signing a report.</span><em>Open page ↗</em></span></a>
+        <p class="om-sub">See it working · the four core pages</p>
+        <div class="lk-grid lk-4">
+          <a class="lk" href="./fas-stewardship.html#fellowship"><span class="lk-img"><img src="./assets/thumbs/fas-brief.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the FAS pilot brief, Ph.D. fellowship section"></span><span class="lk-body"><b>FAS pilot brief</b><span>The plan in SMARTER order, piloted on the new Ph.D. fellowship funds, with who owns what.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./operations.html"><span class="lk-img"><img src="./assets/thumbs/operations.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the operations page and its weekly loop"></span><span class="lk-body"><b>How it runs</b><span>The reporting loop step by step: extract, control totals, cross-check, Release Gate, send and lock.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./donor-profile.html"><span class="lk-img"><img src="./assets/thumbs/donor-profile.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the illustrative donor record"></span><span class="lk-body"><b>Donor record</b><span>What a reviewer reads before signing: giving, fund, story and consent, and a video's Release Gate review.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./archive.html"><span class="lk-img"><img src="./assets/thumbs/archive.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the detail-by-section page"></span><span class="lk-body"><b>Detail by section</b><span>Older, longer work samples, grouped by the posting's four areas.</span><em>Open page ↗</em></span></a>
         </div>
+        <p class="om-sub" style="margin-top:22px">Every posting duty, with its proof</p>
+        <div data-aad-model="coverage"></div>
       </div>
       <p class="ic-disclaimer"><strong>Portfolio scope:</strong> an independent proposed approach aligned with One Harvard principles, not an official Harvard policy or a deployed system. Partner offices, report and donor examples are illustrative.</p>
     </div>
