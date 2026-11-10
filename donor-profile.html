@@ -146,6 +146,17 @@
   .story .meta-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;font:11.5px var(--font-sans);color:#4a5f73}
   .story .meta-row span{padding:3px 8px;border-radius:6px;background:#f2f6fa;border:1px solid #e1e8ef}
 
+  .vstory{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .vplayer{display:block;width:100%;max-width:100%;aspect-ratio:16/9;background:#0d1520;border-radius:10px}
+  .vchk{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .vchk li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px;align-items:start;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff}
+  .vchk .state{margin-top:2px;font:700 10.5px var(--font-sans);text-transform:uppercase;letter-spacing:.05em;text-align:center;padding:3px 0;border-radius:6px;background:#eef2f6;color:#5b6b7c}
+  .vchk .state.hold{background:var(--red-soft);color:#8a1c2c}
+  .vchk .state.pass{background:var(--green-soft);color:#116a55}
+  .vchk .state.na{background:var(--amber-soft);color:#815000}
+  .vchk b{display:block;font:700 13px var(--font-sans)}
+  .vchk small{display:block;font:12px/1.45 var(--font-sans);color:var(--muted)}
+
   /* Prior reports */
   .reports-table{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
   table.reports{border-collapse:collapse;width:100%;font:12px/1.4 var(--font-sans);min-width:720px}
@@ -263,7 +274,7 @@
         <button role="tab" aria-selected="false" data-tab="giving">Giving history</button>
         <button role="tab" aria-selected="false" data-tab="fund">Fund & financials</button>
         <button role="tab" aria-selected="false" data-tab="notes">Gift-officer notes</button>
-        <button role="tab" aria-selected="false" data-tab="story">Story & consent</button>
+        <button role="tab" aria-selected="false" data-tab="story">Stories & consent</button>
         <button role="tab" aria-selected="false" data-tab="reports">Prior reports</button>
         <button role="tab" aria-selected="false" data-tab="review">Review & decision</button>
       </div>
@@ -499,8 +510,8 @@
 
     <!-- ---------- STORY ---------- -->
     <div class="tab-panel" id="tab-story" style="padding:16px 18px 18px">
-      <h3>The story, and the consent that makes it safe</h3>
-      <p class="lead">A reviewer should be able to see the story, the consent it sits on, and the exact scope of that consent, in one view. This is the section that keeps the annual report from carrying a quote that has already expired.</p>
+      <h3>The stories, and the consent that makes them safe</h3>
+      <p class="lead">A reviewer should be able to see the story, the consent it sits on, and the exact scope of that consent, in one view. This is the section that keeps the annual report from carrying a quote that has already expired, and a video from carrying a claim no one can source.</p>
 
       <div class="story">
         <div>
@@ -530,6 +541,40 @@
             <div class="field"><span class="k">Reuse rule</span><span class="v">Requires new consent for any future use</span></div>
           </div>
           <div class="note red" style="margin-top:10px"><b>Release Gate dependency:</b> if the report is released after 2027-06-30, the story must be removed or a new consent obtained. The Release Gate will show this as HOLD until the consent date is verified against the release date.</div>
+        </div>
+      </div>
+
+      <div class="story vstory" id="story-video">
+        <div>
+          <h4>Lena · video thank-you <span class="meta sample">SAMPLE</span></h4>
+          <video class="vplayer" controls preload="none" playsinline poster="./assets/thumbs/video-story.webp?v=2" aria-label="Sample donor thank-you video for the Whitfield Family Graduate Fellowship, about 4 minutes">
+            <source src="./Story.mp4" type="video/mp4">
+            <a href="./Story.mp4">Download the sample video (MP4)</a>
+          </video>
+          <div class="meta-row">
+            <span>Item <code>VID-FY-2027-0011</code></span>
+            <span>About 4 minutes</span>
+            <span>AI-illustrated</span>
+            <span>Planned Nov 2026 · gift officer email</span>
+          </div>
+          <div class="meta-row">
+            <span>Fund: Whitfield Family Graduate Fellowship</span>
+            <span>Fellow: Lena, first name only</span>
+            <span><a href="./communications.html#video-thanks">Intro email drafts</a></span>
+          </div>
+          <p class="small" style="margin-top:10px">Lena, the fund and every figure here are fictional. The video is an AI-illustrated work sample; no real student’s image or voice is used.</p>
+        </div>
+        <div>
+          <h4>Release Gate review of this video</h4>
+          <ul class="vchk">
+            <li><span class="state hold">Hold</span><div><b>Traceability</b><small>The chart scene shows federal fellowships “−60%” with no source. Cite a published figure or cut the number from the scene.</small></div></li>
+            <li><span class="state hold">Hold</span><div><b>Accuracy of image</b><small>The opening lab scene shows a different student from the fellow the email names. Re-cut so scenes of “Lena” match her, or caption them as illustrative.</small></div></li>
+            <li><span class="state na">Verify</span><div><b>Intent</b><small>“5 full years of support” must match the fellowship’s gift terms before release.</small></div></li>
+            <li><span class="state pass">Pass</span><div><b>Consent</b><small>Lena’s consent covers her first name, words and likeness in a video, signed before release. The illustrated likeness is covered by the same consent.</small></div></li>
+            <li><span class="state na">Verify</span><div><b>Attribution</b><small>The end card says the donor, fund and student are fictional. Add “Illustrations made with AI” to the end card and the intro email.</small></div></li>
+            <li><span class="state na">Pending</span><div><b>Authorization</b><small>Gift officer review, then the named approver signs. Status stays “On hold” until both Holds clear.</small></div></li>
+          </ul>
+          <div class="note amber" style="margin-top:10px"><b>Why it matters:</b> a video is easier to share than a PDF, so one unsourced number travels further. The same six checks apply to every format.</div>
         </div>
       </div>
     </div>
@@ -590,8 +635,8 @@
               <td><code>VID-FY-2027-0011</code></td>
               <td>FY2027</td>
               <td>planned · Nov 2026 · gift officer email</td>
-              <td>Video thank-you · Whitfield Family Graduate Fellowship · first fellow, Lena <span class="meta sample">SAMPLE</span> · <a href="./communications.html#video-thanks">view</a></td>
-              <td><span class="tag amber">Awaiting approval</span></td>
+              <td>Video thank-you · Whitfield Family Graduate Fellowship · first fellow, Lena <span class="meta sample">SAMPLE</span> · <a href="#story-video" data-goto-tab="story">watch + review</a></td>
+              <td><span class="tag">On hold · 2 fixes</span></td>
             </tr>
           </tbody>
         </table>
@@ -666,6 +711,15 @@
 'use strict';
 const $ = (s, ctx = document) => ctx.querySelector(s);
 const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+document.addEventListener('click', e => {
+  const g = e.target.closest && e.target.closest('[data-goto-tab]');
+  if (!g) return;
+  e.preventDefault();
+  const tab = document.querySelector('[role="tab"][data-tab="' + g.dataset.gotoTab + '"]');
+  if (tab) tab.click();
+  const t = document.getElementById((g.getAttribute('href') || '').slice(1));
+  if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+});
 const E = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 
 /* Tabs */

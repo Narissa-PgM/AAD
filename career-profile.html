@@ -1293,27 +1293,25 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 .dh-ctl button{border:1px solid var(--line-strong,#CDD3D9);background:#fff;border-radius:999px;padding:6px 12px;font:600 12px var(--ui);color:var(--ink);cursor:pointer}
 .dh-ctl button[aria-pressed="true"]{background:#13171C;color:#fff;border-color:#13171C}
 @media (prefers-reduced-motion:reduce){#netDatahub .net-links path.dh-flow,#netDatahub .hub{animation:none}#netDatahub.dh-anim .node,#netDatahub.dh-anim .hub{opacity:1;transform:none;transition:none}#netDatahub .dh-dot{display:none}}
+
+/* One Harvard loop · DataHub-style motion */
+.oh-loop .lsub{font:12px var(--ui);fill:#6E7780}
+.oh-loop .sn{font:700 12.5px var(--ui);fill:#13171C}
+.oh-loop .ss{font:11px var(--ui);fill:#6E7780}
+.oh-loop .lt{font:700 12px var(--ui);fill:#6B4E14}
+.oh-flow{fill:none;stroke-width:1.8;stroke-opacity:.75;stroke-dasharray:5 7;animation:ohDash 1.3s linear infinite}
+.oh-con{stroke-width:2.2;stroke-opacity:.85}
+.oh-back{stroke-width:2;stroke-dasharray:7 6}
+@keyframes ohDash{to{stroke-dashoffset:-24}}
+.oh-learn rect{fill:#FBF5EA}
+.oh-learn:hover rect,.oh-learn:focus-visible rect{fill:#F4E6C9}
+.oh-loop.oh-anim .oh-lane,.oh-loop.oh-anim .oh-src,.oh-loop.oh-anim .oh-out,.oh-loop.oh-anim .oh-step,.oh-loop.oh-anim .oh-con,.oh-loop.oh-anim .oh-learn{opacity:0;transition:opacity .5s ease var(--d,0ms)}
+.oh-loop.oh-anim.oh-in .oh-lane,.oh-loop.oh-anim.oh-in .oh-src,.oh-loop.oh-anim.oh-in .oh-out,.oh-loop.oh-anim.oh-in .oh-step,.oh-loop.oh-anim.oh-in .oh-con,.oh-loop.oh-anim.oh-in .oh-learn{opacity:1}
+.oh-loop.oh-paused .oh-flow{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.oh-flow{animation:none}.oh-pip{display:none}}
+@media print{.oh-pip{display:none}.oh-flow{animation:none}}
 </style>
 <link rel="stylesheet" href="./assets/aad-model.css">
-<style id="career-visual-enhancement-20261109">
-.stew-anime{margin:14px 0 18px;border:1px solid #D6E0E7;border-radius:15px;overflow:hidden;background:#F6F2EA;box-shadow:0 8px 24px rgba(32,51,70,.07)}
-.stew-anime svg{display:block;width:100%;height:auto}
-.stew-anime-caption{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 16px;background:#FFF;color:#536476;font:13px/1.4 Arial,sans-serif}
-.stew-anime-caption strong{color:#283F52}
-.stew-approval{font-weight:700;color:#8E3952;background:#F9EEF1;border-radius:999px;padding:5px 11px}
-.om-links .lk-grid{width:100%}
-.om-links a.lk{box-shadow:0 5px 17px rgba(25,53,78,.09);border-radius:14px;transition:transform .18s,box-shadow .18s;border-color:#D7E1E9}
-.om-links a.lk:hover,.om-links a.lk:focus-visible{transform:translateY(-3px);box-shadow:0 12px 26px rgba(25,53,78,.16)}
-.om-links .lk-img{position:relative;background:#E8EEF4;padding:7px 7px 0;box-sizing:border-box;aspect-ratio:16/10;overflow:hidden}
-.om-links .lk-img:before{content:"";display:block;position:absolute;top:0;left:0;right:0;height:10px;background:linear-gradient(90deg,#79243B,#BD7785 30%,#D9E4E9 30%);opacity:.9;z-index:1}
-.om-links .lk-img img{width:100%;height:100%;display:block;border-radius:5px 5px 0 0;object-fit:cover}
-.om-links .lk-body{padding:15px 16px 17px;background:white}
-.om-links .lk-body b{font-size:17px}
-.om-links .lk-body em{margin-top:10px;letter-spacing:.02em}
-.vw-card video{background:#E8EDF2}
-@media(prefers-reduced-motion:reduce){.om-links a.lk{transition:none}.om-links a.lk:hover{transform:none}}
-@media(max-width:600px){.stew-anime-caption{display:block}.stew-approval{display:inline-block;margin-top:6px}}
-</style>
 </head>
 
 <body>
@@ -1438,8 +1436,8 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
             <figcaption id="vw-hub-cap"><b>Impact Circle · Stewardship Hub walkthrough</b><span>6½ min · How One Harvard partners, the seven-stage Impact Circle, SMARTER gates and VERITAS reports fit together, and the hub's team tools.</span><a href="./impact-circle.html">Open the hub ↗</a></figcaption>
           </figure>
           <figure class="vw-card">
-            <video controls preload="none" playsinline poster="./assets/thumbs/video-story.webp" width="1920" height="1080" aria-describedby="vw-story-cap"><source src="./Story.mp4#t=167" type="video/mp4"></video>
-            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>4 min · Opens at 2:47 for the featured scene. A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. The donor, fund and student are fictional.</span><a href="./communications.html#video-thanks">See the email and send checks ↗</a></figcaption>
+            <video controls preload="none" playsinline poster="./assets/thumbs/video-story-247.webp" width="1920" height="1080" aria-describedby="vw-story-cap"><source src="./Story.mp4" type="video/mp4"></video>
+            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>4 min · A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. The donor, fund and student are fictional.</span><a href="./communications.html#video-thanks">See the email and send checks ↗</a></figcaption>
           </figure>
         </div>
       </div>
@@ -1676,87 +1674,61 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         <header class="om-head"><p class="om-k"><i>1</i>One Harvard · automation with guardrails</p>
           <h3>Automation takes the repetitive work. People keep every decision.</h3>
           <p>One Harvard means coordinating without formal authority: offices share the automation and the standards, and each office keeps its own decisions.</p></header>
-        <div class="stew-anime" role="img" aria-label="Anime-inspired illustrated university stewardship desk. Data and template automation prepare reporting, while a reviewer retains the final approval decision.">
-<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-<defs><linearGradient id="stAnimeBg" x2="1" y2="1"><stop stop-color="#F5F0E9"/><stop offset="1" stop-color="#E5F1F2"/></linearGradient><linearGradient id="stDesk" x2="0" y2="1"><stop stop-color="#A77358"/><stop offset="1" stop-color="#6E473F"/></linearGradient><filter id="stAnimeShadow"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#314755" flood-opacity=".13"/></filter></defs>
-<rect width="960" height="300" rx="17" fill="url(#stAnimeBg)"/>
-<path d="M0 198 L960 198" stroke="#D5D9CF" stroke-width="2"/>
-<rect x="20" y="19" width="285" height="175" rx="9" fill="#EFF8F8" stroke="#C7D9DD" stroke-width="6"/>
-<path d="M160 19 V194 M20 109 H305" stroke="#C7D9DD" stroke-width="6"/>
-<path d="M50 194V122L85 95 111 117 137 76 170 104 201 77 242 106 280 84 V194" fill="#B6C8C5" opacity=".55"/>
-<path d="M20 194L61 145 82 153 111 122 142 146 177 116 204 135 248 111 305 144V194" fill="#A2B4A8" opacity=".65"/>
-<g filter="url(#stAnimeShadow)">
-<rect x="327" y="46" width="268" height="170" rx="12" fill="#263F54"/>
-<rect x="336" y="57" width="250" height="149" rx="5" fill="#F8FAFC"/>
-<rect x="336" y="57" width="250" height="23" rx="4" fill="#E8EFF4"/>
-<circle cx="350" cy="69" r="4" fill="#BE6974"/><circle cx="363" cy="69" r="4" fill="#D3B164"/><circle cx="376" cy="69" r="4" fill="#74AFA2"/>
-<rect x="349" y="92" width="99" height="13" rx="4" fill="#D8E8EE"/>
-<rect x="349" y="116" width="128" height="9" rx="4" fill="#E1E9EF"/><rect x="349" y="135" width="159" height="9" rx="4" fill="#E1E9EF"/><rect x="349" y="154" width="116" height="9" rx="4" fill="#E1E9EF"/>
-<circle cx="536" cy="119" r="23" fill="#DEF1E8"/><path d="M524 119l9 9 17-21" fill="none" stroke="#28765D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M440 215v18h36v-18" fill="#526D7F"/><rect x="413" y="233" width="92" height="6" rx="3" fill="#526D7F"/>
-<rect x="618" y="64" width="314" height="152" rx="12" fill="#2C4356"/>
-<rect x="627" y="73" width="296" height="134" rx="5" fill="#FBFCFD"/>
-<rect x="627" y="73" width="296" height="23" fill="#F3E8EC"/>
-<rect x="643" y="109" width="125" height="12" rx="4" fill="#D5E3EB"/>
-<rect x="643" y="132" width="208" height="9" rx="4" fill="#E1EAF0"/><rect x="643" y="151" width="169" height="9" rx="4" fill="#E1EAF0"/>
-<rect x="643" y="171" width="117" height="23" rx="7" fill="#E9F3ED"/><rect x="774" y="171" width="129" height="23" rx="7" fill="#F6E5E9"/>
-<path d="M657 183l5 5 11-11" stroke="#2F8061" stroke-width="3" fill="none"/><path d="M790 179l9 9m0-9l-9 9" stroke="#9C4560" stroke-width="2"/>
-<path d="M749 216v18h37v-18" fill="#526D7F"/><rect x="726" y="233" width="83" height="6" rx="3" fill="#526D7F"/>
+        <figure class="oh-fig"><svg class="oh-loop" id="ohLoop" viewBox="0 0 1240 516" role="group" aria-label="The reporting loop on one page: data from five sources flows through eight steps in four lanes, then out to donors, the send log and season measures. Green steps are automation; red steps are people. Animated.">
+<defs><marker id="ohAr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6E7780"/></marker><radialGradient id="ohTok"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#E9C98B"/><stop offset="1" stop-color="#8A651F"/></radialGradient>
+<path id="ohRoute" d="M264.0,134.0 C324.5,134.0 313.5,134.0 374.0,134.0 C434.5,134.0 423.5,258.0 484.0,258.0 C544.5,258.0 533.5,358.0 594.0,358.0 C654.5,358.0 643.5,258.0 704.0,258.0 C764.5,258.0 753.5,258.0 814.0,258.0 C874.5,258.0 863.5,458.0 924.0,458.0 C984.5,458.0 973.5,134.0 1034.0,134.0"/></defs>
+<g class="oh-lane" style="--d:0ms"><rect x="0" y="64" width="1240" height="140" rx="12" fill="#2F6B4F" fill-opacity=".055"/>
+<text x="14" y="84" class="lane" fill="#2F6B4F">Systems</text><text x="76" y="84" class="lsub">scheduled · read-only</text>
 </g>
-<path d="M0 265Q310 249 960 258V300H0Z" fill="url(#stDesk)"/>
-<g transform="translate(137 166)">
-<path d="M-67 103Q-71 24-32-11Q10-39 49-9Q71 21 79 103" fill="#7B3752"/>
-<path d="M-11 18Q-8 43 8 46Q26 36 27 13" fill="#D59E7C"/>
-<ellipse cx="7" cy="-29" rx="37" ry="46" fill="#DFA883"/>
-<path d="M-32-36Q-44-93 11-100Q54-97 42-42Q28-57 12-69Q-7-43-32-36Z" fill="#302E3F"/>
-<path d="M-25-38Q-52-58-34-88Q-18-104 2-99" fill="#302E3F"/>
-<path d="M-9-25h7M19-25h7" stroke="#513B3C" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M5-9q5 4 10 0" stroke="#9F6461" stroke-width="1.5" fill="none"/>
-<path d="M-16 18L7 40 29 18" stroke="#F2E5DC" stroke-width="14" fill="none"/>
+<g class="oh-lane" style="--d:60ms"><rect x="0" y="212" width="1240" height="92" rx="12" fill="#A51C30" fill-opacity=".055"/>
+<text x="14" y="255.0" class="lane" fill="#A51C30">Reporting team</text><text x="14" y="272.0" class="lsub">led by the Director</text>
 </g>
-<rect x="270" y="268" width="200" height="12" rx="6" fill="#273E4C"/>
-<path d="M315 267L343 243H448L467 267" fill="#DCE7EC" stroke="#9EB4C3"/>
-<rect x="509" y="268" width="54" height="27" rx="4" fill="#EFE7DD"/><path d="M563 274q25-3 0 14" fill="none" stroke="#EFE7DD" stroke-width="6"/>
-<path d="M883 269q-22-30-9-55q21 8 15 37q12-33 28-30q0 31-21 48" fill="#5D8B77"/><rect x="869" y="269" width="44" height="31" rx="4" fill="#B27966"/>
-</svg>
-<div class="stew-anime-caption"><span><strong>A proposed human-in-the-loop workflow</strong> · read-only retrieval, evidence matching and draft preparation</span><span class="stew-approval">Named reviewer controls every donor release</span></div>
-</div><figure class="oh-fig"><svg class="oh-loop" id="ohLoop" viewBox="0 -16 940 352" role="group" aria-label="Automation and people: six-step stewardship reporting loop, animated">
-<defs><marker id="ohAr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6E7780"/></marker>
-<radialGradient id="ohTok"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#E9C98B"/><stop offset="1" stop-color="#8A651F"/></radialGradient>
-<linearGradient id="ohLaneA" x1="0" x2="1"><stop offset="0" stop-color="#E4F1E9"/><stop offset="1" stop-color="#F3F9F5"/></linearGradient>
-<linearGradient id="ohLaneP" x1="0" x2="1"><stop offset="0" stop-color="#FBEEF0"/><stop offset="1" stop-color="#F8E3E7"/></linearGradient>
-<path id="ohRoute" d="M100 85 L400 85 C520 85 550 150 550 250 L700 250 C830 250 850 190 850 85 C850 -16 100 -16 100 85"/></defs>
-<rect x="30" y="18" width="910" height="136" rx="10" fill="url(#ohLaneA)"/>
-<rect x="30" y="184" width="910" height="136" rx="10" fill="url(#ohLaneP)"/>
-<text x="14" y="86" transform="rotate(-90 14 86)" text-anchor="middle" class="lane" fill="#2F6B4F">Automation</text>
-<text x="14" y="252" transform="rotate(-90 14 252)" text-anchor="middle" class="lane" fill="#A51C30">People decide</text>
-<path d="M162 85 L186 85" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
-<path d="M312 85 L336 85" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
-<path d="M462 85 C520 85 550 150 550 213" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
-<path d="M612 250 L636 250" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
-<path d="M762 250 C830 250 850 190 850 122" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)"/>
-<path d="M850 50 C850 -16 100 -16 100 50" fill="none" stroke="#9AA3AC" stroke-width="2" marker-end="url(#ohAr)" stroke-dasharray="6 5"/>
-<text x="475" y="-3" text-anchor="middle" class="note">each cycle starts better than the last</text>
-<text x="585" y="160" class="note" fill="#A51C30">handoff to a person</text>
+<g class="oh-lane" style="--d:120ms"><rect x="0" y="312" width="1240" height="92" rx="12" fill="#A51C30" fill-opacity=".055"/>
+<text x="14" y="355.0" class="lane" fill="#A51C30">Review team</text><text x="14" y="372.0" class="lsub">exceptions only</text>
+</g>
+<g class="oh-lane" style="--d:180ms"><rect x="0" y="412" width="1240" height="92" rx="12" fill="#A51C30" fill-opacity=".055"/>
+<text x="14" y="455.0" class="lane" fill="#A51C30">Gift officer + approver</text><text x="14" y="472.0" class="lsub">Release Gate</text>
+</g>
+<g class="oh-src" style="--d:120ms"><circle cx="20" cy="94" r="4.5" fill="#A51C30"/><text x="31" y="98" class="sn">Advance<title>Advance · gifts · funds</title></text><path id="ohS0" class="oh-flow" d="M150,94 C182,94 178,115.0 212,115.0" stroke="#A51C30"/><circle r="2.8" fill="#A51C30" class="oh-pip"><animateMotion dur="2.2s" begin="0.0s" repeatCount="indefinite"><mpath href="#ohS0"/></animateMotion></circle></g>
+<g class="oh-src" style="--d:190ms"><circle cx="20" cy="115" r="4.5" fill="#8A651F"/><text x="31" y="119" class="sn">FAS Finance<title>FAS Finance · ledger</title></text><path id="ohS1" class="oh-flow" d="M150,115 C182,115 178,124.5 212,124.5" stroke="#8A651F"/><circle r="2.8" fill="#8A651F" class="oh-pip"><animateMotion dur="2.5s" begin="-0.5s" repeatCount="indefinite"><mpath href="#ohS1"/></animateMotion></circle></g>
+<g class="oh-src" style="--d:260ms"><circle cx="20" cy="136" r="4.5" fill="#2B5C8A"/><text x="31" y="140" class="sn">Financial Aid<title>Financial Aid · recipients</title></text><path id="ohS2" class="oh-flow" d="M150,136 C182,136 178,134.0 212,134.0" stroke="#2B5C8A"/><circle r="2.8" fill="#2B5C8A" class="oh-pip"><animateMotion dur="2.8s" begin="-1.0s" repeatCount="indefinite"><mpath href="#ohS2"/></animateMotion></circle></g>
+<g class="oh-src" style="--d:330ms"><circle cx="20" cy="157" r="4.5" fill="#5B4A8A"/><text x="31" y="161" class="sn">GSAS<title>GSAS · fellows</title></text><path id="ohS3" class="oh-flow" d="M150,157 C182,157 178,143.5 212,143.5" stroke="#5B4A8A"/><circle r="2.8" fill="#5B4A8A" class="oh-pip"><animateMotion dur="3.1s" begin="-1.5s" repeatCount="indefinite"><mpath href="#ohS3"/></animateMotion></circle></g>
+<g class="oh-src" style="--d:400ms"><circle cx="20" cy="178" r="4.5" fill="#2F6B4F"/><text x="31" y="182" class="sn">Faculty Affairs<title>Faculty Affairs · chair holders</title></text><path id="ohS4" class="oh-flow" d="M150,178 C182,178 178,153.0 212,153.0" stroke="#2F6B4F"/><circle r="2.8" fill="#2F6B4F" class="oh-pip"><animateMotion dur="3.4s" begin="-2.0s" repeatCount="indefinite"><mpath href="#ohS4"/></animateMotion></circle></g>
+<path class="oh-flow oh-con" d="M314,134.0 L321,134.0" stroke="#2F6B4F" marker-end="url(#ohAr)" style="--d:390ms"/>
+<path class="oh-flow oh-con" d="M374.0,167.0 C374.0,258.0 382.0,258.0 431,258.0" stroke="#A51C30" marker-end="url(#ohAr)" style="--d:480ms"/>
+<path class="oh-flow oh-con" d="M484.0,291.0 C484.0,358.0 492.0,358.0 541,358.0" stroke="#A51C30" marker-end="url(#ohAr)" style="--d:570ms"/>
+<path class="oh-flow oh-con" d="M594.0,325.0 C594.0,258.0 602.0,258.0 651,258.0" stroke="#A51C30" marker-end="url(#ohAr)" style="--d:660ms"/>
+<path class="oh-flow oh-con" d="M754,258.0 L761,258.0" stroke="#2F6B4F" marker-end="url(#ohAr)" style="--d:750ms"/>
+<path class="oh-flow oh-con" d="M814.0,291.0 C814.0,458.0 822.0,458.0 871,458.0" stroke="#A51C30" marker-end="url(#ohAr)" style="--d:840ms"/>
+<path class="oh-flow oh-con" d="M924.0,425.0 C924.0,134.0 932.0,134.0 981,134.0" stroke="#2F6B4F" marker-end="url(#ohAr)" style="--d:930ms"/>
+<g class="oh-out" style="--d:1100ms"><path id="ohO0" class="oh-flow" d="M1084,119.0 C1114,119.0 1054,84 1084,84" stroke="#2F6B4F"/><circle r="2.8" fill="#2F6B4F" class="oh-pip"><animateMotion dur="2.4s" begin="0.0s" repeatCount="indefinite"><mpath href="#ohO0"/></animateMotion></circle><rect x="1086" y="69" width="146" height="32" rx="8" fill="#fff" stroke="#D5DBE1"/><circle cx="1098" cy="85" r="4" fill="#2F6B4F"/><text x="1108" y="83" class="sn">Donor reports</text><text x="1108" y="95" class="ss">print or digital</text></g>
+<g class="oh-out" style="--d:1190ms"><path id="ohO1" class="oh-flow" d="M1084,134.0 C1114,134.0 1054,124 1084,124" stroke="#2F6B4F"/><circle r="2.8" fill="#2F6B4F" class="oh-pip"><animateMotion dur="2.7s" begin="-0.6s" repeatCount="indefinite"><mpath href="#ohO1"/></animateMotion></circle><rect x="1086" y="109" width="146" height="32" rx="8" fill="#fff" stroke="#D5DBE1"/><circle cx="1098" cy="125" r="4" fill="#2F6B4F"/><text x="1108" y="123" class="sn">Send log</text><text x="1108" y="135" class="ss">saved in Advance</text></g>
+<g class="oh-out" style="--d:1280ms"><path id="ohO2" class="oh-flow" d="M1084,149.0 C1114,149.0 1054,164 1084,164" stroke="#2F6B4F"/><circle r="2.8" fill="#2F6B4F" class="oh-pip"><animateMotion dur="3.0s" begin="-1.2s" repeatCount="indefinite"><mpath href="#ohO2"/></animateMotion></circle><rect x="1086" y="149" width="146" height="32" rx="8" fill="#fff" stroke="#D5DBE1"/><circle cx="1098" cy="165" r="4" fill="#2F6B4F"/><text x="1108" y="163" class="sn">Season measures</text><text x="1108" y="175" class="ss">on time · corrections</text></g>
+<g class="oh-nd oh-learn" tabindex="0" role="button" data-model="oh-9" aria-label="The learning loop" style="--c:#8A651F;--d:1400ms"><path class="oh-flow oh-back" d="M1034.0,99.0 C1034.0,18 374.0,18 374.0,97.0" stroke="#8A651F" marker-end="url(#ohAr)"/><rect x="534.0" y="12" width="340" height="24" rx="12" fill="#FBF5EA" stroke="#8A651F" stroke-width="1.2"/><text x="704.0" y="28.5" text-anchor="middle" class="lt">Learn · reason codes tighten the next cycle’s rules</text></g>
 <g class="oh-tokens" aria-hidden="true">
-<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="9s" begin="0s" repeatCount="indefinite" rotate="0"><mpath href="#ohRoute"/></animateMotion></g>
-<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="9s" begin="-3s" repeatCount="indefinite" rotate="0"><mpath href="#ohRoute"/></animateMotion></g>
-<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="9s" begin="-6s" repeatCount="indefinite" rotate="0"><mpath href="#ohRoute"/></animateMotion></g>
+<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="10.5s" begin="0.0s" repeatCount="indefinite"><mpath href="#ohRoute"/></animateMotion></g>
+<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="10.5s" begin="-3.5s" repeatCount="indefinite"><mpath href="#ohRoute"/></animateMotion></g>
+<g><circle r="7" fill="url(#ohTok)" stroke="#8A651F" stroke-width="1"/><rect x="-3.5" y="-2" width="7" height="4.5" rx=".8" fill="#8A651F" opacity=".75"/><animateMotion dur="10.5s" begin="-7.0s" repeatCount="indefinite"><mpath href="#ohRoute"/></animateMotion></g>
 </g>
-<g class="oh-nd" tabindex="0" role="button" data-model="oh-1" aria-label="Step 1: Pull" style="--c:#2F6B4F"><rect x="34" y="47" width="132" height="76" rx="10"/><g transform="translate(44 58)" class="ic" fill="none" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="10" cy="4" rx="7" ry="2.6"/><path d="M3 4v12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V4"/><path d="M3 10c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6"/></g><circle cx="34" cy="47" r="12" fill="#2F6B4F"/><text x="34" y="51.5" text-anchor="middle" class="num">1</text><text x="110" y="73" text-anchor="middle" class="t">Pull</text><text x="100" y="95" text-anchor="middle" class="s">Scheduled, read-only</text><text x="100" y="112" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
-<g class="oh-nd" tabindex="0" role="button" data-model="oh-2" aria-label="Step 2: Match & flag" style="--c:#2F6B4F"><rect x="184" y="47" width="132" height="76" rx="10"/><g transform="translate(194 58)" class="ic" fill="none" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v16M5 18h10M4 6h12"/><path d="M4 6l-3 6h6zM16 6l-3 6h6z"/></g><circle cx="184" cy="47" r="12" fill="#2F6B4F"/><text x="184" y="51.5" text-anchor="middle" class="num">2</text><text x="260" y="73" text-anchor="middle" dx="7" class="t sm">Match &amp; flag</text><text x="250" y="95" text-anchor="middle" class="s">Ledger tie-out</text><text x="250" y="112" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
-<g class="oh-nd" tabindex="0" role="button" data-model="oh-3" aria-label="Step 3: Draft" style="--c:#2F6B4F"><rect x="334" y="47" width="132" height="76" rx="10"/><g transform="translate(344 58)" class="ic" fill="none" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 1.5h7l4 4V18.5H5z"/><path d="M12 1.5v4h4M8 10h5M8 13h5"/></g><circle cx="334" cy="47" r="12" fill="#2F6B4F"/><text x="334" y="51.5" text-anchor="middle" class="num">3</text><text x="410" y="73" text-anchor="middle" class="t">Draft</text><text x="400" y="95" text-anchor="middle" class="s">Approved templates</text><text x="400" y="112" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
-<g class="oh-nd" tabindex="0" role="button" data-model="oh-4" aria-label="Step 4: Review" style="--c:#A51C30"><rect x="484" y="212" width="132" height="76" rx="10"/><g transform="translate(494 223)" class="ic" fill="none" stroke="#A51C30" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l5 5"/></g><circle cx="484" cy="212" r="12" fill="#A51C30"/><text x="484" y="216.5" text-anchor="middle" class="num">4</text><text x="560" y="238" text-anchor="middle" class="t">Review</text><text x="550" y="260" text-anchor="middle" class="s">Evidence, exceptions</text><text x="550" y="277" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
-<g class="oh-nd" tabindex="0" role="button" data-model="oh-5" aria-label="Step 5: Approve & deliver" style="--c:#A51C30"><rect x="634" y="212" width="132" height="76" rx="10"/><g transform="translate(644 223)" class="ic" fill="none" stroke="#A51C30" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l9.5-9.5 2.5 2.5L5.5 17.5H3z"/><path d="M11 7l2.5 2.5M2 19.5h16"/></g><circle cx="634" cy="212" r="12" fill="#A51C30"/><text x="634" y="216.5" text-anchor="middle" class="num">5</text><text x="710" y="238" text-anchor="middle" dx="7" class="t sm">Approve &amp; deliver</text><text x="700" y="260" text-anchor="middle" class="s">Named approver signs</text><text x="700" y="277" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
-<g class="oh-nd" tabindex="0" role="button" data-model="oh-6" aria-label="Step 6: Learn" style="--c:#8A651F"><rect x="784" y="47" width="132" height="76" rx="10"/><g transform="translate(794 58)" class="ic" fill="none" stroke="#8A651F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7a7 7 0 0 0-12-1M4 13a7 7 0 0 0 12 1"/><path d="M16 2.5V7h-4.5M4 17.5V13h4.5"/></g><circle cx="784" cy="47" r="12" fill="#8A651F"/><text x="784" y="51.5" text-anchor="middle" class="num">6</text><text x="860" y="73" text-anchor="middle" class="t">Learn</text><text x="850" y="95" text-anchor="middle" class="s">Feeds the next cycle</text><text x="850" y="112" text-anchor="middle" class="a" fill="#8A651F">Shared</text></g>
-</svg><figcaption class="oh-cap"><span><i class="oh-dot" aria-hidden="true"></i>Gold markers are records moving through one cycle. Green steps run on a schedule; red steps are always a person. Select a step.</span><button type="button" class="oh-motion" id="ohMotion" aria-pressed="false">Pause motion</button></figcaption></figure>
-        <ol class="oh-mlist" aria-label="The six steps">
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-1" aria-label="Step 1: Pull · Automation" style="--c:#2F6B4F;--d:260ms"><rect x="214" y="101.0" width="100" height="66" rx="10"/><circle cx="228" cy="101.0" r="11" fill="#2F6B4F" stroke="#fff" stroke-width="2"/><text x="228" y="105.5" text-anchor="middle" class="num">1</text><text x="264.0" y="127.0" text-anchor="middle" class="t">Pull</text><text x="264.0" y="143.0" text-anchor="middle" class="s">approved views</text><text x="264.0" y="158.0" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-2" aria-label="Step 2: Match &amp; flag · Automation" style="--c:#2F6B4F;--d:370ms"><rect x="324" y="101.0" width="100" height="66" rx="10"/><circle cx="338" cy="101.0" r="11" fill="#2F6B4F" stroke="#fff" stroke-width="2"/><text x="338" y="105.5" text-anchor="middle" class="num">2</text><text x="374.0" y="127.0" text-anchor="middle" class="t sm">Match &amp; flag</text><text x="374.0" y="143.0" text-anchor="middle" class="s">ledger + flags</text><text x="374.0" y="158.0" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-3" aria-label="Step 3: Check totals · People" style="--c:#A51C30;--d:480ms"><rect x="434" y="225.0" width="100" height="66" rx="10"/><circle cx="448" cy="225.0" r="11" fill="#A51C30" stroke="#fff" stroke-width="2"/><text x="448" y="229.5" text-anchor="middle" class="num">3</text><text x="484.0" y="251.0" text-anchor="middle" class="t sm">Check totals</text><text x="484.0" y="267.0" text-anchor="middle" class="s">assign exceptions</text><text x="484.0" y="282.0" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-4" aria-label="Step 4: Cross-check · People" style="--c:#A51C30;--d:590ms"><rect x="544" y="325.0" width="100" height="66" rx="10"/><circle cx="558" cy="325.0" r="11" fill="#A51C30" stroke="#fff" stroke-width="2"/><text x="558" y="329.5" text-anchor="middle" class="num">4</text><text x="594.0" y="351.0" text-anchor="middle" class="t sm">Cross-check</text><text x="594.0" y="367.0" text-anchor="middle" class="s">exceptions only</text><text x="594.0" y="382.0" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-5" aria-label="Step 5: Resolve · People" style="--c:#A51C30;--d:700ms"><rect x="654" y="225.0" width="100" height="66" rx="10"/><circle cx="668" cy="225.0" r="11" fill="#A51C30" stroke="#fff" stroke-width="2"/><text x="668" y="229.5" text-anchor="middle" class="num">5</text><text x="704.0" y="251.0" text-anchor="middle" class="t">Resolve</text><text x="704.0" y="267.0" text-anchor="middle" class="s">with data owners</text><text x="704.0" y="282.0" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-6" aria-label="Step 6: Draft · Automation" style="--c:#2F6B4F;--d:810ms"><rect x="764" y="225.0" width="100" height="66" rx="10"/><circle cx="778" cy="225.0" r="11" fill="#2F6B4F" stroke="#fff" stroke-width="2"/><text x="778" y="229.5" text-anchor="middle" class="num">6</text><text x="814.0" y="251.0" text-anchor="middle" class="t">Draft</text><text x="814.0" y="267.0" text-anchor="middle" class="s">approved rows</text><text x="814.0" y="282.0" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-7" aria-label="Step 7: Release Gate · People" style="--c:#A51C30;--d:920ms"><rect x="874" y="425.0" width="100" height="66" rx="10"/><circle cx="888" cy="425.0" r="11" fill="#A51C30" stroke="#fff" stroke-width="2"/><text x="888" y="429.5" text-anchor="middle" class="num">7</text><text x="924.0" y="451.0" text-anchor="middle" class="t sm">Release Gate</text><text x="924.0" y="467.0" text-anchor="middle" class="s">6 checks · signed</text><text x="924.0" y="482.0" text-anchor="middle" class="a" fill="#A51C30">People</text></g>
+<g class="oh-nd oh-step" tabindex="0" role="button" data-model="oh-8" aria-label="Step 8: Send + log · Automation" style="--c:#2F6B4F;--d:1030ms"><rect x="984" y="101.0" width="100" height="66" rx="10"/><circle cx="998" cy="101.0" r="11" fill="#2F6B4F" stroke="#fff" stroke-width="2"/><text x="998" y="105.5" text-anchor="middle" class="num">8</text><text x="1034.0" y="127.0" text-anchor="middle" class="t">Send + log</text><text x="1034.0" y="143.0" text-anchor="middle" class="s">lock the cycle</text><text x="1034.0" y="158.0" text-anchor="middle" class="a" fill="#2F6B4F">Automation</text></g>
+</svg><figcaption class="oh-cap"><span><i class="oh-dot" aria-hidden="true"></i>Gold markers are records moving through one cycle; dashed lines are data in motion. Green steps run on a schedule; red steps are always a person. Select a step, or <a href="./operations.html#weekly-loop">see how it runs, step by step</a>.</span><button type="button" class="oh-motion" id="ohMotion" aria-pressed="false">Pause motion</button></figcaption></figure>
+        <ol class="oh-mlist" aria-label="The eight steps and the learning loop">
           <li><button type="button" data-model="oh-1" style="--c:#2F6B4F"><b>1</b>Pull<em>Automation</em></button></li>
           <li><button type="button" data-model="oh-2" style="--c:#2F6B4F"><b>2</b>Match &amp; flag<em>Automation</em></button></li>
-          <li><button type="button" data-model="oh-3" style="--c:#2F6B4F"><b>3</b>Draft<em>Automation</em></button></li>
-          <li><button type="button" data-model="oh-4" style="--c:#A51C30"><b>4</b>Review<em>People</em></button></li>
-          <li><button type="button" data-model="oh-5" style="--c:#A51C30"><b>5</b>Approve &amp; deliver<em>People</em></button></li>
-          <li><button type="button" data-model="oh-6" style="--c:#8A651F"><b>6</b>Learn<em>Shared</em></button></li>
+          <li><button type="button" data-model="oh-3" style="--c:#A51C30"><b>3</b>Check totals<em>People</em></button></li>
+          <li><button type="button" data-model="oh-4" style="--c:#A51C30"><b>4</b>Cross-check<em>People</em></button></li>
+          <li><button type="button" data-model="oh-5" style="--c:#A51C30"><b>5</b>Resolve<em>People</em></button></li>
+          <li><button type="button" data-model="oh-6" style="--c:#2F6B4F"><b>6</b>Draft<em>Automation</em></button></li>
+          <li><button type="button" data-model="oh-7" style="--c:#A51C30"><b>7</b>Release Gate<em>People</em></button></li>
+          <li><button type="button" data-model="oh-8" style="--c:#2F6B4F"><b>8</b>Send + log<em>Automation</em></button></li>
+          <li><button type="button" data-model="oh-9" style="--c:#8A651F"><b>↺</b>Learn<em>Shared</em></button></li>
         </ol>
         <div class="gr-grid" aria-label="Guardrails">
           <div><b>Read-only to systems of record</b><span>Automation never changes a gift, fund or constituent record.</span></div>
@@ -1914,12 +1886,12 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
       <div class="om-links" aria-label="See it working">
         <p class="om-sub">See it working · other pages in this portfolio</p>
         <div class="lk-grid">
-          <a class="lk" href="./impact-circle.html#visuals"><span class="lk-img"><img src="./assets/thumbs/infographic-impact-circle.svg" width="800" height="500" loading="lazy" decoding="async" alt="Infographic preview: seven-stage Impact Circle stewardship cycle"></span><span class="lk-body"><b>Impact Circle infographic atlas</b><span>Clickable stages and partner areas, each with a worked example.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./workframe.html#contract"><span class="lk-img"><img src="./assets/thumbs/infographic-workframe.svg" width="800" height="500" loading="lazy" decoding="async" alt="Infographic preview: One Harvard aligned with Impact Circle, SMARTER, release gate and VERITAS"></span><span class="lk-body"><b>All models in the Workframe</b><span>One Harvard, the Impact Circle, SMARTER (with its Release Gate) and VERITAS on one page.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./donor-impact-reporting.html#trust"><span class="lk-img"><img src="./assets/thumbs/infographic-release-gate.svg" width="800" height="500" loading="lazy" decoding="async" alt="Infographic preview: six assurance checks with a publication hold"></span><span class="lk-body"><b>Release gate in action</b><span>The six checks on a sample fund, with a publication hold.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./donor-impact-reporting.html#reports"><span class="lk-img"><img src="./assets/thumbs/infographic-endowed-report.svg" width="800" height="500" loading="lazy" decoding="async" alt="Infographic preview: annual endowed fund report with purpose, funding flow, outcomes, and evidence"></span><span class="lk-body"><b>Sample endowed-fund report</b><span>Four report families, including an annual endowed-fund report.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./playbook.html"><span class="lk-img"><img src="./assets/thumbs/infographic-playbook.svg" width="800" height="500" loading="lazy" decoding="async" alt="Infographic preview: eight-stage stewardship delivery roadmap"></span><span class="lk-body"><b>Stewardship reporting playbook</b><span>From donor intent to evidence: the operating guide, chapter by chapter.</span><em>Open page ↗</em></span></a>
-          <a class="lk" href="./donor-profile.html"><span class="lk-img"><img src="./assets/thumbs/infographic-donor-profile.svg" width="800" height="500" loading="lazy" decoding="async" alt="Infographic preview: illustrative constituent and review readiness dashboard"></span><span class="lk-body"><b>Illustrative donor profile</b><span>The review workspace a steward reads before signing a report.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./impact-circle.html#visuals"><span class="lk-img"><img src="./assets/thumbs/ic-atlas.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the impact circle infographic atlas page"></span><span class="lk-body"><b>Impact Circle infographic atlas</b><span>Clickable stages and partner areas, each with a worked example.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./workframe.html#contract"><span class="lk-img"><img src="./assets/thumbs/workframe.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the all models in the workframe page"></span><span class="lk-body"><b>All models in the Workframe</b><span>One Harvard, the Impact Circle, SMARTER (with its Release Gate) and VERITAS on one page.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./donor-impact-reporting.html#trust"><span class="lk-img"><img src="./assets/thumbs/release-gate.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the release gate in action page"></span><span class="lk-body"><b>Release gate in action</b><span>The six checks on a sample fund, with a publication hold.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./donor-impact-reporting.html#reports"><span class="lk-img"><img src="./assets/thumbs/endowed-report.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the sample endowed-fund report page"></span><span class="lk-body"><b>Sample endowed-fund report</b><span>Four report families, including an annual endowed-fund report.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./playbook.html"><span class="lk-img"><img src="./assets/thumbs/playbook.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the stewardship reporting playbook page"></span><span class="lk-body"><b>Stewardship reporting playbook</b><span>From donor intent to evidence: the operating guide, chapter by chapter.</span><em>Open page ↗</em></span></a>
+          <a class="lk" href="./donor-profile.html"><span class="lk-img"><img src="./assets/thumbs/donor-profile.webp" width="800" height="500" loading="lazy" decoding="async" alt="Screenshot of the illustrative donor profile page"></span><span class="lk-body"><b>Illustrative donor profile</b><span>The review workspace a steward reads before signing a report.</span><em>Open page ↗</em></span></a>
         </div>
       </div>
       <p class="ic-disclaimer"><strong>Portfolio scope:</strong> an independent proposed approach aligned with One Harvard principles, not an official Harvard policy or a deployed system. Partner offices, report and donor examples are illustrative.</p>
@@ -3225,12 +3197,16 @@ var G=[
  ['h-4',{g:'Hours per domain per quarter · 4 of 5',t:'Review & approve: 7 → 7 h',c:'People',s:[['Why it stays flat','Review is where trust is earned. The time saved elsewhere is not taken from review, on purpose.']]}],
  ['h-5',{g:'Hours per domain per quarter · 5 of 5',t:'Send & track: 4 → 2 h',c:'Automation',s:[['What changes','Delivery, logging and follow-up reminders run automatically.'],['What stays human','The gift officer’s personal follow-up.']]}],
  // ---- One Harvard loop (adapted from the human-in-the-loop design)
- ['oh-1',{g:'One Harvard · step 1 of 6',t:'Pull',c:'Automation',s:[['What happens','Scheduled, read-only pulls of gift, fund, allocation and distribution data from the systems of record.'],['Repetitive work removed','Re-keying figures and collecting spreadsheets by email.'],['Who decides','Data owners grant access. Nothing is written back to a source.'],['How we measure it','Data is ready by the cycle date.']]}],
- ['oh-2',{g:'One Harvard · step 2 of 6',t:'Match & flag',c:'Automation',s:[['What happens','Amounts are matched to the General Ledger. Variances, missing gift intent and missing consent are flagged.'],['Repetitive work removed','Line-by-line manual tie-outs.'],['Who decides','Finance resolves every variance.'],['How we measure it','Variances are resolved before drafting starts.']]}],
- ['oh-3',{g:'One Harvard · step 3 of 6',t:'Draft',c:'Automation',s:[['What happens','Drafts are assembled from approved templates for each report family, with figures and sources filled in.'],['Repetitive work removed','Building each report from a blank page.'],['Who decides','Stewardship owns the templates.'],['How we measure it','Share of reports drafted from templates.']]}],
- ['oh-4',{g:'One Harvard · step 4 of 6',t:'Review',c:'People',s:[['What happens','A steward reviews the draft, the flags and the evidence. Finance and the academic unit confirm their parts.'],['Why it stays human','Judgment about the donor, the story and the relationship.'],['How we measure it','Review time, and exceptions logged with a reason.']]}],
- ['oh-5',{g:'One Harvard · step 5 of 6',t:'Approve & deliver',c:'People',s:[['What happens','A named approver signs the release. The gift officer delivers it with a personal note.'],['Guardrail','Nothing reaches a donor without a named approver.'],['How we measure it','On-time delivery rate.']]}],
- ['oh-6',{g:'One Harvard · step 6 of 6',t:'Learn',c:'Shared',s:[['What happens','Donor responses and exception reasons update templates, data rules and the calendar.'],['Who decides','The stewardship lead approves each change.'],['How we measure it','Repeat exceptions fall from cycle to cycle.']]}],
+ // ---- One Harvard loop: the reporting loop on one page
+ ['oh-1',{g:"One Harvard · step 1 of 8",t:"Pull",c:"Automation",s:[["What happens", "Scheduled, read-only pulls from approved views of Advance (gifts, funds, stewardees) and FAS Finance (fund values, distributions, spending), plus recipients, fellows and chair holders from their owners."], ["Repetitive work removed", "Re-keying figures and collecting spreadsheets by email."], ["Guardrail", "Read-only. Nothing is ever written back to a system of record."]]}],
+ ['oh-2',{g:"One Harvard · step 2 of 8",t:"Match & flag",c:"Automation",s:[["What happens", "Every fund is tied to the General Ledger, and rules flag what a person must look at: a variance, missing figures, purpose mismatch, missing consent, an anonymity conflict, no gift officer, a due date at risk, a duplicate."], ["Repetitive work removed", "Line-by-line tie-outs in spreadsheets."], ["How we measure it", "All funds tie within $1, or sit on hold with Finance."]]}],
+ ['oh-3',{g:"One Harvard · step 3 of 8",t:"Check totals",c:"People",s:[["What happens", "The Reporting Analyst checks the control totals and posts the exception list; the Director signs off before any review starts."], ["Who decides", "The Director. A mismatch holds only that fund, not the whole batch."]]}],
+ ['oh-4',{g:"One Harvard · step 4 of 8",t:"Cross-check",c:"People",s:[["What happens", "Reviewers check only the flagged rows, not every row, and mark each one approved, corrected or on hold with a reason code."], ["Why it is people", "Judgment about donor intent, names and stories stays with a person who knows the fund."], ["How we measure it", "Every flagged row has a status and a reason before drafting starts."]]}],
+ ['oh-5',{g:"One Harvard · step 5 of 8",t:"Resolve",c:"People",s:[["What happens", "Corrected and held rows go back to their data owners: Finance, Financial Aid, GSAS, Faculty Affairs or the gift officer."], ["Who decides", "Each owner decides in their own area. One Harvard: coordinate, don’t override."]]}],
+ ['oh-6',{g:"One Harvard · step 6 of 8",t:"Draft",c:"Automation",s:[["What happens", "Drafts are built from one approved template per report family, using approved rows only, with every figure linked to its source."], ["Repetitive work removed", "Copying figures into letters by hand."], ["Guardrail", "No draft from a row that is still in review."]]}],
+ ['oh-7',{g:"One Harvard · step 7 of 8",t:"Release Gate",c:"People",s:[["What happens", "Gift officers read the drafts; a named approver signs after six checks: intent, reconciliation, consent, traceability, attribution and authorization."], ["Guardrail", "Nothing reaches a donor on a timer."]]}],
+ ['oh-8',{g:"One Harvard · step 8 of 8",t:"Send + log",c:"Automation",s:[["What happens", "Approved reports go out through the approved channel; the send is logged in Advance and the cycle’s workbook is locked."], ["How we measure it", "On-time rate and corrections after release."]]}],
+ ['oh-9',{g:"One Harvard · the learning loop",t:"Learn",c:"Shared",s:[["What happens", "Reason codes from each cycle become new data rules and template fixes, so the same mistake is caught earlier next time."], ["Who decides", "The stewardship reporting team, with the data owners whose rules change."]]}],
  // ---- Impact Circle stages (names from the Stewardship Reporting Cycle)
  ['ic-1',{g:'Impact Circle · stage 1 of 7',t:'Plan & Prioritize',s:[['What happens','Align donor intent, the reporting calendar and institutional priorities.'],['Partners','FAS Development and gift officers.'],['Automation’s part','Builds the reporting calendar from fund records.'],['Done when','Every fund has an owner and a due date.']]}],
  ['ic-2',{g:'Impact Circle · stage 2 of 7',t:'Prepare & Gather',s:[['What happens','Collect fund, impact and stakeholder inputs.'],['Partners','Finance, academic units and Institutional Research.'],['Automation’s part','Scheduled pulls and ledger matches.'],['Done when','Every source is confirmed by its owner.']]}],
@@ -3287,9 +3263,10 @@ dlg.addEventListener('close',function(){if(opener&&document.contains(opener))ope
 })();
 (function(){'use strict';
 var svg=document.getElementById('ohLoop'),btn=document.getElementById('ohMotion');if(!svg||!btn||!svg.pauseAnimations)return;
-function set(paused){if(paused)svg.pauseAnimations();else svg.unpauseAnimations();btn.setAttribute('aria-pressed',String(paused));btn.textContent=paused?'Play motion':'Pause motion'}
+function set(paused){if(paused)svg.pauseAnimations();else svg.unpauseAnimations();svg.classList.toggle('oh-paused',paused);btn.setAttribute('aria-pressed',String(paused));btn.textContent=paused?'Play motion':'Pause motion'}
 var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(rm){btn.hidden=true;svg.pauseAnimations();}
+if(rm||!('IntersectionObserver' in window)){svg.classList.add('oh-in')}else{svg.classList.add('oh-anim');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){svg.classList.add('oh-in');io.disconnect()}})},{threshold:.2});io.observe(svg)}
 btn.addEventListener('click',function(){set(btn.getAttribute('aria-pressed')!=='true')});
 })();
 
