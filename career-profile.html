@@ -1295,6 +1295,25 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
 @media (prefers-reduced-motion:reduce){#netDatahub .net-links path.dh-flow,#netDatahub .hub{animation:none}#netDatahub.dh-anim .node,#netDatahub.dh-anim .hub{opacity:1;transform:none;transition:none}#netDatahub .dh-dot{display:none}}
 </style>
 <link rel="stylesheet" href="./assets/aad-model.css">
+<style id="career-visual-enhancement-20261109">
+.stew-anime{margin:14px 0 18px;border:1px solid #D6E0E7;border-radius:15px;overflow:hidden;background:#F6F2EA;box-shadow:0 8px 24px rgba(32,51,70,.07)}
+.stew-anime svg{display:block;width:100%;height:auto}
+.stew-anime-caption{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 16px;background:#FFF;color:#536476;font:13px/1.4 Arial,sans-serif}
+.stew-anime-caption strong{color:#283F52}
+.stew-approval{font-weight:700;color:#8E3952;background:#F9EEF1;border-radius:999px;padding:5px 11px}
+.om-links .lk-grid{width:100%}
+.om-links a.lk{box-shadow:0 5px 17px rgba(25,53,78,.09);border-radius:14px;transition:transform .18s,box-shadow .18s;border-color:#D7E1E9}
+.om-links a.lk:hover,.om-links a.lk:focus-visible{transform:translateY(-3px);box-shadow:0 12px 26px rgba(25,53,78,.16)}
+.om-links .lk-img{position:relative;background:#E8EEF4;padding:7px 7px 0;box-sizing:border-box;aspect-ratio:16/10;overflow:hidden}
+.om-links .lk-img:before{content:"";display:block;position:absolute;top:0;left:0;right:0;height:10px;background:linear-gradient(90deg,#79243B,#BD7785 30%,#D9E4E9 30%);opacity:.9;z-index:1}
+.om-links .lk-img img{width:100%;height:100%;display:block;border-radius:5px 5px 0 0;object-fit:cover}
+.om-links .lk-body{padding:15px 16px 17px;background:white}
+.om-links .lk-body b{font-size:17px}
+.om-links .lk-body em{margin-top:10px;letter-spacing:.02em}
+.vw-card video{background:#E8EDF2}
+@media(prefers-reduced-motion:reduce){.om-links a.lk{transition:none}.om-links a.lk:hover{transform:none}}
+@media(max-width:600px){.stew-anime-caption{display:block}.stew-approval{display:inline-block;margin-top:6px}}
+</style>
 </head>
 
 <body>
@@ -1419,8 +1438,8 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
             <figcaption id="vw-hub-cap"><b>Impact Circle · Stewardship Hub walkthrough</b><span>6½ min · How One Harvard partners, the seven-stage Impact Circle, SMARTER gates and VERITAS reports fit together, and the hub's team tools.</span><a href="./impact-circle.html">Open the hub ↗</a></figcaption>
           </figure>
           <figure class="vw-card">
-            <video controls preload="none" playsinline poster="./assets/thumbs/video-story.webp" width="1920" height="1080" aria-describedby="vw-story-cap"><source src="./Story.mp4" type="video/mp4"></video>
-            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>4 min · A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. The donor, fund and student are fictional.</span><a href="./communications.html#video-thanks">See the email and send checks ↗</a></figcaption>
+            <video controls preload="none" playsinline poster="./assets/thumbs/video-story.webp" width="1920" height="1080" aria-describedby="vw-story-cap"><source src="./Story.mp4#t=167" type="video/mp4"></video>
+            <figcaption id="vw-story-cap"><b>Donor thank-you story · sample</b><span>4 min · Opens at 2:47 for the featured scene. A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. The donor, fund and student are fictional.</span><a href="./communications.html#video-thanks">See the email and send checks ↗</a></figcaption>
           </figure>
         </div>
       </div>
@@ -1657,7 +1676,51 @@ a.arch-node:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);color:v
         <header class="om-head"><p class="om-k"><i>1</i>One Harvard · automation with guardrails</p>
           <h3>Automation takes the repetitive work. People keep every decision.</h3>
           <p>One Harvard means coordinating without formal authority: offices share the automation and the standards, and each office keeps its own decisions.</p></header>
-        <figure class="oh-fig"><svg class="oh-loop" id="ohLoop" viewBox="0 -16 940 352" role="group" aria-label="Automation and people: six-step stewardship reporting loop, animated">
+        <div class="stew-anime" role="img" aria-label="Anime-inspired illustrated university stewardship desk. Data and template automation prepare reporting, while a reviewer retains the final approval decision.">
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<defs><linearGradient id="stAnimeBg" x2="1" y2="1"><stop stop-color="#F5F0E9"/><stop offset="1" stop-color="#E5F1F2"/></linearGradient><linearGradient id="stDesk" x2="0" y2="1"><stop stop-color="#A77358"/><stop offset="1" stop-color="#6E473F"/></linearGradient><filter id="stAnimeShadow"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#314755" flood-opacity=".13"/></filter></defs>
+<rect width="960" height="300" rx="17" fill="url(#stAnimeBg)"/>
+<path d="M0 198 L960 198" stroke="#D5D9CF" stroke-width="2"/>
+<rect x="20" y="19" width="285" height="175" rx="9" fill="#EFF8F8" stroke="#C7D9DD" stroke-width="6"/>
+<path d="M160 19 V194 M20 109 H305" stroke="#C7D9DD" stroke-width="6"/>
+<path d="M50 194V122L85 95 111 117 137 76 170 104 201 77 242 106 280 84 V194" fill="#B6C8C5" opacity=".55"/>
+<path d="M20 194L61 145 82 153 111 122 142 146 177 116 204 135 248 111 305 144V194" fill="#A2B4A8" opacity=".65"/>
+<g filter="url(#stAnimeShadow)">
+<rect x="327" y="46" width="268" height="170" rx="12" fill="#263F54"/>
+<rect x="336" y="57" width="250" height="149" rx="5" fill="#F8FAFC"/>
+<rect x="336" y="57" width="250" height="23" rx="4" fill="#E8EFF4"/>
+<circle cx="350" cy="69" r="4" fill="#BE6974"/><circle cx="363" cy="69" r="4" fill="#D3B164"/><circle cx="376" cy="69" r="4" fill="#74AFA2"/>
+<rect x="349" y="92" width="99" height="13" rx="4" fill="#D8E8EE"/>
+<rect x="349" y="116" width="128" height="9" rx="4" fill="#E1E9EF"/><rect x="349" y="135" width="159" height="9" rx="4" fill="#E1E9EF"/><rect x="349" y="154" width="116" height="9" rx="4" fill="#E1E9EF"/>
+<circle cx="536" cy="119" r="23" fill="#DEF1E8"/><path d="M524 119l9 9 17-21" fill="none" stroke="#28765D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M440 215v18h36v-18" fill="#526D7F"/><rect x="413" y="233" width="92" height="6" rx="3" fill="#526D7F"/>
+<rect x="618" y="64" width="314" height="152" rx="12" fill="#2C4356"/>
+<rect x="627" y="73" width="296" height="134" rx="5" fill="#FBFCFD"/>
+<rect x="627" y="73" width="296" height="23" fill="#F3E8EC"/>
+<rect x="643" y="109" width="125" height="12" rx="4" fill="#D5E3EB"/>
+<rect x="643" y="132" width="208" height="9" rx="4" fill="#E1EAF0"/><rect x="643" y="151" width="169" height="9" rx="4" fill="#E1EAF0"/>
+<rect x="643" y="171" width="117" height="23" rx="7" fill="#E9F3ED"/><rect x="774" y="171" width="129" height="23" rx="7" fill="#F6E5E9"/>
+<path d="M657 183l5 5 11-11" stroke="#2F8061" stroke-width="3" fill="none"/><path d="M790 179l9 9m0-9l-9 9" stroke="#9C4560" stroke-width="2"/>
+<path d="M749 216v18h37v-18" fill="#526D7F"/><rect x="726" y="233" width="83" height="6" rx="3" fill="#526D7F"/>
+</g>
+<path d="M0 265Q310 249 960 258V300H0Z" fill="url(#stDesk)"/>
+<g transform="translate(137 166)">
+<path d="M-67 103Q-71 24-32-11Q10-39 49-9Q71 21 79 103" fill="#7B3752"/>
+<path d="M-11 18Q-8 43 8 46Q26 36 27 13" fill="#D59E7C"/>
+<ellipse cx="7" cy="-29" rx="37" ry="46" fill="#DFA883"/>
+<path d="M-32-36Q-44-93 11-100Q54-97 42-42Q28-57 12-69Q-7-43-32-36Z" fill="#302E3F"/>
+<path d="M-25-38Q-52-58-34-88Q-18-104 2-99" fill="#302E3F"/>
+<path d="M-9-25h7M19-25h7" stroke="#513B3C" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M5-9q5 4 10 0" stroke="#9F6461" stroke-width="1.5" fill="none"/>
+<path d="M-16 18L7 40 29 18" stroke="#F2E5DC" stroke-width="14" fill="none"/>
+</g>
+<rect x="270" y="268" width="200" height="12" rx="6" fill="#273E4C"/>
+<path d="M315 267L343 243H448L467 267" fill="#DCE7EC" stroke="#9EB4C3"/>
+<rect x="509" y="268" width="54" height="27" rx="4" fill="#EFE7DD"/><path d="M563 274q25-3 0 14" fill="none" stroke="#EFE7DD" stroke-width="6"/>
+<path d="M883 269q-22-30-9-55q21 8 15 37q12-33 28-30q0 31-21 48" fill="#5D8B77"/><rect x="869" y="269" width="44" height="31" rx="4" fill="#B27966"/>
+</svg>
+<div class="stew-anime-caption"><span><strong>A proposed human-in-the-loop workflow</strong> · read-only retrieval, evidence matching and draft preparation</span><span class="stew-approval">Named reviewer controls every donor release</span></div>
+</div><figure class="oh-fig"><svg class="oh-loop" id="ohLoop" viewBox="0 -16 940 352" role="group" aria-label="Automation and people: six-step stewardship reporting loop, animated">
 <defs><marker id="ohAr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6E7780"/></marker>
 <radialGradient id="ohTok"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#E9C98B"/><stop offset="1" stop-color="#8A651F"/></radialGradient>
 <linearGradient id="ohLaneA" x1="0" x2="1"><stop offset="0" stop-color="#E4F1E9"/><stop offset="1" stop-color="#F3F9F5"/></linearGradient>
