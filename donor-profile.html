@@ -164,8 +164,12 @@
   .vt-tabs button[aria-selected="true"]{background:#a51c30;border-color:#a51c30;color:#fff}
   .vt-head{padding:10px 14px;border-bottom:1px dashed var(--line);font:13px var(--font-sans);color:#5b6b7d}
   .vt-head b{color:var(--ink)}
-  .vt-body{padding:12px 14px 14px;white-space:pre-line;font:15px/1.6 var(--font-serif);color:var(--ink);max-height:420px;overflow:auto}
-  .vt-cta{display:inline-block;margin:2px 0;padding:6px 12px;border-radius:999px;background:#a51c30;color:#fff;font:700 12.5px var(--font-sans)}
+  .vt-body{padding:12px 14px 14px;white-space:pre-line;font:15px/1.6 var(--font-serif);color:var(--ink);max-height:640px;overflow:auto}
+  .vt-cta{display:inline-block;margin:2px 0;padding:6px 12px;border-radius:999px;background:#a51c30;color:#fff;font:700 12.5px var(--font-sans);text-decoration:none}
+  .vt-thumb{position:relative;display:block;max-width:420px;margin:4px 0 8px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0}
+  .vt-thumb img{display:block;width:100%;height:auto}
+  .vt-play{position:absolute;left:12px;bottom:12px;width:46px;height:46px;border-radius:50%;background:rgba(165,28,48,.92);color:#fff;display:grid;place-items:center;font:20px/1 var(--font-sans);box-shadow:0 0 0 3px #fff;padding-left:4px;box-sizing:border-box}
+  .vt-thumb:hover .vt-play,.vt-thumb:focus-visible .vt-play{background:#7d1424}
 
   /* Prior reports */
   .reports-table{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
@@ -603,7 +607,7 @@ I wanted to share something special with you and your family.
 This fall, a new Ph.D. student began her first semester at Harvard because of the Whitfield Family Graduate Fellowship. Her name is Lena, and she studies how to turn sunlight into clean fuel. When we asked what the fellowship means to her, she said it was the reason she could say yes.
 
 We made a short video so you could meet her:
-<span class="vt-cta">▶ Watch Lena’s story (4 minutes)</span>
+<a class="vt-thumb" href="./Story.mp4" data-play-story aria-label="Play Lena’s 4-minute video"><img src="./assets/thumbs/video-story.webp?v=3" width="960" height="523" alt="A thank-you card beside lab goggles, the opening of Lena’s video" loading="lazy" decoding="async"><span class="vt-play" aria-hidden="true">▶</span></a><a class="vt-cta" href="./Story.mp4" data-play-story>▶ Watch Lena’s story (4 minutes)</a>
 
 Your fellowship covers her tuition, health insurance and stipend for five years, giving her the freedom to pursue bold questions from her very first day in the lab. Because it is endowed, it will do the same for a new student in every generation.
 
@@ -619,7 +623,7 @@ With gratitude,
 On behalf of the Faculty of Arts and Sciences, thank you for establishing the Whitfield Family Graduate Fellowship.
 
 We are delighted to introduce the first Whitfield Fellow, Lena, a first-year Ph.D. student in chemistry. We invite you to watch a brief video in which she shares what your support has made possible:
-<span class="vt-cta">▶ Watch the video (4 minutes)</span>
+<a class="vt-thumb" href="./Story.mp4" data-play-story aria-label="Play Lena’s 4-minute video"><img src="./assets/thumbs/video-story.webp?v=3" width="960" height="523" alt="A thank-you card beside lab goggles, the opening of Lena’s video" loading="lazy" decoding="async"><span class="vt-play" aria-hidden="true">▶</span></a><a class="vt-cta" href="./Story.mp4" data-play-story>▶ Watch the video (4 minutes)</a>
 
 Your fellowship provides tuition, health insurance and a stipend for five years. As an endowed fund, it will support a Ph.D. student in perpetuity. It is one of 50 endowed fellowships established this year by a community of donors committed to the next generation of scholars.
 
@@ -765,6 +769,16 @@ Harvard Alumni Affairs and Development</div></div>
 'use strict';
 const $ = (s, ctx = document) => ctx.querySelector(s);
 const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+// Thumbnail and button in the email preview play the sample video above
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('[data-play-story]');
+  if (!a) return;
+  const v = document.querySelector('#story-video video');
+  if (!v) return;
+  e.preventDefault();
+  v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  try { v.play(); } catch (err) {}
+});
 // Email tone tabs (story tab) and deep links into the story tab
 document.addEventListener('click', e => {
   const b = e.target.closest && e.target.closest('.vt-tabs [role="tab"]');
