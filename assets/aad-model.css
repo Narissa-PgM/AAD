@@ -105,12 +105,14 @@
 .aadm-hm td.aadm-hm-c a{display:inline-block;width:22px;height:22px;border-radius:6px;vertical-align:middle}
 .aadm-hm td.aadm-hm-c a.p{background:var(--c);box-shadow:0 2px 5px -2px var(--c)}
 .aadm-hm td.aadm-hm-c a.s{background:color-mix(in srgb,var(--c) 22%,#fff);border:1px solid color-mix(in srgb,var(--c) 45%,#fff)}
+.aadm-hm td.aadm-hm-c a.d{background:#fff;border:1.5px dashed color-mix(in srgb,var(--c) 60%,#fff)}
 .aadm-hm td.aadm-hm-c a:hover,.aadm-hm td.aadm-hm-c a:focus-visible{outline:2px solid #13171C;outline-offset:1px}
 .aadm-hm tbody tr:not(.aadm-hm-area):hover{background:#FBFAF7}
 .aadm-hm-key{margin:8px 0 0;font-size:12px;color:var(--aadm-muted)}
 .aadm-hm-key span{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-left:6px}
 .aadm-hm-key span.p{background:#3B4754}
 .aadm-hm-key span.s{background:#D5DAE0;border:1px solid #AEB6BF}
+.aadm-hm-key span.d{background:#fff;border:1.5px dashed #AEB6BF}
 
 @media (max-width:900px){
   .aadm-grid{grid-template-columns:1fr}
@@ -139,3 +141,6 @@
 .wf-model b{color:#A51C30}
 .wf-model:hover,.wf-model:focus-visible{background:#F6DDE2;color:#13171C;outline:none}
 @media (max-width:560px){.aadm-rb{grid-template-columns:repeat(2,minmax(0,1fr))}.aadm-rb li::before{display:none!important}.aadm-rb button{padding:9px 10px;gap:8px}.aadm-rb em{display:none}.aadm-g{width:28px;height:28px;padding:5px}.aadm-rb li:nth-child(even) button{border-left:1px solid var(--aadm-line)}.wf-model{white-space:normal}}
+
+.aadm-cov{max-width:100%;min-width:0}
+.aadm-hm-wrap{max-width:100%;overflow-x:auto}

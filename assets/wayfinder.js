@@ -2,34 +2,35 @@
 /* Stewardship Journey Navigator v2 — ScrollSpy / Visibility / URL State. A public/static-site navigation tool; it stores only page paths, not donor data. */
 (function(){'use strict';
   var BASE=[
-    ['career-profile.html','Career Profile','Start here · capability with proof','P'],
-    ['fas-stewardship.html','FAS Pilot Brief','SMARTER plan for FAS stewardship','F'],
-    ['workframe.html','Portfolio Workframe','Operating model & role coverage','W'],
-    ['index.html','Operating Suite','Live demonstration','S'],
-    ['strategic-leadership.html','Strategic Leadership','Program 1','1'],
-    ['donor-impact-reporting.html','Donor Impact Reporting','Program 2','2'],
-    ['team-leadership.html','Team Leadership','Program 3','3'],
-    ['campaign-initiatives.html','Campaign Initiatives','Program 4','4'],
-    ['playbook.html','Executive Playbook','Workflows & SOPs','B'],
-    ['program-office.html','Program Office','Timelines & delivery','O'],
-    ['operations.html','Operations & Alerts','Tracking & release','A'],
-    ['donor-profile.html','Donor Dossier','Synthetic record','D'],
-    ['communications.html','Communications Studio','Donor storytelling','C'],
-    ['impact-circle.html','Impact Circle','Annual wheel, open door & team calendar','◈']
+    ['career-profile.html','Career Profile','Start here · capability with proof','1'],
+    ['fas-stewardship.html','FAS Pilot Brief','The plan · Ph.D. fellowship pilot','2'],
+    ['operations.html','Operations','How it runs · the weekly loop','3'],
+    ['donor-profile.html','Donor Record','The work up close · Release Gate','4'],
+    ['archive.html','Detail by section','Older work samples, kept for depth','◇'],
+    ['impact-circle.html','Impact Circle hub','Supporting · team calendar & open door','◈'],
+    ['playbook.html','Playbook','Archive · workflows & SOPs','·'],
+    ['workframe.html','Workframe','Archive · model reference','·'],
+    ['operating-suite.html','Operating Suite','Archive · report gallery','·'],
+    ['strategic-leadership.html','Strategic Leadership','Archive · posting area 1','·'],
+    ['donor-impact-reporting.html','Donor Impact Reporting','Archive · posting area 2','·'],
+    ['team-leadership.html','Team Leadership','Archive · posting area 3','·'],
+    ['campaign-initiatives.html','Campaign Initiatives','Archive · posting area 4','·'],
+    ['program-office.html','Program Office','Archive · timelines & delivery','·'],
+    ['communications.html','Communications Studio','Archive · storytelling library','·']
   ];
   var KEY='aad_wayfinder_v1';
-  var route=["workframe.html","index.html?report=endowed#reportgallery","donor-profile.html","communications.html","index.html#suite","index.html?report=current#reportgallery","index.html?report=grant#reportgallery","index.html?report=capital#reportgallery","playbook.html#start","operations.html","program-office.html#start","strategic-leadership.html#northstar","team-leadership.html#team","campaign-initiatives.html#campaign","impact-circle.html#today"];
-  var GUIDE=[["workframe.html","Workframe","The map. Two minutes, then leave."],["index.html?report=endowed#reportgallery","Report Gallery — Endowed fund","University Opportunity Endowment · $55,000 distributed · $46,000 spent · $9,000 available · 18 aid awards"],["donor-profile.html","Donor profile","Eleanor M. Whitfield · fictional donor dossier"],["communications.html","Communications","The donor letter accompanying the endowed report"],["index.html#suite","Operating Suite","How reports are held, checked and released"],["index.html?report=current#reportgallery","Current-use gift","Student Experience & Access Fund · report 02"],["index.html?report=grant#reportgallery","Restricted grant","Biomedical Training Grant · report 04"],["index.html?report=capital#reportgallery","Capital project","Learning Commons · report 03 · whole-project figures"],["playbook.html#start","Playbook","Procedures behind the reports"],["operations.html","Operations board","Where the numbers come from"],["program-office.html#start","Program office","Schedule, capacity and risks"],["strategic-leadership.html#northstar","Strategic leadership","Priorities and standards"],["team-leadership.html#team","Team and operations","Who does the work"],["campaign-initiatives.html#campaign","Campaign and initiatives","How reports serve a campaign"],["impact-circle.html#today","Open-door hub","Daily team board"]];
+  var route=["career-profile.html","fas-stewardship.html#fellowship","operations.html#weekly-loop","donor-profile.html","archive.html"];
+  var GUIDE=[["career-profile.html","Career profile","Who I am, with proof · 2 minutes"],["fas-stewardship.html#fellowship","FAS pilot brief","The plan, piloted on the Ph.D. fellowship funds"],["operations.html#weekly-loop","Operations","How the reporting loop runs, step by step"],["donor-profile.html","Donor record","One record, its story, video and Release Gate"],["archive.html","Detail by section","Older work samples, by posting area"]];
   var config={};BASE.forEach(function(v){config[v[0]]=v});
-  function file(){return document.documentElement.getAttribute('data-aad-page')||decodeURIComponent(location.pathname.split('/').pop())||'index.html'}
+  function file(){return document.documentElement.getAttribute('data-aad-page')||decodeURIComponent(location.pathname.split('/').pop())||'operating-suite.html'}
   function base(fileName){return fileName.split('#')[0].split('?')[0]}
   function valid(rel){return config[base(rel)]!==undefined}
-  function guideKey(url){var u=new URL(url,location.href);return (u.pathname.split('/').pop()||'index.html')+(u.search||'')+(u.hash||'')}
+  function guideKey(url){var u=new URL(url,location.href);return (u.pathname.split('/').pop()||'operating-suite.html')+(u.search||'')+(u.hash||'')}
   function isGuideVisited(v){return (state.guideVisited||[]).indexOf(v)>=0}
-  function markGuide(){var key=loc(),matches=[];GUIDE.forEach(function(g){var target=g[0],tf=base(target);if(tf!==file())return;if(tf==='index.html'){var rid=new URLSearchParams(location.search).get('report')||'endowed';if(target.indexOf('#reportgallery')>=0){if(location.hash==='#reportgallery'&&target.indexOf('report='+rid)>=0)matches.push(target)}else if(location.hash!=='#reportgallery')matches.push(target)}else{matches.push(target)}});if(!state.guideVisited)state.guideVisited=[];matches.forEach(function(k){if(!isGuideVisited(k))state.guideVisited.push(k)})}
+  function markGuide(){var key=loc(),matches=[];GUIDE.forEach(function(g){var target=g[0],tf=base(target);if(tf!==file())return;if(tf==='operating-suite.html'){var rid=new URLSearchParams(location.search).get('report')||'endowed';if(target.indexOf('#reportgallery')>=0){if(location.hash==='#reportgallery'&&target.indexOf('report='+rid)>=0)matches.push(target)}else if(location.hash!=='#reportgallery')matches.push(target)}else{matches.push(target)}});if(!state.guideVisited)state.guideVisited=[];matches.forEach(function(k){if(!isGuideVisited(k))state.guideVisited.push(k)})}
   function guideNext(){return GUIDE.find(function(g){return !isGuideVisited(g[0])})||GUIDE[0]}
-  function renderGuide(){return '<div class="aad-nav-group"><h3>Series guide <span>'+(state.guideVisited||[]).length+'/15 steps explored</span></h3><p style="font-size:11px;color:#526878;margin:0 0 9px">Short path: 01 Workframe → 02 Endowed report → 03 Donor profile. Reports are fictional worked examples; numbers are not institutional financial data.</p><div class="aad-nav-link-list aad-guide-list">'+GUIDE.map(function(g,i){var done=isGuideVisited(g[0]),current=guideCurrent(g[0]);return '<a class="aad-nav-link" href="'+esc(href(g[0]))+'" data-wf-go="'+esc(g[0])+'" '+(current?'aria-current="step"':'')+'><span class="aad-nav-n">'+(done?'✓':String(i+1).padStart(2,'0'))+'</span><span><strong>'+esc(g[1])+'</strong><small>'+esc(g[2])+'</small></span></a>'}).join('')+'</div></div>'}
-  function guideCurrent(target){if(base(target)!==file())return false;if(file()!=='index.html')return true;if(target.indexOf('#reportgallery')>=0){return location.hash==='#reportgallery'&&(new URL(target,location.href).searchParams.get('report')===(new URLSearchParams(location.search).get('report')||'endowed'))}return location.hash!=='#reportgallery'}
+  function renderGuide(){return '<div class="aad-nav-group"><h3>Series guide <span>'+(state.guideVisited||[]).length+'/'+GUIDE.length+' core steps explored</span></h3><p style="font-size:11px;color:#526878;margin:0 0 9px">Core path: 01 Career profile → 02 FAS pilot brief → 03 Operations → 04 Donor record → 05 Detail by section. Examples are fictional; figures are labeled.</p><div class="aad-nav-link-list aad-guide-list">'+GUIDE.map(function(g,i){var done=isGuideVisited(g[0]),current=guideCurrent(g[0]);return '<a class="aad-nav-link" href="'+esc(href(g[0]))+'" data-wf-go="'+esc(g[0])+'" '+(current?'aria-current="step"':'')+'><span class="aad-nav-n">'+(done?'✓':String(i+1).padStart(2,'0'))+'</span><span><strong>'+esc(g[1])+'</strong><small>'+esc(g[2])+'</small></span></a>'}).join('')+'</div></div>'}
+  function guideCurrent(target){if(base(target)!==file())return false;if(file()!=='operating-suite.html')return true;if(target.indexOf('#reportgallery')>=0){return location.hash==='#reportgallery'&&(new URL(target,location.href).searchParams.get('report')===(new URLSearchParams(location.search).get('report')||'endowed'))}return location.hash!=='#reportgallery'}
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');return {visited:Array.isArray(d.visited)?d.visited:[],trail:Array.isArray(d.trail)?d.trail:[],playbook:typeof d.playbook==='string'?d.playbook:'',guideVisited:Array.isArray(d.guideVisited)?d.guideVisited:[],origin:d.origin||null}}catch(e){return {visited:[],trail:[],playbook:'',guideVisited:[],origin:null}}}
   var state=load(), lastUrl='', widget, trigger, panel, opened=false, staticPage=false;
@@ -59,22 +60,22 @@
     return '<a class="aad-nav-link" href="'+esc(href(target))+'" data-wf-go="'+esc(target)+'" '+(isCurrent?'aria-current="page"':'')+'><span class="aad-nav-n">'+(done?'✓':esc(v[3]))+'</span><span><strong>'+esc(v[1])+'</strong><small>'+esc(v[2])+'</small></span></a>'
   }).join('')}
   function renderLaunch(){if(!trigger)return;var l=config[file()]||['','Unknown page'];var subtitle=section()||l[2]||'';
-    trigger.querySelector('.aad-nav-launch-text').innerHTML='<b>You are here: '+esc(l[1])+'</b><small>'+esc(subtitle)+' · '+(state.guideVisited||[]).length+'/15 series steps</small>'
+    trigger.querySelector('.aad-nav-launch-text').innerHTML='<b>You are here: '+esc(l[1])+'</b><small>'+esc(subtitle)+' · '+(state.guideVisited||[]).length+'/'+GUIDE.length+' core steps</small>'
   }
   function renderPanel(){if(!panel)return;var cur=file(),p=prev(),origin=state.origin&&state.origin.to===cur?sanitize(state.origin.from):'',progress=Math.round(state.visited.length/BASE.length*100);
     var recent=state.trail.slice(-7).reverse().filter(function(x,i,a){return a.indexOf(x)===i&&valid(x)}).slice(0,5);
     var next=guideNext()[0];
-    panel.innerHTML='<div class="aad-nav-panel-head"><div><div class="aad-nav-kicker">Your navigation compass</div><h2>Your navigation compass</h2><p>'+BASE.length+' connected workspaces · one coherent operating story</p></div><button class="aad-nav-close" type="button" data-wf-close aria-label="Close navigator">×</button></div>'+
+    panel.innerHTML='<div class="aad-nav-panel-head"><div><div class="aad-nav-kicker">Your navigation compass</div><h2>Your navigation compass</h2><p>Four core pages · older work kept by section</p></div><button class="aad-nav-close" type="button" data-wf-close aria-label="Close navigator">×</button></div>'+
       '<div class="aad-nav-panel-body"><nav class="aad-nav-breadcrumb" aria-label="You are here"><span>Portfolio</span><i aria-hidden="true">›</i><span>'+esc((config[cur]||["","Page"])[1])+'</span>'+(section()?'<i aria-hidden="true">›</i><strong>'+esc(section())+'</strong>':'')+'</nav><div class="aad-nav-here"><small>Current location</small><b>'+esc(section()?((config[cur]||['','Profile'])[1]+' · '+section()):label(loc()))+'</b><span>Current workspace and chapter are shown above. The visit trail remembers how you arrived here.</span></div>'+
       '<div class="aad-nav-actions">'+
-      (origin?'<a class="primary" href="'+esc(href(origin))+'" data-wf-go="'+esc(origin)+'">← Return to '+esc(config[base(origin)][1])+'</a>':p?'<a class="primary" href="'+esc(href(p))+'" data-wf-go="'+esc(p)+'">← Previous stop</a>':'<a class="primary" href="./workframe.html" data-wf-go="workframe.html">Open portfolio map</a>')+
+      (origin?'<a class="primary" href="'+esc(href(origin))+'" data-wf-go="'+esc(origin)+'">← Return to '+esc(config[base(origin)][1])+'</a>':p?'<a class="primary" href="'+esc(href(p))+'" data-wf-go="'+esc(p)+'">← Previous stop</a>':'<a class="primary" href="./career-profile.html" data-wf-go="career-profile.html">Start at the career profile</a>')+
       (state.playbook&&cur!=='playbook.html'?'<a href="'+esc(href(state.playbook))+'" data-wf-go="'+esc(state.playbook)+'">Resume Playbook</a>':'<a href="./career-profile.html" data-wf-go="career-profile.html">Professional profile</a>')+
-      '<a href="./workframe.html" data-wf-go="workframe.html">Four-program map</a><a href="./index.html#suite" data-wf-go="index.html#suite">Operating Suite</a></div>'+
+      '<a href="./fas-stewardship.html" data-wf-go="fas-stewardship.html">FAS pilot brief</a><a href="./archive.html" data-wf-go="archive.html">Detail by section</a></div>'+
       '<div class="aad-nav-guide"><b>Reading position</b><span>ScrollSpy highlights the visible section. Use the links to jump instantly, and Return to retrace your path.</span></div>'+
       '<div class="aad-nav-group"><h3>Exploration trail <span>'+state.visited.length+'/'+BASE.length+' visited</span></h3><div class="aad-nav-progress"><i style="width:'+progress+'%"></i></div><p style="font-size:10.5px;color:#607486;margin:5px 0 0">Visited means opened—not approved, completed, or verified.</p></div>'+
-      renderGuide()+'<div class="aad-nav-actions" style="margin-bottom:0"><a class="primary" href="'+esc(href(next))+'" data-wf-go="'+esc(next)+'">Next unvisited series step →</a><a href="./index.html?report=endowed#reportgallery" data-wf-go="index.html?report=endowed#reportgallery">Endowed report →</a></div>'+
-      '<div class="aad-nav-group"><h3>Additional program workspaces</h3><div class="aad-nav-link-list">'+list(BASE.slice(4,8))+'</div></div>'+
-      '<div class="aad-nav-group"><h3>Additional portfolio links</h3><div class="aad-nav-link-list">'+list(BASE.slice(0,4).concat(BASE.slice(8)))+'</div></div>'+
+      renderGuide()+'<div class="aad-nav-actions" style="margin-bottom:0"><a class="primary" href="'+esc(href(next))+'" data-wf-go="'+esc(next)+'">Next unvisited series step →</a><a href="./archive.html" data-wf-go="archive.html">All detail →</a></div>'+
+      '<div class="aad-nav-group"><h3>Core path</h3><div class="aad-nav-link-list">'+list(BASE.slice(0,5))+'</div></div>'+
+      '<div class="aad-nav-group"><h3>Supporting and archived detail</h3><div class="aad-nav-link-list">'+list(BASE.slice(5))+'</div></div>'+
       '<div class="aad-nav-group"><h3>Recent stops</h3><div class="aad-nav-trail">'+(recent.length?recent.map(function(t){return '<a href="'+esc(href(t))+'" data-wf-go="'+esc(t)+'"><span>'+esc(label(t))+'</span><small>Go ↗</small></a>'}).join(''):'<small>No places visited yet</small>')+'</div></div>'+
       '<div class="aad-nav-footer"><p>Your trail is stored in this browser only. No donor data or message content is collected.</p><button class="aad-nav-reset" type="button" data-wf-reset>Clear visit history</button></div></div>';
   }
@@ -177,12 +178,12 @@
       } else {
         var url;try{url=new URL(raw,location.href)}catch(e){return}
         if(url.origin!==location.origin)return;
-        dest=decodeURIComponent(url.pathname.split('/').pop())||'index.html';
+        dest=decodeURIComponent(url.pathname.split('/').pop())||'operating-suite.html';
       }
       if(!config[dest]||dest===file())return;
       var from=loc();if(staticPage){var live=(document.documentElement.getAttribute('data-aad-section-label')||''); var active=document.querySelector('a[href^="#"][aria-current="location"]');if(active)from=file()+active.getAttribute('href');} state.origin={from:from,to:dest};save();
     },true);
-    document.addEventListener('click',function(e){var pick=e.target.closest('[data-report-choose]');if(!pick||file()!=='index.html')return;var id=pick.getAttribute('data-report-choose');if(['endowed','current','grant','capital'].indexOf(id)<0)return;history.replaceState(history.state,'','?report='+encodeURIComponent(id)+'#reportgallery');track(true)},false);
+    document.addEventListener('click',function(e){var pick=e.target.closest('[data-report-choose]');if(!pick||file()!=='operating-suite.html')return;var id=pick.getAttribute('data-report-choose');if(['endowed','current','grant','capital'].indexOf(id)<0)return;history.replaceState(history.state,'','?report='+encodeURIComponent(id)+'#reportgallery');track(true)},false);
     document.addEventListener('aad-sectionchange',function(){renderLaunch();if(opened)renderPanel()});
     window.addEventListener('hashchange',function(){track()});
     window.addEventListener('popstate',function(){track()});
