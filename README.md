@@ -23,7 +23,7 @@
 
 <table>
 <tr>
-<td width="50%" valign="top"><a href="https://narissa-pgm.github.io/AAD/Stewardship_Hub.mp4"><img src="assets/video-hub.webp" width="100%" alt="Play: Impact Circle · Stewardship Hub walkthrough, 3½ minutes"></a><br><b>Impact Circle · Stewardship Hub walkthrough</b><br><sub>The four-layer model, the reporting loop and its Release Gate, and the proposed Ph.D. fellowship pilot. <a href="https://narissa-pgm.github.io/AAD/impact-circle.html">Open the hub ↗</a></sub></td>
+<td width="50%" valign="top"><a href="https://narissa-pgm.github.io/AAD/Stewardship_Hub.mp4"><img src="assets/video-hub.webp" width="100%" alt="Play: Impact Circle · Stewardship Hub walkthrough, 3 minutes 22 seconds"></a><br><b>Impact Circle · Stewardship Hub walkthrough</b><br><sub>The four-layer model, the reporting loop and its Release Gate, and the proposed Ph.D. fellowship pilot. <a href="https://narissa-pgm.github.io/AAD/impact-circle.html">Open the hub ↗</a></sub></td>
 <td width="50%" valign="top"><a href="https://narissa-pgm.github.io/AAD/Story.mp4"><img src="assets/video-story.webp" width="100%" alt="Play: donor thank-you story, sample, 4 minutes"></a><br><b>Donor thank-you story · sample</b><br><sub>A stewardship video for an endowed Ph.D. fellowship, with the email that delivers it. Donor, fund and student are fictional. <a href="https://narissa-pgm.github.io/AAD/donor-profile.html#story-email">See the email and the Release Gate review ↗</a></sub></td>
 </tr>
 </table>
